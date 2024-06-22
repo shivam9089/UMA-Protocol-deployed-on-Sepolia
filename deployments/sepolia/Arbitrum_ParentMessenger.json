@@ -1,0 +1,1041 @@
+{
+  "address": "0xB6F40ec1765fbc00C4ceDe1181331Fd41F8775E9",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_inbox",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_childChainId",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "childMessenger",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "targetHub",
+          "type": "address"
+        }
+      ],
+      "name": "MessageReceivedFromChild",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "targetSpoke",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "l1CallValue",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "gasLimit",
+          "type": "uint32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "gasPrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maxSubmissionCost",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "refundL2Address",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "childMessenger",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "sequenceNumber",
+          "type": "uint256"
+        }
+      ],
+      "name": "MessageSentToChild",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "seqNum",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "userToRefund",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "l1CallValue",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "gasLimit",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "gasPrice",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maxSubmissionCost",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "RelayedMessage",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "childMessenger",
+          "type": "address"
+        }
+      ],
+      "name": "SetChildMessenger",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "newDefaultGasLimit",
+          "type": "uint32"
+        }
+      ],
+      "name": "SetDefaultGasLimit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newDefaultGasPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "SetDefaultGasPrice",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newMaxSubmissionCost",
+          "type": "uint256"
+        }
+      ],
+      "name": "SetDefaultMaxSubmissionCost",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "governorHub",
+          "type": "address"
+        }
+      ],
+      "name": "SetGovernorHub",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "governorSpoke",
+          "type": "address"
+        }
+      ],
+      "name": "SetGovernorSpoke",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oracleHub",
+          "type": "address"
+        }
+      ],
+      "name": "SetOracleHub",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oracleSpoke",
+          "type": "address"
+        }
+      ],
+      "name": "SetOracleSpoke",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newRefundL2Address",
+          "type": "address"
+        }
+      ],
+      "name": "SetRefundL2Address",
+      "type": "event"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "fallback"
+    },
+    {
+      "inputs": [],
+      "name": "childChainId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "childMessenger",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "defaultGasLimit",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "defaultGasPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "defaultMaxSubmissionCost",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getL1CallValue",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "governorHub",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "governorSpoke",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "inbox",
+      "outputs": [
+        {
+          "internalType": "contract iArbitrum_Inbox",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "oracleHub",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "oracleSpoke",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "processMessageFromCrossChainChild",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "refundL2Address",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "userToRefund",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "l1CallValue",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gasLimit",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "gasPrice",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxSubmissionCost",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "message",
+          "type": "bytes"
+        }
+      ],
+      "name": "relayMessage",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "sendMessageToChild",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newChildMessenger",
+          "type": "address"
+        }
+      ],
+      "name": "setChildMessenger",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOracleSpoke",
+          "type": "address"
+        }
+      ],
+      "name": "setChildOracleSpoke",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newParentMessenger",
+          "type": "address"
+        }
+      ],
+      "name": "setChildParentMessenger",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "newDefaultGasLimit",
+          "type": "uint32"
+        }
+      ],
+      "name": "setDefaultGasLimit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newDefaultGasPrice",
+          "type": "uint256"
+        }
+      ],
+      "name": "setDefaultGasPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newDefaultMaxSubmissionCost",
+          "type": "uint256"
+        }
+      ],
+      "name": "setDefaultMaxSubmissionCost",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newGovernorHub",
+          "type": "address"
+        }
+      ],
+      "name": "setGovernorHub",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newGovernorSpoke",
+          "type": "address"
+        }
+      ],
+      "name": "setGovernorSpoke",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOracleHub",
+          "type": "address"
+        }
+      ],
+      "name": "setOracleHub",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOracleSpoke",
+          "type": "address"
+        }
+      ],
+      "name": "setOracleSpoke",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newRefundl2Address",
+          "type": "address"
+        }
+      ],
+      "name": "setRefundL2Address",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xf94d845f16161f3bfae3d342738df5606069343347a2f12e097c0b62a932e831",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0xB6F40ec1765fbc00C4ceDe1181331Fd41F8775E9",
+    "transactionIndex": 30,
+    "gasUsed": "1211658",
+    "logsBloom": "0x00002000000000000000020000000000000000000800000000800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000800000000000000001000000000000000000000000000000000000020000000000000000000800000010000000000000000000000000400000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x70a9d7fce4618477b93d265ed468e33c23e614c86472015bd8ac44115168dd4b",
+    "transactionHash": "0xf94d845f16161f3bfae3d342738df5606069343347a2f12e097c0b62a932e831",
+    "logs": [
+      {
+        "transactionIndex": 30,
+        "blockNumber": 6161334,
+        "transactionHash": "0xf94d845f16161f3bfae3d342738df5606069343347a2f12e097c0b62a932e831",
+        "address": "0xB6F40ec1765fbc00C4ceDe1181331Fd41F8775E9",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x0000000000000000000000002d92211362adaa7963de4609214282fff44859f6"
+        ],
+        "data": "0x",
+        "logIndex": 75,
+        "blockHash": "0x70a9d7fce4618477b93d265ed468e33c23e614c86472015bd8ac44115168dd4b"
+      }
+    ],
+    "blockNumber": 6161334,
+    "cumulativeGasUsed": "6137338",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x4Dbd4fc535Ac27206064B68FfCf827b0A60BAB3f",
+    42161
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_inbox\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_childChainId\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"childMessenger\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"targetHub\",\"type\":\"address\"}],\"name\":\"MessageReceivedFromChild\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"targetSpoke\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"l1CallValue\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"gasLimit\",\"type\":\"uint32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gasPrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxSubmissionCost\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"refundL2Address\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"childMessenger\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"sequenceNumber\",\"type\":\"uint256\"}],\"name\":\"MessageSentToChild\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"seqNum\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"userToRefund\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"l1CallValue\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gasLimit\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"gasPrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxSubmissionCost\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"RelayedMessage\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"childMessenger\",\"type\":\"address\"}],\"name\":\"SetChildMessenger\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"newDefaultGasLimit\",\"type\":\"uint32\"}],\"name\":\"SetDefaultGasLimit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newDefaultGasPrice\",\"type\":\"uint256\"}],\"name\":\"SetDefaultGasPrice\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMaxSubmissionCost\",\"type\":\"uint256\"}],\"name\":\"SetDefaultMaxSubmissionCost\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"governorHub\",\"type\":\"address\"}],\"name\":\"SetGovernorHub\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"governorSpoke\",\"type\":\"address\"}],\"name\":\"SetGovernorSpoke\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oracleHub\",\"type\":\"address\"}],\"name\":\"SetOracleHub\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oracleSpoke\",\"type\":\"address\"}],\"name\":\"SetOracleSpoke\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newRefundL2Address\",\"type\":\"address\"}],\"name\":\"SetRefundL2Address\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"inputs\":[],\"name\":\"childChainId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"childMessenger\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"defaultGasLimit\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"defaultGasPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"defaultMaxSubmissionCost\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getL1CallValue\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"governorHub\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"governorSpoke\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"inbox\",\"outputs\":[{\"internalType\":\"contract iArbitrum_Inbox\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"oracleHub\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"oracleSpoke\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"processMessageFromCrossChainChild\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"refundL2Address\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"userToRefund\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"l1CallValue\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"gasLimit\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"gasPrice\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxSubmissionCost\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"message\",\"type\":\"bytes\"}],\"name\":\"relayMessage\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"sendMessageToChild\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newChildMessenger\",\"type\":\"address\"}],\"name\":\"setChildMessenger\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOracleSpoke\",\"type\":\"address\"}],\"name\":\"setChildOracleSpoke\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newParentMessenger\",\"type\":\"address\"}],\"name\":\"setChildParentMessenger\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"newDefaultGasLimit\",\"type\":\"uint32\"}],\"name\":\"setDefaultGasLimit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newDefaultGasPrice\",\"type\":\"uint256\"}],\"name\":\"setDefaultGasPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newDefaultMaxSubmissionCost\",\"type\":\"uint256\"}],\"name\":\"setDefaultMaxSubmissionCost\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newGovernorHub\",\"type\":\"address\"}],\"name\":\"setGovernorHub\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newGovernorSpoke\",\"type\":\"address\"}],\"name\":\"setGovernorSpoke\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOracleHub\",\"type\":\"address\"}],\"name\":\"setOracleHub\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOracleSpoke\",\"type\":\"address\"}],\"name\":\"setOracleSpoke\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newRefundl2Address\",\"type\":\"address\"}],\"name\":\"setRefundL2Address\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This contract is ownable and should be owned by the DVM governor.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_childChainId\":\"The chain id of the Optimism L2 network this messenger should connect to.*\",\"_inbox\":\"Contract that sends generalized messages to the Arbitrum chain.\"}},\"getL1CallValue()\":{\"returns\":{\"_0\":\"Amount of msg.value to include to send cross-chain message.\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"processMessageFromCrossChainChild(bytes)\":{\"details\":\"The caller must be the the child messenger, sent over the canonical message bridge.Note that only the OracleHub can receive messages from the child messenger. Therefore we can always forward these messages to this contract. The OracleHub must implement processMessageFromChild to handle this message.\",\"params\":{\"data\":\"data message sent from the child messenger. Should be an encoded function call or packed data.\"}},\"relayMessage(address,address,uint256,uint256,uint256,uint256,bytes)\":{\"params\":{\"gasLimit\":\"The gasLimit for the receipt of the message on L2.\",\"gasPrice\":\"Gas price bid for L2 execution.\",\"l1CallValue\":\"Amount of ETH deposited to `target` contract on L2. Used to pay for L2 submission fee and l2CallValue. This will usually be > 0.\",\"maxSubmissionCost\":\": Max gas deducted from user's L2 balance to cover base submission fee. This amount is proportional to the size of `data`.\",\"message\":\"The data to send to the target (usually calldata to a function with  `onlyFromCrossDomainAccount()`)\",\"target\":\"The intended recipient on L2.\",\"userToRefund\":\"User on L2 to refund extra fees to.\"}},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.\"},\"sendMessageToChild(bytes)\":{\"details\":\"The caller must be the either the OracleHub or the GovernorHub. This is to send either a price or initiate a governance action to the OracleSpoke or GovernorSpoke on the child network.The recipient of this message is the child messenger. The messenger must implement processMessageFromParent which then forwards the data to the target either the OracleSpoke or the governorSpoke depending on the caller.This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.\",\"params\":{\"data\":\"data message sent to the child messenger. Should be an encoded function call or packed data.\"}},\"setChildMessenger(address)\":{\"details\":\"The caller of this function must be the owner. This should be set to the DVM governor.\",\"params\":{\"newChildMessenger\":\"address of the new child messenger, deployed on L2.\"}},\"setChildOracleSpoke(address)\":{\"details\":\"The caller of this function must be the owner, which should be set to the DVM governor.This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.\",\"params\":{\"newOracleSpoke\":\"the new oracle spoke address set on L2.\"}},\"setChildParentMessenger(address)\":{\"details\":\"The caller of this function must be the owner, which should be set to the DVM governor.This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.\",\"params\":{\"newParentMessenger\":\"the new parent messenger contract to be set on L2.\"}},\"setDefaultGasLimit(uint32)\":{\"details\":\"The caller of this function must be the owner, which should be set to the DVM governor.\",\"params\":{\"newDefaultGasLimit\":\"the new L2 gas limit to be set.\"}},\"setDefaultGasPrice(uint256)\":{\"details\":\"The caller of this function must be the owner, which should be set to the DVM governor.\",\"params\":{\"newDefaultGasPrice\":\"the new L2 gas price to be set.\"}},\"setDefaultMaxSubmissionCost(uint256)\":{\"details\":\"The caller of this function must be the owner, which should be set to the DVM governor.\",\"params\":{\"newDefaultMaxSubmissionCost\":\"the new L2 max submission cost to be set.\"}},\"setGovernorHub(address)\":{\"details\":\"The caller of this function must be the owner. This should be set to the DVM governor.\",\"params\":{\"newGovernorHub\":\"address of the new governor hub, deployed on L1 Ethereum.\"}},\"setGovernorSpoke(address)\":{\"details\":\"The caller of this function must be the owner. This should be set to the DVM governor.\",\"params\":{\"newGovernorSpoke\":\"address of the new governor spoke, deployed on L2.\"}},\"setOracleHub(address)\":{\"details\":\"The caller of this function must be the owner. This should be set to the DVM governor.\",\"params\":{\"newOracleHub\":\"address of the new oracle hub, deployed on L1 Ethereum.\"}},\"setOracleSpoke(address)\":{\"details\":\"The caller of this function must be the owner. This should be set to the DVM governor.\",\"params\":{\"newOracleSpoke\":\"address of the new oracle spoke, deployed on L2.\"}},\"setRefundL2Address(address)\":{\"details\":\"The caller of this function must be the owner, which should be set to the DVM governor.\",\"params\":{\"newRefundl2Address\":\"the new refund address to set. This should be set to an L2 address that is trusted by the owner as it can spend Arbitrum L2 refunds for excess gas when sending transactions on Arbitrum.\"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Construct the Optimism_ParentMessenger contract.\"},\"getL1CallValue()\":{\"notice\":\"This function is expected to be queried by Hub contracts that need to determine how much ETH to include in msg.value when calling `sendMessageToChild`.\"},\"processMessageFromCrossChainChild(bytes)\":{\"notice\":\"Process a received message from the child messenger via the canonical message bridge.\"},\"relayMessage(address,address,uint256,uint256,uint256,uint256,bytes)\":{\"notice\":\"Sends a message to an account on L2. If this message reverts on l2 for any reason it can either be resent on L1, or redeemed on L2 manually. To learn more see how \\\"retryable tickets\\\" work on Arbitrum https://developer.offchainlabs.com/docs/l1_l2_messages#parameters\"},\"sendMessageToChild(bytes)\":{\"notice\":\"Sends a message to the child messenger via the canonical message bridge.\"},\"setChildMessenger(address)\":{\"notice\":\"Changes the stored address of the child messenger, deployed on L2.\"},\"setChildOracleSpoke(address)\":{\"notice\":\"Changes the address of the oracle spoke on L2 via the child messenger.\"},\"setChildParentMessenger(address)\":{\"notice\":\"Changes the address of the parent messenger on L2 via the child messenger.\"},\"setDefaultGasLimit(uint32)\":{\"notice\":\"Changes the default gas limit that is sent along with transactions to Arbitrum.\"},\"setDefaultGasPrice(uint256)\":{\"notice\":\"Changes the default gas price that is sent along with transactions to Arbitrum.\"},\"setDefaultMaxSubmissionCost(uint256)\":{\"notice\":\"Changes the default max submission cost that is sent along with transactions to Arbitrum.\"},\"setGovernorHub(address)\":{\"notice\":\"Changes the stored address of the Governor hub, deployed on L1.\"},\"setGovernorSpoke(address)\":{\"notice\":\"Changes the stored address of the governor spoke, deployed on L2.\"},\"setOracleHub(address)\":{\"notice\":\"Changes the stored address of the Oracle hub, deployed on L1.\"},\"setOracleSpoke(address)\":{\"notice\":\"Changes the stored address of the oracle spoke, deployed on L2.\"},\"setRefundL2Address(address)\":{\"notice\":\"Changes the refund address on L2 that receives excess gas or the full msg.value if the retryable ticket reverts.\"}},\"notice\":\"Sends cross chain messages from Ethereum L1 to Arbitrum L2 network.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol\":\"Arbitrum_ParentMessenger\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.0;\\n\\nimport \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * By default, the owner account will be the one that deploys the contract. This\\n * can later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the deployer as the initial owner.\\n     */\\n    constructor() {\\n        _transferOwnership(_msgSender());\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        require(owner() == _msgSender(), \\\"Ownable: caller is not the owner\\\");\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby disabling any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        require(newOwner != address(0), \\\"Ownable: new owner is the zero address\\\");\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.4) (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n\\n    function _contextSuffixLength() internal view virtual returns (uint256) {\\n        return 0;\\n    }\\n}\\n\",\"keccak256\":\"0xa92e4fa126feb6907daa0513ddd816b2eb91f30a808de54f63c17d0e162c3439\",\"license\":\"MIT\"},\"contracts/common/implementation/Lockable.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title A contract that provides modifiers to prevent reentrancy to state-changing and view-only methods. This contract\\r\\n * is inspired by https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/ReentrancyGuard.sol\\r\\n * and https://github.com/balancer-labs/balancer-core/blob/master/contracts/BPool.sol.\\r\\n */\\r\\ncontract Lockable {\\r\\n    bool private _notEntered;\\r\\n\\r\\n    constructor() {\\r\\n        // Storing an initial non-zero value makes deployment a bit more expensive, but in exchange the refund on every\\r\\n        // call to nonReentrant will be lower in amount. Since refunds are capped to a percentage of the total\\r\\n        // transaction's gas, it is best to keep them low in cases like this one, to increase the likelihood of the full\\r\\n        // refund coming into effect.\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Prevents a contract from calling itself, directly or indirectly.\\r\\n     * Calling a `nonReentrant` function from another `nonReentrant` function is not supported. It is possible to\\r\\n     * prevent this from happening by making the `nonReentrant` function external, and making it call a `private`\\r\\n     * function that does the actual state modification.\\r\\n     */\\r\\n    modifier nonReentrant() {\\r\\n        _preEntranceCheck();\\r\\n        _preEntranceSet();\\r\\n        _;\\r\\n        _postEntranceReset();\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Designed to prevent a view-only method from being re-entered during a call to a `nonReentrant()` state-changing method.\\r\\n     */\\r\\n    modifier nonReentrantView() {\\r\\n        _preEntranceCheck();\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    // Internal methods are used to avoid copying the require statement's bytecode to every `nonReentrant()` method.\\r\\n    // On entry into a function, `_preEntranceCheck()` should always be called to check if the function is being\\r\\n    // re-entered. Then, if the function modifies state, it should call `_postEntranceSet()`, perform its logic, and\\r\\n    // then call `_postEntranceReset()`.\\r\\n    // View-only methods can simply call `_preEntranceCheck()` to make sure that it is not being re-entered.\\r\\n    function _preEntranceCheck() internal view {\\r\\n        // On the first call to nonReentrant, _notEntered will be true\\r\\n        require(_notEntered, \\\"ReentrancyGuard: reentrant call\\\");\\r\\n    }\\r\\n\\r\\n    function _preEntranceSet() internal {\\r\\n        // Any calls to nonReentrant after this point will fail\\r\\n        _notEntered = false;\\r\\n    }\\r\\n\\r\\n    function _postEntranceReset() internal {\\r\\n        // By storing the original value once again, a refund is triggered (see\\r\\n        // https://eips.ethereum.org/EIPS/eip-2200)\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    // These functions are intended to be used by child contracts to temporarily disable and re-enable the guard.\\r\\n    // Intended use:\\r\\n    // _startReentrantGuardDisabled();\\r\\n    // ...\\r\\n    // _endReentrantGuardDisabled();\\r\\n    //\\r\\n    // IMPORTANT: these should NEVER be used in a method that isn't inside a nonReentrant block. Otherwise, it's\\r\\n    // possible to permanently lock your contract.\\r\\n    function _startReentrantGuardDisabled() internal {\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    function _endReentrantGuardDisabled() internal {\\r\\n        _notEntered = false;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x0d2de08951d2be32ceb242649e4b248508f43ce9184ee9ac69eedcef9f6afd8b\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"../../external/avm/Arbitrum_Messenger.sol\\\";\\r\\nimport \\\"../interfaces/ParentMessengerInterface.sol\\\";\\r\\nimport \\\"../interfaces/ParentMessengerConsumerInterface.sol\\\";\\r\\nimport \\\"./ParentMessengerBase.sol\\\";\\r\\nimport \\\"../../common/implementation/Lockable.sol\\\";\\r\\n\\r\\n/**\\r\\n * @notice Sends cross chain messages from Ethereum L1 to Arbitrum L2 network.\\r\\n * @dev This contract is ownable and should be owned by the DVM governor.\\r\\n */\\r\\ncontract Arbitrum_ParentMessenger is Arbitrum_Messenger, ParentMessengerInterface, ParentMessengerBase, Lockable {\\r\\n    event SetDefaultGasLimit(uint32 newDefaultGasLimit);\\r\\n    event SetDefaultMaxSubmissionCost(uint256 newMaxSubmissionCost);\\r\\n    event SetDefaultGasPrice(uint256 newDefaultGasPrice);\\r\\n    event SetRefundL2Address(address newRefundL2Address);\\r\\n    event MessageSentToChild(\\r\\n        bytes data,\\r\\n        address indexed targetSpoke,\\r\\n        uint256 l1CallValue,\\r\\n        uint32 gasLimit,\\r\\n        uint256 gasPrice,\\r\\n        uint256 maxSubmissionCost,\\r\\n        address refundL2Address,\\r\\n        address indexed childMessenger,\\r\\n        uint256 sequenceNumber\\r\\n    );\\r\\n    event MessageReceivedFromChild(bytes data, address indexed childMessenger, address indexed targetHub);\\r\\n\\r\\n    // Gas limit for immediate L2 execution attempt (can be estimated via NodeInterface.estimateRetryableTicket).\\r\\n    // NodeInterface precompile interface exists at L2 address 0x00000000000000000000000000000000000000C8\\r\\n    uint32 public defaultGasLimit = 5_000_000;\\r\\n\\r\\n    // Amount of ETH allocated to pay for the base submission fee. The base submission fee is a parameter unique to\\r\\n    // retryable transactions; the user is charged the base submission fee to cover the storage costs of keeping their\\r\\n    // ticket\\u2019s calldata in the retry buffer. (current base submission fee is queryable via\\r\\n    // ArbRetryableTx.getSubmissionPrice). ArbRetryableTicket precompile interface exists at L2 address\\r\\n    // 0x000000000000000000000000000000000000006E.\\r\\n    uint256 public defaultMaxSubmissionCost = 0.1e18;\\r\\n\\r\\n    // L2 Gas price bid for immediate L2 execution attempt (queryable via standard eth*gasPrice RPC)\\r\\n    uint256 public defaultGasPrice = 10e9; // 10 gWei\\r\\n\\r\\n    // This address on L2 receives extra ETH that is left over after relaying a message via the inbox.\\r\\n    address public refundL2Address;\\r\\n\\r\\n    /**\\r\\n     * @notice Construct the Optimism_ParentMessenger contract.\\r\\n     * @param _inbox Contract that sends generalized messages to the Arbitrum chain.\\r\\n     * @param _childChainId The chain id of the Optimism L2 network this messenger should connect to.\\r\\n     **/\\r\\n    constructor(address _inbox, uint256 _childChainId) Arbitrum_Messenger(_inbox) ParentMessengerBase(_childChainId) {\\r\\n        refundL2Address = owner();\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the refund address on L2 that receives excess gas or the full msg.value if the retryable\\r\\n     * ticket reverts.\\r\\n     * @dev The caller of this function must be the owner, which should be set to the DVM governor.\\r\\n     * @param newRefundl2Address the new refund address to set. This should be set to an L2 address that is trusted by\\r\\n     * the owner as it can spend Arbitrum L2 refunds for excess gas when sending transactions on Arbitrum.\\r\\n     */\\r\\n    function setRefundL2Address(address newRefundl2Address) public onlyOwner nonReentrant() {\\r\\n        refundL2Address = newRefundl2Address;\\r\\n        emit SetRefundL2Address(refundL2Address);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the default gas limit that is sent along with transactions to Arbitrum.\\r\\n     * @dev The caller of this function must be the owner, which should be set to the DVM governor.\\r\\n     * @param newDefaultGasLimit the new L2 gas limit to be set.\\r\\n     */\\r\\n    function setDefaultGasLimit(uint32 newDefaultGasLimit) public onlyOwner nonReentrant() {\\r\\n        defaultGasLimit = newDefaultGasLimit;\\r\\n        emit SetDefaultGasLimit(newDefaultGasLimit);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the default gas price that is sent along with transactions to Arbitrum.\\r\\n     * @dev The caller of this function must be the owner, which should be set to the DVM governor.\\r\\n     * @param newDefaultGasPrice the new L2 gas price to be set.\\r\\n     */\\r\\n    function setDefaultGasPrice(uint256 newDefaultGasPrice) public onlyOwner nonReentrant() {\\r\\n        defaultGasPrice = newDefaultGasPrice;\\r\\n        emit SetDefaultGasPrice(newDefaultGasPrice);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the default max submission cost that is sent along with transactions to Arbitrum.\\r\\n     * @dev The caller of this function must be the owner, which should be set to the DVM governor.\\r\\n     * @param newDefaultMaxSubmissionCost the new L2 max submission cost to be set.\\r\\n     */\\r\\n    function setDefaultMaxSubmissionCost(uint256 newDefaultMaxSubmissionCost) public onlyOwner nonReentrant() {\\r\\n        defaultMaxSubmissionCost = newDefaultMaxSubmissionCost;\\r\\n        emit SetDefaultMaxSubmissionCost(newDefaultMaxSubmissionCost);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the address of the oracle spoke on L2 via the child messenger.\\r\\n     * @dev The caller of this function must be the owner, which should be set to the DVM governor.\\r\\n     * @dev This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.\\r\\n     * @param newOracleSpoke the new oracle spoke address set on L2.\\r\\n     */\\r\\n    function setChildOracleSpoke(address newOracleSpoke) public onlyOwner nonReentrant() {\\r\\n        bytes memory dataSentToChild = abi.encodeWithSignature(\\\"setOracleSpoke(address)\\\", newOracleSpoke);\\r\\n        _sendMessageToChild(dataSentToChild, childMessenger);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the address of the parent messenger on L2 via the child messenger.\\r\\n     * @dev The caller of this function must be the owner, which should be set to the DVM governor.\\r\\n     * @dev This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.\\r\\n     * @param newParentMessenger the new parent messenger contract to be set on L2.\\r\\n     */\\r\\n    function setChildParentMessenger(address newParentMessenger) public onlyOwner nonReentrant() {\\r\\n        bytes memory dataSentToChild = abi.encodeWithSignature(\\\"setParentMessenger(address)\\\", newParentMessenger);\\r\\n        _sendMessageToChild(dataSentToChild, childMessenger);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Sends a message to the child messenger via the canonical message bridge.\\r\\n     * @dev The caller must be the either the OracleHub or the GovernorHub. This is to send either a\\r\\n     * price or initiate a governance action to the OracleSpoke or GovernorSpoke on the child network.\\r\\n     * @dev The recipient of this message is the child messenger. The messenger must implement processMessageFromParent\\r\\n     * which then forwards the data to the target either the OracleSpoke or the governorSpoke depending on the caller.\\r\\n     * @dev This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.\\r\\n     * @param data data message sent to the child messenger. Should be an encoded function call or packed data.\\r\\n     */\\r\\n    function sendMessageToChild(bytes memory data) external override onlyHubContract() nonReentrant() {\\r\\n        address target = msg.sender == oracleHub ? oracleSpoke : governorSpoke;\\r\\n        bytes memory dataSentToChild =\\r\\n            abi.encodeWithSignature(\\\"processMessageFromCrossChainParent(bytes,address)\\\", data, target);\\r\\n        _sendMessageToChild(dataSentToChild, target);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Process a received message from the child messenger via the canonical message bridge.\\r\\n     * @dev The caller must be the the child messenger, sent over the canonical message bridge.\\r\\n     * @dev Note that only the OracleHub can receive messages from the child messenger. Therefore we can always forward\\r\\n     * these messages to this contract. The OracleHub must implement processMessageFromChild to handle this message.\\r\\n     * @param data data message sent from the child messenger. Should be an encoded function call or packed data.\\r\\n     */\\r\\n    function processMessageFromCrossChainChild(bytes memory data)\\r\\n        public\\r\\n        onlyFromCrossDomainAccount(childMessenger)\\r\\n        nonReentrant()\\r\\n    {\\r\\n        ParentMessengerConsumerInterface(oracleHub).processMessageFromChild(childChainId, data);\\r\\n        emit MessageReceivedFromChild(data, childMessenger, oracleHub);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice This function is expected to be queried by Hub contracts that need to determine how much ETH\\r\\n     * to include in msg.value when calling `sendMessageToChild`.\\r\\n     * @return Amount of msg.value to include to send cross-chain message.\\r\\n     */\\r\\n    function getL1CallValue()\\r\\n        public\\r\\n        view\\r\\n        override(ParentMessengerBase, ParentMessengerInterface)\\r\\n        nonReentrantView()\\r\\n        returns (uint256)\\r\\n    {\\r\\n        return _getL1CallValue();\\r\\n    }\\r\\n\\r\\n    // We need to allow this contract to receive ETH, so that it can include some msg.value amount on external calls\\r\\n    // to the `sendMessageToChild` function. We shouldn't expect the owner of this contract to send\\r\\n    // ETH because the owner is intended to be a contract (e.g. the Governor) and we don't want to change the\\r\\n    // Governor interface.\\r\\n    fallback() external payable {}\\r\\n\\r\\n    // Used to determine how much ETH to include in msg.value when calling admin functions like\\r\\n    // `setChildParentMessenger` and sending messages across the bridge.\\r\\n    function _getL1CallValue() internal view returns (uint256) {\\r\\n        // This could overflow if these values are set too high, but since they are configurable by trusted owner\\r\\n        // we won't catch this case.\\r\\n        return defaultMaxSubmissionCost + defaultGasPrice * defaultGasLimit;\\r\\n    }\\r\\n\\r\\n    // This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.\\r\\n    function _sendMessageToChild(bytes memory data, address target) internal {\\r\\n        uint256 requiredL1CallValue = _getL1CallValue();\\r\\n        require(address(this).balance >= requiredL1CallValue, \\\"Insufficient ETH balance\\\");\\r\\n\\r\\n        uint256 seqNumber =\\r\\n            sendTxToL2NoAliassing(\\r\\n                childMessenger,\\r\\n                refundL2Address,\\r\\n                requiredL1CallValue,\\r\\n                defaultMaxSubmissionCost,\\r\\n                defaultGasLimit,\\r\\n                defaultGasPrice,\\r\\n                data\\r\\n            );\\r\\n        emit MessageSentToChild(\\r\\n            data,\\r\\n            target,\\r\\n            requiredL1CallValue,\\r\\n            defaultGasLimit,\\r\\n            defaultGasPrice,\\r\\n            defaultMaxSubmissionCost,\\r\\n            refundL2Address,\\r\\n            childMessenger,\\r\\n            seqNumber\\r\\n        );\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x9a0f6b118ec3b7fbf8cd976f0ea8a7fa8374b8928444ced2c7c85943a911c5ff\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/chain-adapters/ParentMessengerBase.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\r\\nimport \\\"../interfaces/ParentMessengerInterface.sol\\\";\\r\\n\\r\\nabstract contract ParentMessengerBase is Ownable, ParentMessengerInterface {\\r\\n    uint256 public childChainId;\\r\\n\\r\\n    address public childMessenger;\\r\\n\\r\\n    address public oracleHub;\\r\\n    address public governorHub;\\r\\n\\r\\n    address public oracleSpoke;\\r\\n    address public governorSpoke;\\r\\n\\r\\n    event SetChildMessenger(address indexed childMessenger);\\r\\n    event SetOracleHub(address indexed oracleHub);\\r\\n    event SetGovernorHub(address indexed governorHub);\\r\\n    event SetOracleSpoke(address indexed oracleSpoke);\\r\\n    event SetGovernorSpoke(address indexed governorSpoke);\\r\\n\\r\\n    modifier onlyHubContract() {\\r\\n        require(msg.sender == oracleHub || msg.sender == governorHub, \\\"Only privileged caller\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Construct the ParentMessengerBase contract.\\r\\n     * @param _childChainId The chain id of the L2 network this messenger should connect to.\\r\\n     **/\\r\\n    constructor(uint256 _childChainId) {\\r\\n        childChainId = _childChainId;\\r\\n    }\\r\\n\\r\\n    /*******************\\r\\n     *  OWNER METHODS  *\\r\\n     *******************/\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the stored address of the child messenger, deployed on L2.\\r\\n     * @dev The caller of this function must be the owner. This should be set to the DVM governor.\\r\\n     * @param newChildMessenger address of the new child messenger, deployed on L2.\\r\\n     */\\r\\n    function setChildMessenger(address newChildMessenger) public onlyOwner {\\r\\n        childMessenger = newChildMessenger;\\r\\n        emit SetChildMessenger(childMessenger);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the stored address of the Oracle hub, deployed on L1.\\r\\n     * @dev The caller of this function must be the owner. This should be set to the DVM governor.\\r\\n     * @param newOracleHub address of the new oracle hub, deployed on L1 Ethereum.\\r\\n     */\\r\\n    function setOracleHub(address newOracleHub) public onlyOwner {\\r\\n        oracleHub = newOracleHub;\\r\\n        emit SetOracleHub(oracleHub);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the stored address of the Governor hub, deployed on L1.\\r\\n     * @dev The caller of this function must be the owner. This should be set to the DVM governor.\\r\\n     * @param newGovernorHub address of the new governor hub, deployed on L1 Ethereum.\\r\\n     */\\r\\n    function setGovernorHub(address newGovernorHub) public onlyOwner {\\r\\n        governorHub = newGovernorHub;\\r\\n        emit SetGovernorHub(governorHub);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the stored address of the oracle spoke, deployed on L2.\\r\\n     * @dev The caller of this function must be the owner. This should be set to the DVM governor.\\r\\n     * @param newOracleSpoke address of the new oracle spoke, deployed on L2.\\r\\n     */\\r\\n    function setOracleSpoke(address newOracleSpoke) public onlyOwner {\\r\\n        oracleSpoke = newOracleSpoke;\\r\\n        emit SetOracleSpoke(oracleSpoke);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the stored address of the governor spoke, deployed on L2.\\r\\n     * @dev The caller of this function must be the owner. This should be set to the DVM governor.\\r\\n     * @param newGovernorSpoke address of the new governor spoke, deployed on L2.\\r\\n     */\\r\\n    function setGovernorSpoke(address newGovernorSpoke) public onlyOwner {\\r\\n        governorSpoke = newGovernorSpoke;\\r\\n        emit SetGovernorSpoke(governorSpoke);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns the amount of ETH required for a caller to pass as msg.value when calling `sendMessageToChild`.\\r\\n     * @return The amount of ETH required for a caller to pass as msg.value when calling `sendMessageToChild`.\\r\\n     */\\r\\n    function getL1CallValue() external view virtual override returns (uint256) {\\r\\n        return 0;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x517819d0f7af95682ac76a03af3b6fac11367d993b8791a1e5eb12527156d163\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/interfaces/ParentMessengerConsumerInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface ParentMessengerConsumerInterface {\\r\\n    // Function called on Oracle hub to pass in data send from L2, with chain ID.\\r\\n    function processMessageFromChild(uint256 chainId, bytes memory data) external;\\r\\n}\\r\\n\",\"keccak256\":\"0xa847709b6502eb61850bed4229702c9935789adbe0d7e010c4ad763b4563434c\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/interfaces/ParentMessengerInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface ParentMessengerInterface {\\r\\n    // Should send cross-chain message to Child messenger contract or revert.\\r\\n    function sendMessageToChild(bytes memory data) external;\\r\\n\\r\\n    // Informs Hub how much msg.value they need to include to call `sendMessageToChild`.\\r\\n    function getL1CallValue() external view returns (uint256);\\r\\n}\\r\\n\",\"keccak256\":\"0xc74acc686b947b8634e084a110c511b167f8251138a80def1faae9101660fb05\",\"license\":\"AGPL-3.0-only\"},\"contracts/external/avm/Arbitrum_CrossDomainEnabled.sol\":{\"content\":\"// Copied logic from https://github.com/makerdao/arbitrum-dai-bridge/blob/34acc39bc6f3a2da0a837ea3c5dbc634ec61c7de/contracts/l1/L1CrossDomainEnabled.sol\\r\\n// with a change to the solidity version.\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"../../external/avm/interfaces/iArbitrum_Inbox.sol\\\";\\r\\nimport \\\"../../external/avm/interfaces/iArbitrum_Outbox.sol\\\";\\r\\n\\r\\nabstract contract Arbitrum_CrossDomainEnabled {\\r\\n    iArbitrum_Inbox public immutable inbox;\\r\\n\\r\\n    /**\\r\\n     * @param _inbox Contract that sends generalized messages to the Arbitrum chain.\\r\\n     */\\r\\n    constructor(address _inbox) {\\r\\n        inbox = iArbitrum_Inbox(_inbox);\\r\\n    }\\r\\n\\r\\n    // More details about retryable ticket parameters here: https://developer.offchainlabs.com/docs/l1_l2_messages#parameters\\r\\n    // This function will not apply aliassing to the `user` address on L2.\\r\\n    // Note: If `l1CallValue > 0`, then this contract must contain at least that much ETH to send as msg.value to the\\r\\n    // inbox.\\r\\n    function sendTxToL2NoAliassing(\\r\\n        address target, // Address where transaction will initiate on L2.\\r\\n        address user, // Address where excess gas is credited on L2.\\r\\n        uint256 l1CallValue, // msg.value deposited to `user` on L2.\\r\\n        uint256 maxSubmissionCost, // Amount of ETH allocated to pay for base submission fee. The user is charged this\\r\\n        // fee to cover the storage costs of keeping their retryable ticket's calldata in the retry buffer. This should\\r\\n        // also cover the `l2CallValue`, but we set that to 0. This amount is proportional to the size of `data`.\\r\\n        uint256 maxGas, // Gas limit for immediate L2 execution attempt.\\r\\n        uint256 gasPriceBid, // L2 gas price bid for immediate L2 execution attempt.\\r\\n        bytes memory data // ABI encoded data to send to target.\\r\\n    ) internal returns (uint256) {\\r\\n        // createRetryableTicket API: https://developer.offchainlabs.com/docs/sol_contract_docs/md_docs/arb-bridge-eth/bridge/inbox#createretryableticketaddress-destaddr-uint256-l2callvalue-uint256-maxsubmissioncost-address-excessfeerefundaddress-address-callvaluerefundaddress-uint256-maxgas-uint256-gaspricebid-bytes-data-%E2%86%92-uint256-external\\r\\n        // - address destAddr: destination L2 contract address\\r\\n        // - uint256 l2CallValue: call value for retryable L2 message\\r\\n        // - uint256 maxSubmissionCost: Max gas deducted from user's L2 balance to cover base submission fee\\r\\n        // - address excessFeeRefundAddress: maxgas x gasprice - execution cost gets credited here on L2\\r\\n        // - address callValueRefundAddress: l2CallValue gets credited here on L2 if retryable txn times out or gets cancelled\\r\\n        // - uint256 maxGas: Max gas deducted from user's L2 balance to cover L2 execution\\r\\n        // - uint256 gasPriceBid: price bid for L2 execution\\r\\n        // - bytes data: ABI encoded data of L2 message\\r\\n        uint256 seqNum =\\r\\n            inbox.createRetryableTicketNoRefundAliasRewrite{ value: l1CallValue }(\\r\\n                target,\\r\\n                0, // we always assume that l2CallValue = 0\\r\\n                maxSubmissionCost,\\r\\n                user,\\r\\n                user,\\r\\n                maxGas,\\r\\n                gasPriceBid,\\r\\n                data\\r\\n            );\\r\\n        return seqNum;\\r\\n    }\\r\\n\\r\\n    // Copied mostly from: https://github.com/makerdao/arbitrum-dai-bridge/blob/34acc39bc6f3a2da0a837ea3c5dbc634ec61c7de/contracts/l1/L1CrossDomainEnabled.sol#L31\\r\\n    modifier onlyFromCrossDomainAccount(address l2Counterpart) {\\r\\n        // a message coming from the counterpart gateway was executed by the bridge\\r\\n        IBridge bridge = IBridge(inbox.bridge());\\r\\n        require(msg.sender == address(bridge), \\\"NOT_FROM_BRIDGE\\\");\\r\\n\\r\\n        // and the outbox reports that the L2 address of the sender is the counterpart gateway\\r\\n        address l2ToL1Sender = iArbitrum_Outbox(bridge.activeOutbox()).l2ToL1Sender();\\r\\n        require(l2ToL1Sender == l2Counterpart, \\\"ONLY_COUNTERPART_GATEWAY\\\");\\r\\n        _;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x4fcb49b9078460cf00e082a545918312634e60684ec61689063b17e34dcdda37\"},\"contracts/external/avm/Arbitrum_Messenger.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"./Arbitrum_CrossDomainEnabled.sol\\\";\\r\\nimport \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\r\\n\\r\\n/**\\r\\n * @notice Sends cross chain messages Arbitrum L2 network.\\r\\n * @dev This contract's owner should be set to the BridgeAdmin deployed on the same L1 network so that only the\\r\\n * BridgeAdmin can call cross-chain administrative functions on the L2 DepositBox via this messenger.\\r\\n * @dev This address will be the sender of any L1 --> L2 retryable tickets, so it should be set as the cross domain\\r\\n * owner for L2 contracts that expect to receive cross domain messages.\\r\\n */\\r\\ncontract Arbitrum_Messenger is Ownable, Arbitrum_CrossDomainEnabled {\\r\\n    event RelayedMessage(\\r\\n        address indexed from,\\r\\n        address indexed to,\\r\\n        uint256 indexed seqNum,\\r\\n        address userToRefund,\\r\\n        uint256 l1CallValue,\\r\\n        uint256 gasLimit,\\r\\n        uint256 gasPrice,\\r\\n        uint256 maxSubmissionCost,\\r\\n        bytes data\\r\\n    );\\r\\n\\r\\n    /**\\r\\n     * @param _inbox Contract that sends generalized messages to the Arbitrum chain.\\r\\n     */\\r\\n    constructor(address _inbox) Arbitrum_CrossDomainEnabled(_inbox) {}\\r\\n\\r\\n    /**\\r\\n     * @notice Sends a message to an account on L2. If this message reverts on l2 for any reason it can either be\\r\\n     * resent on L1, or redeemed on L2 manually. To learn more see how \\\"retryable tickets\\\" work on Arbitrum\\r\\n     * https://developer.offchainlabs.com/docs/l1_l2_messages#parameters\\r\\n     * @param target The intended recipient on L2.\\r\\n     * @param userToRefund User on L2 to refund extra fees to.\\r\\n     * @param l1CallValue Amount of ETH deposited to `target` contract on L2. Used to pay for L2 submission fee and\\r\\n     * l2CallValue. This will usually be > 0.\\r\\n     * @param gasLimit The gasLimit for the receipt of the message on L2.\\r\\n     * @param gasPrice Gas price bid for L2 execution.\\r\\n     * @param maxSubmissionCost: Max gas deducted from user's L2 balance to cover base submission fee.\\r\\n     * This amount is proportional to the size of `data`.\\r\\n     * @param message The data to send to the target (usually calldata to a function with\\r\\n     *  `onlyFromCrossDomainAccount()`)\\r\\n     */\\r\\n    function relayMessage(\\r\\n        address target,\\r\\n        address userToRefund,\\r\\n        uint256 l1CallValue,\\r\\n        uint256 gasLimit,\\r\\n        uint256 gasPrice,\\r\\n        uint256 maxSubmissionCost,\\r\\n        bytes memory message\\r\\n    ) external payable onlyOwner {\\r\\n        // Since we know the L2 target's address in advance, we don't need to alias an L1 address.\\r\\n        uint256 seqNumber =\\r\\n            sendTxToL2NoAliassing(target, userToRefund, l1CallValue, maxSubmissionCost, gasLimit, gasPrice, message);\\r\\n        emit RelayedMessage(\\r\\n            msg.sender,\\r\\n            target,\\r\\n            seqNumber,\\r\\n            userToRefund,\\r\\n            l1CallValue,\\r\\n            gasLimit,\\r\\n            gasPrice,\\r\\n            maxSubmissionCost,\\r\\n            message\\r\\n        );\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x94a57820895c5fddf5d80360a34c44504017bc200c921934af59abcab77dd3cd\",\"license\":\"AGPL-3.0-only\"},\"contracts/external/avm/interfaces/iArbitrum_Inbox.sol\":{\"content\":\"// SPDX-License-Identifier: Apache-2.0\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface IBridge {\\r\\n    function activeOutbox() external view returns (address);\\r\\n}\\r\\n\\r\\ninterface iArbitrum_Inbox {\\r\\n    // Retryable tickets are the Arbitrum protocol\\u2019s canonical method for passing generalized messages from Ethereum to\\r\\n    // Arbitrum. A retryable ticket is an L2 message encoded and delivered by L1; if gas is provided, it will be executed\\r\\n    // immediately. If no gas is provided or the execution reverts, it will be placed in the L2 retry buffer,\\r\\n    // where any user can re-execute for some fixed period (roughly one week).\\r\\n    // Retryable tickets are created by calling Inbox.createRetryableTicket.\\r\\n    // More details here: https://developer.offchainlabs.com/docs/l1_l2_messages#ethereum-to-arbitrum-retryable-tickets\\r\\n    function createRetryableTicketNoRefundAliasRewrite(\\r\\n        address destAddr,\\r\\n        uint256 l2CallValue,\\r\\n        uint256 maxSubmissionCost,\\r\\n        address excessFeeRefundAddress,\\r\\n        address callValueRefundAddress,\\r\\n        uint256 maxGas,\\r\\n        uint256 gasPriceBid,\\r\\n        bytes calldata data\\r\\n    ) external payable returns (uint256);\\r\\n\\r\\n    function bridge() external view returns (address);\\r\\n}\\r\\n\",\"keccak256\":\"0xae3829bad42af690e655fe1dffe4b9e65af804bcd0057f60457e4c046e82fcf5\",\"license\":\"Apache-2.0\"},\"contracts/external/avm/interfaces/iArbitrum_Outbox.sol\":{\"content\":\"// Copied logic from https://github.com/OffchainLabs/arbitrum-tutorials/blob/4761fa1ba1f1eca95e8c03f24f1442ed5aecd8bd/packages/arb-shared-dependencies/contracts/Outbox.sol\\r\\n// with changes only to the solidity version.\\r\\n\\r\\n// SPDX-License-Identifier: Apache-2.0\\r\\n\\r\\n/*\\r\\n * Copyright 2021, Offchain Labs, Inc.\\r\\n *\\r\\n * Licensed under the Apache License, Version 2.0 (the \\\"License\\\");\\r\\n * you may not use this file except in compliance with the License.\\r\\n * You may obtain a copy of the License at\\r\\n *\\r\\n *    http://www.apache.org/licenses/LICENSE-2.0\\r\\n *\\r\\n * Unless required by applicable law or agreed to in writing, software\\r\\n * distributed under the License is distributed on an \\\"AS IS\\\" BASIS,\\r\\n * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\\r\\n * See the License for the specific language governing permissions and\\r\\n * limitations under the License.\\r\\n */\\r\\n\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface iArbitrum_Outbox {\\r\\n    function l2ToL1Sender() external view returns (address);\\r\\n}\\r\\n\",\"keccak256\":\"0xeb323dba264e44fb055393ec87b65649a98d3cc1b3e065e25995b06f368d5cad\",\"license\":\"Apache-2.0\"}},\"version\":1}",
+  "bytecode": "0x60a0346100fb57601f61138838819003918201601f19168301916001600160401b038311848410176101005780849260409485528339810103126100fb5780516001600160a01b0391828216918290036100fb57602001516000549160018060a01b0319923384821617600055604051943391167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0600087a36080526001556006805464ffffffffff60a01b1916634c4b400160a01b17905567016345785d8a00006007556402540be40060085560098054909116331790556112719081610117823960805181818161016f01528181610ace01526111ca0152f35b600080fd5b634e487b7160e01b600052604160045260246000fdfe6040608081526004908136101561001257005b600091823560e01c90816308f1ed1514610e225781630a2b5e0314610db85781630e28c76414610d48578163109ff9a914610a795781631a50ad3014610a0d5781634c09e6e8146108fb578163524b6f70146108715781635f234d531461084857816362315c42146107dc5781637092a2b2146107b3578163715018a61461075657816373d62b461461072d578163816c24441461069d57816381e8ea46146106315781638b42a40a146105c95781638d09550e146105a15781638da5cb5b1461057957816395368d2e1461055157816398e1e16f146105285781639e353c7014610453578163a0cadf0b146103eb578163acab324c14610360578163b14b0f5614610341578163bcafec1314610318578163c75ba1f4146102ac578163d78eb11f1461028d578163e7b4294c1461026e578163f2fde38b146101a2575063fb0e722b1461015c57005b3461019e578160031936011261019e57517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b5080fd5b90503461026a57602036600319011261026a576101bd610e4e565b6101c5610f0f565b6001600160a01b03908116918215610218575060005492826001600160601b0360a01b8516176000555192167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0600084a3f35b608490602085519162461bcd60e51b8352820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152fd5b8280fd5b50503461019e578160031936011261019e576020906008549051908152f35b50503461019e578160031936011261019e576020906007549051908152f35b50503461019e57602036600319011261019e576102c7610e4e565b6102cf610f0f565b60018060a01b03168260065492826001600160601b0360a01b851617600655519216177f642412aa8027246b85920fe1c2364b4928dba23ead405e72d6c3ea90305d0a298383a2f35b50503461019e578160031936011261019e5760095490516001600160a01b039091168152602090f35b50503461019e578160031936011261019e576020906001549051908152f35b50503461019e57602036600319011261019e5761037b610e4e565b610383610f0f565b61038b610f67565b6006805460ff60a01b1990811690915582516301a50ad360e41b60208201526001600160a01b03928316602480830191909152815290916103da91906103d082610e64565b6002541690611060565b600160a01b90600654161760065551f35b90503461026a57602036600319011261026a5735610407610f0f565b61040f610f67565b7f9b163153ddcdb709353747ea107a1c8515a5123f3fa7ef84e537a675e6955459602060ff60a01b196006541692806007558451908152a1600160a01b1760065551f35b905060e036600319011261026a57610469610e4e565b906024356001600160a01b038181169290838303610523576044359460a43560843560643560c43567ffffffffffffffff811161051f5789978383866104d67fe0546421195e3e65035cacdb8d655c6d557e249c01c601f2af8b56f7526bc03f9b6104e796369101610eb8565b9b8c946104e1610f0f565b8a611163565b988a519889526020890152898801526060870152608086015260c060a0860152169280610519339460c0830190610fbc565b0390a451f35b8b80fd5b600080fd5b50503461019e578160031936011261019e5760055490516001600160a01b039091168152602090f35b50503461019e578160031936011261019e5760209063ffffffff60065460a81c169051908152f35b50503461019e578160031936011261019e57905490516001600160a01b039091168152602090f35b90503461026a578260031936011261026a575490516001600160a01b03909116815260209150f35b90503461026a57602036600319011261026a57356105e5610f0f565b6105ed610f67565b7f581b3a6bde09dc2c2cfaa74c9011ebfe71cda54431d7d96454ab00408651ba6c602060ff60a01b196006541692806008558451908152a1600160a01b1760065551f35b50503461019e57602036600319011261019e5761064c610e4e565b610654610f0f565b60018060a01b03168260025492826001600160601b0360a01b851617600255519216177f2b3527e6183dce7676cc1a77ba1c1a943740ff02cfcd0d8ff32ae5b42205ccc58383a2f35b50503461019e57602036600319011261019e576106b8610e4e565b6106c0610f0f565b6106c8610f67565b600654600980546001600160a01b03939093166001600160a01b031984168117909155835192851617825260ff60a01b1916907fb1a697eb7cf7300ba21207eedfa9b7aebb022107febbc4fb28993d0f0ed291cb90602090a1600160a01b1760065551f35b50503461019e578160031936011261019e5760035490516001600160a01b039091168152602090f35b50503461019e578160031936011261019e57610770610f0f565b600080546001600160a01b0319811682559151916001600160a01b03167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e08284a3f35b50503461019e578160031936011261019e5760065490516001600160a01b039091168152602090f35b50503461019e57602036600319011261019e576107f7610e4e565b6107ff610f0f565b60018060a01b03168260035492826001600160601b0360a01b851617600355519216177fe5c5f8656458e7eb3288974c5d146e8b37414ece1fccdfc3d377f58c5ead3a168383a2f35b50503461019e578160031936011261019e5760025490516001600160a01b039091168152602090f35b90503461026a57602036600319011261026a573563ffffffff81168082036108f75761089b610f0f565b6108a3610f67565b7f82420e5818c266bec5ae52072a057f0b7dae2f148dfa3cc4d2d94fcba1e99cfb6020600654928551908152a164ffffffffff60a01b191660a89190911b63ffffffff60a81b1617600160a01b1760065551f35b8380fd5b90503461026a57602036600319011261026a57803567ffffffffffffffff81116108f75761092c9036908301610eb8565b600354336001600160a01b039182161492909190838015610a01575b156109c55750906109a36109b96103da93610961610f67565b8360065460ff60a01b19978882166006556000146109be575060055416935b8751630c3b8be760e11b6020820152602481018990529384926064840190610fbc565b908516604483015203601f198101835282610e96565b611060565b1693610980565b606490602086519162461bcd60e51b8352820152601660248201527527b7363c90383934bb34b632b3b2b21031b0b63632b960511b6044820152fd5b50828154163314610948565b50503461019e57602036600319011261019e57610a28610e4e565b610a30610f0f565b60018060a01b03168260055492826001600160601b0360a01b851617600555519216177f5e60d1b338c1efe33cdc840bc15ae31e8c16ec95b6ce1e2a41d334fc28b69fbc8383a2f35b90503461026a576020806003193601126108f75767ffffffffffffffff8235818111610d4457610aac9036908501610eb8565b60025485516373c6754960e11b81526001600160a01b039391841690858188817f000000000000000000000000000000000000000000000000000000000000000089165afa8015610c5a5785918a91610d27575b5016803303610cf25785879189519283809263ab5d894360e01b82525afa908115610c5a57859187918b91610cd5575b50888a5180948193634032458160e11b8352165afa8015610c5a5785918a91610ca8575b501603610c6457610b63610f67565b60ff60a01b1994856006541660065583600354169188600154843b1561019e578951948591633211db0760e11b8352858301528a6024830152818381610bac604482018b610fbc565b03925af18015610c5a57610c12575b5050507f0900453a3fb13750c432500a3921b5e974ecf1362cf21947630d60528d6bdd59908260025416926003541693610bfe8751928284938452830190610fbc565b0390a3600160a01b90600654161760065551f35b8298939811610c4757508552947f0900453a3fb13750c432500a3921b5e974ecf1362cf21947630d60528d6bdd593880610bbb565b634e487b7160e01b835260419052602482fd5b88513d8b823e3d90fd5b5050925162461bcd60e51b815291820152601860248201527f4f4e4c595f434f554e544552504152545f474154455741590000000000000000604482015260649150fd5b610cc89150873d8911610cce575b610cc08183610e96565b810190610ffc565b38610b54565b503d610cb6565b610cec9150823d8411610cce57610cc08183610e96565b38610b30565b875162461bcd60e51b8152808801879052600f60248201526e4e4f545f46524f4d5f42524944474560881b6044820152606490fd5b610d3e9150873d8911610cce57610cc08183610e96565b38610b00565b8580fd5b50503461019e57602036600319011261019e57610d63610e4e565b610d6b610f0f565b610d73610f67565b6006805460ff60a01b19908116909155825163c948564b60e01b60208201526001600160a01b03928316602480830191909152815290916103da91906103d082610e64565b9190503461026a57602036600319011261026a57610dd4610e4e565b610ddc610f0f565b82546001600160a01b0319166001600160a01b039190911690811790925551907f378c0ff663d300fda5b8ad9e2dee32975ac78884277c539d47671a8d2b5d797b8383a2f35b50503461019e578160031936011261019e57602090610e3f610f67565b610e4761101b565b9051908152f35b600435906001600160a01b038216820361052357565b6060810190811067ffffffffffffffff821117610e8057604052565b634e487b7160e01b600052604160045260246000fd5b90601f8019910116810190811067ffffffffffffffff821117610e8057604052565b81601f820112156105235780359067ffffffffffffffff8211610e805760405192610eed601f8401601f191660200185610e96565b8284526020838301011161052357816000926020809301838601378301015290565b6000546001600160a01b03163303610f2357565b606460405162461bcd60e51b815260206004820152602060248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152fd5b60ff60065460a01c1615610f7757565b60405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606490fd5b919082519283825260005b848110610fe8575050826000602080949584010152601f8019910116010190565b602081830181015184830182015201610fc7565b9081602091031261052357516001600160a01b03811681036105235790565b60075460085463ffffffff60065460a81c1690806000190482118115151661104a5702810180911161104a5790565b634e487b7160e01b600052601160045260246000fd5b61106861101b565b9081471061111e576110f87fdeaf46ce401b41ffb05b383a170e15861664528eb335320ad3b5059afccd864e9160018060a01b038060025416956110c9838360095416600754996006549a8a6008549363ffffffff809e60a81c1693611163565b9660065460a81c169660085460075484600954169185600254169a60405198899860e08a5260e08a0190610fbc565b9a602089015260408801526060870152608086015260a085015260c084015216930390a3565b60405162461bcd60e51b815260206004820152601860248201527f496e73756666696369656e74204554482062616c616e636500000000000000006044820152606490fd5b91906111c66020969760405198899788968795631b871c8d60e01b875260018060a01b03998a809316600489015260006024890152604488015216806064870152608486015260a485015260c484015261010060e4840152610104830190610fbc565b03927f0000000000000000000000000000000000000000000000000000000000000000165af190811561122f576000916111fe575090565b906020823d8211611227575b8161121760209383610e96565b8101031261122457505190565b80fd5b3d915061120a565b6040513d6000823e3d90fdfea26469706673582212208ae823290c25350600cc84ba9af787f892834340dff658c46d548b9c0de84fab64736f6c63430008100033",
+  "deployedBytecode": "0x6040608081526004908136101561001257005b600091823560e01c90816308f1ed1514610e225781630a2b5e0314610db85781630e28c76414610d48578163109ff9a914610a795781631a50ad3014610a0d5781634c09e6e8146108fb578163524b6f70146108715781635f234d531461084857816362315c42146107dc5781637092a2b2146107b3578163715018a61461075657816373d62b461461072d578163816c24441461069d57816381e8ea46146106315781638b42a40a146105c95781638d09550e146105a15781638da5cb5b1461057957816395368d2e1461055157816398e1e16f146105285781639e353c7014610453578163a0cadf0b146103eb578163acab324c14610360578163b14b0f5614610341578163bcafec1314610318578163c75ba1f4146102ac578163d78eb11f1461028d578163e7b4294c1461026e578163f2fde38b146101a2575063fb0e722b1461015c57005b3461019e578160031936011261019e57517f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b5080fd5b90503461026a57602036600319011261026a576101bd610e4e565b6101c5610f0f565b6001600160a01b03908116918215610218575060005492826001600160601b0360a01b8516176000555192167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0600084a3f35b608490602085519162461bcd60e51b8352820152602660248201527f4f776e61626c653a206e6577206f776e657220697320746865207a65726f206160448201526564647265737360d01b6064820152fd5b8280fd5b50503461019e578160031936011261019e576020906008549051908152f35b50503461019e578160031936011261019e576020906007549051908152f35b50503461019e57602036600319011261019e576102c7610e4e565b6102cf610f0f565b60018060a01b03168260065492826001600160601b0360a01b851617600655519216177f642412aa8027246b85920fe1c2364b4928dba23ead405e72d6c3ea90305d0a298383a2f35b50503461019e578160031936011261019e5760095490516001600160a01b039091168152602090f35b50503461019e578160031936011261019e576020906001549051908152f35b50503461019e57602036600319011261019e5761037b610e4e565b610383610f0f565b61038b610f67565b6006805460ff60a01b1990811690915582516301a50ad360e41b60208201526001600160a01b03928316602480830191909152815290916103da91906103d082610e64565b6002541690611060565b600160a01b90600654161760065551f35b90503461026a57602036600319011261026a5735610407610f0f565b61040f610f67565b7f9b163153ddcdb709353747ea107a1c8515a5123f3fa7ef84e537a675e6955459602060ff60a01b196006541692806007558451908152a1600160a01b1760065551f35b905060e036600319011261026a57610469610e4e565b906024356001600160a01b038181169290838303610523576044359460a43560843560643560c43567ffffffffffffffff811161051f5789978383866104d67fe0546421195e3e65035cacdb8d655c6d557e249c01c601f2af8b56f7526bc03f9b6104e796369101610eb8565b9b8c946104e1610f0f565b8a611163565b988a519889526020890152898801526060870152608086015260c060a0860152169280610519339460c0830190610fbc565b0390a451f35b8b80fd5b600080fd5b50503461019e578160031936011261019e5760055490516001600160a01b039091168152602090f35b50503461019e578160031936011261019e5760209063ffffffff60065460a81c169051908152f35b50503461019e578160031936011261019e57905490516001600160a01b039091168152602090f35b90503461026a578260031936011261026a575490516001600160a01b03909116815260209150f35b90503461026a57602036600319011261026a57356105e5610f0f565b6105ed610f67565b7f581b3a6bde09dc2c2cfaa74c9011ebfe71cda54431d7d96454ab00408651ba6c602060ff60a01b196006541692806008558451908152a1600160a01b1760065551f35b50503461019e57602036600319011261019e5761064c610e4e565b610654610f0f565b60018060a01b03168260025492826001600160601b0360a01b851617600255519216177f2b3527e6183dce7676cc1a77ba1c1a943740ff02cfcd0d8ff32ae5b42205ccc58383a2f35b50503461019e57602036600319011261019e576106b8610e4e565b6106c0610f0f565b6106c8610f67565b600654600980546001600160a01b03939093166001600160a01b031984168117909155835192851617825260ff60a01b1916907fb1a697eb7cf7300ba21207eedfa9b7aebb022107febbc4fb28993d0f0ed291cb90602090a1600160a01b1760065551f35b50503461019e578160031936011261019e5760035490516001600160a01b039091168152602090f35b50503461019e578160031936011261019e57610770610f0f565b600080546001600160a01b0319811682559151916001600160a01b03167f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e08284a3f35b50503461019e578160031936011261019e5760065490516001600160a01b039091168152602090f35b50503461019e57602036600319011261019e576107f7610e4e565b6107ff610f0f565b60018060a01b03168260035492826001600160601b0360a01b851617600355519216177fe5c5f8656458e7eb3288974c5d146e8b37414ece1fccdfc3d377f58c5ead3a168383a2f35b50503461019e578160031936011261019e5760025490516001600160a01b039091168152602090f35b90503461026a57602036600319011261026a573563ffffffff81168082036108f75761089b610f0f565b6108a3610f67565b7f82420e5818c266bec5ae52072a057f0b7dae2f148dfa3cc4d2d94fcba1e99cfb6020600654928551908152a164ffffffffff60a01b191660a89190911b63ffffffff60a81b1617600160a01b1760065551f35b8380fd5b90503461026a57602036600319011261026a57803567ffffffffffffffff81116108f75761092c9036908301610eb8565b600354336001600160a01b039182161492909190838015610a01575b156109c55750906109a36109b96103da93610961610f67565b8360065460ff60a01b19978882166006556000146109be575060055416935b8751630c3b8be760e11b6020820152602481018990529384926064840190610fbc565b908516604483015203601f198101835282610e96565b611060565b1693610980565b606490602086519162461bcd60e51b8352820152601660248201527527b7363c90383934bb34b632b3b2b21031b0b63632b960511b6044820152fd5b50828154163314610948565b50503461019e57602036600319011261019e57610a28610e4e565b610a30610f0f565b60018060a01b03168260055492826001600160601b0360a01b851617600555519216177f5e60d1b338c1efe33cdc840bc15ae31e8c16ec95b6ce1e2a41d334fc28b69fbc8383a2f35b90503461026a576020806003193601126108f75767ffffffffffffffff8235818111610d4457610aac9036908501610eb8565b60025485516373c6754960e11b81526001600160a01b039391841690858188817f000000000000000000000000000000000000000000000000000000000000000089165afa8015610c5a5785918a91610d27575b5016803303610cf25785879189519283809263ab5d894360e01b82525afa908115610c5a57859187918b91610cd5575b50888a5180948193634032458160e11b8352165afa8015610c5a5785918a91610ca8575b501603610c6457610b63610f67565b60ff60a01b1994856006541660065583600354169188600154843b1561019e578951948591633211db0760e11b8352858301528a6024830152818381610bac604482018b610fbc565b03925af18015610c5a57610c12575b5050507f0900453a3fb13750c432500a3921b5e974ecf1362cf21947630d60528d6bdd59908260025416926003541693610bfe8751928284938452830190610fbc565b0390a3600160a01b90600654161760065551f35b8298939811610c4757508552947f0900453a3fb13750c432500a3921b5e974ecf1362cf21947630d60528d6bdd593880610bbb565b634e487b7160e01b835260419052602482fd5b88513d8b823e3d90fd5b5050925162461bcd60e51b815291820152601860248201527f4f4e4c595f434f554e544552504152545f474154455741590000000000000000604482015260649150fd5b610cc89150873d8911610cce575b610cc08183610e96565b810190610ffc565b38610b54565b503d610cb6565b610cec9150823d8411610cce57610cc08183610e96565b38610b30565b875162461bcd60e51b8152808801879052600f60248201526e4e4f545f46524f4d5f42524944474560881b6044820152606490fd5b610d3e9150873d8911610cce57610cc08183610e96565b38610b00565b8580fd5b50503461019e57602036600319011261019e57610d63610e4e565b610d6b610f0f565b610d73610f67565b6006805460ff60a01b19908116909155825163c948564b60e01b60208201526001600160a01b03928316602480830191909152815290916103da91906103d082610e64565b9190503461026a57602036600319011261026a57610dd4610e4e565b610ddc610f0f565b82546001600160a01b0319166001600160a01b039190911690811790925551907f378c0ff663d300fda5b8ad9e2dee32975ac78884277c539d47671a8d2b5d797b8383a2f35b50503461019e578160031936011261019e57602090610e3f610f67565b610e4761101b565b9051908152f35b600435906001600160a01b038216820361052357565b6060810190811067ffffffffffffffff821117610e8057604052565b634e487b7160e01b600052604160045260246000fd5b90601f8019910116810190811067ffffffffffffffff821117610e8057604052565b81601f820112156105235780359067ffffffffffffffff8211610e805760405192610eed601f8401601f191660200185610e96565b8284526020838301011161052357816000926020809301838601378301015290565b6000546001600160a01b03163303610f2357565b606460405162461bcd60e51b815260206004820152602060248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e65726044820152fd5b60ff60065460a01c1615610f7757565b60405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606490fd5b919082519283825260005b848110610fe8575050826000602080949584010152601f8019910116010190565b602081830181015184830182015201610fc7565b9081602091031261052357516001600160a01b03811681036105235790565b60075460085463ffffffff60065460a81c1690806000190482118115151661104a5702810180911161104a5790565b634e487b7160e01b600052601160045260246000fd5b61106861101b565b9081471061111e576110f87fdeaf46ce401b41ffb05b383a170e15861664528eb335320ad3b5059afccd864e9160018060a01b038060025416956110c9838360095416600754996006549a8a6008549363ffffffff809e60a81c1693611163565b9660065460a81c169660085460075484600954169185600254169a60405198899860e08a5260e08a0190610fbc565b9a602089015260408801526060870152608086015260a085015260c084015216930390a3565b60405162461bcd60e51b815260206004820152601860248201527f496e73756666696369656e74204554482062616c616e636500000000000000006044820152606490fd5b91906111c66020969760405198899788968795631b871c8d60e01b875260018060a01b03998a809316600489015260006024890152604488015216806064870152608486015260a485015260c484015261010060e4840152610104830190610fbc565b03927f0000000000000000000000000000000000000000000000000000000000000000165af190811561122f576000916111fe575090565b906020823d8211611227575b8161121760209383610e96565b8101031261122457505190565b80fd5b3d915061120a565b6040513d6000823e3d90fdfea26469706673582212208ae823290c25350600cc84ba9af787f892834340dff658c46d548b9c0de84fab64736f6c63430008100033",
+  "devdoc": {
+    "details": "This contract is ownable and should be owned by the DVM governor.",
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "params": {
+          "_childChainId": "The chain id of the Optimism L2 network this messenger should connect to.*",
+          "_inbox": "Contract that sends generalized messages to the Arbitrum chain."
+        }
+      },
+      "getL1CallValue()": {
+        "returns": {
+          "_0": "Amount of msg.value to include to send cross-chain message."
+        }
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "processMessageFromCrossChainChild(bytes)": {
+        "details": "The caller must be the the child messenger, sent over the canonical message bridge.Note that only the OracleHub can receive messages from the child messenger. Therefore we can always forward these messages to this contract. The OracleHub must implement processMessageFromChild to handle this message.",
+        "params": {
+          "data": "data message sent from the child messenger. Should be an encoded function call or packed data."
+        }
+      },
+      "relayMessage(address,address,uint256,uint256,uint256,uint256,bytes)": {
+        "params": {
+          "gasLimit": "The gasLimit for the receipt of the message on L2.",
+          "gasPrice": "Gas price bid for L2 execution.",
+          "l1CallValue": "Amount of ETH deposited to `target` contract on L2. Used to pay for L2 submission fee and l2CallValue. This will usually be > 0.",
+          "maxSubmissionCost": ": Max gas deducted from user's L2 balance to cover base submission fee. This amount is proportional to the size of `data`.",
+          "message": "The data to send to the target (usually calldata to a function with  `onlyFromCrossDomainAccount()`)",
+          "target": "The intended recipient on L2.",
+          "userToRefund": "User on L2 to refund extra fees to."
+        }
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+      },
+      "sendMessageToChild(bytes)": {
+        "details": "The caller must be the either the OracleHub or the GovernorHub. This is to send either a price or initiate a governance action to the OracleSpoke or GovernorSpoke on the child network.The recipient of this message is the child messenger. The messenger must implement processMessageFromParent which then forwards the data to the target either the OracleSpoke or the governorSpoke depending on the caller.This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.",
+        "params": {
+          "data": "data message sent to the child messenger. Should be an encoded function call or packed data."
+        }
+      },
+      "setChildMessenger(address)": {
+        "details": "The caller of this function must be the owner. This should be set to the DVM governor.",
+        "params": {
+          "newChildMessenger": "address of the new child messenger, deployed on L2."
+        }
+      },
+      "setChildOracleSpoke(address)": {
+        "details": "The caller of this function must be the owner, which should be set to the DVM governor.This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.",
+        "params": {
+          "newOracleSpoke": "the new oracle spoke address set on L2."
+        }
+      },
+      "setChildParentMessenger(address)": {
+        "details": "The caller of this function must be the owner, which should be set to the DVM governor.This function will only succeed if this contract has enough ETH to cover the approximate L1 call value.",
+        "params": {
+          "newParentMessenger": "the new parent messenger contract to be set on L2."
+        }
+      },
+      "setDefaultGasLimit(uint32)": {
+        "details": "The caller of this function must be the owner, which should be set to the DVM governor.",
+        "params": {
+          "newDefaultGasLimit": "the new L2 gas limit to be set."
+        }
+      },
+      "setDefaultGasPrice(uint256)": {
+        "details": "The caller of this function must be the owner, which should be set to the DVM governor.",
+        "params": {
+          "newDefaultGasPrice": "the new L2 gas price to be set."
+        }
+      },
+      "setDefaultMaxSubmissionCost(uint256)": {
+        "details": "The caller of this function must be the owner, which should be set to the DVM governor.",
+        "params": {
+          "newDefaultMaxSubmissionCost": "the new L2 max submission cost to be set."
+        }
+      },
+      "setGovernorHub(address)": {
+        "details": "The caller of this function must be the owner. This should be set to the DVM governor.",
+        "params": {
+          "newGovernorHub": "address of the new governor hub, deployed on L1 Ethereum."
+        }
+      },
+      "setGovernorSpoke(address)": {
+        "details": "The caller of this function must be the owner. This should be set to the DVM governor.",
+        "params": {
+          "newGovernorSpoke": "address of the new governor spoke, deployed on L2."
+        }
+      },
+      "setOracleHub(address)": {
+        "details": "The caller of this function must be the owner. This should be set to the DVM governor.",
+        "params": {
+          "newOracleHub": "address of the new oracle hub, deployed on L1 Ethereum."
+        }
+      },
+      "setOracleSpoke(address)": {
+        "details": "The caller of this function must be the owner. This should be set to the DVM governor.",
+        "params": {
+          "newOracleSpoke": "address of the new oracle spoke, deployed on L2."
+        }
+      },
+      "setRefundL2Address(address)": {
+        "details": "The caller of this function must be the owner, which should be set to the DVM governor.",
+        "params": {
+          "newRefundl2Address": "the new refund address to set. This should be set to an L2 address that is trusted by the owner as it can spend Arbitrum L2 refunds for excess gas when sending transactions on Arbitrum."
+        }
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "Construct the Optimism_ParentMessenger contract."
+      },
+      "getL1CallValue()": {
+        "notice": "This function is expected to be queried by Hub contracts that need to determine how much ETH to include in msg.value when calling `sendMessageToChild`."
+      },
+      "processMessageFromCrossChainChild(bytes)": {
+        "notice": "Process a received message from the child messenger via the canonical message bridge."
+      },
+      "relayMessage(address,address,uint256,uint256,uint256,uint256,bytes)": {
+        "notice": "Sends a message to an account on L2. If this message reverts on l2 for any reason it can either be resent on L1, or redeemed on L2 manually. To learn more see how \"retryable tickets\" work on Arbitrum https://developer.offchainlabs.com/docs/l1_l2_messages#parameters"
+      },
+      "sendMessageToChild(bytes)": {
+        "notice": "Sends a message to the child messenger via the canonical message bridge."
+      },
+      "setChildMessenger(address)": {
+        "notice": "Changes the stored address of the child messenger, deployed on L2."
+      },
+      "setChildOracleSpoke(address)": {
+        "notice": "Changes the address of the oracle spoke on L2 via the child messenger."
+      },
+      "setChildParentMessenger(address)": {
+        "notice": "Changes the address of the parent messenger on L2 via the child messenger."
+      },
+      "setDefaultGasLimit(uint32)": {
+        "notice": "Changes the default gas limit that is sent along with transactions to Arbitrum."
+      },
+      "setDefaultGasPrice(uint256)": {
+        "notice": "Changes the default gas price that is sent along with transactions to Arbitrum."
+      },
+      "setDefaultMaxSubmissionCost(uint256)": {
+        "notice": "Changes the default max submission cost that is sent along with transactions to Arbitrum."
+      },
+      "setGovernorHub(address)": {
+        "notice": "Changes the stored address of the Governor hub, deployed on L1."
+      },
+      "setGovernorSpoke(address)": {
+        "notice": "Changes the stored address of the governor spoke, deployed on L2."
+      },
+      "setOracleHub(address)": {
+        "notice": "Changes the stored address of the Oracle hub, deployed on L1."
+      },
+      "setOracleSpoke(address)": {
+        "notice": "Changes the stored address of the oracle spoke, deployed on L2."
+      },
+      "setRefundL2Address(address)": {
+        "notice": "Changes the refund address on L2 that receives excess gas or the full msg.value if the retryable ticket reverts."
+      }
+    },
+    "notice": "Sends cross chain messages from Ethereum L1 to Arbitrum L2 network.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 4304,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 23860,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "childChainId",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 23862,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "childMessenger",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_address"
+      },
+      {
+        "astId": 23864,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "oracleHub",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_address"
+      },
+      {
+        "astId": 23866,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "governorHub",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_address"
+      },
+      {
+        "astId": 23868,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "oracleSpoke",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_address"
+      },
+      {
+        "astId": 23870,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "governorSpoke",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_address"
+      },
+      {
+        "astId": 16304,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "_notEntered",
+        "offset": 20,
+        "slot": "6",
+        "type": "t_bool"
+      },
+      {
+        "astId": 23112,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "defaultGasLimit",
+        "offset": 21,
+        "slot": "6",
+        "type": "t_uint32"
+      },
+      {
+        "astId": 23115,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "defaultMaxSubmissionCost",
+        "offset": 0,
+        "slot": "7",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 23118,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "defaultGasPrice",
+        "offset": 0,
+        "slot": "8",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 23120,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Arbitrum_ParentMessenger.sol:Arbitrum_ParentMessenger",
+        "label": "refundL2Address",
+        "offset": 0,
+        "slot": "9",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      },
+      "t_uint32": {
+        "encoding": "inplace",
+        "label": "uint32",
+        "numberOfBytes": "4"
+      }
+    }
+  }
+}

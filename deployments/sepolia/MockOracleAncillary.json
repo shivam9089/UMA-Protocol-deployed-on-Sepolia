@@ -1,0 +1,611 @@
+{
+  "address": "0x6d09F55D849b20238e069C0E769438E967937aA4",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_finderAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_timerAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "requester",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "PriceRequestAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "pusher",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "price",
+          "type": "int256"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "PushedPrice",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "getCurrentTime",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPendingQueries",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "identifier",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "time",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "ancillaryData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct MockOracleAncillary.QueryPoint[]",
+          "name": "",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getRequestParameters",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "identifier",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "time",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes",
+              "name": "ancillaryData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct MockOracleAncillary.QueryPoint",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        }
+      ],
+      "name": "hasPrice",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        },
+        {
+          "internalType": "int256",
+          "name": "price",
+          "type": "int256"
+        }
+      ],
+      "name": "pushPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "requestId",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "int256",
+          "name": "price",
+          "type": "int256"
+        }
+      ],
+      "name": "pushPriceByRequestId",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        }
+      ],
+      "name": "requestPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "name": "setCurrentTime",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "timerAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x1b4d3478c1fac4e31c299322ea13f85d26f464515808c727691c7c97473b754f",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0x6d09F55D849b20238e069C0E769438E967937aA4",
+    "transactionIndex": 25,
+    "gasUsed": "948791",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x5e84cc32cd69de77de1a97b621e236f4b4ca3deff152dbc1e44cd5cf87287b4a",
+    "transactionHash": "0x1b4d3478c1fac4e31c299322ea13f85d26f464515808c727691c7c97473b754f",
+    "logs": [],
+    "blockNumber": 6153697,
+    "cumulativeGasUsed": "4064864",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xA969917A4dFaB07936dEc60f70FA5c736A1e2b9e",
+    "0xf8815ce169E5450aa6908e76E1B970dBcEC11550"
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_finderAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_timerAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"requester\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"}],\"name\":\"PriceRequestAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"pusher\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"price\",\"type\":\"int256\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"}],\"name\":\"PushedPrice\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getCurrentTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPendingQueries\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"}],\"internalType\":\"struct MockOracleAncillary.QueryPoint[]\",\"name\":\"\",\"type\":\"tuple[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"}],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"}],\"name\":\"getRequestParameters\",\"outputs\":[{\"components\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"}],\"internalType\":\"struct MockOracleAncillary.QueryPoint\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"}],\"name\":\"hasPrice\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"},{\"internalType\":\"int256\",\"name\":\"price\",\"type\":\"int256\"}],\"name\":\"pushPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"requestId\",\"type\":\"bytes32\"},{\"internalType\":\"int256\",\"name\":\"price\",\"type\":\"int256\"}],\"name\":\"pushPriceByRequestId\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"}],\"name\":\"requestPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"setCurrentTime\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"timerAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getCurrentTime()\":{\"returns\":{\"_0\":\"uint for the current Testable timestamp.\"}},\"getPrice(bytes32,uint256,bytes)\":{\"details\":\"If the price is not available, the method reverts.\",\"params\":{\"ancillaryData\":\"arbitrary data appended to a price request to give the voters more info from the caller.\",\"identifier\":\"uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\",\"time\":\"unix timestamp for the price request.\"},\"returns\":{\"_0\":\"int256 representing the resolved price for the given identifier and timestamp.\"}},\"hasPrice(bytes32,uint256,bytes)\":{\"details\":\"Time must be in the past and the identifier must be supported.\",\"params\":{\"ancillaryData\":\"arbitrary data appended to a price request to give the voters more info from the caller.\",\"identifier\":\"uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\",\"time\":\"unix timestamp for the price request.\"},\"returns\":{\"_0\":\"bool if the DVM has resolved to a price for the given identifier and timestamp.\"}},\"requestPrice(bytes32,uint256,bytes)\":{\"details\":\"Time must be in the past and the identifier must be supported.\",\"params\":{\"ancillaryData\":\"arbitrary data appended to a price request to give the voters more info from the caller.\",\"identifier\":\"uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\",\"time\":\"unix timestamp for the price request.\"}},\"setCurrentTime(uint256)\":{\"details\":\"Will revert if not running in test mode.\",\"params\":{\"time\":\"timestamp to set current Testable time to.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getCurrentTime()\":{\"notice\":\"Gets the current time. Will return the last time set in `setCurrentTime` if running in test mode. Otherwise, it will return the block timestamp.\"},\"getPrice(bytes32,uint256,bytes)\":{\"notice\":\"Gets the price for `identifier` and `time` if it has already been requested and resolved.\"},\"hasPrice(bytes32,uint256,bytes)\":{\"notice\":\"Whether the price for `identifier` and `time` is available.\"},\"requestPrice(bytes32,uint256,bytes)\":{\"notice\":\"Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair.\"},\"setCurrentTime(uint256)\":{\"notice\":\"Sets the current time.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/data-verification-mechanism/test/MockOracleAncillary.sol\":\"MockOracleAncillary\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/common/implementation/Testable.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"./Timer.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title Base class that provides time overrides, but only if being run in test mode.\\r\\n */\\r\\nabstract contract Testable {\\r\\n    // If the contract is being run in production, then `timerAddress` will be the 0x0 address.\\r\\n    // Note: this variable should be set on construction and never modified.\\r\\n    address public timerAddress;\\r\\n\\r\\n    /**\\r\\n     * @notice Constructs the Testable contract. Called by child contracts.\\r\\n     * @param _timerAddress Contract that stores the current time in a testing environment.\\r\\n     * Must be set to 0x0 for production environments that use live time.\\r\\n     */\\r\\n    constructor(address _timerAddress) {\\r\\n        timerAddress = _timerAddress;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Reverts if not running in test mode.\\r\\n     */\\r\\n    modifier onlyIfTest {\\r\\n        require(timerAddress != address(0x0));\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Sets the current time.\\r\\n     * @dev Will revert if not running in test mode.\\r\\n     * @param time timestamp to set current Testable time to.\\r\\n     */\\r\\n    function setCurrentTime(uint256 time) external onlyIfTest {\\r\\n        Timer(timerAddress).setCurrentTime(time);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Gets the current time. Will return the last time set in `setCurrentTime` if running in test mode.\\r\\n     * Otherwise, it will return the block timestamp.\\r\\n     * @return uint for the current Testable timestamp.\\r\\n     */\\r\\n    function getCurrentTime() public view virtual returns (uint256) {\\r\\n        if (timerAddress != address(0x0)) {\\r\\n            return Timer(timerAddress).getCurrentTime();\\r\\n        } else {\\r\\n            return block.timestamp; // solhint-disable-line not-rely-on-time\\r\\n        }\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xcd0943490d2b65b1f76a2532924dc8e28c1e29c7e788e825944a234fbadb511c\",\"license\":\"AGPL-3.0-only\"},\"contracts/common/implementation/Timer.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Universal store of current contract time for testing environments.\\r\\n */\\r\\ncontract Timer {\\r\\n    uint256 private currentTime;\\r\\n\\r\\n    constructor() {\\r\\n        currentTime = block.timestamp; // solhint-disable-line not-rely-on-time\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Sets the current time.\\r\\n     * @dev Will revert if not running in test mode.\\r\\n     * @param time timestamp to set `currentTime` to.\\r\\n     */\\r\\n    function setCurrentTime(uint256 time) external {\\r\\n        currentTime = time;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Gets the currentTime variable set in the Timer.\\r\\n     * @return uint256 for the current Testable timestamp.\\r\\n     */\\r\\n    function getCurrentTime() public view returns (uint256) {\\r\\n        return currentTime;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x4e0d9be5ba1850756eb638cff475080811dd1ca14ba9c99c8b8056f2ad75984f\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/implementation/Constants.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Stores common interface names used throughout the DVM by registration in the Finder.\\r\\n */\\r\\nlibrary OracleInterfaces {\\r\\n    bytes32 public constant Oracle = \\\"Oracle\\\";\\r\\n    bytes32 public constant IdentifierWhitelist = \\\"IdentifierWhitelist\\\";\\r\\n    bytes32 public constant Store = \\\"Store\\\";\\r\\n    bytes32 public constant FinancialContractsAdmin = \\\"FinancialContractsAdmin\\\";\\r\\n    bytes32 public constant Registry = \\\"Registry\\\";\\r\\n    bytes32 public constant CollateralWhitelist = \\\"CollateralWhitelist\\\";\\r\\n    bytes32 public constant OptimisticOracle = \\\"OptimisticOracle\\\";\\r\\n    bytes32 public constant OptimisticOracleV2 = \\\"OptimisticOracleV2\\\";\\r\\n    bytes32 public constant OptimisticOracleV3 = \\\"OptimisticOracleV3\\\";\\r\\n    bytes32 public constant Bridge = \\\"Bridge\\\";\\r\\n    bytes32 public constant GenericHandler = \\\"GenericHandler\\\";\\r\\n    bytes32 public constant SkinnyOptimisticOracle = \\\"SkinnyOptimisticOracle\\\";\\r\\n    bytes32 public constant ChildMessenger = \\\"ChildMessenger\\\";\\r\\n    bytes32 public constant OracleHub = \\\"OracleHub\\\";\\r\\n    bytes32 public constant OracleSpoke = \\\"OracleSpoke\\\";\\r\\n}\\r\\n\\r\\n/**\\r\\n * @title Commonly re-used values for contracts associated with the OptimisticOracle.\\r\\n */\\r\\nlibrary OptimisticOracleConstraints {\\r\\n    // Any price request submitted to the OptimisticOracle must contain ancillary data no larger than this value.\\r\\n    // This value must be <= the Voting contract's `ancillaryBytesLimit` constant value otherwise it is possible\\r\\n    // that a price can be requested to the OptimisticOracle successfully, but cannot be resolved by the DVM which\\r\\n    // refuses to accept a price request made with ancillary data length over a certain size.\\r\\n    uint256 public constant ancillaryBytesLimit = 8192;\\r\\n}\\r\\n\",\"keccak256\":\"0xc91adf0214524d001e7d5eadc61c8e8406a62c97362e9c72fff121ff68676c00\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/FinderInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Provides addresses of the live contracts implementing certain interfaces.\\r\\n * @dev Examples are the Oracle or Store interfaces.\\r\\n */\\r\\ninterface FinderInterface {\\r\\n    /**\\r\\n     * @notice Updates the address of the contract that implements `interfaceName`.\\r\\n     * @param interfaceName bytes32 encoding of the interface name that is either changed or registered.\\r\\n     * @param implementationAddress address of the deployed contract that implements the interface.\\r\\n     */\\r\\n    function changeImplementationAddress(bytes32 interfaceName, address implementationAddress) external;\\r\\n\\r\\n    /**\\r\\n     * @notice Gets the address of the contract that implements the given `interfaceName`.\\r\\n     * @param interfaceName queried interface.\\r\\n     * @return implementationAddress address of the deployed contract that implements the interface.\\r\\n     */\\r\\n    function getImplementationAddress(bytes32 interfaceName) external view returns (address);\\r\\n}\\r\\n\",\"keccak256\":\"0xad6668a10f243739d0bf5d077954119434f7b2cda129cb484ad6d359d158e5ec\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/IdentifierWhitelistInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Interface for whitelists of supported identifiers that the oracle can provide prices for.\\r\\n */\\r\\ninterface IdentifierWhitelistInterface {\\r\\n    /**\\r\\n     * @notice Adds the provided identifier as a supported identifier.\\r\\n     * @dev Price requests using this identifier will succeed after this call.\\r\\n     * @param identifier bytes32 encoding of the string identifier. Eg: BTC/USD.\\r\\n     */\\r\\n    function addSupportedIdentifier(bytes32 identifier) external;\\r\\n\\r\\n    /**\\r\\n     * @notice Removes the identifier from the whitelist.\\r\\n     * @dev Price requests using this identifier will no longer succeed after this call.\\r\\n     * @param identifier bytes32 encoding of the string identifier. Eg: BTC/USD.\\r\\n     */\\r\\n    function removeSupportedIdentifier(bytes32 identifier) external;\\r\\n\\r\\n    /**\\r\\n     * @notice Checks whether an identifier is on the whitelist.\\r\\n     * @param identifier bytes32 encoding of the string identifier. Eg: BTC/USD.\\r\\n     * @return bool if the identifier is supported (or not).\\r\\n     */\\r\\n    function isIdentifierSupported(bytes32 identifier) external view returns (bool);\\r\\n}\\r\\n\",\"keccak256\":\"0x811cd273221c05eb94521f808a5603e3d12020336e4021c4ab93d188973fcee9\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/OracleAncillaryInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Financial contract facing Oracle interface.\\r\\n * @dev Interface used by financial contracts to interact with the Oracle. Voters will use a different interface.\\r\\n */\\r\\nabstract contract OracleAncillaryInterface {\\r\\n    /**\\r\\n     * @notice Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair.\\r\\n     * @dev Time must be in the past and the identifier must be supported.\\r\\n     * @param identifier uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\\r\\n     * @param ancillaryData arbitrary data appended to a price request to give the voters more info from the caller.\\r\\n     * @param time unix timestamp for the price request.\\r\\n     */\\r\\n\\r\\n    function requestPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public virtual;\\r\\n\\r\\n    /**\\r\\n     * @notice Whether the price for `identifier` and `time` is available.\\r\\n     * @dev Time must be in the past and the identifier must be supported.\\r\\n     * @param identifier uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\\r\\n     * @param time unix timestamp for the price request.\\r\\n     * @param ancillaryData arbitrary data appended to a price request to give the voters more info from the caller.\\r\\n     * @return bool if the DVM has resolved to a price for the given identifier and timestamp.\\r\\n     */\\r\\n    function hasPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public view virtual returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @notice Gets the price for `identifier` and `time` if it has already been requested and resolved.\\r\\n     * @dev If the price is not available, the method reverts.\\r\\n     * @param identifier uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\\r\\n     * @param time unix timestamp for the price request.\\r\\n     * @param ancillaryData arbitrary data appended to a price request to give the voters more info from the caller.\\r\\n     * @return int256 representing the resolved price for the given identifier and timestamp.\\r\\n     */\\r\\n\\r\\n    function getPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public view virtual returns (int256);\\r\\n}\\r\\n\",\"keccak256\":\"0x527e51a47c25f533cee60d7e2e2410b3d6a16b8dbdeca7d3fd734fabf76a109a\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/test/MockOracleAncillary.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"../../common/implementation/Testable.sol\\\";\\r\\nimport \\\"../interfaces/OracleAncillaryInterface.sol\\\";\\r\\nimport \\\"../interfaces/IdentifierWhitelistInterface.sol\\\";\\r\\nimport \\\"../interfaces/FinderInterface.sol\\\";\\r\\nimport \\\"../implementation/Constants.sol\\\";\\r\\n\\r\\n// A mock oracle used for testing.\\r\\ncontract MockOracleAncillary is OracleAncillaryInterface, Testable {\\r\\n    // Represents an available price. Have to keep a separate bool to allow for price=0.\\r\\n    struct Price {\\r\\n        bool isAvailable;\\r\\n        int256 price;\\r\\n        // Time the verified price became available.\\r\\n        uint256 verifiedTime;\\r\\n    }\\r\\n\\r\\n    // The two structs below are used in an array and mapping to keep track of prices that have been requested but are\\r\\n    // not yet available.\\r\\n    struct QueryIndex {\\r\\n        bool isValid;\\r\\n        uint256 index;\\r\\n    }\\r\\n\\r\\n    // Represents a (identifier, time, ancillary data) point that has been queried.\\r\\n    struct QueryPoint {\\r\\n        bytes32 identifier;\\r\\n        uint256 time;\\r\\n        bytes ancillaryData;\\r\\n    }\\r\\n\\r\\n    // Reference to the Finder.\\r\\n    FinderInterface private finder;\\r\\n\\r\\n    // Maps request IDs to their resolved Price structs.\\r\\n    mapping(bytes32 => Price) internal verifiedPrices;\\r\\n\\r\\n    // Maps request IDs to their pending QueryIndex structs.\\r\\n    mapping(bytes32 => QueryIndex) internal queryIndices;\\r\\n\\r\\n    // Array of pending QueryPoint structs.\\r\\n    QueryPoint[] internal requestedPrices;\\r\\n\\r\\n    event PriceRequestAdded(\\r\\n        address indexed requester,\\r\\n        bytes32 indexed identifier,\\r\\n        uint256 time,\\r\\n        bytes ancillaryData,\\r\\n        bytes32 indexed requestId\\r\\n    );\\r\\n    event PushedPrice(\\r\\n        address indexed pusher,\\r\\n        bytes32 indexed identifier,\\r\\n        uint256 time,\\r\\n        bytes ancillaryData,\\r\\n        int256 price,\\r\\n        bytes32 indexed requestId\\r\\n    );\\r\\n\\r\\n    constructor(address _finderAddress, address _timerAddress) Testable(_timerAddress) {\\r\\n        finder = FinderInterface(_finderAddress);\\r\\n    }\\r\\n\\r\\n    // Enqueues a request (if a request isn't already present) for the given identifier, time and ancillary data.\\r\\n\\r\\n    function requestPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public override {\\r\\n        require(_getIdentifierWhitelist().isIdentifierSupported(identifier));\\r\\n        bytes32 requestId = _encodePriceRequest(identifier, time, ancillaryData);\\r\\n        Price storage lookup = verifiedPrices[requestId];\\r\\n        if (!lookup.isAvailable && !queryIndices[requestId].isValid) {\\r\\n            // New query, enqueue it for review.\\r\\n            queryIndices[requestId] = QueryIndex(true, requestedPrices.length);\\r\\n            requestedPrices.push(QueryPoint(identifier, time, ancillaryData));\\r\\n            emit PriceRequestAdded(msg.sender, identifier, time, ancillaryData, requestId);\\r\\n        }\\r\\n    }\\r\\n\\r\\n    // Pushes the verified price for a requested query.\\r\\n    function pushPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData,\\r\\n        int256 price\\r\\n    ) public {\\r\\n        bytes32 requestId = _encodePriceRequest(identifier, time, ancillaryData);\\r\\n        verifiedPrices[requestId] = Price(true, price, getCurrentTime());\\r\\n\\r\\n        QueryIndex storage queryIndex = queryIndices[requestId];\\r\\n        require(queryIndex.isValid, \\\"Can't push prices that haven't been requested\\\");\\r\\n        // Delete from the array. Instead of shifting the queries over, replace the contents of `indexToReplace` with\\r\\n        // the contents of the last index (unless it is the last index).\\r\\n        uint256 indexToReplace = queryIndex.index;\\r\\n        delete queryIndices[requestId];\\r\\n        uint256 lastIndex = requestedPrices.length - 1;\\r\\n        if (lastIndex != indexToReplace) {\\r\\n            QueryPoint storage queryToCopy = requestedPrices[lastIndex];\\r\\n            queryIndices[_encodePriceRequest(queryToCopy.identifier, queryToCopy.time, queryToCopy.ancillaryData)]\\r\\n                .index = indexToReplace;\\r\\n            requestedPrices[indexToReplace] = queryToCopy;\\r\\n        }\\r\\n        requestedPrices.pop();\\r\\n\\r\\n        emit PushedPrice(msg.sender, identifier, time, ancillaryData, price, requestId);\\r\\n    }\\r\\n\\r\\n    // Wrapper function to push the verified price by request ID.\\r\\n    function pushPriceByRequestId(bytes32 requestId, int256 price) external {\\r\\n        QueryPoint memory queryPoint = getRequestParameters(requestId);\\r\\n        pushPrice(queryPoint.identifier, queryPoint.time, queryPoint.ancillaryData, price);\\r\\n    }\\r\\n\\r\\n    // Checks whether a price has been resolved.\\r\\n    function hasPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public view override returns (bool) {\\r\\n        Price storage lookup = verifiedPrices[_encodePriceRequest(identifier, time, ancillaryData)];\\r\\n        return lookup.isAvailable;\\r\\n    }\\r\\n\\r\\n    // Gets a price that has already been resolved.\\r\\n    function getPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public view override returns (int256) {\\r\\n        Price storage lookup = verifiedPrices[_encodePriceRequest(identifier, time, ancillaryData)];\\r\\n        require(lookup.isAvailable);\\r\\n        return lookup.price;\\r\\n    }\\r\\n\\r\\n    // Gets the queries that still need verified prices.\\r\\n    function getPendingQueries() external view returns (QueryPoint[] memory) {\\r\\n        return requestedPrices;\\r\\n    }\\r\\n\\r\\n    // Gets the request parameters by request ID.\\r\\n    function getRequestParameters(bytes32 requestId) public view returns (QueryPoint memory) {\\r\\n        QueryIndex storage queryIndex = queryIndices[requestId];\\r\\n        require(queryIndex.isValid, \\\"Request ID not found\\\");\\r\\n        return requestedPrices[queryIndex.index];\\r\\n    }\\r\\n\\r\\n    function _getIdentifierWhitelist() internal view returns (IdentifierWhitelistInterface supportedIdentifiers) {\\r\\n        return IdentifierWhitelistInterface(finder.getImplementationAddress(OracleInterfaces.IdentifierWhitelist));\\r\\n    }\\r\\n\\r\\n    // Returns an encoded bytes32 representing a price request ID. Used when storing/referencing price requests.\\r\\n    function _encodePriceRequest(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) internal pure returns (bytes32) {\\r\\n        return keccak256(abi.encode(identifier, time, ancillaryData));\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x70f5018022894911c376966ab7c43f10b0dd72557e52879d8bf1bc333243ff26\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x60803461008b57601f61100e38819003918201601f19168301916001600160401b0383118484101761009057808492604094855283398101031261008b576020610048826100a6565b916001600160a01b0391829161005e91016100a6565b169160018060a01b03199283600054161760005516906001541617600155604051610f5390816100bb8239f35b600080fd5b634e487b7160e01b600052604160045260246000fd5b51906001600160a01b038216820361008b5756fe6080604081815260048036101561001557600080fd5b600092833560e01c9081631c39c38d1461074b57508063216666a41461036a57806322f8e566146102db57806329cb924d146102b75780636a5ef5061461027f578063719c6d5614610245578063b551cd5014610214578063b555d60814610110578063d7d6f43d146100c95763f76177cf1461009157600080fd5b346100c557816003193601126100c5576100ae6100c29135610e59565b805160208201518460243593015191610ba3565b51f35b8280fd5b50346100c55760803660031901126100c5576044359067ffffffffffffffff821161010c576100fe6100c292369083016107c3565b606435916024359035610ba3565b8380fd5b50829034610210578160031936011261021057805467ffffffffffffffff81116101fd57918351602093610149858260051b01836107a1565b808252848201809484527f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b84915b8383106101d857505050508451938085019181865251809252858501958260051b8601019392955b8287106101ac5785850386f35b9091929382806101c8600193603f198a82030186528851610895565b960192019601959291909261019f565b6003886001926101eb859b98999b610e2a565b81520192019201919096949396610177565b634e487b7160e01b835260418252602483fd5b5080fd5b5050346102105760ff8160209361023361022d3661081f565b91610ede565b81526002855220541690519015158152f35b5050346102105761025861022d3661081f565b825260026020528082209160ff8354161561027c5750600160209201549051908152f35b80fd5b50913461027c57602036600319011261027c57506102a06102b39235610e59565b9051918291602083526020830190610895565b0390f35b5050346102105781600319360112610210576020906102d46108bc565b9051908152f35b508290346102105760203660031901126102105781546001600160a01b031680156100c557803b156100c55790828092602486518095819363117c72b360e11b83528635878401525af180156103605761033457828451f35b67ffffffffffffffff821161034d575082528280828451f35b634e487b7160e01b835260419052602482fd5b84513d85823e3d90fd5b50346100c5576103793661081f565b6001805486516302abf57960e61b8152721259195b9d1a599a595c95da1a5d195b1a5cdd606a1b8782015292939192602091602491908a906001600160a01b0390859084908690829085165afa928315610741578a8a9286928895966106fd575b508d5195869485936390978d1b60e01b8552840152165afa9081156106f3578a916106b9575b50156106b557610411858488610ede565b96878a526002835260ff898b20541615806106a3575b61043057898951f35b8054895167ffffffffffffffff9291818c0184811183821017610691579061047e8d8f8e8c9583528587528a8701948552815260038a522093511515849060ff801983541691151516179055565b5191015589519261048e8461076f565b888452848401938685528b81019489865283546801000000000000000081101561067f5789810180865581101561066d579060038f92867f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19d959452029151827f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b0155517f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19c82015501935191825193841161065c57505090829161055d826105578d979654610988565b856109d9565b83908c601f84116001146105db577f5b89fcc758ee4d9d8841986019cd2bb83213389a619b54baff9ec2ec9944e7a79890928492836105d0575b50501b916000199060031b1c19161790555b8151928352820152806105c0339488830190610855565b0390a43880808080808080898951f35b015192503880610597565b90979291601f198316858352868320925b818110610644575098837f5b89fcc758ee4d9d8841986019cd2bb83213389a619b54baff9ec2ec9944e7a79a1061062b575b505050811b0190556105a9565b015160001960f88460031b161c1916905538808061061e565b8a83015184558e9850928501929187019187016105ec565b634e487b7160e01b8d52604190528bfd5b634e487b7160e01b8f5260328552838ffd5b634e487b7160e01b8f5260418552838ffd5b634e487b7160e01b8e5260418452858efd5b506003835260ff898b20541615610427565b8880fd5b90508281813d83116106ec575b6106d081836107a1565b810103126106e8575180151581036106e85738610400565b8980fd5b503d6106c6565b89513d8c823e3d90fd5b9493509450505081813d831161073a575b61071881836107a1565b81010312610736575181811681036107365787838a869394386103da565b8a80fd5b503d61070e565b8b513d84823e3d90fd5b84903461021057816003193601126102105790546001600160a01b03168152602090f35b6060810190811067ffffffffffffffff82111761078b57604052565b634e487b7160e01b600052604160045260246000fd5b90601f8019910116810190811067ffffffffffffffff82111761078b57604052565b81601f8201121561081a5780359067ffffffffffffffff821161078b57604051926107f8601f8401601f1916602001856107a1565b8284526020838301011161081a57816000926020809301838601378301015290565b600080fd5b606060031982011261081a5760043591602435916044359067ffffffffffffffff821161081a57610852916004016107c3565b90565b919082519283825260005b848110610881575050826000602080949584010152601f8019910116010190565b602081830181015184830182015201610860565b90606060406108529380518452602081015160208501520151918160408201520190610855565b6000546001600160a01b03168015610932576020600491604051928380926329cb924d60e01b82525afa908115610926576000916108f8575090565b906020823d821161091e575b81610911602093836107a1565b8101031261027c57505190565b3d9150610904565b6040513d6000823e3d90fd5b504290565b600454811015610972576003906004600052027f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b0190600090565b634e487b7160e01b600052603260045260246000fd5b90600182811c921680156109b8575b60208310146109a257565b634e487b7160e01b600052602260045260246000fd5b91607f1691610997565b8181106109cd575050565b600081556001016109c2565b9190601f81116109e857505050565b610a14926000526020600020906020601f840160051c83019310610a16575b601f0160051c01906109c2565b565b9091508190610a07565b9060405191826000825492610a3484610988565b908184526001948581169081600014610aa15750600114610a5e575b5050610a14925003836107a1565b9093915060005260209081600020936000915b818310610a89575050610a1493508201013880610a50565b85548884018501529485019487945091830191610a71565b915050610a1494506020925060ff191682840152151560051b8201013880610a50565b90808214610b9f57610ad68154610988565b9067ffffffffffffffff821161078b578190610afc82610af68654610988565b866109d9565b600090601f8311600114610b3357600092610b28575b50508160011b916000199060031b1c1916179055565b015490503880610b12565b81526020808220858352818320935090601f1985169083905b828210610b86575050908460019594939210610b6d575b505050811b019055565b015460001960f88460031b161c19169055388080610b63565b8495819295850154815560018091019601940190610b4c565b5050565b9190610bb0828285610ede565b93610bb96108bc565b92604093845190610bc98261076f565b6001908183526020926002848201928784528983019081526000938c8552828752610c068b862094511515859060ff801983541691151516179055565b5185840155519101556003835286812060ff81541615610dd05782015490898152600384528083898220828155015560049182549060001991828101908111610dbd579081818c9303610d3f575b50505082548015610d2c570192610c6a84610937565b610d1a5792827f01aba42f88d71f240ed63f6e0b37e62ba65f3d4bc0f11228ef9163cdc56c64b59998979592600286610cd099966060985583838201550190610cb38254610988565b80610cdc575b505050505587519586528501526060840190610855565b938201528033930390a4565b601f8111600114610cf4575050555b38808080610cb9565b610d0e91838552601f888620920160051c820191016109c2565b81858120915555610ceb565b634e487b7160e01b8352828452602483fd5b634e487b7160e01b835260318452602483fd5b610d4890610937565b50610d78815492808980850196610d69885497600288019861022d8a610a20565b8a5260038d5289200155610937565b610dab57818103610d8d575b508b9250610c54565b610da293600292548255548882015501610ac4565b38808080610d84565b634e487b7160e01b8652858752602486fd5b634e487b7160e01b845260118552602484fd5b875162461bcd60e51b815260048101859052602d60248201527f43616e2774207075736820707269636573207468617420686176656e2774206260448201526c19595b881c995c5d595cdd1959609a1b6064820152608490fd5b90604051610e378161076f565b6040610e5460028395805485526001810154602086015201610a20565b910152565b606060408051610e688161076f565b600081526000602082015201526000526003602052604060002060ff81541615610ea257610e9c6001610852920154610937565b50610e2a565b60405162461bcd60e51b815260206004820152601460248201527314995c5d595cdd081251081b9bdd08199bdd5b9960621b6044820152606490fd5b9190610f1790610f096040519384926020840196875260408401526060808401526080830190610855565b03601f1981018352826107a1565b5190209056fea26469706673582212201655ab402060671e0cf58623975ffd385b0259d6bdd145546ae7403aa8b6f5e464736f6c63430008100033",
+  "deployedBytecode": "0x6080604081815260048036101561001557600080fd5b600092833560e01c9081631c39c38d1461074b57508063216666a41461036a57806322f8e566146102db57806329cb924d146102b75780636a5ef5061461027f578063719c6d5614610245578063b551cd5014610214578063b555d60814610110578063d7d6f43d146100c95763f76177cf1461009157600080fd5b346100c557816003193601126100c5576100ae6100c29135610e59565b805160208201518460243593015191610ba3565b51f35b8280fd5b50346100c55760803660031901126100c5576044359067ffffffffffffffff821161010c576100fe6100c292369083016107c3565b606435916024359035610ba3565b8380fd5b50829034610210578160031936011261021057805467ffffffffffffffff81116101fd57918351602093610149858260051b01836107a1565b808252848201809484527f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b84915b8383106101d857505050508451938085019181865251809252858501958260051b8601019392955b8287106101ac5785850386f35b9091929382806101c8600193603f198a82030186528851610895565b960192019601959291909261019f565b6003886001926101eb859b98999b610e2a565b81520192019201919096949396610177565b634e487b7160e01b835260418252602483fd5b5080fd5b5050346102105760ff8160209361023361022d3661081f565b91610ede565b81526002855220541690519015158152f35b5050346102105761025861022d3661081f565b825260026020528082209160ff8354161561027c5750600160209201549051908152f35b80fd5b50913461027c57602036600319011261027c57506102a06102b39235610e59565b9051918291602083526020830190610895565b0390f35b5050346102105781600319360112610210576020906102d46108bc565b9051908152f35b508290346102105760203660031901126102105781546001600160a01b031680156100c557803b156100c55790828092602486518095819363117c72b360e11b83528635878401525af180156103605761033457828451f35b67ffffffffffffffff821161034d575082528280828451f35b634e487b7160e01b835260419052602482fd5b84513d85823e3d90fd5b50346100c5576103793661081f565b6001805486516302abf57960e61b8152721259195b9d1a599a595c95da1a5d195b1a5cdd606a1b8782015292939192602091602491908a906001600160a01b0390859084908690829085165afa928315610741578a8a9286928895966106fd575b508d5195869485936390978d1b60e01b8552840152165afa9081156106f3578a916106b9575b50156106b557610411858488610ede565b96878a526002835260ff898b20541615806106a3575b61043057898951f35b8054895167ffffffffffffffff9291818c0184811183821017610691579061047e8d8f8e8c9583528587528a8701948552815260038a522093511515849060ff801983541691151516179055565b5191015589519261048e8461076f565b888452848401938685528b81019489865283546801000000000000000081101561067f5789810180865581101561066d579060038f92867f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19d959452029151827f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b0155517f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19c82015501935191825193841161065c57505090829161055d826105578d979654610988565b856109d9565b83908c601f84116001146105db577f5b89fcc758ee4d9d8841986019cd2bb83213389a619b54baff9ec2ec9944e7a79890928492836105d0575b50501b916000199060031b1c19161790555b8151928352820152806105c0339488830190610855565b0390a43880808080808080898951f35b015192503880610597565b90979291601f198316858352868320925b818110610644575098837f5b89fcc758ee4d9d8841986019cd2bb83213389a619b54baff9ec2ec9944e7a79a1061062b575b505050811b0190556105a9565b015160001960f88460031b161c1916905538808061061e565b8a83015184558e9850928501929187019187016105ec565b634e487b7160e01b8d52604190528bfd5b634e487b7160e01b8f5260328552838ffd5b634e487b7160e01b8f5260418552838ffd5b634e487b7160e01b8e5260418452858efd5b506003835260ff898b20541615610427565b8880fd5b90508281813d83116106ec575b6106d081836107a1565b810103126106e8575180151581036106e85738610400565b8980fd5b503d6106c6565b89513d8c823e3d90fd5b9493509450505081813d831161073a575b61071881836107a1565b81010312610736575181811681036107365787838a869394386103da565b8a80fd5b503d61070e565b8b513d84823e3d90fd5b84903461021057816003193601126102105790546001600160a01b03168152602090f35b6060810190811067ffffffffffffffff82111761078b57604052565b634e487b7160e01b600052604160045260246000fd5b90601f8019910116810190811067ffffffffffffffff82111761078b57604052565b81601f8201121561081a5780359067ffffffffffffffff821161078b57604051926107f8601f8401601f1916602001856107a1565b8284526020838301011161081a57816000926020809301838601378301015290565b600080fd5b606060031982011261081a5760043591602435916044359067ffffffffffffffff821161081a57610852916004016107c3565b90565b919082519283825260005b848110610881575050826000602080949584010152601f8019910116010190565b602081830181015184830182015201610860565b90606060406108529380518452602081015160208501520151918160408201520190610855565b6000546001600160a01b03168015610932576020600491604051928380926329cb924d60e01b82525afa908115610926576000916108f8575090565b906020823d821161091e575b81610911602093836107a1565b8101031261027c57505190565b3d9150610904565b6040513d6000823e3d90fd5b504290565b600454811015610972576003906004600052027f8a35acfbc15ff81a39ae7d344fd709f28e8600b4aa8c65c6b64bfe7fe36bd19b0190600090565b634e487b7160e01b600052603260045260246000fd5b90600182811c921680156109b8575b60208310146109a257565b634e487b7160e01b600052602260045260246000fd5b91607f1691610997565b8181106109cd575050565b600081556001016109c2565b9190601f81116109e857505050565b610a14926000526020600020906020601f840160051c83019310610a16575b601f0160051c01906109c2565b565b9091508190610a07565b9060405191826000825492610a3484610988565b908184526001948581169081600014610aa15750600114610a5e575b5050610a14925003836107a1565b9093915060005260209081600020936000915b818310610a89575050610a1493508201013880610a50565b85548884018501529485019487945091830191610a71565b915050610a1494506020925060ff191682840152151560051b8201013880610a50565b90808214610b9f57610ad68154610988565b9067ffffffffffffffff821161078b578190610afc82610af68654610988565b866109d9565b600090601f8311600114610b3357600092610b28575b50508160011b916000199060031b1c1916179055565b015490503880610b12565b81526020808220858352818320935090601f1985169083905b828210610b86575050908460019594939210610b6d575b505050811b019055565b015460001960f88460031b161c19169055388080610b63565b8495819295850154815560018091019601940190610b4c565b5050565b9190610bb0828285610ede565b93610bb96108bc565b92604093845190610bc98261076f565b6001908183526020926002848201928784528983019081526000938c8552828752610c068b862094511515859060ff801983541691151516179055565b5185840155519101556003835286812060ff81541615610dd05782015490898152600384528083898220828155015560049182549060001991828101908111610dbd579081818c9303610d3f575b50505082548015610d2c570192610c6a84610937565b610d1a5792827f01aba42f88d71f240ed63f6e0b37e62ba65f3d4bc0f11228ef9163cdc56c64b59998979592600286610cd099966060985583838201550190610cb38254610988565b80610cdc575b505050505587519586528501526060840190610855565b938201528033930390a4565b601f8111600114610cf4575050555b38808080610cb9565b610d0e91838552601f888620920160051c820191016109c2565b81858120915555610ceb565b634e487b7160e01b8352828452602483fd5b634e487b7160e01b835260318452602483fd5b610d4890610937565b50610d78815492808980850196610d69885497600288019861022d8a610a20565b8a5260038d5289200155610937565b610dab57818103610d8d575b508b9250610c54565b610da293600292548255548882015501610ac4565b38808080610d84565b634e487b7160e01b8652858752602486fd5b634e487b7160e01b845260118552602484fd5b875162461bcd60e51b815260048101859052602d60248201527f43616e2774207075736820707269636573207468617420686176656e2774206260448201526c19595b881c995c5d595cdd1959609a1b6064820152608490fd5b90604051610e378161076f565b6040610e5460028395805485526001810154602086015201610a20565b910152565b606060408051610e688161076f565b600081526000602082015201526000526003602052604060002060ff81541615610ea257610e9c6001610852920154610937565b50610e2a565b60405162461bcd60e51b815260206004820152601460248201527314995c5d595cdd081251081b9bdd08199bdd5b9960621b6044820152606490fd5b9190610f1790610f096040519384926020840196875260408401526060808401526080830190610855565b03601f1981018352826107a1565b5190209056fea26469706673582212201655ab402060671e0cf58623975ffd385b0259d6bdd145546ae7403aa8b6f5e464736f6c63430008100033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getCurrentTime()": {
+        "returns": {
+          "_0": "uint for the current Testable timestamp."
+        }
+      },
+      "getPrice(bytes32,uint256,bytes)": {
+        "details": "If the price is not available, the method reverts.",
+        "params": {
+          "ancillaryData": "arbitrary data appended to a price request to give the voters more info from the caller.",
+          "identifier": "uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.",
+          "time": "unix timestamp for the price request."
+        },
+        "returns": {
+          "_0": "int256 representing the resolved price for the given identifier and timestamp."
+        }
+      },
+      "hasPrice(bytes32,uint256,bytes)": {
+        "details": "Time must be in the past and the identifier must be supported.",
+        "params": {
+          "ancillaryData": "arbitrary data appended to a price request to give the voters more info from the caller.",
+          "identifier": "uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.",
+          "time": "unix timestamp for the price request."
+        },
+        "returns": {
+          "_0": "bool if the DVM has resolved to a price for the given identifier and timestamp."
+        }
+      },
+      "requestPrice(bytes32,uint256,bytes)": {
+        "details": "Time must be in the past and the identifier must be supported.",
+        "params": {
+          "ancillaryData": "arbitrary data appended to a price request to give the voters more info from the caller.",
+          "identifier": "uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.",
+          "time": "unix timestamp for the price request."
+        }
+      },
+      "setCurrentTime(uint256)": {
+        "details": "Will revert if not running in test mode.",
+        "params": {
+          "time": "timestamp to set current Testable time to."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getCurrentTime()": {
+        "notice": "Gets the current time. Will return the last time set in `setCurrentTime` if running in test mode. Otherwise, it will return the block timestamp."
+      },
+      "getPrice(bytes32,uint256,bytes)": {
+        "notice": "Gets the price for `identifier` and `time` if it has already been requested and resolved."
+      },
+      "hasPrice(bytes32,uint256,bytes)": {
+        "notice": "Whether the price for `identifier` and `time` is available."
+      },
+      "requestPrice(bytes32,uint256,bytes)": {
+        "notice": "Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair."
+      },
+      "setCurrentTime(uint256)": {
+        "notice": "Sets the current time."
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 17751,
+        "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+        "label": "timerAddress",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 38027,
+        "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+        "label": "finder",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_contract(FinderInterface)36753"
+      },
+      {
+        "astId": 38032,
+        "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+        "label": "verifiedPrices",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_bytes32,t_struct(Price)38012_storage)"
+      },
+      {
+        "astId": 38037,
+        "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+        "label": "queryIndices",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_bytes32,t_struct(QueryIndex)38017_storage)"
+      },
+      {
+        "astId": 38041,
+        "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+        "label": "requestedPrices",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_array(t_struct(QueryPoint)38024_storage)dyn_storage"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_struct(QueryPoint)38024_storage)dyn_storage": {
+        "base": "t_struct(QueryPoint)38024_storage",
+        "encoding": "dynamic_array",
+        "label": "struct MockOracleAncillary.QueryPoint[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_bytes_storage": {
+        "encoding": "bytes",
+        "label": "bytes",
+        "numberOfBytes": "32"
+      },
+      "t_contract(FinderInterface)36753": {
+        "encoding": "inplace",
+        "label": "contract FinderInterface",
+        "numberOfBytes": "20"
+      },
+      "t_int256": {
+        "encoding": "inplace",
+        "label": "int256",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_bytes32,t_struct(Price)38012_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct MockOracleAncillary.Price)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Price)38012_storage"
+      },
+      "t_mapping(t_bytes32,t_struct(QueryIndex)38017_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct MockOracleAncillary.QueryIndex)",
+        "numberOfBytes": "32",
+        "value": "t_struct(QueryIndex)38017_storage"
+      },
+      "t_struct(Price)38012_storage": {
+        "encoding": "inplace",
+        "label": "struct MockOracleAncillary.Price",
+        "members": [
+          {
+            "astId": 38007,
+            "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+            "label": "isAvailable",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool"
+          },
+          {
+            "astId": 38009,
+            "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+            "label": "price",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_int256"
+          },
+          {
+            "astId": 38011,
+            "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+            "label": "verifiedTime",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "96"
+      },
+      "t_struct(QueryIndex)38017_storage": {
+        "encoding": "inplace",
+        "label": "struct MockOracleAncillary.QueryIndex",
+        "members": [
+          {
+            "astId": 38014,
+            "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+            "label": "isValid",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bool"
+          },
+          {
+            "astId": 38016,
+            "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+            "label": "index",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(QueryPoint)38024_storage": {
+        "encoding": "inplace",
+        "label": "struct MockOracleAncillary.QueryPoint",
+        "members": [
+          {
+            "astId": 38019,
+            "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+            "label": "identifier",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_bytes32"
+          },
+          {
+            "astId": 38021,
+            "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+            "label": "time",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 38023,
+            "contract": "contracts/data-verification-mechanism/test/MockOracleAncillary.sol:MockOracleAncillary",
+            "label": "ancillaryData",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_bytes_storage"
+          }
+        ],
+        "numberOfBytes": "96"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

@@ -1,0 +1,486 @@
+{
+  "address": "0x2Ec2F662C1e1D02Bad43A813E4022C1Eb55Ef041",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_finderAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "requestHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "PriceRequestAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "price",
+          "type": "int256"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "requestHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "PushedPrice",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "finder",
+      "outputs": [
+        {
+          "internalType": "contract FinderInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getChildMessenger",
+      "outputs": [
+        {
+          "internalType": "contract ChildMessengerInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "name": "hasPrice",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        }
+      ],
+      "name": "hasPrice",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "processMessageFromParent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        }
+      ],
+      "name": "requestPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "identifier",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "time",
+          "type": "uint256"
+        }
+      ],
+      "name": "requestPrice",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "ancillaryData",
+          "type": "bytes"
+        }
+      ],
+      "name": "stampAncillaryData",
+      "outputs": [
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x7ea0cde8cbe8641f8a155a43b8ef2340b97dd6a640a752173dc01aafb3adc22b",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0x2Ec2F662C1e1D02Bad43A813E4022C1Eb55Ef041",
+    "transactionIndex": 43,
+    "gasUsed": "1060469",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x08a6c1803130d4aecd989aefb95e02d64c5c669f7c3cae39e669327df1020a5f",
+    "transactionHash": "0x7ea0cde8cbe8641f8a155a43b8ef2340b97dd6a640a752173dc01aafb3adc22b",
+    "logs": [],
+    "blockNumber": 6161473,
+    "cumulativeGasUsed": "11571415",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xA969917A4dFaB07936dEc60f70FA5c736A1e2b9e"
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_finderAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"requestHash\",\"type\":\"bytes32\"}],\"name\":\"PriceRequestAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"price\",\"type\":\"int256\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"requestHash\",\"type\":\"bytes32\"}],\"name\":\"PushedPrice\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"finder\",\"outputs\":[{\"internalType\":\"contract FinderInterface\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getChildMessenger\",\"outputs\":[{\"internalType\":\"contract ChildMessengerInterface\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"}],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"hasPrice\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"}],\"name\":\"hasPrice\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"processMessageFromParent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"}],\"name\":\"requestPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"identifier\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"time\",\"type\":\"uint256\"}],\"name\":\"requestPrice\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"ancillaryData\",\"type\":\"bytes\"}],\"name\":\"stampAncillaryData\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"The intended client of this contract is an OptimisticOracle on sidechain that needs price resolution secured by the DVM on mainnet.\",\"kind\":\"dev\",\"methods\":{\"getChildMessenger()\":{\"returns\":{\"_0\":\"ChildMessengerInterface instance of child messenger deployed on L2.\"}},\"getPrice(bytes32,uint256,bytes)\":{\"params\":{\"ancillaryData\":\"extra data of price request.\",\"identifier\":\"Identifier of price request.\",\"time\":\"Timestamp of price request\"},\"returns\":{\"_0\":\"int256 Price, or reverts if no resolved price for any reason.\"}},\"hasPrice(bytes32,uint256,bytes)\":{\"params\":{\"ancillaryData\":\"extra data of price request.\",\"identifier\":\"Identifier of price request.\",\"time\":\"Timestamp of price request\"},\"returns\":{\"_0\":\"True if a price is available, False otherwise. If true, then getPrice will succeed for the request.\"}},\"processMessageFromParent(bytes)\":{\"details\":\"Can only be called by the ChildMessenger contract which is designed to communicate only with the ParentMessenger contract on Mainnet. See the SpokeBase for the onlyMessenger modifier.\",\"params\":{\"data\":\"ABI encoded params with which to call `_publishPrice`.\"}},\"requestPrice(bytes32,uint256,bytes)\":{\"details\":\"Can be called only by a registered contract that is allowed to make DVM price requests. Will mark this price request as Requested, and therefore able to receive the price resolution data from mainnet.Contract registration enables the DVM to validate that the calling contract correctly pays final fees. Therefore, this function does not directly attempt to pull a final fee from the caller.\",\"params\":{\"ancillaryData\":\"extra data of price request.\",\"identifier\":\"Identifier of price request.\",\"time\":\"Timestamp of price request.\"}},\"stampAncillaryData(bytes)\":{\"params\":{\"ancillaryData\":\"ancillary data of the price being requested.\"},\"returns\":{\"_0\":\"the stamped ancillary bytes.\"}}},\"title\":\"Cross-chain Oracle L2 Oracle Spoke.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getChildMessenger()\":{\"notice\":\"Returns the child messenger address set in the finder.\"},\"getPrice(bytes32,uint256)\":{\"notice\":\"Overloaded function to provide backwards compatibility for legacy financial contracts that do not use ancillary data.\"},\"getPrice(bytes32,uint256,bytes)\":{\"notice\":\"Returns resolved price for the request. Reverts if price is not available.\"},\"hasPrice(bytes32,uint256)\":{\"notice\":\"Overloaded function to provide backwards compatibility for legacy financial contracts that do not use ancillary data.\"},\"hasPrice(bytes32,uint256,bytes)\":{\"notice\":\"Returns whether a price has resolved for the request. This method will not revert.\"},\"processMessageFromParent(bytes)\":{\"notice\":\"Resolves a price request originating from a message sent by the DVM on the parent chain.\"},\"requestPrice(bytes32,uint256)\":{\"notice\":\"Overloaded function to provide backwards compatibility for legacy financial contracts that do not use ancillary data.\"},\"requestPrice(bytes32,uint256,bytes)\":{\"notice\":\"This is called to bridge a price request to mainnet. This method will enqueue a new price request or return silently if already requested. Price requests are relayed to mainnet (the \\\"Parent\\\" chain) via the ChildMessenger contract.\"},\"stampAncillaryData(bytes)\":{\"notice\":\"Generates stamped ancillary data in the format that it would be used in the case of a price request.\"}},\"notice\":\"This contract is primarily intended to receive messages on the child chain from a parent chain and allow contracts deployed on the child chain to interact with this contract as an Oracle. Moreover, this contract gives child chain contracts the ability to trigger cross-chain price requests to the mainnet DVM. This Spoke knows how to communicate with the parent chain via a \\\"ChildMessenger\\\" contract which directly communicates with the \\\"ParentMessenger\\\" on mainnet.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/cross-chain-oracle/OracleSpoke.sol\":\"OracleSpoke\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/common/implementation/AncillaryData.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Library for encoding and decoding ancillary data for DVM price requests.\\r\\n * @notice  We assume that on-chain ancillary data can be formatted directly from bytes to utf8 encoding via\\r\\n * web3.utils.hexToUtf8, and that clients will parse the utf8-encoded ancillary data as a comma-delimitted key-value\\r\\n * dictionary. Therefore, this library provides internal methods that aid appending to ancillary data from Solidity\\r\\n * smart contracts. More details on UMA's ancillary data guidelines below:\\r\\n * https://docs.google.com/document/d/1zhKKjgY1BupBGPPrY_WOJvui0B6DMcd-xDR8-9-SPDw/edit\\r\\n */\\r\\nlibrary AncillaryData {\\r\\n    // This converts the bottom half of a bytes32 input to hex in a highly gas-optimized way.\\r\\n    // Source: the brilliant implementation at https://gitter.im/ethereum/solidity?at=5840d23416207f7b0ed08c9b.\\r\\n    function toUtf8Bytes32Bottom(bytes32 bytesIn) private pure returns (bytes32) {\\r\\n        unchecked {\\r\\n            uint256 x = uint256(bytesIn);\\r\\n\\r\\n            // Nibble interleave\\r\\n            x = x & 0x00000000000000000000000000000000ffffffffffffffffffffffffffffffff;\\r\\n            x = (x | (x * 2**64)) & 0x0000000000000000ffffffffffffffff0000000000000000ffffffffffffffff;\\r\\n            x = (x | (x * 2**32)) & 0x00000000ffffffff00000000ffffffff00000000ffffffff00000000ffffffff;\\r\\n            x = (x | (x * 2**16)) & 0x0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff0000ffff;\\r\\n            x = (x | (x * 2**8)) & 0x00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff00ff;\\r\\n            x = (x | (x * 2**4)) & 0x0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f;\\r\\n\\r\\n            // Hex encode\\r\\n            uint256 h = (x & 0x0808080808080808080808080808080808080808080808080808080808080808) / 8;\\r\\n            uint256 i = (x & 0x0404040404040404040404040404040404040404040404040404040404040404) / 4;\\r\\n            uint256 j = (x & 0x0202020202020202020202020202020202020202020202020202020202020202) / 2;\\r\\n            x = x + (h & (i | j)) * 0x27 + 0x3030303030303030303030303030303030303030303030303030303030303030;\\r\\n\\r\\n            // Return the result.\\r\\n            return bytes32(x);\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns utf8-encoded bytes32 string that can be read via web3.utils.hexToUtf8.\\r\\n     * @dev Will return bytes32 in all lower case hex characters and without the leading 0x.\\r\\n     * This has minor changes from the toUtf8BytesAddress to control for the size of the input.\\r\\n     * @param bytesIn bytes32 to encode.\\r\\n     * @return utf8 encoded bytes32.\\r\\n     */\\r\\n    function toUtf8Bytes(bytes32 bytesIn) internal pure returns (bytes memory) {\\r\\n        return abi.encodePacked(toUtf8Bytes32Bottom(bytesIn >> 128), toUtf8Bytes32Bottom(bytesIn));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns utf8-encoded address that can be read via web3.utils.hexToUtf8.\\r\\n     * Source: https://ethereum.stackexchange.com/questions/8346/convert-address-to-string/8447#8447\\r\\n     * @dev Will return address in all lower case characters and without the leading 0x.\\r\\n     * @param x address to encode.\\r\\n     * @return utf8 encoded address bytes.\\r\\n     */\\r\\n    function toUtf8BytesAddress(address x) internal pure returns (bytes memory) {\\r\\n        return\\r\\n            abi.encodePacked(toUtf8Bytes32Bottom(bytes32(bytes20(x)) >> 128), bytes8(toUtf8Bytes32Bottom(bytes20(x))));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Converts a uint into a base-10, UTF-8 representation stored in a `string` type.\\r\\n     * @dev This method is based off of this code: https://stackoverflow.com/a/65707309.\\r\\n     */\\r\\n    function toUtf8BytesUint(uint256 x) internal pure returns (bytes memory) {\\r\\n        if (x == 0) {\\r\\n            return \\\"0\\\";\\r\\n        }\\r\\n        uint256 j = x;\\r\\n        uint256 len;\\r\\n        while (j != 0) {\\r\\n            len++;\\r\\n            j /= 10;\\r\\n        }\\r\\n        bytes memory bstr = new bytes(len);\\r\\n        uint256 k = len;\\r\\n        while (x != 0) {\\r\\n            k = k - 1;\\r\\n            uint8 temp = (48 + uint8(x - (x / 10) * 10));\\r\\n            bytes1 b1 = bytes1(temp);\\r\\n            bstr[k] = b1;\\r\\n            x /= 10;\\r\\n        }\\r\\n        return bstr;\\r\\n    }\\r\\n\\r\\n    function appendKeyValueBytes32(\\r\\n        bytes memory currentAncillaryData,\\r\\n        bytes memory key,\\r\\n        bytes32 value\\r\\n    ) internal pure returns (bytes memory) {\\r\\n        bytes memory prefix = constructPrefix(currentAncillaryData, key);\\r\\n        return abi.encodePacked(currentAncillaryData, prefix, toUtf8Bytes(value));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Adds \\\"key:value\\\" to `currentAncillaryData` where `value` is an address that first needs to be converted\\r\\n     * to utf8 bytes. For example, if `utf8(currentAncillaryData)=\\\"k1:v1\\\"`, then this function will return\\r\\n     * `utf8(k1:v1,key:value)`, and if `currentAncillaryData` is blank, then this will return `utf8(key:value)`.\\r\\n     * @param currentAncillaryData This bytes data should ideally be able to be utf8-decoded, but its OK if not.\\r\\n     * @param key Again, this bytes data should ideally be able to be utf8-decoded, but its OK if not.\\r\\n     * @param value An address to set as the value in the key:value pair to append to `currentAncillaryData`.\\r\\n     * @return Newly appended ancillary data.\\r\\n     */\\r\\n    function appendKeyValueAddress(\\r\\n        bytes memory currentAncillaryData,\\r\\n        bytes memory key,\\r\\n        address value\\r\\n    ) internal pure returns (bytes memory) {\\r\\n        bytes memory prefix = constructPrefix(currentAncillaryData, key);\\r\\n        return abi.encodePacked(currentAncillaryData, prefix, toUtf8BytesAddress(value));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Adds \\\"key:value\\\" to `currentAncillaryData` where `value` is a uint that first needs to be converted\\r\\n     * to utf8 bytes. For example, if `utf8(currentAncillaryData)=\\\"k1:v1\\\"`, then this function will return\\r\\n     * `utf8(k1:v1,key:value)`, and if `currentAncillaryData` is blank, then this will return `utf8(key:value)`.\\r\\n     * @param currentAncillaryData This bytes data should ideally be able to be utf8-decoded, but its OK if not.\\r\\n     * @param key Again, this bytes data should ideally be able to be utf8-decoded, but its OK if not.\\r\\n     * @param value A uint to set as the value in the key:value pair to append to `currentAncillaryData`.\\r\\n     * @return Newly appended ancillary data.\\r\\n     */\\r\\n    function appendKeyValueUint(\\r\\n        bytes memory currentAncillaryData,\\r\\n        bytes memory key,\\r\\n        uint256 value\\r\\n    ) internal pure returns (bytes memory) {\\r\\n        bytes memory prefix = constructPrefix(currentAncillaryData, key);\\r\\n        return abi.encodePacked(currentAncillaryData, prefix, toUtf8BytesUint(value));\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Helper method that returns the left hand side of a \\\"key:value\\\" pair plus the colon \\\":\\\" and a leading\\r\\n     * comma \\\",\\\" if the `currentAncillaryData` is not empty. The return value is intended to be prepended as a prefix to\\r\\n     * some utf8 value that is ultimately added to a comma-delimited, key-value dictionary.\\r\\n     */\\r\\n    function constructPrefix(bytes memory currentAncillaryData, bytes memory key) internal pure returns (bytes memory) {\\r\\n        if (currentAncillaryData.length > 0) {\\r\\n            return abi.encodePacked(\\\",\\\", key, \\\":\\\");\\r\\n        } else {\\r\\n            return abi.encodePacked(key, \\\":\\\");\\r\\n        }\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xbe2300c69cbaca3ca305dc9445e6f791ef26315d1af9cf4f8021757fd1e2fd07\",\"license\":\"AGPL-3.0-only\"},\"contracts/common/implementation/HasFinder.sol\":{\"content\":\"pragma solidity ^0.8.9;\\r\\n\\r\\n// SPDX-License-Identifier: UNLICENSED\\r\\nimport \\\"../../data-verification-mechanism/interfaces/FinderInterface.sol\\\";\\r\\n\\r\\n// Contract stores a reference to the DVM Finder contract which can be used to locate other important DVM contracts.\\r\\ncontract HasFinder {\\r\\n    FinderInterface public finder;\\r\\n\\r\\n    constructor(address _finder) {\\r\\n        finder = FinderInterface(_finder);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x755afa586fda2721076c48a4b6c6882443ff8fcde320d4bfe4b94dce32978a73\",\"license\":\"UNLICENSED\"},\"contracts/common/implementation/Lockable.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title A contract that provides modifiers to prevent reentrancy to state-changing and view-only methods. This contract\\r\\n * is inspired by https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/ReentrancyGuard.sol\\r\\n * and https://github.com/balancer-labs/balancer-core/blob/master/contracts/BPool.sol.\\r\\n */\\r\\ncontract Lockable {\\r\\n    bool private _notEntered;\\r\\n\\r\\n    constructor() {\\r\\n        // Storing an initial non-zero value makes deployment a bit more expensive, but in exchange the refund on every\\r\\n        // call to nonReentrant will be lower in amount. Since refunds are capped to a percentage of the total\\r\\n        // transaction's gas, it is best to keep them low in cases like this one, to increase the likelihood of the full\\r\\n        // refund coming into effect.\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Prevents a contract from calling itself, directly or indirectly.\\r\\n     * Calling a `nonReentrant` function from another `nonReentrant` function is not supported. It is possible to\\r\\n     * prevent this from happening by making the `nonReentrant` function external, and making it call a `private`\\r\\n     * function that does the actual state modification.\\r\\n     */\\r\\n    modifier nonReentrant() {\\r\\n        _preEntranceCheck();\\r\\n        _preEntranceSet();\\r\\n        _;\\r\\n        _postEntranceReset();\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Designed to prevent a view-only method from being re-entered during a call to a `nonReentrant()` state-changing method.\\r\\n     */\\r\\n    modifier nonReentrantView() {\\r\\n        _preEntranceCheck();\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    // Internal methods are used to avoid copying the require statement's bytecode to every `nonReentrant()` method.\\r\\n    // On entry into a function, `_preEntranceCheck()` should always be called to check if the function is being\\r\\n    // re-entered. Then, if the function modifies state, it should call `_postEntranceSet()`, perform its logic, and\\r\\n    // then call `_postEntranceReset()`.\\r\\n    // View-only methods can simply call `_preEntranceCheck()` to make sure that it is not being re-entered.\\r\\n    function _preEntranceCheck() internal view {\\r\\n        // On the first call to nonReentrant, _notEntered will be true\\r\\n        require(_notEntered, \\\"ReentrancyGuard: reentrant call\\\");\\r\\n    }\\r\\n\\r\\n    function _preEntranceSet() internal {\\r\\n        // Any calls to nonReentrant after this point will fail\\r\\n        _notEntered = false;\\r\\n    }\\r\\n\\r\\n    function _postEntranceReset() internal {\\r\\n        // By storing the original value once again, a refund is triggered (see\\r\\n        // https://eips.ethereum.org/EIPS/eip-2200)\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    // These functions are intended to be used by child contracts to temporarily disable and re-enable the guard.\\r\\n    // Intended use:\\r\\n    // _startReentrantGuardDisabled();\\r\\n    // ...\\r\\n    // _endReentrantGuardDisabled();\\r\\n    //\\r\\n    // IMPORTANT: these should NEVER be used in a method that isn't inside a nonReentrant block. Otherwise, it's\\r\\n    // possible to permanently lock your contract.\\r\\n    function _startReentrantGuardDisabled() internal {\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    function _endReentrantGuardDisabled() internal {\\r\\n        _notEntered = false;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x0d2de08951d2be32ceb242649e4b248508f43ce9184ee9ac69eedcef9f6afd8b\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/OracleBase.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"../data-verification-mechanism/interfaces/FinderInterface.sol\\\";\\r\\nimport \\\"../data-verification-mechanism/implementation/Constants.sol\\\";\\r\\nimport \\\"../common/implementation/HasFinder.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title Cross-chain Oracle L1 Oracle Base.\\r\\n * @notice Enforces lifecycle of price requests for deriving contract.\\r\\n */\\r\\nabstract contract OracleBase is HasFinder {\\r\\n    enum RequestState { NeverRequested, Requested, Resolved }\\r\\n\\r\\n    struct Price {\\r\\n        RequestState state;\\r\\n        int256 price;\\r\\n    }\\r\\n\\r\\n    // Mapping of encoded price requests {identifier, time, ancillaryData} to Price objects.\\r\\n    mapping(bytes32 => Price) internal prices;\\r\\n\\r\\n    event PriceRequestAdded(bytes32 indexed identifier, uint256 time, bytes ancillaryData, bytes32 indexed requestHash);\\r\\n    event PushedPrice(\\r\\n        bytes32 indexed identifier,\\r\\n        uint256 time,\\r\\n        bytes ancillaryData,\\r\\n        int256 price,\\r\\n        bytes32 indexed requestHash\\r\\n    );\\r\\n\\r\\n    /**\\r\\n     * @notice Enqueues a request (if a request isn't already present) for the given (identifier, time,\\r\\n     * ancillary data) combination. Will only emit an event if the request has never been requested.\\r\\n     * @return True if price request is new, false otherwise. This is useful for caller to keep track of\\r\\n     * duplicate price requests.\\r\\n     */\\r\\n    function _requestPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) internal returns (bool) {\\r\\n        require(ancillaryData.length <= OptimisticOracleConstraints.ancillaryBytesLimit, \\\"Invalid ancillary data\\\");\\r\\n        bytes32 priceRequestId = _encodePriceRequest(identifier, time, ancillaryData);\\r\\n        Price storage lookup = prices[priceRequestId];\\r\\n        if (lookup.state == RequestState.NeverRequested) {\\r\\n            lookup.state = RequestState.Requested;\\r\\n            emit PriceRequestAdded(identifier, time, ancillaryData, priceRequestId);\\r\\n            return true;\\r\\n        } else {\\r\\n            return false;\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Publishes price for a requested query.\\r\\n     * @dev Does not update price state if price is already resolved.\\r\\n     */\\r\\n    function _publishPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData,\\r\\n        int256 price\\r\\n    ) internal {\\r\\n        bytes32 priceRequestId = _encodePriceRequest(identifier, time, ancillaryData);\\r\\n        Price storage lookup = prices[priceRequestId];\\r\\n        if (lookup.state == RequestState.Resolved) return;\\r\\n        lookup.price = price;\\r\\n        lookup.state = RequestState.Resolved;\\r\\n        emit PushedPrice(identifier, time, ancillaryData, lookup.price, priceRequestId);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns the convenient way to store price requests, uniquely identified by {identifier, time,\\r\\n     * ancillaryData }.\\r\\n     */\\r\\n    function _encodePriceRequest(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) internal pure returns (bytes32) {\\r\\n        return keccak256(abi.encode(identifier, time, ancillaryData));\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x7cb65d896ef38a6768b57bd657a18c5387e6e6b34564fd998d3433addfbd9371\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/OracleSpoke.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"../data-verification-mechanism/interfaces/OracleAncillaryInterface.sol\\\";\\r\\nimport \\\"../data-verification-mechanism/interfaces/OracleInterface.sol\\\";\\r\\nimport \\\"../data-verification-mechanism/interfaces/RegistryInterface.sol\\\";\\r\\nimport \\\"./OracleBase.sol\\\";\\r\\nimport \\\"../common/implementation/AncillaryData.sol\\\";\\r\\nimport \\\"../common/implementation/Lockable.sol\\\";\\r\\nimport \\\"./interfaces/ChildMessengerInterface.sol\\\";\\r\\nimport \\\"./interfaces/ChildMessengerConsumerInterface.sol\\\";\\r\\nimport \\\"./SpokeBase.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title Cross-chain Oracle L2 Oracle Spoke.\\r\\n * @notice This contract is primarily intended to receive messages on the child chain from a parent chain and allow\\r\\n * contracts deployed on the child chain to interact with this contract as an Oracle. Moreover, this contract gives\\r\\n * child chain contracts the ability to trigger cross-chain price requests to the mainnet DVM. This Spoke knows how\\r\\n * to communicate with the parent chain via a \\\"ChildMessenger\\\" contract which directly communicates with the\\r\\n * \\\"ParentMessenger\\\" on mainnet.\\r\\n * @dev The intended client of this contract is an OptimisticOracle on sidechain that needs price\\r\\n * resolution secured by the DVM on mainnet.\\r\\n */\\r\\ncontract OracleSpoke is\\r\\n    OracleBase,\\r\\n    SpokeBase,\\r\\n    OracleAncillaryInterface,\\r\\n    OracleInterface,\\r\\n    ChildMessengerConsumerInterface,\\r\\n    Lockable\\r\\n{\\r\\n    constructor(address _finderAddress) HasFinder(_finderAddress) {}\\r\\n\\r\\n    // This assumes that the local network has a Registry that resembles the mainnet registry.\\r\\n    modifier onlyRegisteredContract() {\\r\\n        RegistryInterface registry = RegistryInterface(finder.getImplementationAddress(OracleInterfaces.Registry));\\r\\n        require(registry.isContractRegistered(msg.sender), \\\"Caller must be registered\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice This is called to bridge a price request to mainnet. This method will enqueue a new price request\\r\\n     * or return silently if already requested. Price requests are relayed to mainnet (the \\\"Parent\\\" chain) via the\\r\\n     * ChildMessenger contract.\\r\\n     * @dev Can be called only by a registered contract that is allowed to make DVM price requests. Will mark this\\r\\n     * price request as Requested, and therefore able to receive the price resolution data from mainnet.\\r\\n     * @dev Contract registration enables the DVM to validate that the calling contract correctly pays final fees.\\r\\n     * Therefore, this function does not directly attempt to pull a final fee from the caller.\\r\\n     * @param identifier Identifier of price request.\\r\\n     * @param time Timestamp of price request.\\r\\n     * @param ancillaryData extra data of price request.\\r\\n     */\\r\\n    function requestPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public override nonReentrant() onlyRegisteredContract() {\\r\\n        bool newPriceRequested = _requestPrice(identifier, time, _stampAncillaryData(ancillaryData));\\r\\n        if (newPriceRequested) {\\r\\n            getChildMessenger().sendMessageToParent(abi.encode(identifier, time, _stampAncillaryData(ancillaryData)));\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Overloaded function to provide backwards compatibility for legacy financial contracts that do not use\\r\\n     * ancillary data.\\r\\n     */\\r\\n    function requestPrice(bytes32 identifier, uint256 time) public override nonReentrant() onlyRegisteredContract() {\\r\\n        bool newPriceRequested = _requestPrice(identifier, time, _stampAncillaryData(\\\"\\\"));\\r\\n        if (newPriceRequested) {\\r\\n            getChildMessenger().sendMessageToParent(abi.encode(identifier, time, _stampAncillaryData(\\\"\\\")));\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Resolves a price request originating from a message sent by the DVM on the parent chain.\\r\\n     * @dev Can only be called by the ChildMessenger contract which is designed to communicate only with the\\r\\n     * ParentMessenger contract on Mainnet. See the SpokeBase for the onlyMessenger modifier.\\r\\n     * @param data ABI encoded params with which to call `_publishPrice`.\\r\\n     */\\r\\n    function processMessageFromParent(bytes memory data) public override nonReentrant() onlyMessenger() {\\r\\n        (bytes32 identifier, uint256 time, bytes memory ancillaryData, int256 price) =\\r\\n            abi.decode(data, (bytes32, uint256, bytes, int256));\\r\\n        _publishPrice(identifier, time, ancillaryData, price);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns whether a price has resolved for the request. This method will not revert.\\r\\n     * @param identifier Identifier of price request.\\r\\n     * @param time Timestamp of price request\\r\\n     * @param ancillaryData extra data of price request.\\r\\n     * @return True if a price is available, False otherwise. If true, then getPrice will succeed for the request.\\r\\n     */\\r\\n    function hasPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public view override nonReentrantView() onlyRegisteredContract() returns (bool) {\\r\\n        bytes32 priceRequestId = _encodePriceRequest(identifier, time, _stampAncillaryData(ancillaryData));\\r\\n        return prices[priceRequestId].state == RequestState.Resolved;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Overloaded function to provide backwards compatibility for legacy financial contracts that do not use\\r\\n     * ancillary data.\\r\\n     */\\r\\n    function hasPrice(bytes32 identifier, uint256 time)\\r\\n        public\\r\\n        view\\r\\n        override\\r\\n        nonReentrantView()\\r\\n        onlyRegisteredContract()\\r\\n        returns (bool)\\r\\n    {\\r\\n        bytes32 priceRequestId = _encodePriceRequest(identifier, time, _stampAncillaryData(\\\"\\\"));\\r\\n        return prices[priceRequestId].state == RequestState.Resolved;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns resolved price for the request. Reverts if price is not available.\\r\\n     * @param identifier Identifier of price request.\\r\\n     * @param time Timestamp of price request\\r\\n     * @param ancillaryData extra data of price request.\\r\\n     * @return int256 Price, or reverts if no resolved price for any reason.\\r\\n     */\\r\\n    function getPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public view override nonReentrantView() onlyRegisteredContract() returns (int256) {\\r\\n        bytes32 priceRequestId = _encodePriceRequest(identifier, time, _stampAncillaryData(ancillaryData));\\r\\n        Price storage lookup = prices[priceRequestId];\\r\\n        require(lookup.state == RequestState.Resolved, \\\"Price has not been resolved\\\");\\r\\n        return lookup.price;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Overloaded function to provide backwards compatibility for legacy financial contracts that do not use\\r\\n     * ancillary data.\\r\\n     */\\r\\n    function getPrice(bytes32 identifier, uint256 time)\\r\\n        public\\r\\n        view\\r\\n        override\\r\\n        nonReentrantView()\\r\\n        onlyRegisteredContract()\\r\\n        returns (int256)\\r\\n    {\\r\\n        bytes32 priceRequestId = _encodePriceRequest(identifier, time, _stampAncillaryData(\\\"\\\"));\\r\\n        Price storage lookup = prices[priceRequestId];\\r\\n        require(lookup.state == RequestState.Resolved, \\\"Price has not been resolved\\\");\\r\\n        return lookup.price;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Generates stamped ancillary data in the format that it would be used in the case of a price request.\\r\\n     * @param ancillaryData ancillary data of the price being requested.\\r\\n     * @return the stamped ancillary bytes.\\r\\n     */\\r\\n    function stampAncillaryData(bytes memory ancillaryData) public view nonReentrantView() returns (bytes memory) {\\r\\n        return _stampAncillaryData(ancillaryData);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev We don't handle specifically the case where `ancillaryData` is not already readily translatable in utf8.\\r\\n     * For those cases, we assume that the client will be able to strip out the utf8-translatable part of the\\r\\n     * ancillary data that this contract stamps.\\r\\n     */\\r\\n    function _stampAncillaryData(bytes memory ancillaryData) internal view returns (bytes memory) {\\r\\n        // This contract should stamp the child network's ID so that voters on the parent network can\\r\\n        // deterministically track unique price requests back to this contract.\\r\\n        return AncillaryData.appendKeyValueUint(ancillaryData, \\\"childChainId\\\", block.chainid);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x6ad32f4cf8e4bc208fd75fb2c5ddb2e00c9f58b98fd9acab7d053b98ab9fd553\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/SpokeBase.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\nimport \\\"./interfaces/ChildMessengerInterface.sol\\\";\\r\\n\\r\\nimport \\\"../data-verification-mechanism/implementation/Constants.sol\\\";\\r\\nimport \\\"../common/implementation/HasFinder.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title Cross-chain Oracle L2 Spoke Base.\\r\\n * @notice Provides access control to Governance and Oracle spoke L2 contracts.\\r\\n */\\r\\n\\r\\nabstract contract SpokeBase is HasFinder {\\r\\n    modifier onlyMessenger() {\\r\\n        require(msg.sender == address(getChildMessenger()), \\\"Caller must be messenger\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns the child messenger address set in the finder.\\r\\n     * @return ChildMessengerInterface instance of child messenger deployed on L2.\\r\\n     */\\r\\n    function getChildMessenger() public view returns (ChildMessengerInterface) {\\r\\n        return ChildMessengerInterface(finder.getImplementationAddress(OracleInterfaces.ChildMessenger));\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xed5d177948f66946f6c49416a9d4c780c5abf10aa624e0a80fa4508899186910\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/interfaces/ChildMessengerConsumerInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface ChildMessengerConsumerInterface {\\r\\n    // Called on L2 by child messenger.\\r\\n    function processMessageFromParent(bytes memory data) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x909c5020914855274be891571c9d53ff9d57c8e0144279c3f808ea4fcc28b97f\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/interfaces/ChildMessengerInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface ChildMessengerInterface {\\r\\n    // Should send cross-chain message to Parent messenger contract or revert.\\r\\n    function sendMessageToParent(bytes memory data) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x1276c829956f733346e033969998d3825bea284ba0c29c83d46fe72ebc93e5fa\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/implementation/Constants.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Stores common interface names used throughout the DVM by registration in the Finder.\\r\\n */\\r\\nlibrary OracleInterfaces {\\r\\n    bytes32 public constant Oracle = \\\"Oracle\\\";\\r\\n    bytes32 public constant IdentifierWhitelist = \\\"IdentifierWhitelist\\\";\\r\\n    bytes32 public constant Store = \\\"Store\\\";\\r\\n    bytes32 public constant FinancialContractsAdmin = \\\"FinancialContractsAdmin\\\";\\r\\n    bytes32 public constant Registry = \\\"Registry\\\";\\r\\n    bytes32 public constant CollateralWhitelist = \\\"CollateralWhitelist\\\";\\r\\n    bytes32 public constant OptimisticOracle = \\\"OptimisticOracle\\\";\\r\\n    bytes32 public constant OptimisticOracleV2 = \\\"OptimisticOracleV2\\\";\\r\\n    bytes32 public constant OptimisticOracleV3 = \\\"OptimisticOracleV3\\\";\\r\\n    bytes32 public constant Bridge = \\\"Bridge\\\";\\r\\n    bytes32 public constant GenericHandler = \\\"GenericHandler\\\";\\r\\n    bytes32 public constant SkinnyOptimisticOracle = \\\"SkinnyOptimisticOracle\\\";\\r\\n    bytes32 public constant ChildMessenger = \\\"ChildMessenger\\\";\\r\\n    bytes32 public constant OracleHub = \\\"OracleHub\\\";\\r\\n    bytes32 public constant OracleSpoke = \\\"OracleSpoke\\\";\\r\\n}\\r\\n\\r\\n/**\\r\\n * @title Commonly re-used values for contracts associated with the OptimisticOracle.\\r\\n */\\r\\nlibrary OptimisticOracleConstraints {\\r\\n    // Any price request submitted to the OptimisticOracle must contain ancillary data no larger than this value.\\r\\n    // This value must be <= the Voting contract's `ancillaryBytesLimit` constant value otherwise it is possible\\r\\n    // that a price can be requested to the OptimisticOracle successfully, but cannot be resolved by the DVM which\\r\\n    // refuses to accept a price request made with ancillary data length over a certain size.\\r\\n    uint256 public constant ancillaryBytesLimit = 8192;\\r\\n}\\r\\n\",\"keccak256\":\"0xc91adf0214524d001e7d5eadc61c8e8406a62c97362e9c72fff121ff68676c00\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/FinderInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Provides addresses of the live contracts implementing certain interfaces.\\r\\n * @dev Examples are the Oracle or Store interfaces.\\r\\n */\\r\\ninterface FinderInterface {\\r\\n    /**\\r\\n     * @notice Updates the address of the contract that implements `interfaceName`.\\r\\n     * @param interfaceName bytes32 encoding of the interface name that is either changed or registered.\\r\\n     * @param implementationAddress address of the deployed contract that implements the interface.\\r\\n     */\\r\\n    function changeImplementationAddress(bytes32 interfaceName, address implementationAddress) external;\\r\\n\\r\\n    /**\\r\\n     * @notice Gets the address of the contract that implements the given `interfaceName`.\\r\\n     * @param interfaceName queried interface.\\r\\n     * @return implementationAddress address of the deployed contract that implements the interface.\\r\\n     */\\r\\n    function getImplementationAddress(bytes32 interfaceName) external view returns (address);\\r\\n}\\r\\n\",\"keccak256\":\"0xad6668a10f243739d0bf5d077954119434f7b2cda129cb484ad6d359d158e5ec\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/OracleAncillaryInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Financial contract facing Oracle interface.\\r\\n * @dev Interface used by financial contracts to interact with the Oracle. Voters will use a different interface.\\r\\n */\\r\\nabstract contract OracleAncillaryInterface {\\r\\n    /**\\r\\n     * @notice Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair.\\r\\n     * @dev Time must be in the past and the identifier must be supported.\\r\\n     * @param identifier uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\\r\\n     * @param ancillaryData arbitrary data appended to a price request to give the voters more info from the caller.\\r\\n     * @param time unix timestamp for the price request.\\r\\n     */\\r\\n\\r\\n    function requestPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public virtual;\\r\\n\\r\\n    /**\\r\\n     * @notice Whether the price for `identifier` and `time` is available.\\r\\n     * @dev Time must be in the past and the identifier must be supported.\\r\\n     * @param identifier uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\\r\\n     * @param time unix timestamp for the price request.\\r\\n     * @param ancillaryData arbitrary data appended to a price request to give the voters more info from the caller.\\r\\n     * @return bool if the DVM has resolved to a price for the given identifier and timestamp.\\r\\n     */\\r\\n    function hasPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public view virtual returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @notice Gets the price for `identifier` and `time` if it has already been requested and resolved.\\r\\n     * @dev If the price is not available, the method reverts.\\r\\n     * @param identifier uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\\r\\n     * @param time unix timestamp for the price request.\\r\\n     * @param ancillaryData arbitrary data appended to a price request to give the voters more info from the caller.\\r\\n     * @return int256 representing the resolved price for the given identifier and timestamp.\\r\\n     */\\r\\n\\r\\n    function getPrice(\\r\\n        bytes32 identifier,\\r\\n        uint256 time,\\r\\n        bytes memory ancillaryData\\r\\n    ) public view virtual returns (int256);\\r\\n}\\r\\n\",\"keccak256\":\"0x527e51a47c25f533cee60d7e2e2410b3d6a16b8dbdeca7d3fd734fabf76a109a\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/OracleInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Financial contract facing Oracle interface.\\r\\n * @dev Interface used by financial contracts to interact with the Oracle. Voters will use a different interface.\\r\\n */\\r\\nabstract contract OracleInterface {\\r\\n    /**\\r\\n     * @notice Enqueues a request (if a request isn't already present) for the given `identifier`, `time` pair.\\r\\n     * @dev Time must be in the past and the identifier must be supported.\\r\\n     * @param identifier uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\\r\\n     * @param time unix timestamp for the price request.\\r\\n     */\\r\\n    function requestPrice(bytes32 identifier, uint256 time) external virtual;\\r\\n\\r\\n    /**\\r\\n     * @notice Whether the price for `identifier` and `time` is available.\\r\\n     * @dev Time must be in the past and the identifier must be supported.\\r\\n     * @param identifier uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\\r\\n     * @param time unix timestamp for the price request.\\r\\n     * @return bool if the DVM has resolved to a price for the given identifier and timestamp.\\r\\n     */\\r\\n    function hasPrice(bytes32 identifier, uint256 time) external view virtual returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @notice Gets the price for `identifier` and `time` if it has already been requested and resolved.\\r\\n     * @dev If the price is not available, the method reverts.\\r\\n     * @param identifier uniquely identifies the price requested. eg BTC/USD (encoded as bytes32) could be requested.\\r\\n     * @param time unix timestamp for the price request.\\r\\n     * @return int256 representing the resolved price for the given identifier and timestamp.\\r\\n     */\\r\\n    function getPrice(bytes32 identifier, uint256 time) external view virtual returns (int256);\\r\\n}\\r\\n\",\"keccak256\":\"0xa135756eabf06899395052031d8a2f617ef504477dc3037585f2b4ce0e3da22a\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/RegistryInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Interface for a registry of contracts and contract creators.\\r\\n */\\r\\ninterface RegistryInterface {\\r\\n    /**\\r\\n     * @notice Registers a new contract.\\r\\n     * @dev Only authorized contract creators can call this method.\\r\\n     * @param parties an array of addresses who become parties in the contract.\\r\\n     * @param contractAddress defines the address of the deployed contract.\\r\\n     */\\r\\n    function registerContract(address[] calldata parties, address contractAddress) external;\\r\\n\\r\\n    /**\\r\\n     * @notice Returns whether the contract has been registered with the registry.\\r\\n     * @dev If it is registered, it is an authorized participant in the UMA system.\\r\\n     * @param contractAddress address of the contract.\\r\\n     * @return bool indicates whether the contract is registered.\\r\\n     */\\r\\n    function isContractRegistered(address contractAddress) external view returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @notice Returns a list of all contracts that are associated with a particular party.\\r\\n     * @param party address of the party.\\r\\n     * @return an array of the contracts the party is registered to.\\r\\n     */\\r\\n    function getRegisteredContracts(address party) external view returns (address[] memory);\\r\\n\\r\\n    /**\\r\\n     * @notice Returns all registered contracts.\\r\\n     * @return all registered contract addresses within the system.\\r\\n     */\\r\\n    function getAllRegisteredContracts() external view returns (address[] memory);\\r\\n\\r\\n    /**\\r\\n     * @notice Adds a party to the calling contract.\\r\\n     * @dev msg.sender must be the contract to which the party member is added.\\r\\n     * @param party address to be added to the contract.\\r\\n     */\\r\\n    function addPartyToContract(address party) external;\\r\\n\\r\\n    /**\\r\\n     * @notice Removes a party member to the calling contract.\\r\\n     * @dev msg.sender must be the contract to which the party member is added.\\r\\n     * @param party address to be removed from the contract.\\r\\n     */\\r\\n    function removePartyFromContract(address party) external;\\r\\n\\r\\n    /**\\r\\n     * @notice checks if an address is a party in a contract.\\r\\n     * @param party party to check.\\r\\n     * @param contractAddress address to check against the party.\\r\\n     * @return bool indicating if the address is a party of the contract.\\r\\n     */\\r\\n    function isPartyMemberOfContract(address party, address contractAddress) external view returns (bool);\\r\\n}\\r\\n\",\"keccak256\":\"0xea7f5a5abd024662fa3a79a23823710b36ce5b9e72381716bdd4697d4b9cb403\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x60803461008157601f6111f838819003918201601f19168301916001600160401b038311848410176100865780849260209460405283398101031261008157516001600160a01b0381169081900361008157600080546001600160a01b0319169190911790556002805460ff1916600117905560405161115b908161009d8239f35b600080fd5b634e487b7160e01b600052604160045260246000fdfe6040608081526004908136101561001557600080fd5b6000803560e01c80630c17661d146109ce5780630cbfde4614610892578063216666a4146106d35780632d189d35146106a557806368ad8ae3146104e0578063719c6d5614610419578063a03e881a1461033a578063b551cd5014610233578063b9a3c84c146102075763c9280f061461008e57600080fd5b346102045761009c36610b8f565b93906100a6610c44565b825484516302abf57960e61b815267526567697374727960c01b84820152602096916001600160a01b03919088908290602490829086165afa9081156101fa5790889187916101cd575b50602488518094819363f9f6b49b60e01b8352338a840152165afa9081156101c357610150939291610129918791610196575b50610bdc565b61014a865161013781610a4f565b8681524690610144610e8f565b90610eb7565b91610d7e565b8252600184528282209160ff8354169160038310156101835750509061017a600260019314610e43565b01549051908152f35b634e487b7160e01b825260219052602490fd5b6101b69150893d8b116101bc575b6101ae8183610a87565b810190610bc4565b38610123565b503d6101a4565b86513d87823e3d90fd5b6101ed9150823d84116101f3575b6101e58183610a87565b810190610ba5565b386100f0565b503d6101db565b87513d88823e3d90fd5b80fd5b50903461022f578160031936011261022f57905490516001600160a01b039091168152602090f35b5080fd5b509190346103365761024436610b59565b94919061024f610c44565b825484516302abf57960e61b815267526567697374727960c01b87820152602097916001600160a01b03919089908290602490829086165afa9081156101fa579089918791610319575b50602488518094819363f9f6b49b60e01b8352338d840152165afa9081156101c357916102d561014a926102df96959488916103025750610bdc565b4690610144610e8f565b81526001845260ff82822054169260038410156101835750506002905191148152f35b6101b691508b3d8d116101bc576101ae8183610a87565b6103309150823d84116101f3576101e58183610a87565b38610299565b8280fd5b509190346103365761034b36610b8f565b9390610355610c44565b815483516302abf57960e61b815267526567697374727960c01b86820152602096916001600160a01b03919088908290602490829086165afa9081156101c35790889186916103fc575b50602487518094819363f9f6b49b60e01b8352338c840152165afa9081156103f2576102df9392916103d79186916101965750610bdc565b61014a85516103e581610a4f565b8581524690610144610e8f565b85513d86823e3d90fd5b6104139150823d84116101f3576101e58183610a87565b3861039f565b50346102045761042836610b59565b949190610433610c44565b835485516302abf57960e61b815267526567697374727960c01b85820152602097916001600160a01b03919089908290602490829086165afa9081156104d65790899188916104b9575b50602489518094819363f9f6b49b60e01b8352338b840152165afa9081156101fa57916102d561014a9261015096959489916103025750610bdc565b6104d09150823d84116101f3576101e58183610a87565b3861047d565b88513d89823e3d90fd5b50913461033657826104f136610b8f565b926104fa610c44565b60ff1993846002541660025560018060a01b03928385541693875180956302abf57960e61b825267526567697374727960c01b8683015281602460209889935afa90811561067e57829187918991610688575b5060248b518094819363f9f6b49b60e01b8352338b840152165afa801561067e5761057e9188916106675750610bdc565b6105a361059c895161058f81610a4f565b8881524690610144610e8f565b8484610c96565b6105b8575b8588600189600254161760025551f35b6105ff906105c46110ac565b16916105f16105e48a516105d781610a4f565b8981524690610144610e8f565b8a51958693898501610c28565b03601f198101845283610a87565b803b156106635761062d93858094895196879586948593636cc175dd60e11b85528401526024830190610b34565b03925af1801561065957610645575b808080806105a8565b61064e90610a25565b61033657823861063c565b84513d84823e3d90fd5b8480fd5b6101b69150873d89116101bc576101ae8183610a87565b89513d89823e3d90fd5b61069f9150823d84116101f3576101e58183610a87565b3861054d565b50903461022f578160031936011261022f576020906106c26110ac565b90516001600160a01b039091168152f35b5080923461022f576106e436610b59565b6106ef949294610c44565b6002805460ff19908116909155835487516302abf57960e61b815267526567697374727960c01b87820152919660209290916001600160a01b03919084908290602490829086165afa90811561086b57829185918991610875575b508b5163f9f6b49b60e01b8152338b8201529283916024918391165afa801561086b5761077d9188916108545750610bdc565b6107996107924661078c610e8f565b87610eb7565b8684610c96565b6107ae575b858960018a600254161760025551f35b906107da6107cd6107e8936107c16110ac565b16954690610144610e8f565b8a51968793868501610c28565b03601f198101855284610a87565b813b15610850578651636cc175dd60e11b8152948501528391829084908290610815906024830190610b34565b03925af180156108435761082f575b83818080808061079e565b9261083c60019294610a25565b9290610824565b50505051903d90823e3d90fd5b8380fd5b6101b69150853d87116101bc576101ae8183610a87565b8a513d89823e3d90fd5b61088c9150823d84116101f3576101e58183610a87565b3861074a565b50913461033657602090816003193601126108505767ffffffffffffffff81358181116109ca576108c69036908401610ac5565b906108cf610c44565b6002805460ff19908116909155926001600160a01b036108ed6110ac565b1633036109875750815182016080838683019203126109835784830151918684015190606085015190811161097f57840182603f8201121561097f57868101519461093786610aa9565b936109448a519586610a87565b86855289878401011161097b57610968610970966080938b60019b88019101610b11565b015192610dac565b600254161760025551f35b8980fd5b8880fd5b8680fd5b855162461bcd60e51b8152908101859052601860248201527f43616c6c6572206d757374206265206d657373656e67657200000000000000006044820152606490fd5b8580fd5b50346102045760203660031901126102045782359067ffffffffffffffff82116102045750610a06610a2193610a0e92369101610ac5565b6102d5610c44565b9051918291602083526020830190610b34565b0390f35b67ffffffffffffffff8111610a3957604052565b634e487b7160e01b600052604160045260246000fd5b6020810190811067ffffffffffffffff821117610a3957604052565b6040810190811067ffffffffffffffff821117610a3957604052565b90601f8019910116810190811067ffffffffffffffff821117610a3957604052565b67ffffffffffffffff8111610a3957601f01601f191660200190565b81601f82011215610b0c57803590610adc82610aa9565b92610aea6040519485610a87565b82845260208383010111610b0c57816000926020809301838601378301015290565b600080fd5b60005b838110610b245750506000910152565b8181015183820152602001610b14565b90602091610b4d81518092818552858086019101610b11565b601f01601f1916010190565b6060600319820112610b0c5760043591602435916044359067ffffffffffffffff8211610b0c57610b8c91600401610ac5565b90565b6040906003190112610b0c576004359060243590565b90816020910312610b0c57516001600160a01b0381168103610b0c5790565b90816020910312610b0c57518015158103610b0c5790565b15610be357565b60405162461bcd60e51b815260206004820152601960248201527f43616c6c6572206d7573742062652072656769737465726564000000000000006044820152606490fd5b610b8c9392606092825260208201528160408201520190610b34565b60ff6002541615610c5157565b60405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606490fd5b90612000835111610d4057610cac838284610d7e565b9283600052600160205260406000209182549260ff84166003811015610d2a57610d1f5760017f55ad1db144341b8105784dba37a7cb1c3088262f75ea638cfb7c8ecfb73751c69460ff1916179055610d176040519283928352604060208401526040830190610b34565b0390a3600190565b505050505050600090565b634e487b7160e01b600052602160045260246000fd5b60405162461bcd60e51b8152602060048201526016602482015275496e76616c696420616e63696c6c617279206461746160501b6044820152606490fd5b9190610da690610d98604051938492602084019687610c28565b03601f198101835282610a87565b51902090565b91929092610dbb818585610d7e565b9384600052600160205260406000209283549360ff85166003811015610d2a57600214610e3a5760027ffd38de8c79c8c3c553ecd154c6b11b67511ec8dee573c8a488a056d7335b34e89583600184015560ff1916179055610e2f6040519384938452606060208501526060840190610b34565b9060408301520390a3565b50505050505050565b15610e4a57565b60405162461bcd60e51b815260206004820152601b60248201527f507269636520686173206e6f74206265656e207265736f6c76656400000000006044820152606490fd5b60405190610e9c82610a6b565b600c82526b18da1a5b1910da185a5b925960a21b6020830152565b610ecd610ec7610b8c938361102d565b93610f1b565b926040519384918351610ee881602096878088019101610b11565b8301610efc82518093878085019101610b11565b01610f0f82518093868085019101610b11565b01038084520182610a87565b801561100f5780816000925b610ff75750610f3582610aa9565b91610f436040519384610a87565b80835281601f19610f5383610aa9565b01916020923684870137905b610f695750505090565b60001990808201908111610fe1578093600a808204809404811184151516610fe15783028103908111610fe15760ff809116603001908111610fe1578551821015610fcb5760f81b6001600160f81b03191660001a9085018301539182610f5f565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b916000198114610fe1576001600a9101920480610f27565b5060405161101c81610a6b565b60018152600360fc1b602082015290565b511561107557610b8c60226040518093600b60fa1b602083015261105b815180926020602186019101610b11565b8101601d60f91b6021820152036002810184520182610a87565b610b8c602160405183611092829551809260208086019101610b11565b8101601d60f91b6020820152036001810184520182610a87565b6000546040516302abf57960e61b81526d21b434b63226b2b9b9b2b733b2b960911b60048201526001600160a01b03916020908290602490829086165afa908115611119576000916110fd57501690565b611115915060203d81116101f3576101e58183610a87565b1690565b6040513d6000823e3d90fdfea26469706673582212205de78227ab04d94a6a1d1db414fa64016a8e671c72597c8e26dd7c7d85f2374164736f6c63430008100033",
+  "deployedBytecode": "0x6040608081526004908136101561001557600080fd5b6000803560e01c80630c17661d146109ce5780630cbfde4614610892578063216666a4146106d35780632d189d35146106a557806368ad8ae3146104e0578063719c6d5614610419578063a03e881a1461033a578063b551cd5014610233578063b9a3c84c146102075763c9280f061461008e57600080fd5b346102045761009c36610b8f565b93906100a6610c44565b825484516302abf57960e61b815267526567697374727960c01b84820152602096916001600160a01b03919088908290602490829086165afa9081156101fa5790889187916101cd575b50602488518094819363f9f6b49b60e01b8352338a840152165afa9081156101c357610150939291610129918791610196575b50610bdc565b61014a865161013781610a4f565b8681524690610144610e8f565b90610eb7565b91610d7e565b8252600184528282209160ff8354169160038310156101835750509061017a600260019314610e43565b01549051908152f35b634e487b7160e01b825260219052602490fd5b6101b69150893d8b116101bc575b6101ae8183610a87565b810190610bc4565b38610123565b503d6101a4565b86513d87823e3d90fd5b6101ed9150823d84116101f3575b6101e58183610a87565b810190610ba5565b386100f0565b503d6101db565b87513d88823e3d90fd5b80fd5b50903461022f578160031936011261022f57905490516001600160a01b039091168152602090f35b5080fd5b509190346103365761024436610b59565b94919061024f610c44565b825484516302abf57960e61b815267526567697374727960c01b87820152602097916001600160a01b03919089908290602490829086165afa9081156101fa579089918791610319575b50602488518094819363f9f6b49b60e01b8352338d840152165afa9081156101c357916102d561014a926102df96959488916103025750610bdc565b4690610144610e8f565b81526001845260ff82822054169260038410156101835750506002905191148152f35b6101b691508b3d8d116101bc576101ae8183610a87565b6103309150823d84116101f3576101e58183610a87565b38610299565b8280fd5b509190346103365761034b36610b8f565b9390610355610c44565b815483516302abf57960e61b815267526567697374727960c01b86820152602096916001600160a01b03919088908290602490829086165afa9081156101c35790889186916103fc575b50602487518094819363f9f6b49b60e01b8352338c840152165afa9081156103f2576102df9392916103d79186916101965750610bdc565b61014a85516103e581610a4f565b8581524690610144610e8f565b85513d86823e3d90fd5b6104139150823d84116101f3576101e58183610a87565b3861039f565b50346102045761042836610b59565b949190610433610c44565b835485516302abf57960e61b815267526567697374727960c01b85820152602097916001600160a01b03919089908290602490829086165afa9081156104d65790899188916104b9575b50602489518094819363f9f6b49b60e01b8352338b840152165afa9081156101fa57916102d561014a9261015096959489916103025750610bdc565b6104d09150823d84116101f3576101e58183610a87565b3861047d565b88513d89823e3d90fd5b50913461033657826104f136610b8f565b926104fa610c44565b60ff1993846002541660025560018060a01b03928385541693875180956302abf57960e61b825267526567697374727960c01b8683015281602460209889935afa90811561067e57829187918991610688575b5060248b518094819363f9f6b49b60e01b8352338b840152165afa801561067e5761057e9188916106675750610bdc565b6105a361059c895161058f81610a4f565b8881524690610144610e8f565b8484610c96565b6105b8575b8588600189600254161760025551f35b6105ff906105c46110ac565b16916105f16105e48a516105d781610a4f565b8981524690610144610e8f565b8a51958693898501610c28565b03601f198101845283610a87565b803b156106635761062d93858094895196879586948593636cc175dd60e11b85528401526024830190610b34565b03925af1801561065957610645575b808080806105a8565b61064e90610a25565b61033657823861063c565b84513d84823e3d90fd5b8480fd5b6101b69150873d89116101bc576101ae8183610a87565b89513d89823e3d90fd5b61069f9150823d84116101f3576101e58183610a87565b3861054d565b50903461022f578160031936011261022f576020906106c26110ac565b90516001600160a01b039091168152f35b5080923461022f576106e436610b59565b6106ef949294610c44565b6002805460ff19908116909155835487516302abf57960e61b815267526567697374727960c01b87820152919660209290916001600160a01b03919084908290602490829086165afa90811561086b57829185918991610875575b508b5163f9f6b49b60e01b8152338b8201529283916024918391165afa801561086b5761077d9188916108545750610bdc565b6107996107924661078c610e8f565b87610eb7565b8684610c96565b6107ae575b858960018a600254161760025551f35b906107da6107cd6107e8936107c16110ac565b16954690610144610e8f565b8a51968793868501610c28565b03601f198101855284610a87565b813b15610850578651636cc175dd60e11b8152948501528391829084908290610815906024830190610b34565b03925af180156108435761082f575b83818080808061079e565b9261083c60019294610a25565b9290610824565b50505051903d90823e3d90fd5b8380fd5b6101b69150853d87116101bc576101ae8183610a87565b8a513d89823e3d90fd5b61088c9150823d84116101f3576101e58183610a87565b3861074a565b50913461033657602090816003193601126108505767ffffffffffffffff81358181116109ca576108c69036908401610ac5565b906108cf610c44565b6002805460ff19908116909155926001600160a01b036108ed6110ac565b1633036109875750815182016080838683019203126109835784830151918684015190606085015190811161097f57840182603f8201121561097f57868101519461093786610aa9565b936109448a519586610a87565b86855289878401011161097b57610968610970966080938b60019b88019101610b11565b015192610dac565b600254161760025551f35b8980fd5b8880fd5b8680fd5b855162461bcd60e51b8152908101859052601860248201527f43616c6c6572206d757374206265206d657373656e67657200000000000000006044820152606490fd5b8580fd5b50346102045760203660031901126102045782359067ffffffffffffffff82116102045750610a06610a2193610a0e92369101610ac5565b6102d5610c44565b9051918291602083526020830190610b34565b0390f35b67ffffffffffffffff8111610a3957604052565b634e487b7160e01b600052604160045260246000fd5b6020810190811067ffffffffffffffff821117610a3957604052565b6040810190811067ffffffffffffffff821117610a3957604052565b90601f8019910116810190811067ffffffffffffffff821117610a3957604052565b67ffffffffffffffff8111610a3957601f01601f191660200190565b81601f82011215610b0c57803590610adc82610aa9565b92610aea6040519485610a87565b82845260208383010111610b0c57816000926020809301838601378301015290565b600080fd5b60005b838110610b245750506000910152565b8181015183820152602001610b14565b90602091610b4d81518092818552858086019101610b11565b601f01601f1916010190565b6060600319820112610b0c5760043591602435916044359067ffffffffffffffff8211610b0c57610b8c91600401610ac5565b90565b6040906003190112610b0c576004359060243590565b90816020910312610b0c57516001600160a01b0381168103610b0c5790565b90816020910312610b0c57518015158103610b0c5790565b15610be357565b60405162461bcd60e51b815260206004820152601960248201527f43616c6c6572206d7573742062652072656769737465726564000000000000006044820152606490fd5b610b8c9392606092825260208201528160408201520190610b34565b60ff6002541615610c5157565b60405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606490fd5b90612000835111610d4057610cac838284610d7e565b9283600052600160205260406000209182549260ff84166003811015610d2a57610d1f5760017f55ad1db144341b8105784dba37a7cb1c3088262f75ea638cfb7c8ecfb73751c69460ff1916179055610d176040519283928352604060208401526040830190610b34565b0390a3600190565b505050505050600090565b634e487b7160e01b600052602160045260246000fd5b60405162461bcd60e51b8152602060048201526016602482015275496e76616c696420616e63696c6c617279206461746160501b6044820152606490fd5b9190610da690610d98604051938492602084019687610c28565b03601f198101835282610a87565b51902090565b91929092610dbb818585610d7e565b9384600052600160205260406000209283549360ff85166003811015610d2a57600214610e3a5760027ffd38de8c79c8c3c553ecd154c6b11b67511ec8dee573c8a488a056d7335b34e89583600184015560ff1916179055610e2f6040519384938452606060208501526060840190610b34565b9060408301520390a3565b50505050505050565b15610e4a57565b60405162461bcd60e51b815260206004820152601b60248201527f507269636520686173206e6f74206265656e207265736f6c76656400000000006044820152606490fd5b60405190610e9c82610a6b565b600c82526b18da1a5b1910da185a5b925960a21b6020830152565b610ecd610ec7610b8c938361102d565b93610f1b565b926040519384918351610ee881602096878088019101610b11565b8301610efc82518093878085019101610b11565b01610f0f82518093868085019101610b11565b01038084520182610a87565b801561100f5780816000925b610ff75750610f3582610aa9565b91610f436040519384610a87565b80835281601f19610f5383610aa9565b01916020923684870137905b610f695750505090565b60001990808201908111610fe1578093600a808204809404811184151516610fe15783028103908111610fe15760ff809116603001908111610fe1578551821015610fcb5760f81b6001600160f81b03191660001a9085018301539182610f5f565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b916000198114610fe1576001600a9101920480610f27565b5060405161101c81610a6b565b60018152600360fc1b602082015290565b511561107557610b8c60226040518093600b60fa1b602083015261105b815180926020602186019101610b11565b8101601d60f91b6021820152036002810184520182610a87565b610b8c602160405183611092829551809260208086019101610b11565b8101601d60f91b6020820152036001810184520182610a87565b6000546040516302abf57960e61b81526d21b434b63226b2b9b9b2b733b2b960911b60048201526001600160a01b03916020908290602490829086165afa908115611119576000916110fd57501690565b611115915060203d81116101f3576101e58183610a87565b1690565b6040513d6000823e3d90fdfea26469706673582212205de78227ab04d94a6a1d1db414fa64016a8e671c72597c8e26dd7c7d85f2374164736f6c63430008100033",
+  "devdoc": {
+    "details": "The intended client of this contract is an OptimisticOracle on sidechain that needs price resolution secured by the DVM on mainnet.",
+    "kind": "dev",
+    "methods": {
+      "getChildMessenger()": {
+        "returns": {
+          "_0": "ChildMessengerInterface instance of child messenger deployed on L2."
+        }
+      },
+      "getPrice(bytes32,uint256,bytes)": {
+        "params": {
+          "ancillaryData": "extra data of price request.",
+          "identifier": "Identifier of price request.",
+          "time": "Timestamp of price request"
+        },
+        "returns": {
+          "_0": "int256 Price, or reverts if no resolved price for any reason."
+        }
+      },
+      "hasPrice(bytes32,uint256,bytes)": {
+        "params": {
+          "ancillaryData": "extra data of price request.",
+          "identifier": "Identifier of price request.",
+          "time": "Timestamp of price request"
+        },
+        "returns": {
+          "_0": "True if a price is available, False otherwise. If true, then getPrice will succeed for the request."
+        }
+      },
+      "processMessageFromParent(bytes)": {
+        "details": "Can only be called by the ChildMessenger contract which is designed to communicate only with the ParentMessenger contract on Mainnet. See the SpokeBase for the onlyMessenger modifier.",
+        "params": {
+          "data": "ABI encoded params with which to call `_publishPrice`."
+        }
+      },
+      "requestPrice(bytes32,uint256,bytes)": {
+        "details": "Can be called only by a registered contract that is allowed to make DVM price requests. Will mark this price request as Requested, and therefore able to receive the price resolution data from mainnet.Contract registration enables the DVM to validate that the calling contract correctly pays final fees. Therefore, this function does not directly attempt to pull a final fee from the caller.",
+        "params": {
+          "ancillaryData": "extra data of price request.",
+          "identifier": "Identifier of price request.",
+          "time": "Timestamp of price request."
+        }
+      },
+      "stampAncillaryData(bytes)": {
+        "params": {
+          "ancillaryData": "ancillary data of the price being requested."
+        },
+        "returns": {
+          "_0": "the stamped ancillary bytes."
+        }
+      }
+    },
+    "title": "Cross-chain Oracle L2 Oracle Spoke.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getChildMessenger()": {
+        "notice": "Returns the child messenger address set in the finder."
+      },
+      "getPrice(bytes32,uint256)": {
+        "notice": "Overloaded function to provide backwards compatibility for legacy financial contracts that do not use ancillary data."
+      },
+      "getPrice(bytes32,uint256,bytes)": {
+        "notice": "Returns resolved price for the request. Reverts if price is not available."
+      },
+      "hasPrice(bytes32,uint256)": {
+        "notice": "Overloaded function to provide backwards compatibility for legacy financial contracts that do not use ancillary data."
+      },
+      "hasPrice(bytes32,uint256,bytes)": {
+        "notice": "Returns whether a price has resolved for the request. This method will not revert."
+      },
+      "processMessageFromParent(bytes)": {
+        "notice": "Resolves a price request originating from a message sent by the DVM on the parent chain."
+      },
+      "requestPrice(bytes32,uint256)": {
+        "notice": "Overloaded function to provide backwards compatibility for legacy financial contracts that do not use ancillary data."
+      },
+      "requestPrice(bytes32,uint256,bytes)": {
+        "notice": "This is called to bridge a price request to mainnet. This method will enqueue a new price request or return silently if already requested. Price requests are relayed to mainnet (the \"Parent\" chain) via the ChildMessenger contract."
+      },
+      "stampAncillaryData(bytes)": {
+        "notice": "Generates stamped ancillary data in the format that it would be used in the case of a price request."
+      }
+    },
+    "notice": "This contract is primarily intended to receive messages on the child chain from a parent chain and allow contracts deployed on the child chain to interact with this contract as an Oracle. Moreover, this contract gives child chain contracts the ability to trigger cross-chain price requests to the mainnet DVM. This Spoke knows how to communicate with the parent chain via a \"ChildMessenger\" contract which directly communicates with the \"ParentMessenger\" on mainnet.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 16286,
+        "contract": "contracts/cross-chain-oracle/OracleSpoke.sol:OracleSpoke",
+        "label": "finder",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(FinderInterface)36753"
+      },
+      {
+        "astId": 21870,
+        "contract": "contracts/cross-chain-oracle/OracleSpoke.sol:OracleSpoke",
+        "label": "prices",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_bytes32,t_struct(Price)21865_storage)"
+      },
+      {
+        "astId": 16304,
+        "contract": "contracts/cross-chain-oracle/OracleSpoke.sol:OracleSpoke",
+        "label": "_notEntered",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_bool"
+      }
+    ],
+    "types": {
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(FinderInterface)36753": {
+        "encoding": "inplace",
+        "label": "contract FinderInterface",
+        "numberOfBytes": "20"
+      },
+      "t_enum(RequestState)21859": {
+        "encoding": "inplace",
+        "label": "enum OracleBase.RequestState",
+        "numberOfBytes": "1"
+      },
+      "t_int256": {
+        "encoding": "inplace",
+        "label": "int256",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_bytes32,t_struct(Price)21865_storage)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => struct OracleBase.Price)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Price)21865_storage"
+      },
+      "t_struct(Price)21865_storage": {
+        "encoding": "inplace",
+        "label": "struct OracleBase.Price",
+        "members": [
+          {
+            "astId": 21862,
+            "contract": "contracts/cross-chain-oracle/OracleSpoke.sol:OracleSpoke",
+            "label": "state",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_enum(RequestState)21859"
+          },
+          {
+            "astId": 21864,
+            "contract": "contracts/cross-chain-oracle/OracleSpoke.sol:OracleSpoke",
+            "label": "price",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_int256"
+          }
+        ],
+        "numberOfBytes": "64"
+      }
+    }
+  }
+}

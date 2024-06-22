@@ -1,0 +1,139 @@
+{
+  "address": "0x47CACA50f7A2CeE78Fa9f196C04ba8F4E6B54F73",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_stateSender",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "fxChild",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "sendMessageToChild",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_fxChild",
+          "type": "address"
+        }
+      ],
+      "name": "setFxChild",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stateSender",
+      "outputs": [
+        {
+          "internalType": "contract IStateSender",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x305aa8b2ed80289899e12311430dbf7fa4b9671f0b30cfab7ef0ef85a1e55ca5",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0x47CACA50f7A2CeE78Fa9f196C04ba8F4E6B54F73",
+    "transactionIndex": 46,
+    "gasUsed": "227786",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x9e59b0d59f6adf2ae39fbfdb93af7b455c1977a1ba1c0411fb6a9b62d4856ddf",
+    "transactionHash": "0x305aa8b2ed80289899e12311430dbf7fa4b9671f0b30cfab7ef0ef85a1e55ca5",
+    "logs": [],
+    "blockNumber": 6161290,
+    "cumulativeGasUsed": "8257511",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xF3429b8B8d4BE9c70FBF92DcE69526f502D94017"
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_stateSender\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"fxChild\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_receiver\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"sendMessageToChild\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_fxChild\",\"type\":\"address\"}],\"name\":\"setFxChild\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stateSender\",\"outputs\":[{\"internalType\":\"contract IStateSender\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"title\":\"FxRoot root contract for fx-portal\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/polygon-cross-chain-oracle/test/FxRootMock.sol\":\"FxRootMock\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/polygon-cross-chain-oracle/test/FxRootMock.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface IStateSender {\\r\\n    function syncState(address receiver, bytes calldata data) external;\\r\\n}\\r\\n\\r\\ninterface IFxStateSender {\\r\\n    function sendMessageToChild(address _receiver, bytes calldata _data) external;\\r\\n}\\r\\n\\r\\n/**\\r\\n * @title FxRoot root contract for fx-portal\\r\\n */\\r\\ncontract FxRootMock is IFxStateSender {\\r\\n    IStateSender public stateSender;\\r\\n    address public fxChild;\\r\\n\\r\\n    constructor(address _stateSender) {\\r\\n        stateSender = IStateSender(_stateSender);\\r\\n    }\\r\\n\\r\\n    function setFxChild(address _fxChild) public {\\r\\n        require(fxChild == address(0x0));\\r\\n        fxChild = _fxChild;\\r\\n    }\\r\\n\\r\\n    function sendMessageToChild(address _receiver, bytes calldata _data) public override {\\r\\n        bytes memory data = abi.encode(msg.sender, _receiver, _data);\\r\\n        stateSender.syncState(fxChild, data);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x0d4804717f7c0e539828a487bc4420746146d9de4e1acce054ecac7c803b3845\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60803461007457601f61034638819003918201601f19168301916001600160401b038311848410176100795780849260209460405283398101031261007457516001600160a01b0381169081900361007457600080546001600160a01b0319169190911790556040516102b690816100908239f35b600080fd5b634e487b7160e01b600052604160045260246000fdfe60806040818152600436101561001457600080fd5b600091823560e01c908163450d11f01461024057508063b4720477146100c4578063b86cfdcf146100785763cb10f94c1461004e57600080fd5b34610074578160031936011261007457905490516001600160a01b039091168152602090f35b5080fd5b503461007457602036600319011261007457610092610265565b600154906001600160a01b03908183166100c05716906bffffffffffffffffffffffff60a01b161760015551f35b8480fd5b50903461023d578160031936011261023d576100de610265565b6024803567ffffffffffffffff928382116100c057366023830112156100c0578160040135848111610239573684828501011161023957601f908751908086602096338886015260018060a01b038097168c8601526060808601528260808601520160a08401378760a0828401015260bf8284198095819401168101036080810184520116810195861193818710851761022657868952838854169360015416843b1561022257918793918995936316f1983160e01b865260048601528a88860152815191826044870152865b838110610208575050506064848093601f848985819786010152011681010301925af180156101fe576101dd57838551f35b6101ec57508252388080838551f35b634e487b7160e01b8352604160045282fd5b85513d86823e3d90fd5b8181018301518b8201606401528b97508a965082016101ab565b8880fd5b634e487b7160e01b885260416004528588fd5b8580fd5b80fd5b8390346100745781600319360112610074576001546001600160a01b03168152602090f35b600435906001600160a01b038216820361027b57565b600080fdfea2646970667358221220041be357eda100014dac45d992fb2053cf5fbbd77943dda72fd6c46fed06faca64736f6c63430008100033",
+  "deployedBytecode": "0x60806040818152600436101561001457600080fd5b600091823560e01c908163450d11f01461024057508063b4720477146100c4578063b86cfdcf146100785763cb10f94c1461004e57600080fd5b34610074578160031936011261007457905490516001600160a01b039091168152602090f35b5080fd5b503461007457602036600319011261007457610092610265565b600154906001600160a01b03908183166100c05716906bffffffffffffffffffffffff60a01b161760015551f35b8480fd5b50903461023d578160031936011261023d576100de610265565b6024803567ffffffffffffffff928382116100c057366023830112156100c0578160040135848111610239573684828501011161023957601f908751908086602096338886015260018060a01b038097168c8601526060808601528260808601520160a08401378760a0828401015260bf8284198095819401168101036080810184520116810195861193818710851761022657868952838854169360015416843b1561022257918793918995936316f1983160e01b865260048601528a88860152815191826044870152865b838110610208575050506064848093601f848985819786010152011681010301925af180156101fe576101dd57838551f35b6101ec57508252388080838551f35b634e487b7160e01b8352604160045282fd5b85513d86823e3d90fd5b8181018301518b8201606401528b97508a965082016101ab565b8880fd5b634e487b7160e01b885260416004528588fd5b8580fd5b80fd5b8390346100745781600319360112610074576001546001600160a01b03168152602090f35b600435906001600160a01b038216820361027b57565b600080fdfea2646970667358221220041be357eda100014dac45d992fb2053cf5fbbd77943dda72fd6c46fed06faca64736f6c63430008100033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "title": "FxRoot root contract for fx-portal",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 72970,
+        "contract": "contracts/polygon-cross-chain-oracle/test/FxRootMock.sol:FxRootMock",
+        "label": "stateSender",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(IStateSender)72956"
+      },
+      {
+        "astId": 72972,
+        "contract": "contracts/polygon-cross-chain-oracle/test/FxRootMock.sol:FxRootMock",
+        "label": "fxChild",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IStateSender)72956": {
+        "encoding": "inplace",
+        "label": "contract IStateSender",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}

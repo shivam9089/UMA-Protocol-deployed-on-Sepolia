@@ -1,0 +1,571 @@
+{
+  "address": "0xdDD2eB3bc859457C7F896913D13cF9DaeFfFa7c0",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "bridgeAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "initialResourceIDs",
+          "type": "bytes32[]"
+        },
+        {
+          "internalType": "address[]",
+          "name": "initialContractAddresses",
+          "type": "address[]"
+        },
+        {
+          "internalType": "bytes4[]",
+          "name": "initialDepositFunctionSignatures",
+          "type": "bytes4[]"
+        },
+        {
+          "internalType": "bytes4[]",
+          "name": "initialExecuteFunctionSignatures",
+          "type": "bytes4[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "_bridgeAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "_contractAddressToDepositFunctionSignature",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "_contractAddressToExecuteFunctionSignature",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "_contractAddressToResourceID",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "_contractWhitelist",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint64",
+          "name": "",
+          "type": "uint64"
+        }
+      ],
+      "name": "_depositRecords",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "_destinationChainID",
+          "type": "uint8"
+        },
+        {
+          "internalType": "address",
+          "name": "_depositer",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_resourceID",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_metaData",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "name": "_resourceIDToContractAddress",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "resourceID",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint8",
+          "name": "destinationChainID",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint64",
+          "name": "depositNonce",
+          "type": "uint64"
+        },
+        {
+          "internalType": "address",
+          "name": "depositer",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "resourceID",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "bytes",
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "name": "executeProposal",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64",
+          "name": "depositNonce",
+          "type": "uint64"
+        },
+        {
+          "internalType": "uint8",
+          "name": "destId",
+          "type": "uint8"
+        }
+      ],
+      "name": "getDepositRecord",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint8",
+              "name": "_destinationChainID",
+              "type": "uint8"
+            },
+            {
+              "internalType": "address",
+              "name": "_depositer",
+              "type": "address"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "_resourceID",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "bytes",
+              "name": "_metaData",
+              "type": "bytes"
+            }
+          ],
+          "internalType": "struct GenericHandler.DepositRecord",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "resourceID",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes4",
+          "name": "depositFunctionSig",
+          "type": "bytes4"
+        },
+        {
+          "internalType": "bytes4",
+          "name": "executeFunctionSig",
+          "type": "bytes4"
+        }
+      ],
+      "name": "setResource",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x1044967417844f2bda081e66f0c096807d1f1447917761e2d9ba9d091d2ee3c5",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0xdDD2eB3bc859457C7F896913D13cF9DaeFfFa7c0",
+    "transactionIndex": 12,
+    "gasUsed": "822884",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x0a4e1f67101b32d32a1240a20d287baf31613835ec5a3ab3872bb1aec9ba8918",
+    "transactionHash": "0x1044967417844f2bda081e66f0c096807d1f1447917761e2d9ba9d091d2ee3c5",
+    "logs": [],
+    "blockNumber": 6161142,
+    "cumulativeGasUsed": "1486786",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xdE4802a6C542302A84c319099bEd4dA80360D502",
+    [],
+    [],
+    [],
+    []
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"bridgeAddress\",\"type\":\"address\"},{\"internalType\":\"bytes32[]\",\"name\":\"initialResourceIDs\",\"type\":\"bytes32[]\"},{\"internalType\":\"address[]\",\"name\":\"initialContractAddresses\",\"type\":\"address[]\"},{\"internalType\":\"bytes4[]\",\"name\":\"initialDepositFunctionSignatures\",\"type\":\"bytes4[]\"},{\"internalType\":\"bytes4[]\",\"name\":\"initialExecuteFunctionSignatures\",\"type\":\"bytes4[]\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"_bridgeAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"_contractAddressToDepositFunctionSignature\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"_contractAddressToExecuteFunctionSignature\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"_contractAddressToResourceID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"_contractWhitelist\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"},{\"internalType\":\"uint64\",\"name\":\"\",\"type\":\"uint64\"}],\"name\":\"_depositRecords\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"_destinationChainID\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"_depositer\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_resourceID\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"_metaData\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"_resourceIDToContractAddress\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"resourceID\",\"type\":\"bytes32\"},{\"internalType\":\"uint8\",\"name\":\"destinationChainID\",\"type\":\"uint8\"},{\"internalType\":\"uint64\",\"name\":\"depositNonce\",\"type\":\"uint64\"},{\"internalType\":\"address\",\"name\":\"depositer\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"deposit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"resourceID\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"executeProposal\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"depositNonce\",\"type\":\"uint64\"},{\"internalType\":\"uint8\",\"name\":\"destId\",\"type\":\"uint8\"}],\"name\":\"getDepositRecord\",\"outputs\":[{\"components\":[{\"internalType\":\"uint8\",\"name\":\"_destinationChainID\",\"type\":\"uint8\"},{\"internalType\":\"address\",\"name\":\"_depositer\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_resourceID\",\"type\":\"bytes32\"},{\"internalType\":\"bytes\",\"name\":\"_metaData\",\"type\":\"bytes\"}],\"internalType\":\"struct GenericHandler.DepositRecord\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"resourceID\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"},{\"internalType\":\"bytes4\",\"name\":\"depositFunctionSig\",\"type\":\"bytes4\"},{\"internalType\":\"bytes4\",\"name\":\"executeFunctionSig\",\"type\":\"bytes4\"}],\"name\":\"setResource\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"ChainSafe Systems.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"{initialResourceIDs}, {initialContractAddresses}, {initialDepositFunctionSignatures}, and {initialExecuteFunctionSignatures} must all have the same length. Also, values must be ordered in the way that that index x of any mentioned array must be intended for value x of any other array, e.g. {initialContractAddresses}[0] is the intended address for {initialDepositFunctionSignatures}[0].\",\"params\":{\"bridgeAddress\":\"Contract address of previously deployed Bridge.\",\"initialContractAddresses\":\"These are the addresses the {initialResourceIDs} will point to, and are the contracts that will be called to perform deposit and execution calls.\",\"initialDepositFunctionSignatures\":\"These are the function signatures {initialContractAddresses} will point to, and are the function that will be called when executing {deposit}\",\"initialExecuteFunctionSignatures\":\"These are the function signatures {initialContractAddresses} will point to, and are the function that will be called when executing {executeProposal}\",\"initialResourceIDs\":\"Resource IDs used to identify a specific contract address. These are the Resource IDs this contract will initially support.\"}},\"deposit(bytes32,uint8,uint64,address,bytes)\":{\"params\":{\"depositNonce\":\"This value is generated as an ID by the Bridge contract.\",\"depositer\":\"Address of account making the deposit in the Bridge contract.\",\"destinationChainID\":\"Chain ID deposit is expected to be bridged to.\"}},\"getDepositRecord(uint64,uint8)\":{\"params\":{\"depositNonce\":\"This ID will have been generated by the Bridge contract.\",\"destId\":\"ID of chain deposit will be bridged to.\"},\"returns\":{\"_0\":\"DepositRecord which consists of: - _destinationChainID ChainID deposited tokens are intended to end up on. - _resourceID ResourceID used when {deposit} was executed. - _depositer Address that initially called {deposit} in the Bridge contract. - _metaData Data to be passed to method executed in corresponding {resourceID} contract.\"}},\"setResource(bytes32,address,bytes4,bytes4)\":{\"params\":{\"contractAddress\":\"Address of contract to be called when a deposit is made and a deposited is executed.\",\"depositFunctionSig\":\"Function signature of method to be called in {contractAddress} when a deposit is made.\",\"executeFunctionSig\":\"Function signature of method to be called in {contractAddress} when a deposit is executed.\",\"resourceID\":\"ResourceID to be used when making deposits.\"}}},\"title\":\"Handles generic deposits and deposit executions.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"deposit(bytes32,uint8,uint64,address,bytes)\":{\"notice\":\"A deposit is initiatied by making a deposit in the Bridge contract.{contractAddress} is required to be whitelistedIf {_contractAddressToDepositFunctionSignature}[{contractAddress}] is set, {metaData} is expected to consist of needed function arguments.\"},\"executeProposal(bytes32,bytes)\":{\"notice\":\"Proposal execution should be initiated when a proposal is finalized in the Bridge contract.{contractAddress} is required to be whitelistedIf {_contractAddressToExecuteFunctionSignature}[{contractAddress}] is set, {metaData} is expected to consist of needed function arguments.\"},\"setResource(bytes32,address,bytes4,bytes4)\":{\"notice\":\"First verifies {_resourceIDToContractAddress}[{resourceID}] and {_contractAddressToResourceID}[{contractAddress}] are not already set, then sets {_resourceIDToContractAddress} with {contractAddress}, {_contractAddressToResourceID} with {resourceID}, {_contractAddressToDepositFunctionSignature} with {depositFunctionSig}, {_contractAddressToExecuteFunctionSignature} with {executeFunctionSig}, and {_contractWhitelist} to true for {contractAddress}.\"}},\"notice\":\"This contract is intended to be used with the Bridge contract.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/external/chainbridge/handlers/GenericHandler.sol\":\"GenericHandler\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/external/chainbridge/handlers/GenericHandler.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"../interfaces/IGenericHandler.sol\\\";\\r\\n\\r\\n/**\\r\\n    @title Handles generic deposits and deposit executions.\\r\\n    @author ChainSafe Systems.\\r\\n    @notice This contract is intended to be used with the Bridge contract.\\r\\n */\\r\\ncontract GenericHandler is IGenericHandler {\\r\\n    address public _bridgeAddress;\\r\\n\\r\\n    struct DepositRecord {\\r\\n        uint8 _destinationChainID;\\r\\n        address _depositer;\\r\\n        bytes32 _resourceID;\\r\\n        bytes _metaData;\\r\\n    }\\r\\n\\r\\n    // depositNonce => Deposit Record\\r\\n    mapping(uint8 => mapping(uint64 => DepositRecord)) public _depositRecords;\\r\\n\\r\\n    // resourceID => contract address\\r\\n    mapping(bytes32 => address) public _resourceIDToContractAddress;\\r\\n\\r\\n    // contract address => resourceID\\r\\n    mapping(address => bytes32) public _contractAddressToResourceID;\\r\\n\\r\\n    // contract address => deposit function signature\\r\\n    mapping(address => bytes4) public _contractAddressToDepositFunctionSignature;\\r\\n\\r\\n    // contract address => execute proposal function signature\\r\\n    mapping(address => bytes4) public _contractAddressToExecuteFunctionSignature;\\r\\n\\r\\n    // token contract address => is whitelisted\\r\\n    mapping(address => bool) public _contractWhitelist;\\r\\n\\r\\n    modifier onlyBridge() {\\r\\n        _onlyBridge();\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    function _onlyBridge() private view {\\r\\n        require(msg.sender == _bridgeAddress, \\\"sender must be bridge contract\\\");\\r\\n    }\\r\\n\\r\\n    /**\\r\\n        @param bridgeAddress Contract address of previously deployed Bridge.\\r\\n        @param initialResourceIDs Resource IDs used to identify a specific contract address.\\r\\n        These are the Resource IDs this contract will initially support.\\r\\n        @param initialContractAddresses These are the addresses the {initialResourceIDs} will point to, and are the contracts that will be\\r\\n        called to perform deposit and execution calls.\\r\\n        @param initialDepositFunctionSignatures These are the function signatures {initialContractAddresses} will point to,\\r\\n        and are the function that will be called when executing {deposit}\\r\\n        @param initialExecuteFunctionSignatures These are the function signatures {initialContractAddresses} will point to,\\r\\n        and are the function that will be called when executing {executeProposal}\\r\\n\\r\\n        @dev {initialResourceIDs}, {initialContractAddresses}, {initialDepositFunctionSignatures},\\r\\n        and {initialExecuteFunctionSignatures} must all have the same length. Also,\\r\\n        values must be ordered in the way that that index x of any mentioned array\\r\\n        must be intended for value x of any other array, e.g. {initialContractAddresses}[0]\\r\\n        is the intended address for {initialDepositFunctionSignatures}[0].\\r\\n     */\\r\\n    constructor(\\r\\n        address bridgeAddress,\\r\\n        bytes32[] memory initialResourceIDs,\\r\\n        address[] memory initialContractAddresses,\\r\\n        bytes4[] memory initialDepositFunctionSignatures,\\r\\n        bytes4[] memory initialExecuteFunctionSignatures\\r\\n    ) {\\r\\n        require(\\r\\n            initialResourceIDs.length == initialContractAddresses.length,\\r\\n            \\\"initialResourceIDs and initialContractAddresses len mismatch\\\"\\r\\n        );\\r\\n\\r\\n        require(\\r\\n            initialContractAddresses.length == initialDepositFunctionSignatures.length,\\r\\n            \\\"provided contract addresses and function signatures len mismatch\\\"\\r\\n        );\\r\\n\\r\\n        require(\\r\\n            initialDepositFunctionSignatures.length == initialExecuteFunctionSignatures.length,\\r\\n            \\\"provided deposit and execute function signatures len mismatch\\\"\\r\\n        );\\r\\n\\r\\n        _bridgeAddress = bridgeAddress;\\r\\n\\r\\n        for (uint256 i = 0; i < initialResourceIDs.length; i++) {\\r\\n            _setResource(\\r\\n                initialResourceIDs[i],\\r\\n                initialContractAddresses[i],\\r\\n                initialDepositFunctionSignatures[i],\\r\\n                initialExecuteFunctionSignatures[i]\\r\\n            );\\r\\n        }\\r\\n    }\\r\\n\\r\\n    /**\\r\\n        @param depositNonce This ID will have been generated by the Bridge contract.\\r\\n        @param destId ID of chain deposit will be bridged to.\\r\\n        @return DepositRecord which consists of:\\r\\n        - _destinationChainID ChainID deposited tokens are intended to end up on.\\r\\n        - _resourceID ResourceID used when {deposit} was executed.\\r\\n        - _depositer Address that initially called {deposit} in the Bridge contract.\\r\\n        - _metaData Data to be passed to method executed in corresponding {resourceID} contract.\\r\\n    */\\r\\n    function getDepositRecord(uint64 depositNonce, uint8 destId) external view returns (DepositRecord memory) {\\r\\n        return _depositRecords[destId][depositNonce];\\r\\n    }\\r\\n\\r\\n    /**\\r\\n        @notice First verifies {_resourceIDToContractAddress}[{resourceID}] and\\r\\n        {_contractAddressToResourceID}[{contractAddress}] are not already set,\\r\\n        then sets {_resourceIDToContractAddress} with {contractAddress},\\r\\n        {_contractAddressToResourceID} with {resourceID},\\r\\n        {_contractAddressToDepositFunctionSignature} with {depositFunctionSig},\\r\\n        {_contractAddressToExecuteFunctionSignature} with {executeFunctionSig},\\r\\n        and {_contractWhitelist} to true for {contractAddress}.\\r\\n        @param resourceID ResourceID to be used when making deposits.\\r\\n        @param contractAddress Address of contract to be called when a deposit is made and a deposited is executed.\\r\\n        @param depositFunctionSig Function signature of method to be called in {contractAddress} when a deposit is made.\\r\\n        @param executeFunctionSig Function signature of method to be called in {contractAddress} when a deposit is executed.\\r\\n     */\\r\\n    function setResource(\\r\\n        bytes32 resourceID,\\r\\n        address contractAddress,\\r\\n        bytes4 depositFunctionSig,\\r\\n        bytes4 executeFunctionSig\\r\\n    ) external override onlyBridge {\\r\\n        _setResource(resourceID, contractAddress, depositFunctionSig, executeFunctionSig);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n        @notice A deposit is initiatied by making a deposit in the Bridge contract.\\r\\n        @param destinationChainID Chain ID deposit is expected to be bridged to.\\r\\n        @param depositNonce This value is generated as an ID by the Bridge contract.\\r\\n        @param depositer Address of account making the deposit in the Bridge contract.\\r\\n        @notice {contractAddress} is required to be whitelisted\\r\\n        @notice If {_contractAddressToDepositFunctionSignature}[{contractAddress}] is set,\\r\\n        {metaData} is expected to consist of needed function arguments.\\r\\n     */\\r\\n    function deposit(\\r\\n        bytes32 resourceID,\\r\\n        uint8 destinationChainID,\\r\\n        uint64 depositNonce,\\r\\n        address depositer,\\r\\n        bytes calldata\\r\\n    ) external onlyBridge {\\r\\n        bytes32 lenMetadata;\\r\\n        bytes memory metadata;\\r\\n\\r\\n        assembly {\\r\\n            // Load length of metadata from data + 64\\r\\n            lenMetadata := calldataload(0xC4)\\r\\n            // Load free memory pointer\\r\\n            metadata := mload(0x40)\\r\\n\\r\\n            mstore(0x40, add(0x20, add(metadata, lenMetadata)))\\r\\n\\r\\n            // func sig (4) + destinationChainId (padded to 32) + depositNonce (32) + depositor (32) +\\r\\n            // bytes length (32) + resourceId (32) + length (32) = 0xC4\\r\\n\\r\\n            calldatacopy(\\r\\n                metadata, // copy to metadata\\r\\n                0xC4, // copy from calldata after metadata length declaration @0xC4\\r\\n                sub(calldatasize(), 0xC4) // copy size (calldatasize - (0xC4 + the space metaData takes up))\\r\\n            )\\r\\n        }\\r\\n\\r\\n        address contractAddress = _resourceIDToContractAddress[resourceID];\\r\\n        require(_contractWhitelist[contractAddress], \\\"provided contractAddress is not whitelisted\\\");\\r\\n\\r\\n        bytes4 sig = _contractAddressToDepositFunctionSignature[contractAddress];\\r\\n        if (sig != bytes4(0)) {\\r\\n            bytes memory callData = abi.encodePacked(sig, metadata);\\r\\n            (bool success, ) = contractAddress.call(callData);\\r\\n            require(success, \\\"delegatecall to contractAddress failed\\\");\\r\\n        }\\r\\n\\r\\n        _depositRecords[destinationChainID][depositNonce] = DepositRecord(\\r\\n            destinationChainID,\\r\\n            depositer,\\r\\n            resourceID,\\r\\n            metadata\\r\\n        );\\r\\n    }\\r\\n\\r\\n    /**\\r\\n        @notice Proposal execution should be initiated when a proposal is finalized in the Bridge contract.\\r\\n        @notice {contractAddress} is required to be whitelisted\\r\\n        @notice If {_contractAddressToExecuteFunctionSignature}[{contractAddress}] is set,\\r\\n        {metaData} is expected to consist of needed function arguments.\\r\\n     */\\r\\n    function executeProposal(bytes32 resourceID, bytes calldata) external onlyBridge {\\r\\n        bytes memory metaData;\\r\\n        assembly {\\r\\n            // metadata has variable length\\r\\n            // load free memory pointer to store metadata\\r\\n            metaData := mload(0x40)\\r\\n            // first 32 bytes of variable length in storage refer to length\\r\\n            let lenMeta := calldataload(0x64)\\r\\n            mstore(0x40, add(0x60, add(metaData, lenMeta)))\\r\\n\\r\\n            // in the calldata, metadata is stored @0x64 after accounting for function signature, and 2 previous params\\r\\n            calldatacopy(\\r\\n                metaData, // copy to metaData\\r\\n                0x64, // copy from calldata after data length declaration at 0x64\\r\\n                sub(calldatasize(), 0x64) // copy size (calldatasize - 0x64)\\r\\n            )\\r\\n        }\\r\\n\\r\\n        address contractAddress = _resourceIDToContractAddress[resourceID];\\r\\n        require(_contractWhitelist[contractAddress], \\\"provided contractAddress is not whitelisted\\\");\\r\\n\\r\\n        bytes4 sig = _contractAddressToExecuteFunctionSignature[contractAddress];\\r\\n        if (sig != bytes4(0)) {\\r\\n            bytes memory callData = abi.encodePacked(sig, metaData);\\r\\n            (bool success, ) = contractAddress.call(callData);\\r\\n            require(success, \\\"delegatecall to contractAddress failed\\\");\\r\\n        }\\r\\n    }\\r\\n\\r\\n    function _setResource(\\r\\n        bytes32 resourceID,\\r\\n        address contractAddress,\\r\\n        bytes4 depositFunctionSig,\\r\\n        bytes4 executeFunctionSig\\r\\n    ) internal {\\r\\n        _resourceIDToContractAddress[resourceID] = contractAddress;\\r\\n        _contractAddressToResourceID[contractAddress] = resourceID;\\r\\n        _contractAddressToDepositFunctionSignature[contractAddress] = depositFunctionSig;\\r\\n        _contractAddressToExecuteFunctionSignature[contractAddress] = executeFunctionSig;\\r\\n\\r\\n        _contractWhitelist[contractAddress] = true;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xd39c6045b7bca5a598087480ff7cdf1143105efef0aab19b6230923bb5f3c941\",\"license\":\"AGPL-3.0-only\"},\"contracts/external/chainbridge/interfaces/IGenericHandler.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n    @title Interface for handler that handles generic deposits and deposit executions.\\r\\n    @dev Copied directly from here: https://github.com/ChainSafe/chainbridge-solidity/releases/tag/v1.0.0.\\r\\n    @author ChainSafe Systems.\\r\\n */\\r\\ninterface IGenericHandler {\\r\\n    /**\\r\\n        @notice Correlates {resourceID} with {contractAddress}, {depositFunctionSig}, and {executeFunctionSig}.\\r\\n        @param resourceID ResourceID to be used when making deposits.\\r\\n        @param contractAddress Address of contract to be called when a deposit is made and a deposited is executed.\\r\\n        @param depositFunctionSig Function signature of method to be called in {contractAddress} when a deposit is made.\\r\\n        @param executeFunctionSig Function signature of method to be called in {contractAddress} when a deposit is executed.\\r\\n     */\\r\\n    function setResource(\\r\\n        bytes32 resourceID,\\r\\n        address contractAddress,\\r\\n        bytes4 depositFunctionSig,\\r\\n        bytes4 executeFunctionSig\\r\\n    ) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x7c1dfe34730d8f4f1447ace18d77758590625a60a47fe85d4f192920d11a54b3\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x604060808152346200038357620011db803803806200001e81620003b4565b92833981019160a08284031262000383576200003a82620003f0565b6020838101516001600160401b039492939290858111620003835781019486601f8701121562000383578551916200007c620000768462000405565b620003b4565b9684888581520185600595861b830101918a8311620003835786809101915b838310620003a3575050505084810151828111620003835781019780601f8a0112156200038357885198620000d4620000768b62000405565b9986808c8381520191871b83010191838311620003835787809101915b8383106200038857505050506060820151838111620003835781620001189184016200041d565b92608083015190811162000383576200013292016200041d565b90865188510362000319578751815103620002b15780518251036200024757600080546001600160a01b03199081166001600160a01b039889161782559698909691875b895181101562000238576200018c818b6200048c565b518b6200019a83866200048c565b511690620001a983856200048c565b5190620001b784896200048c565b5192818d5260028b528b8d2081898254161790558c5260038a528a8c205560048952898b209160e09263ffffffff1992841c83825416179055888a528a8c20921c9082541617905560068752878920600160ff198254161790556000198114620002245760010162000176565b634e487b7160e01b89526011600452602489fd5b8751610d239081620004b88239f35b845162461bcd60e51b815260048101859052603d60248201527f70726f7669646564206465706f73697420616e6420657865637574652066756e60448201527f6374696f6e207369676e617475726573206c656e206d69736d617463680000006064820152608490fd5b6084848680519162461bcd60e51b8352600483015260248201527f70726f766964656420636f6e74726163742061646472657373657320616e642060448201527f66756e6374696f6e207369676e617475726573206c656e206d69736d617463686064820152fd5b845162461bcd60e51b815260048101859052603c60248201527f696e697469616c5265736f7572636549447320616e6420696e697469616c436f60448201527f6e7472616374416464726573736573206c656e206d69736d61746368000000006064820152608490fd5b600080fd5b81906200039584620003f0565b8152019101908790620000f1565b82518152918101918791016200009b565b6040519190601f01601f191682016001600160401b03811183821017620003da57604052565b634e487b7160e01b600052604160045260246000fd5b51906001600160a01b03821682036200038357565b6001600160401b038111620003da5760051b60200190565b9080601f8301121562000383578151906200043c620000768362000405565b9182938184526020808095019260051b82010192831162000383578301905b8282106200046a575050505090565b81516001600160e01b031981168103620003835781529083019083016200045b565b8051821015620004a15760209160051b010190565b634e487b7160e01b600052603260045260246000fdfe60806040526004361015610013575b600080fd5b60003560e01c8063318c136e146100ef57806338995da9146100e65780634402027f146100dd5780637f79bea8146100d4578063a5c3a985146100cb578063ba484c09146100c2578063bba8185a146100b9578063c54c2a11146100b0578063cb624463146100a7578063e248cff21461009e5763ec97d3b41461009657600080fd5b61000e6109a4565b5061000e6108c2565b5061000e61087b565b5061000e610846565b5061000e610752565b5061000e610669565b5061000e6105df565b5061000e61059f565b5061000e610504565b5061000e6101d4565b503461000e57600036600319011261000e576000546040516001600160a01b039091168152602090f35b6024359060ff8216820361000e57565b6004359060ff8216820361000e57565b604435906001600160401b038216820361000e57565b602435906001600160401b038216820361000e57565b600435906001600160401b038216820361000e57565b606435906001600160a01b038216820361000e57565b600435906001600160a01b038216820361000e57565b9181601f8401121561000e578235916001600160401b03831161000e576020838186019501011161000e57565b503461000e5760a036600319011261000e576004356101f1610119565b906101fa610139565b9061020361017b565b916084356001600160401b03811161000e576103349461032f9361022e6103179336906004016101a7565b50506102386109ec565b6040519060c435820160200160405260c319360160c48337610274610267826000526002602052604060002090565b546001600160a01b031690565b6001600160a01b03811660009081526006602052604090206102a19061029c905b5460ff1690565b610a45565b6001600160a01b03811660009081526004602052604090206102c5905b5460e01b90565b906001600160e01b03198216610336575b50506102fa6102e36109df565b60ff85168152976001600160a01b03166020890152565b6040870152606086015260ff166000526001602052604060002090565b906001600160401b0316600052602052604060002090565b610bc8565b005b600080916103759382604051610363816103558b602083019687610aa5565b03601f1981018352826103f5565b51925af161036f610acc565b50610b19565b38806102d6565b90600182811c921680156103ac575b602083101461039657565b634e487b7160e01b600052602260045260246000fd5b91607f169161038b565b50634e487b7160e01b600052604160045260246000fd5b608081019081106001600160401b038211176103e857604052565b6103f06103b6565b604052565b90601f801991011681019081106001600160401b038211176103e857604052565b906040519182600082549261042a8461037c565b9081845260019485811690816000146104995750600114610456575b5050610454925003836103f5565b565b9093915060005260209081600020936000915b81831061048157505061045493508201013880610446565b85548884018501529485019487945091830191610469565b91505061045494506020925060ff191682840152151560051b8201013880610446565b60005b8381106104cf5750506000910152565b81810151838201526020016104bf565b906020916104f8815180928185528580860191016104bc565b601f01601f1916010190565b503461000e57604036600319011261000e57610552610521610129565b60ff61052b61014f565b911660005260016020526040600020906001600160401b0316600052602052604060002090565b805461059b610568600260018501549401610416565b604051938360ff869516855260018060a01b039060081c16602085015260408401526080606084015260808301906104df565b0390f35b503461000e57602036600319011261000e576001600160a01b036105c1610191565b166000526006602052602060ff604060002054166040519015158152f35b503461000e57602036600319011261000e576001600160a01b03610601610191565b166000526005602052602060406000205460e01b6040519063ffffffff60e01b168152f35b60a06060610666936020845260ff8151166020850152600180841b03602082015116604085015260408101518285015201519160808082015201906104df565b90565b503461000e5760408060031936011261000e5761059b906106db61068b610165565b60ff610695610119565b60608086516106a3816103cd565b6000815260006020820152600088820152015216600052600160205282600020906001600160401b0316600052602052604060002090565b9061071560028251936106ed856103cd565b805460ff8116865260081c6001600160a01b0316602086015260018101548486015201610416565b60608301525191829182610626565b604435906001600160e01b03198216820361000e57565b606435906001600160e01b03198216820361000e57565b503461000e57608036600319011261000e576024356001600160a01b0381169060043582820361000e576108419161081a610834926107f0610792610724565b61079a61073b565b926107a36109ec565b600098818a52600260205260408a20816bffffffffffffffffffffffff60a01b8254161790558952600360205260408920556004602052604088209060e01c63ffffffff19825416179055565b6001600160a01b03831660009081526005602052604090209060e01c63ffffffff19825416179055565b6001600160a01b0316600090815260066020526040902090565b805460ff19166001179055565b604051f35b503461000e57602036600319011261000e576004356000526002602052602060018060a01b0360406000205416604051908152f35b503461000e57602036600319011261000e576001600160a01b0361089d610191565b166000526004602052602060406000205460e01b6040519063ffffffff60e01b168152f35b503461000e57604036600319011261000e576024356001600160401b03811161000e576108f39036906004016101a7565b50506108fd6109ec565b604051606435810160600160405260631936016064823761092d6102676004356000526002602052604060002090565b9061095061029c6102958460018060a01b03166000526006602052604060002090565b6001600160a01b0382166000908152600560205260409020610971906102be565b906001600160e01b0319821661098357005b61033492600092836103556103638295604051928391602083019687610aa5565b503461000e57602036600319011261000e576001600160a01b036109c6610191565b1660005260036020526020604060002054604051908152f35b60405190610454826103cd565b6000546001600160a01b03163303610a0057565b60405162461bcd60e51b815260206004820152601e60248201527f73656e646572206d7573742062652062726964676520636f6e747261637400006044820152606490fd5b15610a4c57565b60405162461bcd60e51b815260206004820152602b60248201527f70726f766964656420636f6e747261637441646472657373206973206e6f742060448201526a1dda1a5d195b1a5cdd195960aa1b6064820152608490fd5b6004929163ffffffff60e01b168152610ac782518093602086850191016104bc565b010190565b3d15610b14573d906001600160401b038211610b07575b60405191610afb601f8201601f1916602001846103f5565b82523d6000602084013e565b610b0f6103b6565b610ae3565b606090565b15610b2057565b60405162461bcd60e51b815260206004820152602660248201527f64656c656761746563616c6c20746f20636f6e7472616374416464726573732060448201526519985a5b195960d21b6064820152608490fd5b90601f8111610b8257505050565b600091825260208220906020601f850160051c83019410610bbe575b601f0160051c01915b828110610bb357505050565b818155600101610ba7565b9092508290610b9e565b60ff82511681548160ff198216178355602091610100600160a81b038386015160081b16916affffffffffffffffffffff60a81b1617178255606060026040850151936001948582015501930151908151916001600160401b038311610ce0575b610c3d83610c37875461037c565b87610b74565b81601f8411600114610c765750928293918392600094610c6b575b50501b916000199060031b1c1916179055565b015192503880610c58565b919083601f198116610c8d88600052602060002090565b946000905b88838310610cc65750505010610cad575b505050811b019055565b015160001960f88460031b161c19169055388080610ca3565b858701518855909601959485019487935090810190610c92565b610ce86103b6565b610c2956fea26469706673582212204526c66193f48155dc3bb0e7777891eb86504749d0084d5c5bdc47a24baa59b764736f6c63430008100033",
+  "deployedBytecode": "0x60806040526004361015610013575b600080fd5b60003560e01c8063318c136e146100ef57806338995da9146100e65780634402027f146100dd5780637f79bea8146100d4578063a5c3a985146100cb578063ba484c09146100c2578063bba8185a146100b9578063c54c2a11146100b0578063cb624463146100a7578063e248cff21461009e5763ec97d3b41461009657600080fd5b61000e6109a4565b5061000e6108c2565b5061000e61087b565b5061000e610846565b5061000e610752565b5061000e610669565b5061000e6105df565b5061000e61059f565b5061000e610504565b5061000e6101d4565b503461000e57600036600319011261000e576000546040516001600160a01b039091168152602090f35b6024359060ff8216820361000e57565b6004359060ff8216820361000e57565b604435906001600160401b038216820361000e57565b602435906001600160401b038216820361000e57565b600435906001600160401b038216820361000e57565b606435906001600160a01b038216820361000e57565b600435906001600160a01b038216820361000e57565b9181601f8401121561000e578235916001600160401b03831161000e576020838186019501011161000e57565b503461000e5760a036600319011261000e576004356101f1610119565b906101fa610139565b9061020361017b565b916084356001600160401b03811161000e576103349461032f9361022e6103179336906004016101a7565b50506102386109ec565b6040519060c435820160200160405260c319360160c48337610274610267826000526002602052604060002090565b546001600160a01b031690565b6001600160a01b03811660009081526006602052604090206102a19061029c905b5460ff1690565b610a45565b6001600160a01b03811660009081526004602052604090206102c5905b5460e01b90565b906001600160e01b03198216610336575b50506102fa6102e36109df565b60ff85168152976001600160a01b03166020890152565b6040870152606086015260ff166000526001602052604060002090565b906001600160401b0316600052602052604060002090565b610bc8565b005b600080916103759382604051610363816103558b602083019687610aa5565b03601f1981018352826103f5565b51925af161036f610acc565b50610b19565b38806102d6565b90600182811c921680156103ac575b602083101461039657565b634e487b7160e01b600052602260045260246000fd5b91607f169161038b565b50634e487b7160e01b600052604160045260246000fd5b608081019081106001600160401b038211176103e857604052565b6103f06103b6565b604052565b90601f801991011681019081106001600160401b038211176103e857604052565b906040519182600082549261042a8461037c565b9081845260019485811690816000146104995750600114610456575b5050610454925003836103f5565b565b9093915060005260209081600020936000915b81831061048157505061045493508201013880610446565b85548884018501529485019487945091830191610469565b91505061045494506020925060ff191682840152151560051b8201013880610446565b60005b8381106104cf5750506000910152565b81810151838201526020016104bf565b906020916104f8815180928185528580860191016104bc565b601f01601f1916010190565b503461000e57604036600319011261000e57610552610521610129565b60ff61052b61014f565b911660005260016020526040600020906001600160401b0316600052602052604060002090565b805461059b610568600260018501549401610416565b604051938360ff869516855260018060a01b039060081c16602085015260408401526080606084015260808301906104df565b0390f35b503461000e57602036600319011261000e576001600160a01b036105c1610191565b166000526006602052602060ff604060002054166040519015158152f35b503461000e57602036600319011261000e576001600160a01b03610601610191565b166000526005602052602060406000205460e01b6040519063ffffffff60e01b168152f35b60a06060610666936020845260ff8151166020850152600180841b03602082015116604085015260408101518285015201519160808082015201906104df565b90565b503461000e5760408060031936011261000e5761059b906106db61068b610165565b60ff610695610119565b60608086516106a3816103cd565b6000815260006020820152600088820152015216600052600160205282600020906001600160401b0316600052602052604060002090565b9061071560028251936106ed856103cd565b805460ff8116865260081c6001600160a01b0316602086015260018101548486015201610416565b60608301525191829182610626565b604435906001600160e01b03198216820361000e57565b606435906001600160e01b03198216820361000e57565b503461000e57608036600319011261000e576024356001600160a01b0381169060043582820361000e576108419161081a610834926107f0610792610724565b61079a61073b565b926107a36109ec565b600098818a52600260205260408a20816bffffffffffffffffffffffff60a01b8254161790558952600360205260408920556004602052604088209060e01c63ffffffff19825416179055565b6001600160a01b03831660009081526005602052604090209060e01c63ffffffff19825416179055565b6001600160a01b0316600090815260066020526040902090565b805460ff19166001179055565b604051f35b503461000e57602036600319011261000e576004356000526002602052602060018060a01b0360406000205416604051908152f35b503461000e57602036600319011261000e576001600160a01b0361089d610191565b166000526004602052602060406000205460e01b6040519063ffffffff60e01b168152f35b503461000e57604036600319011261000e576024356001600160401b03811161000e576108f39036906004016101a7565b50506108fd6109ec565b604051606435810160600160405260631936016064823761092d6102676004356000526002602052604060002090565b9061095061029c6102958460018060a01b03166000526006602052604060002090565b6001600160a01b0382166000908152600560205260409020610971906102be565b906001600160e01b0319821661098357005b61033492600092836103556103638295604051928391602083019687610aa5565b503461000e57602036600319011261000e576001600160a01b036109c6610191565b1660005260036020526020604060002054604051908152f35b60405190610454826103cd565b6000546001600160a01b03163303610a0057565b60405162461bcd60e51b815260206004820152601e60248201527f73656e646572206d7573742062652062726964676520636f6e747261637400006044820152606490fd5b15610a4c57565b60405162461bcd60e51b815260206004820152602b60248201527f70726f766964656420636f6e747261637441646472657373206973206e6f742060448201526a1dda1a5d195b1a5cdd195960aa1b6064820152608490fd5b6004929163ffffffff60e01b168152610ac782518093602086850191016104bc565b010190565b3d15610b14573d906001600160401b038211610b07575b60405191610afb601f8201601f1916602001846103f5565b82523d6000602084013e565b610b0f6103b6565b610ae3565b606090565b15610b2057565b60405162461bcd60e51b815260206004820152602660248201527f64656c656761746563616c6c20746f20636f6e7472616374416464726573732060448201526519985a5b195960d21b6064820152608490fd5b90601f8111610b8257505050565b600091825260208220906020601f850160051c83019410610bbe575b601f0160051c01915b828110610bb357505050565b818155600101610ba7565b9092508290610b9e565b60ff82511681548160ff198216178355602091610100600160a81b038386015160081b16916affffffffffffffffffffff60a81b1617178255606060026040850151936001948582015501930151908151916001600160401b038311610ce0575b610c3d83610c37875461037c565b87610b74565b81601f8411600114610c765750928293918392600094610c6b575b50501b916000199060031b1c1916179055565b015192503880610c58565b919083601f198116610c8d88600052602060002090565b946000905b88838310610cc65750505010610cad575b505050811b019055565b015160001960f88460031b161c19169055388080610ca3565b858701518855909601959485019487935090810190610c92565b610ce86103b6565b610c2956fea26469706673582212204526c66193f48155dc3bb0e7777891eb86504749d0084d5c5bdc47a24baa59b764736f6c63430008100033",
+  "devdoc": {
+    "author": "ChainSafe Systems.",
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "details": "{initialResourceIDs}, {initialContractAddresses}, {initialDepositFunctionSignatures}, and {initialExecuteFunctionSignatures} must all have the same length. Also, values must be ordered in the way that that index x of any mentioned array must be intended for value x of any other array, e.g. {initialContractAddresses}[0] is the intended address for {initialDepositFunctionSignatures}[0].",
+        "params": {
+          "bridgeAddress": "Contract address of previously deployed Bridge.",
+          "initialContractAddresses": "These are the addresses the {initialResourceIDs} will point to, and are the contracts that will be called to perform deposit and execution calls.",
+          "initialDepositFunctionSignatures": "These are the function signatures {initialContractAddresses} will point to, and are the function that will be called when executing {deposit}",
+          "initialExecuteFunctionSignatures": "These are the function signatures {initialContractAddresses} will point to, and are the function that will be called when executing {executeProposal}",
+          "initialResourceIDs": "Resource IDs used to identify a specific contract address. These are the Resource IDs this contract will initially support."
+        }
+      },
+      "deposit(bytes32,uint8,uint64,address,bytes)": {
+        "params": {
+          "depositNonce": "This value is generated as an ID by the Bridge contract.",
+          "depositer": "Address of account making the deposit in the Bridge contract.",
+          "destinationChainID": "Chain ID deposit is expected to be bridged to."
+        }
+      },
+      "getDepositRecord(uint64,uint8)": {
+        "params": {
+          "depositNonce": "This ID will have been generated by the Bridge contract.",
+          "destId": "ID of chain deposit will be bridged to."
+        },
+        "returns": {
+          "_0": "DepositRecord which consists of: - _destinationChainID ChainID deposited tokens are intended to end up on. - _resourceID ResourceID used when {deposit} was executed. - _depositer Address that initially called {deposit} in the Bridge contract. - _metaData Data to be passed to method executed in corresponding {resourceID} contract."
+        }
+      },
+      "setResource(bytes32,address,bytes4,bytes4)": {
+        "params": {
+          "contractAddress": "Address of contract to be called when a deposit is made and a deposited is executed.",
+          "depositFunctionSig": "Function signature of method to be called in {contractAddress} when a deposit is made.",
+          "executeFunctionSig": "Function signature of method to be called in {contractAddress} when a deposit is executed.",
+          "resourceID": "ResourceID to be used when making deposits."
+        }
+      }
+    },
+    "title": "Handles generic deposits and deposit executions.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "deposit(bytes32,uint8,uint64,address,bytes)": {
+        "notice": "A deposit is initiatied by making a deposit in the Bridge contract.{contractAddress} is required to be whitelistedIf {_contractAddressToDepositFunctionSignature}[{contractAddress}] is set, {metaData} is expected to consist of needed function arguments."
+      },
+      "executeProposal(bytes32,bytes)": {
+        "notice": "Proposal execution should be initiated when a proposal is finalized in the Bridge contract.{contractAddress} is required to be whitelistedIf {_contractAddressToExecuteFunctionSignature}[{contractAddress}] is set, {metaData} is expected to consist of needed function arguments."
+      },
+      "setResource(bytes32,address,bytes4,bytes4)": {
+        "notice": "First verifies {_resourceIDToContractAddress}[{resourceID}] and {_contractAddressToResourceID}[{contractAddress}] are not already set, then sets {_resourceIDToContractAddress} with {contractAddress}, {_contractAddressToResourceID} with {resourceID}, {_contractAddressToDepositFunctionSignature} with {depositFunctionSig}, {_contractAddressToExecuteFunctionSignature} with {executeFunctionSig}, and {_contractWhitelist} to true for {contractAddress}."
+      }
+    },
+    "notice": "This contract is intended to be used with the Bridge contract.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 40445,
+        "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+        "label": "_bridgeAddress",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 40461,
+        "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+        "label": "_depositRecords",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_uint8,t_mapping(t_uint64,t_struct(DepositRecord)40454_storage))"
+      },
+      {
+        "astId": 40465,
+        "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+        "label": "_resourceIDToContractAddress",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_bytes32,t_address)"
+      },
+      {
+        "astId": 40469,
+        "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+        "label": "_contractAddressToResourceID",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_bytes32)"
+      },
+      {
+        "astId": 40473,
+        "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+        "label": "_contractAddressToDepositFunctionSignature",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_mapping(t_address,t_bytes4)"
+      },
+      {
+        "astId": 40477,
+        "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+        "label": "_contractAddressToExecuteFunctionSignature",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_mapping(t_address,t_bytes4)"
+      },
+      {
+        "astId": 40481,
+        "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+        "label": "_contractWhitelist",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_mapping(t_address,t_bool)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_bytes4": {
+        "encoding": "inplace",
+        "label": "bytes4",
+        "numberOfBytes": "4"
+      },
+      "t_bytes_storage": {
+        "encoding": "bytes",
+        "label": "bytes",
+        "numberOfBytes": "32"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_bytes32)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bytes32)",
+        "numberOfBytes": "32",
+        "value": "t_bytes32"
+      },
+      "t_mapping(t_address,t_bytes4)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bytes4)",
+        "numberOfBytes": "32",
+        "value": "t_bytes4"
+      },
+      "t_mapping(t_bytes32,t_address)": {
+        "encoding": "mapping",
+        "key": "t_bytes32",
+        "label": "mapping(bytes32 => address)",
+        "numberOfBytes": "32",
+        "value": "t_address"
+      },
+      "t_mapping(t_uint64,t_struct(DepositRecord)40454_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint64",
+        "label": "mapping(uint64 => struct GenericHandler.DepositRecord)",
+        "numberOfBytes": "32",
+        "value": "t_struct(DepositRecord)40454_storage"
+      },
+      "t_mapping(t_uint8,t_mapping(t_uint64,t_struct(DepositRecord)40454_storage))": {
+        "encoding": "mapping",
+        "key": "t_uint8",
+        "label": "mapping(uint8 => mapping(uint64 => struct GenericHandler.DepositRecord))",
+        "numberOfBytes": "32",
+        "value": "t_mapping(t_uint64,t_struct(DepositRecord)40454_storage)"
+      },
+      "t_struct(DepositRecord)40454_storage": {
+        "encoding": "inplace",
+        "label": "struct GenericHandler.DepositRecord",
+        "members": [
+          {
+            "astId": 40447,
+            "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+            "label": "_destinationChainID",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint8"
+          },
+          {
+            "astId": 40449,
+            "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+            "label": "_depositer",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_address"
+          },
+          {
+            "astId": 40451,
+            "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+            "label": "_resourceID",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_bytes32"
+          },
+          {
+            "astId": 40453,
+            "contract": "contracts/external/chainbridge/handlers/GenericHandler.sol:GenericHandler",
+            "label": "_metaData",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_bytes_storage"
+          }
+        ],
+        "numberOfBytes": "96"
+      },
+      "t_uint64": {
+        "encoding": "inplace",
+        "label": "uint64",
+        "numberOfBytes": "8"
+      },
+      "t_uint8": {
+        "encoding": "inplace",
+        "label": "uint8",
+        "numberOfBytes": "1"
+      }
+    }
+  }
+}

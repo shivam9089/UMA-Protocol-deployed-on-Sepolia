@@ -1,0 +1,159 @@
+{
+  "address": "0xf6537Fd2A447afAC20bABaFBf9113bc60F4fa594",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_systemCaller",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "rootMessageSender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "NewFxMessage",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "fxRoot",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "stateId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "name": "onStateReceive",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_fxRoot",
+          "type": "address"
+        }
+      ],
+      "name": "setFxRoot",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "systemCaller",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xea8a96c21f5d75943311b1e0e67f039b6e2e2fd3b44ac111dd299a0f7ccd8f55",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0xf6537Fd2A447afAC20bABaFBf9113bc60F4fa594",
+    "transactionIndex": 13,
+    "gasUsed": "283135",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x73c156058246060834546589ffa4ca730b88de9473f6009c809b03e30b46e4e2",
+    "transactionHash": "0xea8a96c21f5d75943311b1e0e67f039b6e2e2fd3b44ac111dd299a0f7ccd8f55",
+    "logs": [],
+    "blockNumber": 6161292,
+    "cumulativeGasUsed": "937516",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x2d92211362AdAa7963De4609214282FFf44859F6"
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_systemCaller\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"rootMessageSender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"NewFxMessage\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"fxRoot\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"stateId\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"name\":\"onStateReceive\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_fxRoot\",\"type\":\"address\"}],\"name\":\"setFxRoot\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"systemCaller\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"title\":\"FxChild child contract for state receiver\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/polygon-cross-chain-oracle/test/FxChildMock.sol\":\"FxChildMock\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/polygon-cross-chain-oracle/test/FxChildMock.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n// IStateReceiver represents interface to receive state\\r\\ninterface IStateReceiver {\\r\\n    function onStateReceive(uint256 stateId, bytes calldata data) external;\\r\\n}\\r\\n\\r\\n// IFxMessageProcessor represents interface to process message\\r\\ninterface IFxMessageProcessor {\\r\\n    function processMessageFromRoot(\\r\\n        uint256 stateId,\\r\\n        address rootMessageSender,\\r\\n        bytes calldata data\\r\\n    ) external;\\r\\n}\\r\\n\\r\\n/**\\r\\n * @title FxChild child contract for state receiver\\r\\n */\\r\\ncontract FxChildMock is IStateReceiver {\\r\\n    address public fxRoot;\\r\\n    address public systemCaller;\\r\\n\\r\\n    event NewFxMessage(address rootMessageSender, address receiver, bytes data);\\r\\n\\r\\n    constructor(address _systemCaller) {\\r\\n        systemCaller = _systemCaller;\\r\\n    }\\r\\n\\r\\n    function setFxRoot(address _fxRoot) public {\\r\\n        require(fxRoot == address(0x0));\\r\\n        fxRoot = _fxRoot;\\r\\n    }\\r\\n\\r\\n    function onStateReceive(uint256 stateId, bytes calldata _data) external override {\\r\\n        require(msg.sender == systemCaller, \\\"Invalid sender: must be system super user\\\");\\r\\n        (address rootMessageSender, address receiver, bytes memory data) = abi.decode(_data, (address, address, bytes));\\r\\n        emit NewFxMessage(rootMessageSender, receiver, data);\\r\\n        IFxMessageProcessor(receiver).processMessageFromRoot(stateId, rootMessageSender, data);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x825a644a66108aa06e59d15354ecd4476a89ae1a599fb60ac53024271f4f2fd3\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x60803461007457601f61044638819003918201601f19168301916001600160401b038311848410176100795780849260209460405283398101031261007457516001600160a01b0381169081900361007457600180546001600160a01b0319169190911790556040516103b690816100908239f35b600080fd5b634e487b7160e01b600052604160045260246000fdfe608060408181526004918236101561001657600080fd5b600092833560e01c91826326c53bea146100eb575081634c8ff99e146100a3575080638b9805d41461007b5763de9b771f1461005157600080fd5b34610077578160031936011261007757905490516001600160a01b039091168152602090f35b5080fd5b503461007757816003193601126100775760015490516001600160a01b039091168152602090f35b9050346100e75760203660031901126100e757356001600160a01b03818116918290036100e35783549081166100e3576001600160a01b03191617825551f35b8380fd5b8280fd5b9391503461007757826003193601126100775760249081359467ffffffffffffffff908187116103235736602388011215610323578683013582811161029d578701908482019136831161031f576001546001600160a01b039290831633036102cd575088606091031261029d57610164858901610327565b61017060448a01610327565b986064810135908582116102a15701836043820112156102c95786810135908582116102b757895194601f19603f81601f86011601168601868110888211176102a5578b52828652604483830101116102a15760208285949360448c94018389013786010152169716967ff091cd9cbbaff01426d8183042dff452ef18e6690f19816d5dd114e00761e0e887518281528960208201526060898201528061021a6060820186610340565b0390a1873b1561029d579086978697928761025c989451809981958294639a7c4b7160e01b84528a358b8501528b840152606060448401526064830190610340565b03925af180156102935761026f57848651f35b8311610282575050825238808080848651f35b634e487b7160e01b84526041905282fd5b86513d87823e3d90fd5b8580fd5b8880fd5b634e487b7160e01b8b5260418952898bfd5b634e487b7160e01b8952604187528789fd5b8780fd5b62461bcd60e51b81526020868201526029878201527f496e76616c69642073656e6465723a206d7573742062652073797374656d20736044820152683ab832b9103ab9b2b960b91b6064820152608490fd5b8680fd5b8480fd5b35906001600160a01b038216820361033b57565b600080fd5b919082519283825260005b84811061036c575050826000602080949584010152601f8019910116010190565b60208183018101518483018201520161034b56fea2646970667358221220143e8d83dcef5cb22361d75cd8a6df968300fb9f9afcf5a11f8e48b4b3410c0964736f6c63430008100033",
+  "deployedBytecode": "0x608060408181526004918236101561001657600080fd5b600092833560e01c91826326c53bea146100eb575081634c8ff99e146100a3575080638b9805d41461007b5763de9b771f1461005157600080fd5b34610077578160031936011261007757905490516001600160a01b039091168152602090f35b5080fd5b503461007757816003193601126100775760015490516001600160a01b039091168152602090f35b9050346100e75760203660031901126100e757356001600160a01b03818116918290036100e35783549081166100e3576001600160a01b03191617825551f35b8380fd5b8280fd5b9391503461007757826003193601126100775760249081359467ffffffffffffffff908187116103235736602388011215610323578683013582811161029d578701908482019136831161031f576001546001600160a01b039290831633036102cd575088606091031261029d57610164858901610327565b61017060448a01610327565b986064810135908582116102a15701836043820112156102c95786810135908582116102b757895194601f19603f81601f86011601168601868110888211176102a5578b52828652604483830101116102a15760208285949360448c94018389013786010152169716967ff091cd9cbbaff01426d8183042dff452ef18e6690f19816d5dd114e00761e0e887518281528960208201526060898201528061021a6060820186610340565b0390a1873b1561029d579086978697928761025c989451809981958294639a7c4b7160e01b84528a358b8501528b840152606060448401526064830190610340565b03925af180156102935761026f57848651f35b8311610282575050825238808080848651f35b634e487b7160e01b84526041905282fd5b86513d87823e3d90fd5b8580fd5b8880fd5b634e487b7160e01b8b5260418952898bfd5b634e487b7160e01b8952604187528789fd5b8780fd5b62461bcd60e51b81526020868201526029878201527f496e76616c69642073656e6465723a206d7573742062652073797374656d20736044820152683ab832b9103ab9b2b960b91b6064820152608490fd5b8680fd5b8480fd5b35906001600160a01b038216820361033b57565b600080fd5b919082519283825260005b84811061036c575050826000602080949584010152601f8019910116010190565b60208183018101518483018201520161034b56fea2646970667358221220143e8d83dcef5cb22361d75cd8a6df968300fb9f9afcf5a11f8e48b4b3410c0964736f6c63430008100033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "title": "FxChild child contract for state receiver",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 72856,
+        "contract": "contracts/polygon-cross-chain-oracle/test/FxChildMock.sol:FxChildMock",
+        "label": "fxRoot",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 72858,
+        "contract": "contracts/polygon-cross-chain-oracle/test/FxChildMock.sol:FxChildMock",
+        "label": "systemCaller",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}

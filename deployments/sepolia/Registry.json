@@ -1,0 +1,817 @@
+{
+  "address": "0x9B1949d3368b573d2a4Ae73162A9833318d9bcba",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newMember",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "manager",
+          "type": "address"
+        }
+      ],
+      "name": "AddedSharedMember",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address[]",
+          "name": "parties",
+          "type": "address[]"
+        }
+      ],
+      "name": "NewContractRegistered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "party",
+          "type": "address"
+        }
+      ],
+      "name": "PartyAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "party",
+          "type": "address"
+        }
+      ],
+      "name": "PartyRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oldMember",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "manager",
+          "type": "address"
+        }
+      ],
+      "name": "RemovedSharedMember",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newMember",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "manager",
+          "type": "address"
+        }
+      ],
+      "name": "ResetExclusiveMember",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "newMember",
+          "type": "address"
+        }
+      ],
+      "name": "addMember",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "party",
+          "type": "address"
+        }
+      ],
+      "name": "addPartyToContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "contractMap",
+      "outputs": [
+        {
+          "internalType": "enum Registry.Validity",
+          "name": "valid",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint128",
+          "name": "index",
+          "type": "uint128"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllRegisteredContracts",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMember",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "party",
+          "type": "address"
+        }
+      ],
+      "name": "getRegisteredContracts",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "memberToCheck",
+          "type": "address"
+        }
+      ],
+      "name": "holdsRole",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "isContractRegistered",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "party",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "isPartyMemberOfContract",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "parties",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "registerContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "registeredContracts",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "memberToRemove",
+          "type": "address"
+        }
+      ],
+      "name": "removeMember",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "partyAddress",
+          "type": "address"
+        }
+      ],
+      "name": "removePartyFromContract",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        }
+      ],
+      "name": "renounceMembership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "roleId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "newMember",
+          "type": "address"
+        }
+      ],
+      "name": "resetMember",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x7fa8712b5539245f0462ec5a0a03aadb51eadbce1c08ca28372ab325517945a9",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0x9B1949d3368b573d2a4Ae73162A9833318d9bcba",
+    "transactionIndex": 25,
+    "gasUsed": "1114853",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x53201f6e1f76b7725dd99c74f9696633359437a919df2a36670fae8f9b680a85",
+    "transactionHash": "0x7fa8712b5539245f0462ec5a0a03aadb51eadbce1c08ca28372ab325517945a9",
+    "logs": [],
+    "blockNumber": 6149260,
+    "cumulativeGasUsed": "5149187",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newMember\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"manager\",\"type\":\"address\"}],\"name\":\"AddedSharedMember\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"creator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"parties\",\"type\":\"address[]\"}],\"name\":\"NewContractRegistered\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"party\",\"type\":\"address\"}],\"name\":\"PartyAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"party\",\"type\":\"address\"}],\"name\":\"PartyRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oldMember\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"manager\",\"type\":\"address\"}],\"name\":\"RemovedSharedMember\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newMember\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"manager\",\"type\":\"address\"}],\"name\":\"ResetExclusiveMember\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"newMember\",\"type\":\"address\"}],\"name\":\"addMember\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"party\",\"type\":\"address\"}],\"name\":\"addPartyToContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"contractMap\",\"outputs\":[{\"internalType\":\"enum Registry.Validity\",\"name\":\"valid\",\"type\":\"uint8\"},{\"internalType\":\"uint128\",\"name\":\"index\",\"type\":\"uint128\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllRegisteredContracts\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"}],\"name\":\"getMember\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"party\",\"type\":\"address\"}],\"name\":\"getRegisteredContracts\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"memberToCheck\",\"type\":\"address\"}],\"name\":\"holdsRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"name\":\"isContractRegistered\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"party\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"name\":\"isPartyMemberOfContract\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"parties\",\"type\":\"address[]\"},{\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"}],\"name\":\"registerContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"registeredContracts\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"memberToRemove\",\"type\":\"address\"}],\"name\":\"removeMember\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"partyAddress\",\"type\":\"address\"}],\"name\":\"removePartyFromContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"}],\"name\":\"renounceMembership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"roleId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"newMember\",\"type\":\"address\"}],\"name\":\"resetMember\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Maintains a whitelist of financial contract creators that are allowed to register new financial contracts and stores party members of a financial contract.\",\"kind\":\"dev\",\"methods\":{\"addMember(uint256,address)\":{\"details\":\"Reverts if `roleId` does not represent an initialized, SharedRole or if the caller is not a member of the managing role for `roleId`.\",\"params\":{\"newMember\":\"the new SharedRole member.\",\"roleId\":\"the SharedRole membership to modify.\"}},\"addPartyToContract(address)\":{\"details\":\"msg.sender will be used to determine the contract that this party is added to.\",\"params\":{\"party\":\"new party for the calling contract.\"}},\"getAllRegisteredContracts()\":{\"returns\":{\"_0\":\"all registered contract addresses within the system.\"}},\"getMember(uint256)\":{\"details\":\"Reverts if `roleId` does not represent an initialized, exclusive role.\",\"params\":{\"roleId\":\"the ExclusiveRole membership to check.\"},\"returns\":{\"_0\":\"the address of the current ExclusiveRole member.\"}},\"getRegisteredContracts(address)\":{\"params\":{\"party\":\"address of the party.\"},\"returns\":{\"_0\":\"an array of the contracts the party is registered to.\"}},\"holdsRole(uint256,address)\":{\"details\":\"Reverts if roleId does not correspond to an initialized role.\",\"params\":{\"memberToCheck\":\"the address to check.\",\"roleId\":\"the Role to check.\"},\"returns\":{\"_0\":\"True if `memberToCheck` is a member of `roleId`.\"}},\"isContractRegistered(address)\":{\"details\":\"If it is registered, it is an authorized participant in the UMA system.\",\"params\":{\"contractAddress\":\"address of the financial contract.\"},\"returns\":{\"_0\":\"bool indicates whether the contract is registered.\"}},\"isPartyMemberOfContract(address,address)\":{\"params\":{\"contractAddress\":\"address to check against the party.\",\"party\":\"party to check.\"},\"returns\":{\"_0\":\"bool indicating if the address is a party of the contract.\"}},\"registerContract(address[],address)\":{\"details\":\"Only authorized contract creators can call this method.\",\"params\":{\"contractAddress\":\"address of the contract against which the parties are registered.\",\"parties\":\"array of addresses who become parties in the contract.\"}},\"removeMember(uint256,address)\":{\"details\":\"Reverts if `roleId` does not represent an initialized, SharedRole or if the caller is not a member of the managing role for `roleId`.\",\"params\":{\"memberToRemove\":\"the current SharedRole member to remove.\",\"roleId\":\"the SharedRole membership to modify.\"}},\"removePartyFromContract(address)\":{\"details\":\"msg.sender will be used to determine the contract that this party is removed from.\",\"params\":{\"partyAddress\":\"address to be removed from the calling contract.\"}},\"renounceMembership(uint256)\":{\"details\":\"Reverts if the caller is not a member of the role for `roleId` or if `roleId` is not an initialized, SharedRole.\",\"params\":{\"roleId\":\"the SharedRole membership to modify.\"}},\"resetMember(uint256,address)\":{\"details\":\"Reverts if the caller is not a member of the managing role for `roleId` or if `roleId` is not an initialized, ExclusiveRole.\",\"params\":{\"newMember\":\"the new ExclusiveRole member.\",\"roleId\":\"the ExclusiveRole membership to modify.\"}}},\"title\":\"Registry for financial contracts and approved financial contract creators.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"addMember(uint256,address)\":{\"notice\":\"Adds `newMember` to the shared role, `roleId`.\"},\"addPartyToContract(address)\":{\"notice\":\"Adds a party member to the calling contract.\"},\"constructor\":{\"notice\":\"Construct the Registry contract.\"},\"getAllRegisteredContracts()\":{\"notice\":\"Returns all registered contracts.\"},\"getMember(uint256)\":{\"notice\":\"Gets the current holder of the exclusive role, `roleId`.\"},\"getRegisteredContracts(address)\":{\"notice\":\"Returns a list of all contracts that are associated with a particular party.\"},\"holdsRole(uint256,address)\":{\"notice\":\"Whether `memberToCheck` is a member of roleId.\"},\"isContractRegistered(address)\":{\"notice\":\"Returns whether the contract has been registered with the registry.\"},\"isPartyMemberOfContract(address,address)\":{\"notice\":\"checks if an address is a party of a contract.\"},\"registerContract(address[],address)\":{\"notice\":\"Registers a new financial contract.\"},\"removeMember(uint256,address)\":{\"notice\":\"Removes `memberToRemove` from the shared role, `roleId`.\"},\"removePartyFromContract(address)\":{\"notice\":\"Removes a party member from the calling contract.\"},\"renounceMembership(uint256)\":{\"notice\":\"Removes caller from the role, `roleId`.\"},\"resetMember(uint256,address)\":{\"notice\":\"Changes the exclusive role holder of `roleId` to `newMember`.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/data-verification-mechanism/implementation/Registry.sol\":\"Registry\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"@openzeppelin/contracts/utils/math/SafeMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (utils/math/SafeMath.sol)\\n\\npragma solidity ^0.8.0;\\n\\n// CAUTION\\n// This version of SafeMath should only be used with Solidity 0.8 or later,\\n// because it relies on the compiler's built in overflow checks.\\n\\n/**\\n * @dev Wrappers over Solidity's arithmetic operations.\\n *\\n * NOTE: `SafeMath` is generally not needed starting with Solidity 0.8, since the compiler\\n * now has built in overflow checking.\\n */\\nlibrary SafeMath {\\n    /**\\n     * @dev Returns the addition of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            uint256 c = a + b;\\n            if (c < a) return (false, 0);\\n            return (true, c);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b > a) return (false, 0);\\n            return (true, a - b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the multiplication of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the\\n            // benefit is lost if 'b' is also tested.\\n            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522\\n            if (a == 0) return (true, 0);\\n            uint256 c = a * b;\\n            if (c / a != b) return (false, 0);\\n            return (true, c);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the division of two unsigned integers, with a division by zero flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b == 0) return (false, 0);\\n            return (true, a / b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b == 0) return (false, 0);\\n            return (true, a % b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the addition of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `+` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Addition cannot overflow.\\n     */\\n    function add(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a + b;\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting on\\n     * overflow (when the result is negative).\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a - b;\\n    }\\n\\n    /**\\n     * @dev Returns the multiplication of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `*` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Multiplication cannot overflow.\\n     */\\n    function mul(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a * b;\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers, reverting on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a / b;\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * reverting when dividing by zero.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a % b;\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on\\n     * overflow (when the result is negative).\\n     *\\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\\n     * message unnecessarily. For custom revert reasons use {trySub}.\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\\n        unchecked {\\n            require(b <= a, errorMessage);\\n            return a - b;\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers, reverting with custom message on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator. Note: this function uses a\\n     * `revert` opcode (which leaves remaining gas untouched) while Solidity\\n     * uses an invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\\n        unchecked {\\n            require(b > 0, errorMessage);\\n            return a / b;\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * reverting with custom message when dividing by zero.\\n     *\\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\\n     * message unnecessarily. For custom revert reasons use {tryMod}.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\\n        unchecked {\\n            require(b > 0, errorMessage);\\n            return a % b;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x58b21219689909c4f8339af00813760337f7e2e7f169a97fe49e2896dcfb3b9a\",\"license\":\"MIT\"},\"contracts/common/implementation/MultiRole.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nlibrary Exclusive {\\r\\n    struct RoleMembership {\\r\\n        address member;\\r\\n    }\\r\\n\\r\\n    function isMember(RoleMembership storage roleMembership, address memberToCheck) internal view returns (bool) {\\r\\n        return roleMembership.member == memberToCheck;\\r\\n    }\\r\\n\\r\\n    function resetMember(RoleMembership storage roleMembership, address newMember) internal {\\r\\n        require(newMember != address(0x0), \\\"Cannot set an exclusive role to 0x0\\\");\\r\\n        roleMembership.member = newMember;\\r\\n    }\\r\\n\\r\\n    function getMember(RoleMembership storage roleMembership) internal view returns (address) {\\r\\n        return roleMembership.member;\\r\\n    }\\r\\n\\r\\n    function init(RoleMembership storage roleMembership, address initialMember) internal {\\r\\n        resetMember(roleMembership, initialMember);\\r\\n    }\\r\\n}\\r\\n\\r\\nlibrary Shared {\\r\\n    struct RoleMembership {\\r\\n        mapping(address => bool) members;\\r\\n    }\\r\\n\\r\\n    function isMember(RoleMembership storage roleMembership, address memberToCheck) internal view returns (bool) {\\r\\n        return roleMembership.members[memberToCheck];\\r\\n    }\\r\\n\\r\\n    function addMember(RoleMembership storage roleMembership, address memberToAdd) internal {\\r\\n        require(memberToAdd != address(0x0), \\\"Cannot add 0x0 to a shared role\\\");\\r\\n        roleMembership.members[memberToAdd] = true;\\r\\n    }\\r\\n\\r\\n    function removeMember(RoleMembership storage roleMembership, address memberToRemove) internal {\\r\\n        roleMembership.members[memberToRemove] = false;\\r\\n    }\\r\\n\\r\\n    function init(RoleMembership storage roleMembership, address[] memory initialMembers) internal {\\r\\n        for (uint256 i = 0; i < initialMembers.length; i++) {\\r\\n            addMember(roleMembership, initialMembers[i]);\\r\\n        }\\r\\n    }\\r\\n}\\r\\n\\r\\n/**\\r\\n * @title Base class to manage permissions for the derived class.\\r\\n */\\r\\nabstract contract MultiRole {\\r\\n    using Exclusive for Exclusive.RoleMembership;\\r\\n    using Shared for Shared.RoleMembership;\\r\\n\\r\\n    enum RoleType { Invalid, Exclusive, Shared }\\r\\n\\r\\n    struct Role {\\r\\n        uint256 managingRole;\\r\\n        RoleType roleType;\\r\\n        Exclusive.RoleMembership exclusiveRoleMembership;\\r\\n        Shared.RoleMembership sharedRoleMembership;\\r\\n    }\\r\\n\\r\\n    mapping(uint256 => Role) private roles;\\r\\n\\r\\n    event ResetExclusiveMember(uint256 indexed roleId, address indexed newMember, address indexed manager);\\r\\n    event AddedSharedMember(uint256 indexed roleId, address indexed newMember, address indexed manager);\\r\\n    event RemovedSharedMember(uint256 indexed roleId, address indexed oldMember, address indexed manager);\\r\\n\\r\\n    /**\\r\\n     * @notice Reverts unless the caller is a member of the specified roleId.\\r\\n     */\\r\\n    modifier onlyRoleHolder(uint256 roleId) {\\r\\n        require(holdsRole(roleId, msg.sender), \\\"Sender does not hold required role\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Reverts unless the caller is a member of the manager role for the specified roleId.\\r\\n     */\\r\\n    modifier onlyRoleManager(uint256 roleId) {\\r\\n        require(holdsRole(roles[roleId].managingRole, msg.sender), \\\"Can only be called by a role manager\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Reverts unless the roleId represents an initialized, exclusive roleId.\\r\\n     */\\r\\n    modifier onlyExclusive(uint256 roleId) {\\r\\n        require(roles[roleId].roleType == RoleType.Exclusive, \\\"Must be called on an initialized Exclusive role\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Reverts unless the roleId represents an initialized, shared roleId.\\r\\n     */\\r\\n    modifier onlyShared(uint256 roleId) {\\r\\n        require(roles[roleId].roleType == RoleType.Shared, \\\"Must be called on an initialized Shared role\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Whether `memberToCheck` is a member of roleId.\\r\\n     * @dev Reverts if roleId does not correspond to an initialized role.\\r\\n     * @param roleId the Role to check.\\r\\n     * @param memberToCheck the address to check.\\r\\n     * @return True if `memberToCheck` is a member of `roleId`.\\r\\n     */\\r\\n    function holdsRole(uint256 roleId, address memberToCheck) public view returns (bool) {\\r\\n        Role storage role = roles[roleId];\\r\\n        if (role.roleType == RoleType.Exclusive) {\\r\\n            return role.exclusiveRoleMembership.isMember(memberToCheck);\\r\\n        } else if (role.roleType == RoleType.Shared) {\\r\\n            return role.sharedRoleMembership.isMember(memberToCheck);\\r\\n        }\\r\\n        revert(\\\"Invalid roleId\\\");\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the exclusive role holder of `roleId` to `newMember`.\\r\\n     * @dev Reverts if the caller is not a member of the managing role for `roleId` or if `roleId` is not an\\r\\n     * initialized, ExclusiveRole.\\r\\n     * @param roleId the ExclusiveRole membership to modify.\\r\\n     * @param newMember the new ExclusiveRole member.\\r\\n     */\\r\\n    function resetMember(uint256 roleId, address newMember) public onlyExclusive(roleId) onlyRoleManager(roleId) {\\r\\n        roles[roleId].exclusiveRoleMembership.resetMember(newMember);\\r\\n        emit ResetExclusiveMember(roleId, newMember, msg.sender);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Gets the current holder of the exclusive role, `roleId`.\\r\\n     * @dev Reverts if `roleId` does not represent an initialized, exclusive role.\\r\\n     * @param roleId the ExclusiveRole membership to check.\\r\\n     * @return the address of the current ExclusiveRole member.\\r\\n     */\\r\\n    function getMember(uint256 roleId) public view onlyExclusive(roleId) returns (address) {\\r\\n        return roles[roleId].exclusiveRoleMembership.getMember();\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Adds `newMember` to the shared role, `roleId`.\\r\\n     * @dev Reverts if `roleId` does not represent an initialized, SharedRole or if the caller is not a member of the\\r\\n     * managing role for `roleId`.\\r\\n     * @param roleId the SharedRole membership to modify.\\r\\n     * @param newMember the new SharedRole member.\\r\\n     */\\r\\n    function addMember(uint256 roleId, address newMember) public onlyShared(roleId) onlyRoleManager(roleId) {\\r\\n        roles[roleId].sharedRoleMembership.addMember(newMember);\\r\\n        emit AddedSharedMember(roleId, newMember, msg.sender);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Removes `memberToRemove` from the shared role, `roleId`.\\r\\n     * @dev Reverts if `roleId` does not represent an initialized, SharedRole or if the caller is not a member of the\\r\\n     * managing role for `roleId`.\\r\\n     * @param roleId the SharedRole membership to modify.\\r\\n     * @param memberToRemove the current SharedRole member to remove.\\r\\n     */\\r\\n    function removeMember(uint256 roleId, address memberToRemove) public onlyShared(roleId) onlyRoleManager(roleId) {\\r\\n        roles[roleId].sharedRoleMembership.removeMember(memberToRemove);\\r\\n        emit RemovedSharedMember(roleId, memberToRemove, msg.sender);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Removes caller from the role, `roleId`.\\r\\n     * @dev Reverts if the caller is not a member of the role for `roleId` or if `roleId` is not an\\r\\n     * initialized, SharedRole.\\r\\n     * @param roleId the SharedRole membership to modify.\\r\\n     */\\r\\n    function renounceMembership(uint256 roleId) public onlyShared(roleId) onlyRoleHolder(roleId) {\\r\\n        roles[roleId].sharedRoleMembership.removeMember(msg.sender);\\r\\n        emit RemovedSharedMember(roleId, msg.sender, msg.sender);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Reverts if `roleId` is not initialized.\\r\\n     */\\r\\n    modifier onlyValidRole(uint256 roleId) {\\r\\n        require(roles[roleId].roleType != RoleType.Invalid, \\\"Attempted to use an invalid roleId\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Reverts if `roleId` is initialized.\\r\\n     */\\r\\n    modifier onlyInvalidRole(uint256 roleId) {\\r\\n        require(roles[roleId].roleType == RoleType.Invalid, \\\"Cannot use a pre-existing role\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Internal method to initialize a shared role, `roleId`, which will be managed by `managingRoleId`.\\r\\n     * `initialMembers` will be immediately added to the role.\\r\\n     * @dev Should be called by derived contracts, usually at construction time. Will revert if the role is already\\r\\n     * initialized.\\r\\n     */\\r\\n    function _createSharedRole(\\r\\n        uint256 roleId,\\r\\n        uint256 managingRoleId,\\r\\n        address[] memory initialMembers\\r\\n    ) internal onlyInvalidRole(roleId) {\\r\\n        Role storage role = roles[roleId];\\r\\n        role.roleType = RoleType.Shared;\\r\\n        role.managingRole = managingRoleId;\\r\\n        role.sharedRoleMembership.init(initialMembers);\\r\\n        require(\\r\\n            roles[managingRoleId].roleType != RoleType.Invalid,\\r\\n            \\\"Attempted to use an invalid role to manage a shared role\\\"\\r\\n        );\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Internal method to initialize an exclusive role, `roleId`, which will be managed by `managingRoleId`.\\r\\n     * `initialMember` will be immediately added to the role.\\r\\n     * @dev Should be called by derived contracts, usually at construction time. Will revert if the role is already\\r\\n     * initialized.\\r\\n     */\\r\\n    function _createExclusiveRole(\\r\\n        uint256 roleId,\\r\\n        uint256 managingRoleId,\\r\\n        address initialMember\\r\\n    ) internal onlyInvalidRole(roleId) {\\r\\n        Role storage role = roles[roleId];\\r\\n        role.roleType = RoleType.Exclusive;\\r\\n        role.managingRole = managingRoleId;\\r\\n        role.exclusiveRoleMembership.init(initialMember);\\r\\n        require(\\r\\n            roles[managingRoleId].roleType != RoleType.Invalid,\\r\\n            \\\"Attempted to use an invalid role to manage an exclusive role\\\"\\r\\n        );\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xbec581749786ec3a2b56d74331914d03fd7a0bf0e853c6f8a3e778b39417606a\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/implementation/Registry.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"../../common/implementation/MultiRole.sol\\\";\\r\\nimport \\\"../interfaces/RegistryInterface.sol\\\";\\r\\n\\r\\nimport \\\"@openzeppelin/contracts/utils/math/SafeMath.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title Registry for financial contracts and approved financial contract creators.\\r\\n * @dev Maintains a whitelist of financial contract creators that are allowed\\r\\n * to register new financial contracts and stores party members of a financial contract.\\r\\n */\\r\\ncontract Registry is RegistryInterface, MultiRole {\\r\\n    using SafeMath for uint256;\\r\\n\\r\\n    /****************************************\\r\\n     *    INTERNAL VARIABLES AND STORAGE    *\\r\\n     ****************************************/\\r\\n\\r\\n    enum Roles {\\r\\n        Owner, // The owner manages the set of ContractCreators.\\r\\n        ContractCreator // Can register financial contracts.\\r\\n    }\\r\\n\\r\\n    // This enum is required because a `WasValid` state is required\\r\\n    // to ensure that financial contracts cannot be re-registered.\\r\\n    enum Validity { Invalid, Valid }\\r\\n\\r\\n    // Local information about a contract.\\r\\n    struct FinancialContract {\\r\\n        Validity valid;\\r\\n        uint128 index;\\r\\n    }\\r\\n\\r\\n    struct Party {\\r\\n        address[] contracts; // Each financial contract address is stored in this array.\\r\\n        // The address of each financial contract is mapped to its index for constant time look up and deletion.\\r\\n        mapping(address => uint256) contractIndex;\\r\\n    }\\r\\n\\r\\n    // Array of all contracts that are approved to use the UMA Oracle.\\r\\n    address[] public registeredContracts;\\r\\n\\r\\n    // Map of financial contract contracts to the associated FinancialContract struct.\\r\\n    mapping(address => FinancialContract) public contractMap;\\r\\n\\r\\n    // Map each party member to their their associated Party struct.\\r\\n    mapping(address => Party) private partyMap;\\r\\n\\r\\n    /****************************************\\r\\n     *                EVENTS                *\\r\\n     ****************************************/\\r\\n\\r\\n    event NewContractRegistered(address indexed contractAddress, address indexed creator, address[] parties);\\r\\n    event PartyAdded(address indexed contractAddress, address indexed party);\\r\\n    event PartyRemoved(address indexed contractAddress, address indexed party);\\r\\n\\r\\n    /**\\r\\n     * @notice Construct the Registry contract.\\r\\n     */\\r\\n    constructor() {\\r\\n        _createExclusiveRole(uint256(Roles.Owner), uint256(Roles.Owner), msg.sender);\\r\\n        // Start with no contract creators registered.\\r\\n        _createSharedRole(uint256(Roles.ContractCreator), uint256(Roles.Owner), new address[](0));\\r\\n    }\\r\\n\\r\\n    /****************************************\\r\\n     *        REGISTRATION FUNCTIONS        *\\r\\n     ****************************************/\\r\\n\\r\\n    /**\\r\\n     * @notice Registers a new financial contract.\\r\\n     * @dev Only authorized contract creators can call this method.\\r\\n     * @param parties array of addresses who become parties in the contract.\\r\\n     * @param contractAddress address of the contract against which the parties are registered.\\r\\n     */\\r\\n    function registerContract(address[] calldata parties, address contractAddress)\\r\\n        external\\r\\n        override\\r\\n        onlyRoleHolder(uint256(Roles.ContractCreator))\\r\\n    {\\r\\n        FinancialContract storage financialContract = contractMap[contractAddress];\\r\\n        require(contractMap[contractAddress].valid == Validity.Invalid, \\\"Can only register once\\\");\\r\\n\\r\\n        // Store contract address as a registered contract.\\r\\n        registeredContracts.push(contractAddress);\\r\\n\\r\\n        // No length check necessary because we should never hit (2^127 - 1) contracts.\\r\\n        financialContract.index = uint128(registeredContracts.length.sub(1));\\r\\n\\r\\n        // For all parties in the array add them to the contract's parties.\\r\\n        financialContract.valid = Validity.Valid;\\r\\n        for (uint256 i = 0; i < parties.length; i = i.add(1)) {\\r\\n            _addPartyToContract(parties[i], contractAddress);\\r\\n        }\\r\\n\\r\\n        emit NewContractRegistered(contractAddress, msg.sender, parties);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Adds a party member to the calling contract.\\r\\n     * @dev msg.sender will be used to determine the contract that this party is added to.\\r\\n     * @param party new party for the calling contract.\\r\\n     */\\r\\n    function addPartyToContract(address party) external override {\\r\\n        address contractAddress = msg.sender;\\r\\n        require(contractMap[contractAddress].valid == Validity.Valid, \\\"Can only add to valid contract\\\");\\r\\n\\r\\n        _addPartyToContract(party, contractAddress);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Removes a party member from the calling contract.\\r\\n     * @dev msg.sender will be used to determine the contract that this party is removed from.\\r\\n     * @param partyAddress address to be removed from the calling contract.\\r\\n     */\\r\\n    function removePartyFromContract(address partyAddress) external override {\\r\\n        address contractAddress = msg.sender;\\r\\n        Party storage party = partyMap[partyAddress];\\r\\n        uint256 numberOfContracts = party.contracts.length;\\r\\n\\r\\n        require(numberOfContracts != 0, \\\"Party has no contracts\\\");\\r\\n        require(contractMap[contractAddress].valid == Validity.Valid, \\\"Remove only from valid contract\\\");\\r\\n        require(isPartyMemberOfContract(partyAddress, contractAddress), \\\"Can only remove existing party\\\");\\r\\n\\r\\n        // Index of the current location of the contract to remove.\\r\\n        uint256 deleteIndex = party.contractIndex[contractAddress];\\r\\n\\r\\n        // Store the last contract's address to update the lookup map.\\r\\n        address lastContractAddress = party.contracts[numberOfContracts - 1];\\r\\n\\r\\n        // Swap the contract to be removed with the last contract.\\r\\n        party.contracts[deleteIndex] = lastContractAddress;\\r\\n\\r\\n        // Update the lookup index with the new location.\\r\\n        party.contractIndex[lastContractAddress] = deleteIndex;\\r\\n\\r\\n        // Pop the last contract from the array and update the lookup map.\\r\\n        party.contracts.pop();\\r\\n        delete party.contractIndex[contractAddress];\\r\\n\\r\\n        emit PartyRemoved(contractAddress, partyAddress);\\r\\n    }\\r\\n\\r\\n    /****************************************\\r\\n     *         REGISTRY STATE GETTERS       *\\r\\n     ****************************************/\\r\\n\\r\\n    /**\\r\\n     * @notice Returns whether the contract has been registered with the registry.\\r\\n     * @dev If it is registered, it is an authorized participant in the UMA system.\\r\\n     * @param contractAddress address of the financial contract.\\r\\n     * @return bool indicates whether the contract is registered.\\r\\n     */\\r\\n    function isContractRegistered(address contractAddress) external view override returns (bool) {\\r\\n        return contractMap[contractAddress].valid == Validity.Valid;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns a list of all contracts that are associated with a particular party.\\r\\n     * @param party address of the party.\\r\\n     * @return an array of the contracts the party is registered to.\\r\\n     */\\r\\n    function getRegisteredContracts(address party) external view override returns (address[] memory) {\\r\\n        return partyMap[party].contracts;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns all registered contracts.\\r\\n     * @return all registered contract addresses within the system.\\r\\n     */\\r\\n    function getAllRegisteredContracts() external view override returns (address[] memory) {\\r\\n        return registeredContracts;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice checks if an address is a party of a contract.\\r\\n     * @param party party to check.\\r\\n     * @param contractAddress address to check against the party.\\r\\n     * @return bool indicating if the address is a party of the contract.\\r\\n     */\\r\\n    function isPartyMemberOfContract(address party, address contractAddress) public view override returns (bool) {\\r\\n        uint256 index = partyMap[party].contractIndex[contractAddress];\\r\\n        return partyMap[party].contracts.length > index && partyMap[party].contracts[index] == contractAddress;\\r\\n    }\\r\\n\\r\\n    /****************************************\\r\\n     *           INTERNAL FUNCTIONS         *\\r\\n     ****************************************/\\r\\n\\r\\n    function _addPartyToContract(address party, address contractAddress) internal {\\r\\n        require(!isPartyMemberOfContract(party, contractAddress), \\\"Can only register a party once\\\");\\r\\n        uint256 contractIndex = partyMap[party].contracts.length;\\r\\n        partyMap[party].contracts.push(contractAddress);\\r\\n        partyMap[party].contractIndex[contractAddress] = contractIndex;\\r\\n\\r\\n        emit PartyAdded(contractAddress, party);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x0f2261642d37630d06cbb588571a3f2de39f5eef787e38d81833cf4d45bb6e10\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/RegistryInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Interface for a registry of contracts and contract creators.\\r\\n */\\r\\ninterface RegistryInterface {\\r\\n    /**\\r\\n     * @notice Registers a new contract.\\r\\n     * @dev Only authorized contract creators can call this method.\\r\\n     * @param parties an array of addresses who become parties in the contract.\\r\\n     * @param contractAddress defines the address of the deployed contract.\\r\\n     */\\r\\n    function registerContract(address[] calldata parties, address contractAddress) external;\\r\\n\\r\\n    /**\\r\\n     * @notice Returns whether the contract has been registered with the registry.\\r\\n     * @dev If it is registered, it is an authorized participant in the UMA system.\\r\\n     * @param contractAddress address of the contract.\\r\\n     * @return bool indicates whether the contract is registered.\\r\\n     */\\r\\n    function isContractRegistered(address contractAddress) external view returns (bool);\\r\\n\\r\\n    /**\\r\\n     * @notice Returns a list of all contracts that are associated with a particular party.\\r\\n     * @param party address of the party.\\r\\n     * @return an array of the contracts the party is registered to.\\r\\n     */\\r\\n    function getRegisteredContracts(address party) external view returns (address[] memory);\\r\\n\\r\\n    /**\\r\\n     * @notice Returns all registered contracts.\\r\\n     * @return all registered contract addresses within the system.\\r\\n     */\\r\\n    function getAllRegisteredContracts() external view returns (address[] memory);\\r\\n\\r\\n    /**\\r\\n     * @notice Adds a party to the calling contract.\\r\\n     * @dev msg.sender must be the contract to which the party member is added.\\r\\n     * @param party address to be added to the contract.\\r\\n     */\\r\\n    function addPartyToContract(address party) external;\\r\\n\\r\\n    /**\\r\\n     * @notice Removes a party member to the calling contract.\\r\\n     * @dev msg.sender must be the contract to which the party member is added.\\r\\n     * @param party address to be removed from the contract.\\r\\n     */\\r\\n    function removePartyFromContract(address party) external;\\r\\n\\r\\n    /**\\r\\n     * @notice checks if an address is a party in a contract.\\r\\n     * @param party party to check.\\r\\n     * @param contractAddress address to check against the party.\\r\\n     * @return bool indicating if the address is a party of the contract.\\r\\n     */\\r\\n    function isPartyMemberOfContract(address party, address contractAddress) external view returns (bool);\\r\\n}\\r\\n\",\"keccak256\":\"0xea7f5a5abd024662fa3a79a23823710b36ce5b9e72381716bdd4697d4b9cb403\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x604060808152346200032f576000808052602090808252600160ff8185842001541660038110156200031b5762000037901562000334565b81805281835283822060028282019160ff19928484825416179055848155013315620002cb5780546001600160a01b0319163317905582805282845284832082015460ff166003811015620002b757156200025e5784518481016001600160401b038111828210176200024a57865283815282845283855260ff8387862001541660038110156200023657620000ce901562000334565b8284528385528584208084018054841660021790558481556003019084845b62000191575b50505082805250818352838220015460ff169060038210156200017d575015620001265750516111a09081620003828239f35b608491519062461bcd60e51b82526004820152603860248201526000805160206200152283398151915260448201527f20746f206d616e61676520612073686172656420726f6c6500000000000000006064820152fd5b634e487b7160e01b81526021600452602490fd5b81518110156200023057600581901b82018701516001600160a01b03168015620001ec57865282875287862080548516861790556000198114620001d857840184620000ed565b634e487b7160e01b86526011600452602486fd5b885162461bcd60e51b815260048101899052601f60248201527f43616e6e6f74206164642030783020746f20612073686172656420726f6c65006044820152606490fd5b620000f3565b634e487b7160e01b85526021600452602485fd5b634e487b7160e01b85526041600452602485fd5b845162461bcd60e51b815260048101859052603c60248201526000805160206200152283398151915260448201527f20746f206d616e61676520616e206578636c757369766520726f6c65000000006064820152608490fd5b634e487b7160e01b84526021600452602484fd5b855162461bcd60e51b815260048101869052602360248201527f43616e6e6f742073657420616e206578636c757369766520726f6c6520746f2060448201526203078360ec1b6064820152608490fd5b634e487b7160e01b83526021600452602483fd5b600080fd5b156200033c57565b60405162461bcd60e51b815260206004820152601e60248201527f43616e6e6f74207573652061207072652d6578697374696e6720726f6c6500006044820152606490fdfe608060408181526004918236101561001657600080fd5b600092833560e01c9182631676ddc314610c0c57508163167cdde714610b7f578163188c6ff814610acc578163303118d0146108af5781633c0af3441461085057816366c8c250146105df5781636be7658b1461050b57816374d0a676146104105781637a3edab0146103e25781637cdc1cb9146103b1578163aaa14ca3146102fd578163ab3545e51461028b578163d97c05be14610170578163e33c4cd214610115575063f9f6b49b146100ca57600080fd5b346101115760203660031901126101115760209160019060ff9083906001600160a01b036100f6610cf3565b168152600286522054169161010a83610d24565b5191148152f35b5080fd5b90503461016c57602036600319011261016c573560015481101561016c5760016020935260018060a01b03907fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf60154169051908152f35b8280fd5b9190503461016c578060031936011261016c5781359061018e610d0e565b8285528460205260ff600183872001541660038110156102785760016101b49114610e9b565b828552846020526101d16101cc838720543390610e5d565b610eff565b828552846020526002828620019060018060a01b0316938415610229575080546001600160a01b03191684179055519133917f3b855c56b409b671c7112789d022675eb639d0bcb8896f1b6197c132f799e7468585a4f35b608490602084519162461bcd60e51b8352820152602360248201527f43616e6e6f742073657420616e206578636c757369766520726f6c6520746f2060448201526203078360ec1b6064820152fd5b634e487b7160e01b865260218552602486fd5b8284346102fa5760203660031901126102fa5782358082528160205260ff600184842001541660038110156102e7576020945060016102ca9114610e9b565b81528083528190206002015490516001600160a01b039091168152f35b634e487b7160e01b835260218552602483fd5b80fd5b9190503461016c57602036600319011261016c578135918284528360205260ff600183862001541690600382101561039e5750600261033c9114610f57565b61034e6103493384610e5d565b610fb8565b8183526020838152818420336000818152600390920190925260409020805460ff1916905590519181907feb3e33034c392e69263b04ec0fa376dc12784a41b6676c7f31b936cbc0fbb5af8585a4f35b634e487b7160e01b855260219052602484fd5b8284346102fa57816003193601126102fa57506103d96020926103d2610d0e565b9035610e5d565b90519015158152f35b5050346101115780600319360112610111576020906103d9610402610cf3565b61040a610d0e565b9061100f565b9190503461016c578060031936011261016c5781359061042e610d0e565b8285528460205260ff600183872001541660038110156102785760026104549114610f57565b8285528460205261046c6101cc838720543390610e5d565b828552846020526003828620019060018060a01b03169384156104c85750838552602052808420805460ff19166001179055519133917f63502af7324ff6db91ab38f8236a648727d9385ea6c782073dd4882d8a61a48f8585a4f35b606490602084519162461bcd60e51b8352820152601f60248201527f43616e6e6f74206164642030783020746f20612073686172656420726f6c65006044820152fd5b90503461016c578160031936011261016c57803591610528610d0e565b918385528460205260ff60018387200154169060038210156105cc575060026105519114610f57565b828452836020526105696101cc828620543390610e5d565b82845283602052610598826003838720019060018060a01b0316600052602052604060002060ff198154169055565b519133916001600160a01b0316907feb3e33034c392e69263b04ec0fa376dc12784a41b6676c7f31b936cbc0fbb5af8585a4f35b634e487b7160e01b865260219052602485fd5b90503461016c578160031936011261016c5780359067ffffffffffffffff9081831161084c573660238401121561084c578281013591821161084c57602490600592368382861b8701011161084857610636610d0e565b9161064361034933610d72565b60018060a01b0380841695868a5260209260028452898b209560ff8b8d20541661066c81610d24565b61080d576001968754600160401b8110156107fb57888101808a558110156107e957888e527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf60180546001600160a01b0319168b179055875460001981019081116107d75797809796959870ffffffffffffffffffffffffffffffff0083549160081b169070ffffffffffffffffffffffffffffffffff1916171790558b5b85811061078d5750505050875194828287018388525288860197019389905b83821061076257505050505050807f1b0bc775e5162f873356bcc1733155bd2eb9509f1774770f54b4f938287bcf039133940390a351f35b9091929394978835908282168092036107895790815283019783019493929184019061072a565b8b80fd5b88818599969798991b8c01013585811681036107d357826107ad91611078565b8781018091116107c157969594939661070b565b634e487b7160e01b8d5260118352888dfd5b8d80fd5b634e487b7160e01b8e5260118452898efd5b634e487b7160e01b8e5260328452898efd5b634e487b7160e01b8e5260418452898efd5b8a5162461bcd60e51b81528083018690526016818a01527543616e206f6e6c79207265676973746572206f6e636560501b6044820152606490fd5b8680fd5b8480fd5b505034610111576020366003190112610111579081906001600160a01b03610876610cf3565b168152600260205220546fffffffffffffffffffffffffffffffff60ff8216918351926108a281610d24565b835260081c166020820152f35b9190503461016c5760209182600319360112610ac8576108cd610cf3565b6001600160a01b038082168087526003865284872080549196939091908115610a8c5733895260028552600160ff888b20541661090981610d24565b03610a495761091990339061100f565b15610a0557600182019433895285855286892054600019928381019081116109f257610946869186610d44565b90549060031b1c166109808161095c8488610d44565b90919082549060031b9160018060a01b039283811b93849216901b16911916179055565b8a52868652878a205582549081156109df5750019161099f8383610d44565b909182549160031b1b19169055553385525282818120555190337f8e0a870c3ff65bd1f2852048eb92d693833891a8c0ab0827347177544464c5708484a3f35b634e487b7160e01b8a5260319052602489fd5b634e487b7160e01b8b526011835260248bfd5b5050925162461bcd60e51b815291820152601e60248201527f43616e206f6e6c792072656d6f7665206578697374696e672070617274790000604482015260649150fd5b865162461bcd60e51b8152808701869052601f60248201527f52656d6f7665206f6e6c792066726f6d2076616c696420636f6e7472616374006044820152606490fd5b865162461bcd60e51b81528087018690526016602482015275506172747920686173206e6f20636f6e74726163747360501b6044820152606490fd5b8380fd5b838334610111576020908160031936011261016c576001600160a01b039182610af3610cf3565b16845260038152818420908251809482845492838152019387528287209287915b838310610b66575050505050829003601f01601f191682019267ffffffffffffffff841183851017610b535750829182610b4f925282610caf565b0390f35b634e487b7160e01b815260418552602490fd5b8454811686529481019460019485019490920191610b14565b90503461016c57602036600319011261016c57610b9a610cf3565b903384526002602052600160ff8486205416610bb581610d24565b03610bc95750610bc6903390611078565b51f35b606490602084519162461bcd60e51b8352820152601e60248201527f43616e206f6e6c792061646420746f2076616c696420636f6e747261637400006044820152fd5b8490843461016c578260031936011261016c576001805490818452602090818501928187527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf69287905b828210610c91575050505050829003601f01601f191682019267ffffffffffffffff841183851017610b535750829182610b4f925282610caf565b84546001600160a01b03168652948501949383019390830190610c56565b6020908160408183019282815285518094520193019160005b828110610cd6575050505090565b83516001600160a01b031685529381019392810192600101610cc8565b600435906001600160a01b0382168203610d0957565b600080fd5b602435906001600160a01b0382168203610d0957565b60021115610d2e57565b634e487b7160e01b600052602160045260246000fd5b8054821015610d5c5760005260206000200190600090565b634e487b7160e01b600052603260045260246000fd5b6001600090815260208190527fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7e547fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7d919060ff166003811015610e495760018103610dee575050600201546001600160a01b0391821691161490565b600214610e2b5760405162461bcd60e51b815260206004820152600e60248201526d125b9d985b1a59081c9bdb19525960921b6044820152606490fd5b6001600160a01b039092168252600301602052604090205460ff1690565b634e487b7160e01b82526021600452602482fd5b600090815280602052604081209060ff6001830154166003811015610e495760018103610dee575050600201546001600160a01b0391821691161490565b15610ea257565b60405162461bcd60e51b815260206004820152602f60248201527f4d7573742062652063616c6c6564206f6e20616e20696e697469616c697a656460448201526e204578636c757369766520726f6c6560881b6064820152608490fd5b15610f0657565b60405162461bcd60e51b8152602060048201526024808201527f43616e206f6e6c792062652063616c6c6564206279206120726f6c65206d616e60448201526330b3b2b960e11b6064820152608490fd5b15610f5e57565b60405162461bcd60e51b815260206004820152602c60248201527f4d7573742062652063616c6c6564206f6e20616e20696e697469616c697a656460448201526b2053686172656420726f6c6560a01b6064820152608490fd5b15610fbf57565b60405162461bcd60e51b815260206004820152602260248201527f53656e64657220646f6573206e6f7420686f6c6420726571756972656420726f6044820152616c6560f01b6064820152608490fd5b6001600160a01b03908116600081815260036020818152604080842096861680855260018801835290842054948452919052935482109392919084611056575b5050505090565b6110669293945060409020610d44565b90549060031b1c16143880808061104f565b90611083818361100f565b611125576001600160a01b03918216600081815260036020526040812080549294919291908290600160401b821015611111578561095c836110ee9360017f4b920dd33e12e37712086438f2afcecb921cefe83b717ca990222f53d7e2845499989796018155610d44565b8583526003602052600160408420019416938483526020526040822055604051a3565b634e487b7160e01b85526041600452602485fd5b60405162461bcd60e51b815260206004820152601e60248201527f43616e206f6e6c792072656769737465722061207061727479206f6e636500006044820152606490fdfea2646970667358221220ff6029a1d95f664072261a1997b19a767bfa5ef2bd84ca1c6ec9093a5c53ecf964736f6c63430008100033417474656d7074656420746f2075736520616e20696e76616c696420726f6c65",
+  "deployedBytecode": "0x608060408181526004918236101561001657600080fd5b600092833560e01c9182631676ddc314610c0c57508163167cdde714610b7f578163188c6ff814610acc578163303118d0146108af5781633c0af3441461085057816366c8c250146105df5781636be7658b1461050b57816374d0a676146104105781637a3edab0146103e25781637cdc1cb9146103b1578163aaa14ca3146102fd578163ab3545e51461028b578163d97c05be14610170578163e33c4cd214610115575063f9f6b49b146100ca57600080fd5b346101115760203660031901126101115760209160019060ff9083906001600160a01b036100f6610cf3565b168152600286522054169161010a83610d24565b5191148152f35b5080fd5b90503461016c57602036600319011261016c573560015481101561016c5760016020935260018060a01b03907fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf60154169051908152f35b8280fd5b9190503461016c578060031936011261016c5781359061018e610d0e565b8285528460205260ff600183872001541660038110156102785760016101b49114610e9b565b828552846020526101d16101cc838720543390610e5d565b610eff565b828552846020526002828620019060018060a01b0316938415610229575080546001600160a01b03191684179055519133917f3b855c56b409b671c7112789d022675eb639d0bcb8896f1b6197c132f799e7468585a4f35b608490602084519162461bcd60e51b8352820152602360248201527f43616e6e6f742073657420616e206578636c757369766520726f6c6520746f2060448201526203078360ec1b6064820152fd5b634e487b7160e01b865260218552602486fd5b8284346102fa5760203660031901126102fa5782358082528160205260ff600184842001541660038110156102e7576020945060016102ca9114610e9b565b81528083528190206002015490516001600160a01b039091168152f35b634e487b7160e01b835260218552602483fd5b80fd5b9190503461016c57602036600319011261016c578135918284528360205260ff600183862001541690600382101561039e5750600261033c9114610f57565b61034e6103493384610e5d565b610fb8565b8183526020838152818420336000818152600390920190925260409020805460ff1916905590519181907feb3e33034c392e69263b04ec0fa376dc12784a41b6676c7f31b936cbc0fbb5af8585a4f35b634e487b7160e01b855260219052602484fd5b8284346102fa57816003193601126102fa57506103d96020926103d2610d0e565b9035610e5d565b90519015158152f35b5050346101115780600319360112610111576020906103d9610402610cf3565b61040a610d0e565b9061100f565b9190503461016c578060031936011261016c5781359061042e610d0e565b8285528460205260ff600183872001541660038110156102785760026104549114610f57565b8285528460205261046c6101cc838720543390610e5d565b828552846020526003828620019060018060a01b03169384156104c85750838552602052808420805460ff19166001179055519133917f63502af7324ff6db91ab38f8236a648727d9385ea6c782073dd4882d8a61a48f8585a4f35b606490602084519162461bcd60e51b8352820152601f60248201527f43616e6e6f74206164642030783020746f20612073686172656420726f6c65006044820152fd5b90503461016c578160031936011261016c57803591610528610d0e565b918385528460205260ff60018387200154169060038210156105cc575060026105519114610f57565b828452836020526105696101cc828620543390610e5d565b82845283602052610598826003838720019060018060a01b0316600052602052604060002060ff198154169055565b519133916001600160a01b0316907feb3e33034c392e69263b04ec0fa376dc12784a41b6676c7f31b936cbc0fbb5af8585a4f35b634e487b7160e01b865260219052602485fd5b90503461016c578160031936011261016c5780359067ffffffffffffffff9081831161084c573660238401121561084c578281013591821161084c57602490600592368382861b8701011161084857610636610d0e565b9161064361034933610d72565b60018060a01b0380841695868a5260209260028452898b209560ff8b8d20541661066c81610d24565b61080d576001968754600160401b8110156107fb57888101808a558110156107e957888e527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf60180546001600160a01b0319168b179055875460001981019081116107d75797809796959870ffffffffffffffffffffffffffffffff0083549160081b169070ffffffffffffffffffffffffffffffffff1916171790558b5b85811061078d5750505050875194828287018388525288860197019389905b83821061076257505050505050807f1b0bc775e5162f873356bcc1733155bd2eb9509f1774770f54b4f938287bcf039133940390a351f35b9091929394978835908282168092036107895790815283019783019493929184019061072a565b8b80fd5b88818599969798991b8c01013585811681036107d357826107ad91611078565b8781018091116107c157969594939661070b565b634e487b7160e01b8d5260118352888dfd5b8d80fd5b634e487b7160e01b8e5260118452898efd5b634e487b7160e01b8e5260328452898efd5b634e487b7160e01b8e5260418452898efd5b8a5162461bcd60e51b81528083018690526016818a01527543616e206f6e6c79207265676973746572206f6e636560501b6044820152606490fd5b8680fd5b8480fd5b505034610111576020366003190112610111579081906001600160a01b03610876610cf3565b168152600260205220546fffffffffffffffffffffffffffffffff60ff8216918351926108a281610d24565b835260081c166020820152f35b9190503461016c5760209182600319360112610ac8576108cd610cf3565b6001600160a01b038082168087526003865284872080549196939091908115610a8c5733895260028552600160ff888b20541661090981610d24565b03610a495761091990339061100f565b15610a0557600182019433895285855286892054600019928381019081116109f257610946869186610d44565b90549060031b1c166109808161095c8488610d44565b90919082549060031b9160018060a01b039283811b93849216901b16911916179055565b8a52868652878a205582549081156109df5750019161099f8383610d44565b909182549160031b1b19169055553385525282818120555190337f8e0a870c3ff65bd1f2852048eb92d693833891a8c0ab0827347177544464c5708484a3f35b634e487b7160e01b8a5260319052602489fd5b634e487b7160e01b8b526011835260248bfd5b5050925162461bcd60e51b815291820152601e60248201527f43616e206f6e6c792072656d6f7665206578697374696e672070617274790000604482015260649150fd5b865162461bcd60e51b8152808701869052601f60248201527f52656d6f7665206f6e6c792066726f6d2076616c696420636f6e7472616374006044820152606490fd5b865162461bcd60e51b81528087018690526016602482015275506172747920686173206e6f20636f6e74726163747360501b6044820152606490fd5b8380fd5b838334610111576020908160031936011261016c576001600160a01b039182610af3610cf3565b16845260038152818420908251809482845492838152019387528287209287915b838310610b66575050505050829003601f01601f191682019267ffffffffffffffff841183851017610b535750829182610b4f925282610caf565b0390f35b634e487b7160e01b815260418552602490fd5b8454811686529481019460019485019490920191610b14565b90503461016c57602036600319011261016c57610b9a610cf3565b903384526002602052600160ff8486205416610bb581610d24565b03610bc95750610bc6903390611078565b51f35b606490602084519162461bcd60e51b8352820152601e60248201527f43616e206f6e6c792061646420746f2076616c696420636f6e747261637400006044820152fd5b8490843461016c578260031936011261016c576001805490818452602090818501928187527fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf69287905b828210610c91575050505050829003601f01601f191682019267ffffffffffffffff841183851017610b535750829182610b4f925282610caf565b84546001600160a01b03168652948501949383019390830190610c56565b6020908160408183019282815285518094520193019160005b828110610cd6575050505090565b83516001600160a01b031685529381019392810192600101610cc8565b600435906001600160a01b0382168203610d0957565b600080fd5b602435906001600160a01b0382168203610d0957565b60021115610d2e57565b634e487b7160e01b600052602160045260246000fd5b8054821015610d5c5760005260206000200190600090565b634e487b7160e01b600052603260045260246000fd5b6001600090815260208190527fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7e547fada5013122d395ba3c54772283fb069b10426056ef8ca54750cb9bb552a59e7d919060ff166003811015610e495760018103610dee575050600201546001600160a01b0391821691161490565b600214610e2b5760405162461bcd60e51b815260206004820152600e60248201526d125b9d985b1a59081c9bdb19525960921b6044820152606490fd5b6001600160a01b039092168252600301602052604090205460ff1690565b634e487b7160e01b82526021600452602482fd5b600090815280602052604081209060ff6001830154166003811015610e495760018103610dee575050600201546001600160a01b0391821691161490565b15610ea257565b60405162461bcd60e51b815260206004820152602f60248201527f4d7573742062652063616c6c6564206f6e20616e20696e697469616c697a656460448201526e204578636c757369766520726f6c6560881b6064820152608490fd5b15610f0657565b60405162461bcd60e51b8152602060048201526024808201527f43616e206f6e6c792062652063616c6c6564206279206120726f6c65206d616e60448201526330b3b2b960e11b6064820152608490fd5b15610f5e57565b60405162461bcd60e51b815260206004820152602c60248201527f4d7573742062652063616c6c6564206f6e20616e20696e697469616c697a656460448201526b2053686172656420726f6c6560a01b6064820152608490fd5b15610fbf57565b60405162461bcd60e51b815260206004820152602260248201527f53656e64657220646f6573206e6f7420686f6c6420726571756972656420726f6044820152616c6560f01b6064820152608490fd5b6001600160a01b03908116600081815260036020818152604080842096861680855260018801835290842054948452919052935482109392919084611056575b5050505090565b6110669293945060409020610d44565b90549060031b1c16143880808061104f565b90611083818361100f565b611125576001600160a01b03918216600081815260036020526040812080549294919291908290600160401b821015611111578561095c836110ee9360017f4b920dd33e12e37712086438f2afcecb921cefe83b717ca990222f53d7e2845499989796018155610d44565b8583526003602052600160408420019416938483526020526040822055604051a3565b634e487b7160e01b85526041600452602485fd5b60405162461bcd60e51b815260206004820152601e60248201527f43616e206f6e6c792072656769737465722061207061727479206f6e636500006044820152606490fdfea2646970667358221220ff6029a1d95f664072261a1997b19a767bfa5ef2bd84ca1c6ec9093a5c53ecf964736f6c63430008100033",
+  "devdoc": {
+    "details": "Maintains a whitelist of financial contract creators that are allowed to register new financial contracts and stores party members of a financial contract.",
+    "kind": "dev",
+    "methods": {
+      "addMember(uint256,address)": {
+        "details": "Reverts if `roleId` does not represent an initialized, SharedRole or if the caller is not a member of the managing role for `roleId`.",
+        "params": {
+          "newMember": "the new SharedRole member.",
+          "roleId": "the SharedRole membership to modify."
+        }
+      },
+      "addPartyToContract(address)": {
+        "details": "msg.sender will be used to determine the contract that this party is added to.",
+        "params": {
+          "party": "new party for the calling contract."
+        }
+      },
+      "getAllRegisteredContracts()": {
+        "returns": {
+          "_0": "all registered contract addresses within the system."
+        }
+      },
+      "getMember(uint256)": {
+        "details": "Reverts if `roleId` does not represent an initialized, exclusive role.",
+        "params": {
+          "roleId": "the ExclusiveRole membership to check."
+        },
+        "returns": {
+          "_0": "the address of the current ExclusiveRole member."
+        }
+      },
+      "getRegisteredContracts(address)": {
+        "params": {
+          "party": "address of the party."
+        },
+        "returns": {
+          "_0": "an array of the contracts the party is registered to."
+        }
+      },
+      "holdsRole(uint256,address)": {
+        "details": "Reverts if roleId does not correspond to an initialized role.",
+        "params": {
+          "memberToCheck": "the address to check.",
+          "roleId": "the Role to check."
+        },
+        "returns": {
+          "_0": "True if `memberToCheck` is a member of `roleId`."
+        }
+      },
+      "isContractRegistered(address)": {
+        "details": "If it is registered, it is an authorized participant in the UMA system.",
+        "params": {
+          "contractAddress": "address of the financial contract."
+        },
+        "returns": {
+          "_0": "bool indicates whether the contract is registered."
+        }
+      },
+      "isPartyMemberOfContract(address,address)": {
+        "params": {
+          "contractAddress": "address to check against the party.",
+          "party": "party to check."
+        },
+        "returns": {
+          "_0": "bool indicating if the address is a party of the contract."
+        }
+      },
+      "registerContract(address[],address)": {
+        "details": "Only authorized contract creators can call this method.",
+        "params": {
+          "contractAddress": "address of the contract against which the parties are registered.",
+          "parties": "array of addresses who become parties in the contract."
+        }
+      },
+      "removeMember(uint256,address)": {
+        "details": "Reverts if `roleId` does not represent an initialized, SharedRole or if the caller is not a member of the managing role for `roleId`.",
+        "params": {
+          "memberToRemove": "the current SharedRole member to remove.",
+          "roleId": "the SharedRole membership to modify."
+        }
+      },
+      "removePartyFromContract(address)": {
+        "details": "msg.sender will be used to determine the contract that this party is removed from.",
+        "params": {
+          "partyAddress": "address to be removed from the calling contract."
+        }
+      },
+      "renounceMembership(uint256)": {
+        "details": "Reverts if the caller is not a member of the role for `roleId` or if `roleId` is not an initialized, SharedRole.",
+        "params": {
+          "roleId": "the SharedRole membership to modify."
+        }
+      },
+      "resetMember(uint256,address)": {
+        "details": "Reverts if the caller is not a member of the managing role for `roleId` or if `roleId` is not an initialized, ExclusiveRole.",
+        "params": {
+          "newMember": "the new ExclusiveRole member.",
+          "roleId": "the ExclusiveRole membership to modify."
+        }
+      }
+    },
+    "title": "Registry for financial contracts and approved financial contract creators.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "addMember(uint256,address)": {
+        "notice": "Adds `newMember` to the shared role, `roleId`."
+      },
+      "addPartyToContract(address)": {
+        "notice": "Adds a party member to the calling contract."
+      },
+      "constructor": {
+        "notice": "Construct the Registry contract."
+      },
+      "getAllRegisteredContracts()": {
+        "notice": "Returns all registered contracts."
+      },
+      "getMember(uint256)": {
+        "notice": "Gets the current holder of the exclusive role, `roleId`."
+      },
+      "getRegisteredContracts(address)": {
+        "notice": "Returns a list of all contracts that are associated with a particular party."
+      },
+      "holdsRole(uint256,address)": {
+        "notice": "Whether `memberToCheck` is a member of roleId."
+      },
+      "isContractRegistered(address)": {
+        "notice": "Returns whether the contract has been registered with the registry."
+      },
+      "isPartyMemberOfContract(address,address)": {
+        "notice": "checks if an address is a party of a contract."
+      },
+      "registerContract(address[],address)": {
+        "notice": "Registers a new financial contract."
+      },
+      "removeMember(uint256,address)": {
+        "notice": "Removes `memberToRemove` from the shared role, `roleId`."
+      },
+      "removePartyFromContract(address)": {
+        "notice": "Removes a party member from the calling contract."
+      },
+      "renounceMembership(uint256)": {
+        "notice": "Removes caller from the role, `roleId`."
+      },
+      "resetMember(uint256,address)": {
+        "notice": "Changes the exclusive role holder of `roleId` to `newMember`."
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 16654,
+        "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+        "label": "roles",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_uint256,t_struct(Role)16649_storage)"
+      },
+      {
+        "astId": 28064,
+        "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+        "label": "registeredContracts",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_array(t_address)dyn_storage"
+      },
+      {
+        "astId": 28069,
+        "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+        "label": "contractMap",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_mapping(t_address,t_struct(FinancialContract)28053_storage)"
+      },
+      {
+        "astId": 28074,
+        "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+        "label": "partyMap",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_mapping(t_address,t_struct(Party)28061_storage)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_array(t_address)dyn_storage": {
+        "base": "t_address",
+        "encoding": "dynamic_array",
+        "label": "address[]",
+        "numberOfBytes": "32"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_enum(RoleType)16637": {
+        "encoding": "inplace",
+        "label": "enum MultiRole.RoleType",
+        "numberOfBytes": "1"
+      },
+      "t_enum(Validity)28047": {
+        "encoding": "inplace",
+        "label": "enum Registry.Validity",
+        "numberOfBytes": "1"
+      },
+      "t_mapping(t_address,t_bool)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => bool)",
+        "numberOfBytes": "32",
+        "value": "t_bool"
+      },
+      "t_mapping(t_address,t_struct(FinancialContract)28053_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct Registry.FinancialContract)",
+        "numberOfBytes": "32",
+        "value": "t_struct(FinancialContract)28053_storage"
+      },
+      "t_mapping(t_address,t_struct(Party)28061_storage)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => struct Registry.Party)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Party)28061_storage"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_mapping(t_uint256,t_struct(Role)16649_storage)": {
+        "encoding": "mapping",
+        "key": "t_uint256",
+        "label": "mapping(uint256 => struct MultiRole.Role)",
+        "numberOfBytes": "32",
+        "value": "t_struct(Role)16649_storage"
+      },
+      "t_struct(FinancialContract)28053_storage": {
+        "encoding": "inplace",
+        "label": "struct Registry.FinancialContract",
+        "members": [
+          {
+            "astId": 28050,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "valid",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_enum(Validity)28047"
+          },
+          {
+            "astId": 28052,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "index",
+            "offset": 1,
+            "slot": "0",
+            "type": "t_uint128"
+          }
+        ],
+        "numberOfBytes": "32"
+      },
+      "t_struct(Party)28061_storage": {
+        "encoding": "inplace",
+        "label": "struct Registry.Party",
+        "members": [
+          {
+            "astId": 28056,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "contracts",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_array(t_address)dyn_storage"
+          },
+          {
+            "astId": 28060,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "contractIndex",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_mapping(t_address,t_uint256)"
+          }
+        ],
+        "numberOfBytes": "64"
+      },
+      "t_struct(Role)16649_storage": {
+        "encoding": "inplace",
+        "label": "struct MultiRole.Role",
+        "members": [
+          {
+            "astId": 16639,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "managingRole",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_uint256"
+          },
+          {
+            "astId": 16642,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "roleType",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_enum(RoleType)16637"
+          },
+          {
+            "astId": 16645,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "exclusiveRoleMembership",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_struct(RoleMembership)16460_storage"
+          },
+          {
+            "astId": 16648,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "sharedRoleMembership",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_struct(RoleMembership)16533_storage"
+          }
+        ],
+        "numberOfBytes": "128"
+      },
+      "t_struct(RoleMembership)16460_storage": {
+        "encoding": "inplace",
+        "label": "struct Exclusive.RoleMembership",
+        "members": [
+          {
+            "astId": 16459,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "member",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address"
+          }
+        ],
+        "numberOfBytes": "32"
+      },
+      "t_struct(RoleMembership)16533_storage": {
+        "encoding": "inplace",
+        "label": "struct Shared.RoleMembership",
+        "members": [
+          {
+            "astId": 16532,
+            "contract": "contracts/data-verification-mechanism/implementation/Registry.sol:Registry",
+            "label": "members",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_mapping(t_address,t_bool)"
+          }
+        ],
+        "numberOfBytes": "32"
+      },
+      "t_uint128": {
+        "encoding": "inplace",
+        "label": "uint128",
+        "numberOfBytes": "16"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

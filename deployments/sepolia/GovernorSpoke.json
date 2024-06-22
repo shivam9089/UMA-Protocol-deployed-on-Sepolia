@@ -1,0 +1,160 @@
+{
+  "address": "0xC47661E258d56f9315183420CE77085c84543Df9",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_finderAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "ExecutedGovernanceTransaction",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "finder",
+      "outputs": [
+        {
+          "internalType": "contract FinderInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getChildMessenger",
+      "outputs": [
+        {
+          "internalType": "contract ChildMessengerInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "processMessageFromParent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x066340f2f1f6000645135a67cb1a127c8ed0c86eec97f8c20dfd7e3db1782ecb",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0xC47661E258d56f9315183420CE77085c84543Df9",
+    "transactionIndex": 36,
+    "gasUsed": "417295",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x8c3407d424e3ad53dcf220a75f65d1c99f66f0b52ec063e9dfb16c3089324885",
+    "transactionHash": "0x066340f2f1f6000645135a67cb1a127c8ed0c86eec97f8c20dfd7e3db1782ecb",
+    "logs": [],
+    "blockNumber": 6161474,
+    "cumulativeGasUsed": "9115523",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xA969917A4dFaB07936dEc60f70FA5c736A1e2b9e"
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_finderAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"ExecutedGovernanceTransaction\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"finder\",\"outputs\":[{\"internalType\":\"contract FinderInterface\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getChildMessenger\",\"outputs\":[{\"internalType\":\"contract ChildMessengerInterface\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"processMessageFromParent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"getChildMessenger()\":{\"returns\":{\"_0\":\"ChildMessengerInterface instance of child messenger deployed on L2.\"}},\"processMessageFromParent(bytes)\":{\"details\":\"Can only be called by ChildMessenger contract that wants to execute governance action on this child chain that originated from DVM voters on root chain. ChildMessenger should only receive communication from ParentMessenger on mainnet. See the SpokeBase for the onlyMessenger modifier.\",\"params\":{\"data\":\"Contains the target address and the encoded function selector + ABI encoded params to include in delegated transaction.\"}}},\"title\":\"Cross-chain Oracle L2 Governor Spoke.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"getChildMessenger()\":{\"notice\":\"Returns the child messenger address set in the finder.\"},\"processMessageFromParent(bytes)\":{\"notice\":\"Executes governance transaction created on Ethereum.\"}},\"notice\":\"Governor contract deployed on L2 that receives governance actions from Ethereum.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/cross-chain-oracle/GovernorSpoke.sol\":\"GovernorSpoke\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/common/implementation/HasFinder.sol\":{\"content\":\"pragma solidity ^0.8.9;\\r\\n\\r\\n// SPDX-License-Identifier: UNLICENSED\\r\\nimport \\\"../../data-verification-mechanism/interfaces/FinderInterface.sol\\\";\\r\\n\\r\\n// Contract stores a reference to the DVM Finder contract which can be used to locate other important DVM contracts.\\r\\ncontract HasFinder {\\r\\n    FinderInterface public finder;\\r\\n\\r\\n    constructor(address _finder) {\\r\\n        finder = FinderInterface(_finder);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x755afa586fda2721076c48a4b6c6882443ff8fcde320d4bfe4b94dce32978a73\",\"license\":\"UNLICENSED\"},\"contracts/common/implementation/Lockable.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title A contract that provides modifiers to prevent reentrancy to state-changing and view-only methods. This contract\\r\\n * is inspired by https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/ReentrancyGuard.sol\\r\\n * and https://github.com/balancer-labs/balancer-core/blob/master/contracts/BPool.sol.\\r\\n */\\r\\ncontract Lockable {\\r\\n    bool private _notEntered;\\r\\n\\r\\n    constructor() {\\r\\n        // Storing an initial non-zero value makes deployment a bit more expensive, but in exchange the refund on every\\r\\n        // call to nonReentrant will be lower in amount. Since refunds are capped to a percentage of the total\\r\\n        // transaction's gas, it is best to keep them low in cases like this one, to increase the likelihood of the full\\r\\n        // refund coming into effect.\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Prevents a contract from calling itself, directly or indirectly.\\r\\n     * Calling a `nonReentrant` function from another `nonReentrant` function is not supported. It is possible to\\r\\n     * prevent this from happening by making the `nonReentrant` function external, and making it call a `private`\\r\\n     * function that does the actual state modification.\\r\\n     */\\r\\n    modifier nonReentrant() {\\r\\n        _preEntranceCheck();\\r\\n        _preEntranceSet();\\r\\n        _;\\r\\n        _postEntranceReset();\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Designed to prevent a view-only method from being re-entered during a call to a `nonReentrant()` state-changing method.\\r\\n     */\\r\\n    modifier nonReentrantView() {\\r\\n        _preEntranceCheck();\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    // Internal methods are used to avoid copying the require statement's bytecode to every `nonReentrant()` method.\\r\\n    // On entry into a function, `_preEntranceCheck()` should always be called to check if the function is being\\r\\n    // re-entered. Then, if the function modifies state, it should call `_postEntranceSet()`, perform its logic, and\\r\\n    // then call `_postEntranceReset()`.\\r\\n    // View-only methods can simply call `_preEntranceCheck()` to make sure that it is not being re-entered.\\r\\n    function _preEntranceCheck() internal view {\\r\\n        // On the first call to nonReentrant, _notEntered will be true\\r\\n        require(_notEntered, \\\"ReentrancyGuard: reentrant call\\\");\\r\\n    }\\r\\n\\r\\n    function _preEntranceSet() internal {\\r\\n        // Any calls to nonReentrant after this point will fail\\r\\n        _notEntered = false;\\r\\n    }\\r\\n\\r\\n    function _postEntranceReset() internal {\\r\\n        // By storing the original value once again, a refund is triggered (see\\r\\n        // https://eips.ethereum.org/EIPS/eip-2200)\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    // These functions are intended to be used by child contracts to temporarily disable and re-enable the guard.\\r\\n    // Intended use:\\r\\n    // _startReentrantGuardDisabled();\\r\\n    // ...\\r\\n    // _endReentrantGuardDisabled();\\r\\n    //\\r\\n    // IMPORTANT: these should NEVER be used in a method that isn't inside a nonReentrant block. Otherwise, it's\\r\\n    // possible to permanently lock your contract.\\r\\n    function _startReentrantGuardDisabled() internal {\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    function _endReentrantGuardDisabled() internal {\\r\\n        _notEntered = false;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x0d2de08951d2be32ceb242649e4b248508f43ce9184ee9ac69eedcef9f6afd8b\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/GovernorSpoke.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"./interfaces/ChildMessengerConsumerInterface.sol\\\";\\r\\nimport \\\"../common/implementation/Lockable.sol\\\";\\r\\nimport \\\"./SpokeBase.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title Cross-chain Oracle L2 Governor Spoke.\\r\\n * @notice Governor contract deployed on L2 that receives governance actions from Ethereum.\\r\\n */\\r\\ncontract GovernorSpoke is Lockable, SpokeBase, ChildMessengerConsumerInterface {\\r\\n    struct Call {\\r\\n        address to;\\r\\n        bytes data;\\r\\n    }\\r\\n\\r\\n    constructor(address _finderAddress) HasFinder(_finderAddress) {}\\r\\n\\r\\n    event ExecutedGovernanceTransaction(address indexed to, bytes data);\\r\\n\\r\\n    /**\\r\\n     * @notice Executes governance transaction created on Ethereum.\\r\\n     * @dev Can only be called by ChildMessenger contract that wants to execute governance action on this child chain\\r\\n     * that originated from DVM voters on root chain. ChildMessenger should only receive communication from\\r\\n     * ParentMessenger on mainnet. See the SpokeBase for the onlyMessenger modifier.\\r\\n\\r\\n     * @param data Contains the target address and the encoded function selector + ABI encoded params to include in\\r\\n     * delegated transaction.\\r\\n     */\\r\\n    function processMessageFromParent(bytes memory data) public override nonReentrant() onlyMessenger() {\\r\\n        Call[] memory calls = abi.decode(data, (Call[]));\\r\\n\\r\\n        for (uint256 i = 0; i < calls.length; i++) {\\r\\n            (address to, bytes memory inputData) = (calls[i].to, calls[i].data);\\r\\n            require(_executeCall(to, inputData), \\\"execute call failed\\\");\\r\\n            emit ExecutedGovernanceTransaction(to, inputData);\\r\\n        }\\r\\n    }\\r\\n\\r\\n    // Note: this snippet of code is copied from Governor.sol.\\r\\n    function _executeCall(address to, bytes memory data) private returns (bool) {\\r\\n        // Note: this snippet of code is copied from Governor.sol and modified to not include any \\\"value\\\" field.\\r\\n        // solhint-disable-next-line no-inline-assembly\\r\\n\\r\\n        bool success;\\r\\n        assembly {\\r\\n            let inputData := add(data, 0x20)\\r\\n            let inputDataSize := mload(data)\\r\\n            // Hardcode value to be 0 for relayed governance calls in order to avoid addressing complexity of bridging\\r\\n            // value cross-chain.\\r\\n            success := call(gas(), to, 0, inputData, inputDataSize, 0, 0)\\r\\n        }\\r\\n        return success;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x72d53f1ce792060bf4997b1557252d9be2ef1bc3f297a6bf803ce6a9350917c9\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/SpokeBase.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\nimport \\\"./interfaces/ChildMessengerInterface.sol\\\";\\r\\n\\r\\nimport \\\"../data-verification-mechanism/implementation/Constants.sol\\\";\\r\\nimport \\\"../common/implementation/HasFinder.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title Cross-chain Oracle L2 Spoke Base.\\r\\n * @notice Provides access control to Governance and Oracle spoke L2 contracts.\\r\\n */\\r\\n\\r\\nabstract contract SpokeBase is HasFinder {\\r\\n    modifier onlyMessenger() {\\r\\n        require(msg.sender == address(getChildMessenger()), \\\"Caller must be messenger\\\");\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Returns the child messenger address set in the finder.\\r\\n     * @return ChildMessengerInterface instance of child messenger deployed on L2.\\r\\n     */\\r\\n    function getChildMessenger() public view returns (ChildMessengerInterface) {\\r\\n        return ChildMessengerInterface(finder.getImplementationAddress(OracleInterfaces.ChildMessenger));\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xed5d177948f66946f6c49416a9d4c780c5abf10aa624e0a80fa4508899186910\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/interfaces/ChildMessengerConsumerInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface ChildMessengerConsumerInterface {\\r\\n    // Called on L2 by child messenger.\\r\\n    function processMessageFromParent(bytes memory data) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x909c5020914855274be891571c9d53ff9d57c8e0144279c3f808ea4fcc28b97f\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/interfaces/ChildMessengerInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface ChildMessengerInterface {\\r\\n    // Should send cross-chain message to Parent messenger contract or revert.\\r\\n    function sendMessageToParent(bytes memory data) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x1276c829956f733346e033969998d3825bea284ba0c29c83d46fe72ebc93e5fa\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/implementation/Constants.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Stores common interface names used throughout the DVM by registration in the Finder.\\r\\n */\\r\\nlibrary OracleInterfaces {\\r\\n    bytes32 public constant Oracle = \\\"Oracle\\\";\\r\\n    bytes32 public constant IdentifierWhitelist = \\\"IdentifierWhitelist\\\";\\r\\n    bytes32 public constant Store = \\\"Store\\\";\\r\\n    bytes32 public constant FinancialContractsAdmin = \\\"FinancialContractsAdmin\\\";\\r\\n    bytes32 public constant Registry = \\\"Registry\\\";\\r\\n    bytes32 public constant CollateralWhitelist = \\\"CollateralWhitelist\\\";\\r\\n    bytes32 public constant OptimisticOracle = \\\"OptimisticOracle\\\";\\r\\n    bytes32 public constant OptimisticOracleV2 = \\\"OptimisticOracleV2\\\";\\r\\n    bytes32 public constant OptimisticOracleV3 = \\\"OptimisticOracleV3\\\";\\r\\n    bytes32 public constant Bridge = \\\"Bridge\\\";\\r\\n    bytes32 public constant GenericHandler = \\\"GenericHandler\\\";\\r\\n    bytes32 public constant SkinnyOptimisticOracle = \\\"SkinnyOptimisticOracle\\\";\\r\\n    bytes32 public constant ChildMessenger = \\\"ChildMessenger\\\";\\r\\n    bytes32 public constant OracleHub = \\\"OracleHub\\\";\\r\\n    bytes32 public constant OracleSpoke = \\\"OracleSpoke\\\";\\r\\n}\\r\\n\\r\\n/**\\r\\n * @title Commonly re-used values for contracts associated with the OptimisticOracle.\\r\\n */\\r\\nlibrary OptimisticOracleConstraints {\\r\\n    // Any price request submitted to the OptimisticOracle must contain ancillary data no larger than this value.\\r\\n    // This value must be <= the Voting contract's `ancillaryBytesLimit` constant value otherwise it is possible\\r\\n    // that a price can be requested to the OptimisticOracle successfully, but cannot be resolved by the DVM which\\r\\n    // refuses to accept a price request made with ancillary data length over a certain size.\\r\\n    uint256 public constant ancillaryBytesLimit = 8192;\\r\\n}\\r\\n\",\"keccak256\":\"0xc91adf0214524d001e7d5eadc61c8e8406a62c97362e9c72fff121ff68676c00\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/FinderInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title Provides addresses of the live contracts implementing certain interfaces.\\r\\n * @dev Examples are the Oracle or Store interfaces.\\r\\n */\\r\\ninterface FinderInterface {\\r\\n    /**\\r\\n     * @notice Updates the address of the contract that implements `interfaceName`.\\r\\n     * @param interfaceName bytes32 encoding of the interface name that is either changed or registered.\\r\\n     * @param implementationAddress address of the deployed contract that implements the interface.\\r\\n     */\\r\\n    function changeImplementationAddress(bytes32 interfaceName, address implementationAddress) external;\\r\\n\\r\\n    /**\\r\\n     * @notice Gets the address of the contract that implements the given `interfaceName`.\\r\\n     * @param interfaceName queried interface.\\r\\n     * @return implementationAddress address of the deployed contract that implements the interface.\\r\\n     */\\r\\n    function getImplementationAddress(bytes32 interfaceName) external view returns (address);\\r\\n}\\r\\n\",\"keccak256\":\"0xad6668a10f243739d0bf5d077954119434f7b2cda129cb484ad6d359d158e5ec\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x60803461008557601f6106c438819003918201601f19168301916001600160401b0383118484101761008a5780849260209460405283398101031261008557516001600160a01b038116810361008557600080546001600160a81b03191660089290921b610100600160a81b031691909117600117905560405161062390816100a18239f35b600080fd5b634e487b7160e01b600052604160045260246000fdfe60806040526004361015610013575b600080fd5b6000803560e01c9081630cbfde4614610052575080632d189d35146100495763b9a3c84c1461004157600080fd5b61000e61018c565b5061000e61015e565b346100ce5760203660031901126100ce5760043567ffffffffffffffff81116100ca57366023820112156100ca578060040135908261009083610133565b9161009e6040519384610111565b83835236602485830101116100ca57836100c59460246020930183860137830101526101ba565b604051f35b5080fd5b80fd5b50634e487b7160e01b600052604160045260246000fd5b6040810190811067ffffffffffffffff82111761010457604052565b61010c6100d1565b604052565b90601f8019910116810190811067ffffffffffffffff82111761010457604052565b60209067ffffffffffffffff8111610151575b601f01601f19160190565b6101596100d1565b610146565b503461000e57600036600319011261000e57602061017a610556565b6040516001600160a01b039091168152f35b503461000e57600036600319011261000e5760005460405160089190911c6001600160a01b03168152602090f35b90600060ff8154161561041d576101d660ff1960005416600055565b6001600160a01b0392836101e8610556565b1633036103d8578051810160209283820184848403126100ca578484015167ffffffffffffffff948582116103d457019080603f830112156103d05785820151948086116103c3575b8560051b916040958651976102488a86018a610111565b88528689890194860101948286116103bf57878101945b8686106103135750505050505050805b83518110156102f857806102976102896102f393876104be565b51516001600160a01b031690565b7f597c4f48fc399c2e6bc556d2d0931e80d4c210ebc618738587c5d39fd9126d4589886102c4858a6104be565b510151926102db878086518d880182865af16104e8565b6102eb885192839216948261052a565b0390a2610499565b61026f565b50505050509050610311600160ff196000541617600055565b565b85518581116103bb57820189601f1982860301126103bb57895190610337826100e8565b6103428b8201610462565b825260609081810151908882116103b7570186605f820112156103b35790818c809301519161037c61037384610133565b94519485610111565b828452888184840101116103af578f959391928695936103a0928785019101610476565b8382015281520195019461025f565b8c80fd5b8a80fd5b8b80fd5b8880fd5b8680fd5b6103cb6100d1565b610231565b8280fd5b8380fd5b60405162461bcd60e51b815260206004820152601860248201527f43616c6c6572206d757374206265206d657373656e67657200000000000000006044820152606490fd5b60405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606490fd5b51906001600160a01b038216820361000e57565b60005b8381106104895750506000910152565b8181015183820152602001610479565b60001981146104a85760010190565b634e487b7160e01b600052601160045260246000fd5b80518210156104d25760209160051b010190565b634e487b7160e01b600052603260045260246000fd5b156104ef57565b60405162461bcd60e51b8152602060048201526013602482015272195e1958dd5d194818d85b1b0819985a5b1959606a1b6044820152606490fd5b6040916020825261054a8151809281602086015260208686019101610476565b601f01601f1916010190565b6000546040516302abf57960e61b81526d21b434b63226b2b9b9b2b733b2b960911b60048201526001600160a01b03916020908290602490829060081c86165afa9081156105e1576000916105aa57501690565b906020823d82116105d9575b816105c360209383610111565b810103126100ce57506105d590610462565b1690565b3d91506105b6565b6040513d6000823e3d90fdfea26469706673582212208e086fea56ec815fb1bd6c4cb4f6e8e1ce9764ac08ce44f3e4d836376210a5ee64736f6c63430008100033",
+  "deployedBytecode": "0x60806040526004361015610013575b600080fd5b6000803560e01c9081630cbfde4614610052575080632d189d35146100495763b9a3c84c1461004157600080fd5b61000e61018c565b5061000e61015e565b346100ce5760203660031901126100ce5760043567ffffffffffffffff81116100ca57366023820112156100ca578060040135908261009083610133565b9161009e6040519384610111565b83835236602485830101116100ca57836100c59460246020930183860137830101526101ba565b604051f35b5080fd5b80fd5b50634e487b7160e01b600052604160045260246000fd5b6040810190811067ffffffffffffffff82111761010457604052565b61010c6100d1565b604052565b90601f8019910116810190811067ffffffffffffffff82111761010457604052565b60209067ffffffffffffffff8111610151575b601f01601f19160190565b6101596100d1565b610146565b503461000e57600036600319011261000e57602061017a610556565b6040516001600160a01b039091168152f35b503461000e57600036600319011261000e5760005460405160089190911c6001600160a01b03168152602090f35b90600060ff8154161561041d576101d660ff1960005416600055565b6001600160a01b0392836101e8610556565b1633036103d8578051810160209283820184848403126100ca578484015167ffffffffffffffff948582116103d457019080603f830112156103d05785820151948086116103c3575b8560051b916040958651976102488a86018a610111565b88528689890194860101948286116103bf57878101945b8686106103135750505050505050805b83518110156102f857806102976102896102f393876104be565b51516001600160a01b031690565b7f597c4f48fc399c2e6bc556d2d0931e80d4c210ebc618738587c5d39fd9126d4589886102c4858a6104be565b510151926102db878086518d880182865af16104e8565b6102eb885192839216948261052a565b0390a2610499565b61026f565b50505050509050610311600160ff196000541617600055565b565b85518581116103bb57820189601f1982860301126103bb57895190610337826100e8565b6103428b8201610462565b825260609081810151908882116103b7570186605f820112156103b35790818c809301519161037c61037384610133565b94519485610111565b828452888184840101116103af578f959391928695936103a0928785019101610476565b8382015281520195019461025f565b8c80fd5b8a80fd5b8b80fd5b8880fd5b8680fd5b6103cb6100d1565b610231565b8280fd5b8380fd5b60405162461bcd60e51b815260206004820152601860248201527f43616c6c6572206d757374206265206d657373656e67657200000000000000006044820152606490fd5b60405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606490fd5b51906001600160a01b038216820361000e57565b60005b8381106104895750506000910152565b8181015183820152602001610479565b60001981146104a85760010190565b634e487b7160e01b600052601160045260246000fd5b80518210156104d25760209160051b010190565b634e487b7160e01b600052603260045260246000fd5b156104ef57565b60405162461bcd60e51b8152602060048201526013602482015272195e1958dd5d194818d85b1b0819985a5b1959606a1b6044820152606490fd5b6040916020825261054a8151809281602086015260208686019101610476565b601f01601f1916010190565b6000546040516302abf57960e61b81526d21b434b63226b2b9b9b2b733b2b960911b60048201526001600160a01b03916020908290602490829060081c86165afa9081156105e1576000916105aa57501690565b906020823d82116105d9575b816105c360209383610111565b810103126100ce57506105d590610462565b1690565b3d91506105b6565b6040513d6000823e3d90fdfea26469706673582212208e086fea56ec815fb1bd6c4cb4f6e8e1ce9764ac08ce44f3e4d836376210a5ee64736f6c63430008100033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "getChildMessenger()": {
+        "returns": {
+          "_0": "ChildMessengerInterface instance of child messenger deployed on L2."
+        }
+      },
+      "processMessageFromParent(bytes)": {
+        "details": "Can only be called by ChildMessenger contract that wants to execute governance action on this child chain that originated from DVM voters on root chain. ChildMessenger should only receive communication from ParentMessenger on mainnet. See the SpokeBase for the onlyMessenger modifier.",
+        "params": {
+          "data": "Contains the target address and the encoded function selector + ABI encoded params to include in delegated transaction."
+        }
+      }
+    },
+    "title": "Cross-chain Oracle L2 Governor Spoke.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "getChildMessenger()": {
+        "notice": "Returns the child messenger address set in the finder."
+      },
+      "processMessageFromParent(bytes)": {
+        "notice": "Executes governance transaction created on Ethereum."
+      }
+    },
+    "notice": "Governor contract deployed on L2 that receives governance actions from Ethereum.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 16304,
+        "contract": "contracts/cross-chain-oracle/GovernorSpoke.sol:GovernorSpoke",
+        "label": "_notEntered",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 16286,
+        "contract": "contracts/cross-chain-oracle/GovernorSpoke.sol:GovernorSpoke",
+        "label": "finder",
+        "offset": 1,
+        "slot": "0",
+        "type": "t_contract(FinderInterface)36753"
+      }
+    ],
+    "types": {
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_contract(FinderInterface)36753": {
+        "encoding": "inplace",
+        "label": "contract FinderInterface",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}

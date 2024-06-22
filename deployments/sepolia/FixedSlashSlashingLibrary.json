@@ -1,0 +1,301 @@
+{
+  "address": "0x505a414F75cFdaCDc56F075C852dD64E0065853d",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_baseSlashAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_governanceSlashAmount",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "baseSlashAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalStaked",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalVotes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalCorrectVotes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "priceRequestIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "calcNoVoteSlashPerToken",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalStaked",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalVotes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalCorrectVotes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "priceRequestIndex",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "isGovernance",
+          "type": "bool"
+        }
+      ],
+      "name": "calcSlashing",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "wrongVoteSlashPerToken",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "noVoteSlashPerToken",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalStaked",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalVotes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalCorrectVotes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "priceRequestIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "calcWrongVoteSlashPerToken",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "totalStaked",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalVotes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalCorrectVotes",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "priceRequestIndex",
+          "type": "uint256"
+        }
+      ],
+      "name": "calcWrongVoteSlashPerTokenGovernance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "governanceSlashAmount",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xd59bee1775bbd48efcacda7c156c967423b33032ed6228cc8ee4a99430129a0f",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0x505a414F75cFdaCDc56F075C852dD64E0065853d",
+    "transactionIndex": 67,
+    "gasUsed": "185895",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x1ffa4e5445905c9627f44a48f0e817049cc61e15ae34d7f5be92335738a1f520",
+    "transactionHash": "0xd59bee1775bbd48efcacda7c156c967423b33032ed6228cc8ee4a99430129a0f",
+    "logs": [],
+    "blockNumber": 6161549,
+    "cumulativeGasUsed": "11956111",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "1000000000000000",
+    "0"
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_baseSlashAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_governanceSlashAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"baseSlashAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totalStaked\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalCorrectVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"priceRequestIndex\",\"type\":\"uint256\"}],\"name\":\"calcNoVoteSlashPerToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totalStaked\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalCorrectVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"priceRequestIndex\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"isGovernance\",\"type\":\"bool\"}],\"name\":\"calcSlashing\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"wrongVoteSlashPerToken\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"noVoteSlashPerToken\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totalStaked\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalCorrectVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"priceRequestIndex\",\"type\":\"uint256\"}],\"name\":\"calcWrongVoteSlashPerToken\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"totalStaked\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalCorrectVotes\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"priceRequestIndex\",\"type\":\"uint256\"}],\"name\":\"calcWrongVoteSlashPerTokenGovernance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"governanceSlashAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"calcNoVoteSlashPerToken(uint256,uint256,uint256,uint256)\":{\"params\":{\"priceRequestIndex\":\"The price request index within the resolvedPriceRequestIds array.\",\"totalCorrectVotes\":\"The total amount of correct votes.\",\"totalStaked\":\"The total amount of tokens staked.\",\"totalVotes\":\"The total amount of votes.\"},\"returns\":{\"_0\":\"uint256 The amount of tokens to slash per token staked.\"}},\"calcSlashing(uint256,uint256,uint256,uint256,bool)\":{\"params\":{\"isGovernance\":\"Whether the request is a governance request.\",\"priceRequestIndex\":\"The price request index within the resolvedPriceRequestIds array.\",\"totalCorrectVotes\":\"The total amount of correct votes.\",\"totalStaked\":\"The total amount of tokens staked.\",\"totalVotes\":\"The total amount of votes.\"},\"returns\":{\"noVoteSlashPerToken\":\"The amount of tokens to slash for not voting.\",\"wrongVoteSlashPerToken\":\"The amount of tokens to slash for voting wrong.\"}},\"calcWrongVoteSlashPerToken(uint256,uint256,uint256,uint256)\":{\"params\":{\"priceRequestIndex\":\"The price request index within the resolvedPriceRequestIds array.\",\"totalCorrectVotes\":\"The total amount of correct votes.\",\"totalStaked\":\"The total amount of tokens staked.\",\"totalVotes\":\"The total amount of votes.\"},\"returns\":{\"_0\":\"uint256 The amount of tokens to slash per token staked.\"}},\"calcWrongVoteSlashPerTokenGovernance(uint256,uint256,uint256,uint256)\":{\"params\":{\"priceRequestIndex\":\"The price request index within the resolvedPriceRequestIds array.\",\"totalCorrectVotes\":\"The total amount of correct votes.\",\"totalStaked\":\"The total amount of tokens staked.\",\"totalVotes\":\"The total amount of votes.\"},\"returns\":{\"_0\":\"uint256 The amount of tokens to slash per token staked.\"}},\"constructor\":{\"params\":{\"_baseSlashAmount\":\"Slash amount per token for missed votes and wrong non-governance votes.\",\"_governanceSlashAmount\":\"Slash amount per token for wrong governance votes.\"}}},\"title\":\"Slashing Library contract. Returns the how much a voter should be slashed per staked token as a function of the total staked, total votes and total correct votes. Can be upgraded to a new implementation to enable more elaborate slashing algorithms via UMA governance.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"calcNoVoteSlashPerToken(uint256,uint256,uint256,uint256)\":{\"notice\":\"Calculates the no vote slash per token.\"},\"calcSlashing(uint256,uint256,uint256,uint256,bool)\":{\"notice\":\"Calculates all slashing trackers in one go to decrease cross-contract calls needed.\"},\"calcWrongVoteSlashPerToken(uint256,uint256,uint256,uint256)\":{\"notice\":\"Calculates the wrong vote slash per token.\"},\"calcWrongVoteSlashPerTokenGovernance(uint256,uint256,uint256,uint256)\":{\"notice\":\"Calculates the wrong vote slash per token for governance requests.\"},\"constructor\":{\"notice\":\"Construct the FixedSlashSlashingLibrary contract.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/data-verification-mechanism/implementation/FixedSlashSlashingLibrary.sol\":\"FixedSlashSlashingLibrary\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/data-verification-mechanism/implementation/FixedSlashSlashingLibrary.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity 0.8.16;\\r\\n\\r\\nimport \\\"../interfaces/SlashingLibraryInterface.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title Slashing Library contract. Returns the how much a voter should be slashed per staked token as a function of\\r\\n * the total staked, total votes and total correct votes. Can be upgraded to a new implementation to enable more\\r\\n elaborate slashing algorithms via UMA governance.\\r\\n */\\r\\n\\r\\ncontract FixedSlashSlashingLibrary is SlashingLibraryInterface {\\r\\n    uint256 public immutable baseSlashAmount; // Slash amount per token for missed votes and wrong non-governance votes.\\r\\n    uint256 public immutable governanceSlashAmount; // Slash amount per token for wrong governance votes.\\r\\n\\r\\n    /**\\r\\n     * @notice Construct the FixedSlashSlashingLibrary contract.\\r\\n     * @param _baseSlashAmount Slash amount per token for missed votes and wrong non-governance votes.\\r\\n     * @param _governanceSlashAmount Slash amount per token for wrong governance votes.\\r\\n     */\\r\\n    constructor(uint256 _baseSlashAmount, uint256 _governanceSlashAmount) {\\r\\n        require(_baseSlashAmount < 1e18, \\\"Invalid base slash amount\\\");\\r\\n        require(_governanceSlashAmount < 1e18, \\\"Invalid governance slash amount\\\");\\r\\n        baseSlashAmount = _baseSlashAmount; // Slash amount per token for missed votes and wrong non-governance votes.\\r\\n        governanceSlashAmount = _governanceSlashAmount; // Slash amount per token for wrong governance votes.\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Calculates the wrong vote slash per token.\\r\\n     * @param totalStaked The total amount of tokens staked.\\r\\n     * @param totalVotes The total amount of votes.\\r\\n     * @param totalCorrectVotes The total amount of correct votes.\\r\\n     * @param priceRequestIndex The price request index within the resolvedPriceRequestIds array.\\r\\n     * @return uint256 The amount of tokens to slash per token staked.\\r\\n     */\\r\\n    function calcWrongVoteSlashPerToken(\\r\\n        uint256 totalStaked,\\r\\n        uint256 totalVotes,\\r\\n        uint256 totalCorrectVotes,\\r\\n        uint256 priceRequestIndex\\r\\n    ) public view returns (uint256) {\\r\\n        return baseSlashAmount;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Calculates the wrong vote slash per token for governance requests.\\r\\n     * @param totalStaked The total amount of tokens staked.\\r\\n     * @param totalVotes The total amount of votes.\\r\\n     * @param totalCorrectVotes The total amount of correct votes.\\r\\n     * @param priceRequestIndex The price request index within the resolvedPriceRequestIds array.\\r\\n     * @return uint256 The amount of tokens to slash per token staked.\\r\\n     */\\r\\n    function calcWrongVoteSlashPerTokenGovernance(\\r\\n        uint256 totalStaked,\\r\\n        uint256 totalVotes,\\r\\n        uint256 totalCorrectVotes,\\r\\n        uint256 priceRequestIndex\\r\\n    ) public view returns (uint256) {\\r\\n        return governanceSlashAmount;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Calculates the no vote slash per token.\\r\\n     * @param totalStaked The total amount of tokens staked.\\r\\n     * @param totalVotes The total amount of votes.\\r\\n     * @param totalCorrectVotes The total amount of correct votes.\\r\\n     * @param priceRequestIndex The price request index within the resolvedPriceRequestIds array.\\r\\n     * @return uint256 The amount of tokens to slash per token staked.\\r\\n     */\\r\\n    function calcNoVoteSlashPerToken(\\r\\n        uint256 totalStaked,\\r\\n        uint256 totalVotes,\\r\\n        uint256 totalCorrectVotes,\\r\\n        uint256 priceRequestIndex\\r\\n    ) public view returns (uint256) {\\r\\n        return baseSlashAmount;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Calculates all slashing trackers in one go to decrease cross-contract calls needed.\\r\\n     * @param totalStaked The total amount of tokens staked.\\r\\n     * @param totalVotes The total amount of votes.\\r\\n     * @param totalCorrectVotes The total amount of correct votes.\\r\\n     * @param priceRequestIndex The price request index within the resolvedPriceRequestIds array.\\r\\n     * @param isGovernance Whether the request is a governance request.\\r\\n     * @return wrongVoteSlashPerToken The amount of tokens to slash for voting wrong.\\r\\n     * @return noVoteSlashPerToken The amount of tokens to slash for not voting.\\r\\n     */\\r\\n    function calcSlashing(\\r\\n        uint256 totalStaked,\\r\\n        uint256 totalVotes,\\r\\n        uint256 totalCorrectVotes,\\r\\n        uint256 priceRequestIndex,\\r\\n        bool isGovernance\\r\\n    ) external view returns (uint256 wrongVoteSlashPerToken, uint256 noVoteSlashPerToken) {\\r\\n        return (\\r\\n            isGovernance\\r\\n                ? calcWrongVoteSlashPerTokenGovernance(totalStaked, totalVotes, totalCorrectVotes, priceRequestIndex)\\r\\n                : calcWrongVoteSlashPerToken(totalStaked, totalVotes, totalCorrectVotes, priceRequestIndex),\\r\\n            calcNoVoteSlashPerToken(totalStaked, totalVotes, totalCorrectVotes, priceRequestIndex)\\r\\n        );\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xc8f30100efd3963470bdfc95184ec9b6ca7131ac85ae5f1ff24be750f6b40465\",\"license\":\"AGPL-3.0-only\"},\"contracts/data-verification-mechanism/interfaces/SlashingLibraryInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity 0.8.16;\\r\\n\\r\\ninterface SlashingLibraryInterface {\\r\\n    /**\\r\\n     * @notice Calculates the wrong vote slash per token.\\r\\n     * @param totalStaked The total amount of tokens staked.\\r\\n     * @param totalVotes The total amount of votes.\\r\\n     * @param totalCorrectVotes The total amount of correct votes.\\r\\n     * @param priceRequestIndex The price request index within the resolvedPriceRequestIds array.\\r\\n     * @return uint256 The amount of tokens to slash per token staked.\\r\\n     */\\r\\n    function calcWrongVoteSlashPerToken(\\r\\n        uint256 totalStaked,\\r\\n        uint256 totalVotes,\\r\\n        uint256 totalCorrectVotes,\\r\\n        uint256 priceRequestIndex\\r\\n    ) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @notice Calculates the wrong vote slash per token for governance requests.\\r\\n     * @param totalStaked The total amount of tokens staked.\\r\\n     * @param totalVotes The total amount of votes.\\r\\n     * @param totalCorrectVotes The total amount of correct votes.\\r\\n     * @param priceRequestIndex The price request index within the resolvedPriceRequestIds array.\\r\\n     * @return uint256 The amount of tokens to slash per token staked.\\r\\n     */\\r\\n    function calcWrongVoteSlashPerTokenGovernance(\\r\\n        uint256 totalStaked,\\r\\n        uint256 totalVotes,\\r\\n        uint256 totalCorrectVotes,\\r\\n        uint256 priceRequestIndex\\r\\n    ) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @notice Calculates the no vote slash per token.\\r\\n     * @param totalStaked The total amount of tokens staked.\\r\\n     * @param totalVotes The total amount of votes.\\r\\n     * @param totalCorrectVotes The total amount of correct votes.\\r\\n     * @param priceRequestIndex The price request index within the resolvedPriceRequestIds array.\\r\\n     * @return uint256 The amount of tokens to slash per token staked.\\r\\n     */\\r\\n    function calcNoVoteSlashPerToken(\\r\\n        uint256 totalStaked,\\r\\n        uint256 totalVotes,\\r\\n        uint256 totalCorrectVotes,\\r\\n        uint256 priceRequestIndex\\r\\n    ) external view returns (uint256);\\r\\n\\r\\n    /**\\r\\n     * @notice Calculates all slashing trackers in one go to decrease cross-contract calls needed.\\r\\n     * @param totalStaked The total amount of tokens staked.\\r\\n     * @param totalVotes The total amount of votes.\\r\\n     * @param totalCorrectVotes The total amount of correct votes.\\r\\n     * @param priceRequestIndex The price request index within the resolvedPriceRequestIds array.\\r\\n     * @param isGovernance Whether the request is a governance request.\\r\\n     * @return wrongVoteSlashPerToken The amount of tokens to slash for voting wrong.\\r\\n     * @return noVoteSlashPerToken The amount of tokens to slash for not voting.\\r\\n     */\\r\\n    function calcSlashing(\\r\\n        uint256 totalStaked,\\r\\n        uint256 totalVotes,\\r\\n        uint256 totalCorrectVotes,\\r\\n        uint256 priceRequestIndex,\\r\\n        bool isGovernance\\r\\n    ) external view returns (uint256 wrongVoteSlashPerToken, uint256 noVoteSlashPerToken);\\r\\n}\\r\\n\",\"keccak256\":\"0xd64dfc166b4beecf4f102b073bd34ba6b59c2dba0ed200b98118f60d9c5157a1\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x60c03461012f57601f6103a438819003918201601f19168301916001600160401b0383118484101761013457808492604094855283398101031261012f576020815191015190670de0b6b3a7640000808210156100ea578210156100a55760805260a052604051610259908161014b8239608051818181608c015281816101740152818161019c0152610200015260a05181818160cb0152818161010501526101500152f35b60405162461bcd60e51b815260206004820152601f60248201527f496e76616c696420676f7665726e616e636520736c61736820616d6f756e74006044820152606490fd5b60405162461bcd60e51b815260206004820152601960248201527f496e76616c6964206261736520736c61736820616d6f756e74000000000000006044820152606490fd5b600080fd5b634e487b7160e01b600052604160045260246000fdfe608080604052600436101561001357600080fd5b6000803560e01c918263273d1fd6146101285750816348b1342e146100ee57816348b440f3146100b257816355238687146100755750806358162b1a1461006c5763f63f43f614610064575b600080fd5b61005f6101e6565b5061005f6101e6565b346100af57806003193601126100af5760206040517f00000000000000000000000000000000000000000000000000000000000000008152f35b80fd5b346100af576100c0366101c8565b5050505060206040517f00000000000000000000000000000000000000000000000000000000000000008152f35b346100af57806003193601126100af5760206040517f00000000000000000000000000000000000000000000000000000000000000008152f35b346101c45760a03660031901126101c45760843580151581036101c057604092501561019a577f00000000000000000000000000000000000000000000000000000000000000005b81527f00000000000000000000000000000000000000000000000000000000000000006020820152f35b7f0000000000000000000000000000000000000000000000000000000000000000610170565b8280fd5b5080fd5b608090600319011261005f5760043590602435906044359060643590565b503461005f576101f5366101c8565b5050505060206040517f00000000000000000000000000000000000000000000000000000000000000008152f3fea264697066735822122013c1ce7e22f562c75a91523848b18acae753e85c13c4d986996d9199d565fcbe64736f6c63430008100033",
+  "deployedBytecode": "0x608080604052600436101561001357600080fd5b6000803560e01c918263273d1fd6146101285750816348b1342e146100ee57816348b440f3146100b257816355238687146100755750806358162b1a1461006c5763f63f43f614610064575b600080fd5b61005f6101e6565b5061005f6101e6565b346100af57806003193601126100af5760206040517f00000000000000000000000000000000000000000000000000000000000000008152f35b80fd5b346100af576100c0366101c8565b5050505060206040517f00000000000000000000000000000000000000000000000000000000000000008152f35b346100af57806003193601126100af5760206040517f00000000000000000000000000000000000000000000000000000000000000008152f35b346101c45760a03660031901126101c45760843580151581036101c057604092501561019a577f00000000000000000000000000000000000000000000000000000000000000005b81527f00000000000000000000000000000000000000000000000000000000000000006020820152f35b7f0000000000000000000000000000000000000000000000000000000000000000610170565b8280fd5b5080fd5b608090600319011261005f5760043590602435906044359060643590565b503461005f576101f5366101c8565b5050505060206040517f00000000000000000000000000000000000000000000000000000000000000008152f3fea264697066735822122013c1ce7e22f562c75a91523848b18acae753e85c13c4d986996d9199d565fcbe64736f6c63430008100033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "calcNoVoteSlashPerToken(uint256,uint256,uint256,uint256)": {
+        "params": {
+          "priceRequestIndex": "The price request index within the resolvedPriceRequestIds array.",
+          "totalCorrectVotes": "The total amount of correct votes.",
+          "totalStaked": "The total amount of tokens staked.",
+          "totalVotes": "The total amount of votes."
+        },
+        "returns": {
+          "_0": "uint256 The amount of tokens to slash per token staked."
+        }
+      },
+      "calcSlashing(uint256,uint256,uint256,uint256,bool)": {
+        "params": {
+          "isGovernance": "Whether the request is a governance request.",
+          "priceRequestIndex": "The price request index within the resolvedPriceRequestIds array.",
+          "totalCorrectVotes": "The total amount of correct votes.",
+          "totalStaked": "The total amount of tokens staked.",
+          "totalVotes": "The total amount of votes."
+        },
+        "returns": {
+          "noVoteSlashPerToken": "The amount of tokens to slash for not voting.",
+          "wrongVoteSlashPerToken": "The amount of tokens to slash for voting wrong."
+        }
+      },
+      "calcWrongVoteSlashPerToken(uint256,uint256,uint256,uint256)": {
+        "params": {
+          "priceRequestIndex": "The price request index within the resolvedPriceRequestIds array.",
+          "totalCorrectVotes": "The total amount of correct votes.",
+          "totalStaked": "The total amount of tokens staked.",
+          "totalVotes": "The total amount of votes."
+        },
+        "returns": {
+          "_0": "uint256 The amount of tokens to slash per token staked."
+        }
+      },
+      "calcWrongVoteSlashPerTokenGovernance(uint256,uint256,uint256,uint256)": {
+        "params": {
+          "priceRequestIndex": "The price request index within the resolvedPriceRequestIds array.",
+          "totalCorrectVotes": "The total amount of correct votes.",
+          "totalStaked": "The total amount of tokens staked.",
+          "totalVotes": "The total amount of votes."
+        },
+        "returns": {
+          "_0": "uint256 The amount of tokens to slash per token staked."
+        }
+      },
+      "constructor": {
+        "params": {
+          "_baseSlashAmount": "Slash amount per token for missed votes and wrong non-governance votes.",
+          "_governanceSlashAmount": "Slash amount per token for wrong governance votes."
+        }
+      }
+    },
+    "title": "Slashing Library contract. Returns the how much a voter should be slashed per staked token as a function of the total staked, total votes and total correct votes. Can be upgraded to a new implementation to enable more elaborate slashing algorithms via UMA governance.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "calcNoVoteSlashPerToken(uint256,uint256,uint256,uint256)": {
+        "notice": "Calculates the no vote slash per token."
+      },
+      "calcSlashing(uint256,uint256,uint256,uint256,bool)": {
+        "notice": "Calculates all slashing trackers in one go to decrease cross-contract calls needed."
+      },
+      "calcWrongVoteSlashPerToken(uint256,uint256,uint256,uint256)": {
+        "notice": "Calculates the wrong vote slash per token."
+      },
+      "calcWrongVoteSlashPerTokenGovernance(uint256,uint256,uint256,uint256)": {
+        "notice": "Calculates the wrong vote slash per token for governance requests."
+      },
+      "constructor": {
+        "notice": "Construct the FixedSlashSlashingLibrary contract."
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

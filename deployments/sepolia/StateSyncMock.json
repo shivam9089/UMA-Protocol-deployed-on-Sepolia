@@ -1,0 +1,111 @@
+{
+  "address": "0xF3429b8B8d4BE9c70FBF92DcE69526f502D94017",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "contractAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "StateSynced",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "syncState",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x1448d5ed790c8bbf14a84d35319cd7bdbe24e60a1f8a5e8e565425387c26248a",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0xF3429b8B8d4BE9c70FBF92DcE69526f502D94017",
+    "transactionIndex": 43,
+    "gasUsed": "112655",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x0d23b165e3429d10a1c0b755ac10b67cd1ce5d6fe08bc97cad76087c746540b9",
+    "transactionHash": "0x1448d5ed790c8bbf14a84d35319cd7bdbe24e60a1f8a5e8e565425387c26248a",
+    "logs": [],
+    "blockNumber": 6161283,
+    "cumulativeGasUsed": "9183105",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"contractAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"StateSynced\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"syncState\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"events\":{\"StateSynced(uint256,address,bytes)\":{\"details\":\"Heimdall bridge listens to this event and sends the data to receiver contract on child chain\",\"params\":{\"contractAddress\":\"the contract receiving data on child chain\",\"data\":\"bytes data to be sent\",\"id\":\"Id of the sync, increamented for each event in case of actual state sender contract\"}}},\"kind\":\"dev\",\"methods\":{\"syncState(address,bytes)\":{\"details\":\"sender and receiver contracts need to be registered in case of actual state sender contract\",\"params\":{\"data\":\"bytes data to be sent\",\"receiver\":\"the contract receiving data on child chain\"}}},\"version\":1},\"userdoc\":{\"events\":{\"StateSynced(uint256,address,bytes)\":{\"notice\":\"Event emitted when when syncState is called\"}},\"kind\":\"user\",\"methods\":{\"syncState(address,bytes)\":{\"notice\":\"called to send data to child chain\"}},\"notice\":\"Dummy State Sender contract to simulate plasma state sender while testing\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/polygon-cross-chain-oracle/test/StateSyncMock.sol\":\"StateSyncMock\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/polygon-cross-chain-oracle/test/StateSyncMock.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @notice Dummy State Sender contract to simulate plasma state sender while testing\\r\\n */\\r\\ncontract StateSyncMock {\\r\\n    /**\\r\\n     * @notice Event emitted when when syncState is called\\r\\n     * @dev Heimdall bridge listens to this event and sends the data to receiver contract on child chain\\r\\n     * @param id Id of the sync, increamented for each event in case of actual state sender contract\\r\\n     * @param contractAddress the contract receiving data on child chain\\r\\n     * @param data bytes data to be sent\\r\\n     */\\r\\n    event StateSynced(uint256 indexed id, address indexed contractAddress, bytes data);\\r\\n\\r\\n    /**\\r\\n     * @notice called to send data to child chain\\r\\n     * @dev sender and receiver contracts need to be registered in case of actual state sender contract\\r\\n     * @param receiver the contract receiving data on child chain\\r\\n     * @param data bytes data to be sent\\r\\n     */\\r\\n    function syncState(address receiver, bytes calldata data) external {\\r\\n        emit StateSynced(1, receiver, data);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0xbade2eac11e4d5f35b7ff2b3d7a696739b75a373f6229481d4d924f2562498a7\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x6080806040523461001657610112908161001c8239f35b600080fdfe608060408181526004361015601357600080fd5b600091823560e01c6316f1983114602957600080fd5b3460d8578160031936011260d8576004356001600160a01b038116919082900360d45760243567ffffffffffffffff9182821160d0573660238301121560d057816004013592831160d057366024848401011160d05784818460019560247f103fed9db65eac19c4d870f49ab7520fe03b99f1838e5996caf47e9e43308392966020855282602086015201848401378181018301899052601f01601f19168101030190a351f35b8580fd5b8380fd5b8280fdfea2646970667358221220f0e8ff3516a66d2a004445905764d25fb2bcd836e58b2e6059ac5edb698aebb164736f6c63430008100033",
+  "deployedBytecode": "0x608060408181526004361015601357600080fd5b600091823560e01c6316f1983114602957600080fd5b3460d8578160031936011260d8576004356001600160a01b038116919082900360d45760243567ffffffffffffffff9182821160d0573660238301121560d057816004013592831160d057366024848401011160d05784818460019560247f103fed9db65eac19c4d870f49ab7520fe03b99f1838e5996caf47e9e43308392966020855282602086015201848401378181018301899052601f01601f19168101030190a351f35b8580fd5b8380fd5b8280fdfea2646970667358221220f0e8ff3516a66d2a004445905764d25fb2bcd836e58b2e6059ac5edb698aebb164736f6c63430008100033",
+  "devdoc": {
+    "events": {
+      "StateSynced(uint256,address,bytes)": {
+        "details": "Heimdall bridge listens to this event and sends the data to receiver contract on child chain",
+        "params": {
+          "contractAddress": "the contract receiving data on child chain",
+          "data": "bytes data to be sent",
+          "id": "Id of the sync, increamented for each event in case of actual state sender contract"
+        }
+      }
+    },
+    "kind": "dev",
+    "methods": {
+      "syncState(address,bytes)": {
+        "details": "sender and receiver contracts need to be registered in case of actual state sender contract",
+        "params": {
+          "data": "bytes data to be sent",
+          "receiver": "the contract receiving data on child chain"
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "events": {
+      "StateSynced(uint256,address,bytes)": {
+        "notice": "Event emitted when when syncState is called"
+      }
+    },
+    "kind": "user",
+    "methods": {
+      "syncState(address,bytes)": {
+        "notice": "called to send data to child chain"
+      }
+    },
+    "notice": "Dummy State Sender contract to simulate plasma state sender while testing",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

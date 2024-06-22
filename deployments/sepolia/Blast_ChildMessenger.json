@@ -1,0 +1,385 @@
+{
+  "address": "0x61521bAD20731457E280fB85f1D82D0baCE5BaD4",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_parentMessenger",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "targetSpoke",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "parentAddress",
+          "type": "address"
+        }
+      ],
+      "name": "MessageReceivedFromParent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "parentAddress",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "oracleSpoke",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "gasLimit",
+          "type": "uint32"
+        }
+      ],
+      "name": "MessageSentToParent",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint32",
+          "name": "newDefaultGasLimit",
+          "type": "uint32"
+        }
+      ],
+      "name": "SetDefaultGasLimit",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newOracleSpoke",
+          "type": "address"
+        }
+      ],
+      "name": "SetOracleSpoke",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "newParentMessenger",
+          "type": "address"
+        }
+      ],
+      "name": "SetParentMessenger",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "defaultGasLimit",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "messenger",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "oracleSpoke",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "parentMessenger",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        },
+        {
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        }
+      ],
+      "name": "processMessageFromCrossChainParent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "sendMessageToParent",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32",
+          "name": "newDefaultGasLimit",
+          "type": "uint32"
+        }
+      ],
+      "name": "setDefaultGasLimit",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOracleSpoke",
+          "type": "address"
+        }
+      ],
+      "name": "setOracleSpoke",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newParentMessenger",
+          "type": "address"
+        }
+      ],
+      "name": "setParentMessenger",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xb6372d96ca66d875d09a554ad737322345144df9b0d53f4604f2db13931c1fdc",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0x61521bAD20731457E280fB85f1D82D0baCE5BaD4",
+    "transactionIndex": 36,
+    "gasUsed": "647578",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xbab5ddf73abdbce85deaeab07979729e09328adb56495ebc69e12a270ad0848a",
+    "transactionHash": "0xb6372d96ca66d875d09a554ad737322345144df9b0d53f4604f2db13931c1fdc",
+    "logs": [],
+    "blockNumber": 6161944,
+    "cumulativeGasUsed": "6066284",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xEE2a8513C6e1836f2cA87D0C5a788C47114Ee1eF"
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_parentMessenger\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"targetSpoke\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"parentAddress\",\"type\":\"address\"}],\"name\":\"MessageReceivedFromParent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"parentAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"oracleSpoke\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"gasLimit\",\"type\":\"uint32\"}],\"name\":\"MessageSentToParent\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint32\",\"name\":\"newDefaultGasLimit\",\"type\":\"uint32\"}],\"name\":\"SetDefaultGasLimit\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newOracleSpoke\",\"type\":\"address\"}],\"name\":\"SetOracleSpoke\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"newParentMessenger\",\"type\":\"address\"}],\"name\":\"SetParentMessenger\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"defaultGasLimit\",\"outputs\":[{\"internalType\":\"uint32\",\"name\":\"\",\"type\":\"uint32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"messenger\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"oracleSpoke\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"parentMessenger\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"},{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"processMessageFromCrossChainParent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"sendMessageToParent\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint32\",\"name\":\"newDefaultGasLimit\",\"type\":\"uint32\"}],\"name\":\"setDefaultGasLimit\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOracleSpoke\",\"type\":\"address\"}],\"name\":\"setOracleSpoke\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newParentMessenger\",\"type\":\"address\"}],\"name\":\"setParentMessenger\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This contract is ownable via the onlyFromCrossDomainAccount. modifier, restricting ownership to the cross-domain parent messenger contract that lives on L1.\",\"kind\":\"dev\",\"methods\":{\"constructor\":{\"params\":{\"_parentMessenger\":\"The address of the L1 parent messenger. Acts as the \\\"owner\\\" of this contract.\"}},\"processMessageFromCrossChainParent(bytes,address)\":{\"details\":\"The caller must be the the parent messenger, sent over the canonical message bridge.\",\"params\":{\"data\":\"data message sent from the L1 messenger. Should be an encoded function call or packed data.\",\"target\":\"desired recipient of `data`. Target must implement the `processMessageFromParent` function. Having this as a param enables the L1 Messenger to send messages to arbitrary addresses on the L2. This is primarily used to send messages to the OracleSpoke and GovernorSpoke on L2.\"}},\"sendMessageToParent(bytes)\":{\"details\":\"The caller must be the OracleSpoke on L2. No other contract is permissioned to call this function.The L1 target, the parent messenger, must implement processMessageFromChild to consume the message.\",\"params\":{\"data\":\"data message sent to the L1 messenger. Should be an encoded function call or packed data.\"}},\"setDefaultGasLimit(uint32)\":{\"details\":\"The caller of this function must be the parent messenger, over the canonical bridge.\",\"params\":{\"newDefaultGasLimit\":\"the new L1 gas limit to be set.\"}},\"setOracleSpoke(address)\":{\"details\":\"The caller of this function must be the parent messenger, over the canonical bridge.\",\"params\":{\"newOracleSpoke\":\"address of the new oracle spoke, deployed on L2.\"}},\"setParentMessenger(address)\":{\"details\":\"The caller of this function must be the parent messenger, over the canonical bridge.\",\"params\":{\"newParentMessenger\":\"address of the new parent messenger, deployed on L1.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"constructor\":{\"notice\":\"Construct the Optimism_ChildMessenger contract.\"},\"processMessageFromCrossChainParent(bytes,address)\":{\"notice\":\"Process a received message from the parent messenger via the canonical message bridge.\"},\"sendMessageToParent(bytes)\":{\"notice\":\"Sends a message to the parent messenger via the canonical message bridge.\"},\"setDefaultGasLimit(uint32)\":{\"notice\":\"Changes the default gas limit that is sent along with transactions to Ethereum.\"},\"setOracleSpoke(address)\":{\"notice\":\"Changes the stored address of the Oracle spoke, deployed on L2.\"},\"setParentMessenger(address)\":{\"notice\":\"Changes the stored address of the parent messenger, deployed on L1.\"}},\"notice\":\"Sends cross chain messages from Optimism L2 to Ethereum L1 network.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/cross-chain-oracle/chain-adapters/Optimism_ChildMessenger.sol\":\"Optimism_ChildMessenger\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"@eth-optimism/contracts/libraries/bridge/CrossDomainEnabled.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity >0.5.0 <0.9.0;\\n\\n/* Interface Imports */\\nimport { ICrossDomainMessenger } from \\\"./ICrossDomainMessenger.sol\\\";\\n\\n/**\\n * @title CrossDomainEnabled\\n * @dev Helper contract for contracts performing cross-domain communications\\n *\\n * Compiler used: defined by inheriting contract\\n */\\ncontract CrossDomainEnabled {\\n    /*************\\n     * Variables *\\n     *************/\\n\\n    // Messenger contract used to send and recieve messages from the other domain.\\n    address public messenger;\\n\\n    /***************\\n     * Constructor *\\n     ***************/\\n\\n    /**\\n     * @param _messenger Address of the CrossDomainMessenger on the current layer.\\n     */\\n    constructor(address _messenger) {\\n        messenger = _messenger;\\n    }\\n\\n    /**********************\\n     * Function Modifiers *\\n     **********************/\\n\\n    /**\\n     * Enforces that the modified function is only callable by a specific cross-domain account.\\n     * @param _sourceDomainAccount The only account on the originating domain which is\\n     *  authenticated to call this function.\\n     */\\n    modifier onlyFromCrossDomainAccount(address _sourceDomainAccount) {\\n        require(\\n            msg.sender == address(getCrossDomainMessenger()),\\n            \\\"OVM_XCHAIN: messenger contract unauthenticated\\\"\\n        );\\n\\n        require(\\n            getCrossDomainMessenger().xDomainMessageSender() == _sourceDomainAccount,\\n            \\\"OVM_XCHAIN: wrong sender of cross-domain message\\\"\\n        );\\n\\n        _;\\n    }\\n\\n    /**********************\\n     * Internal Functions *\\n     **********************/\\n\\n    /**\\n     * Gets the messenger, usually from storage. This function is exposed in case a child contract\\n     * needs to override.\\n     * @return The address of the cross-domain messenger contract which should be used.\\n     */\\n    function getCrossDomainMessenger() internal virtual returns (ICrossDomainMessenger) {\\n        return ICrossDomainMessenger(messenger);\\n    }\\n\\n    /**q\\n     * Sends a message to an account on another domain\\n     * @param _crossDomainTarget The intended recipient on the destination domain\\n     * @param _message The data to send to the target (usually calldata to a function with\\n     *  `onlyFromCrossDomainAccount()`)\\n     * @param _gasLimit The gasLimit for the receipt of the message on the target domain.\\n     */\\n    function sendCrossDomainMessage(\\n        address _crossDomainTarget,\\n        uint32 _gasLimit,\\n        bytes memory _message\\n    ) internal {\\n        // slither-disable-next-line reentrancy-events, reentrancy-benign\\n        getCrossDomainMessenger().sendMessage(_crossDomainTarget, _message, _gasLimit);\\n    }\\n}\\n\",\"keccak256\":\"0x9c3cc8b7047c68a403529b15769a21c2e2668ea71db7bef51f123288009811ea\",\"license\":\"MIT\"},\"@eth-optimism/contracts/libraries/bridge/ICrossDomainMessenger.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity >0.5.0 <0.9.0;\\n\\n/**\\n * @title ICrossDomainMessenger\\n */\\ninterface ICrossDomainMessenger {\\n    /**********\\n     * Events *\\n     **********/\\n\\n    event SentMessage(\\n        address indexed target,\\n        address sender,\\n        bytes message,\\n        uint256 messageNonce,\\n        uint256 gasLimit\\n    );\\n    event RelayedMessage(bytes32 indexed msgHash);\\n    event FailedRelayedMessage(bytes32 indexed msgHash);\\n\\n    /*************\\n     * Variables *\\n     *************/\\n\\n    function xDomainMessageSender() external view returns (address);\\n\\n    /********************\\n     * Public Functions *\\n     ********************/\\n\\n    /**\\n     * Sends a cross domain message to the target messenger.\\n     * @param _target Target contract address.\\n     * @param _message Message to send to the target.\\n     * @param _gasLimit Gas limit for the provided message.\\n     */\\n    function sendMessage(\\n        address _target,\\n        bytes calldata _message,\\n        uint32 _gasLimit\\n    ) external;\\n}\\n\",\"keccak256\":\"0x8f29ae23021345a20ccac7b5edb3fc38268aef943b65adc8a32e74b80bf1833a\",\"license\":\"MIT\"},\"@eth-optimism/contracts/libraries/constants/Lib_PredeployAddresses.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.9;\\n\\n/**\\n * @title Lib_PredeployAddresses\\n */\\nlibrary Lib_PredeployAddresses {\\n    address internal constant L2_TO_L1_MESSAGE_PASSER = 0x4200000000000000000000000000000000000000;\\n    address internal constant L1_MESSAGE_SENDER = 0x4200000000000000000000000000000000000001;\\n    address internal constant DEPLOYER_WHITELIST = 0x4200000000000000000000000000000000000002;\\n    address payable internal constant OVM_ETH = payable(0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000);\\n    address internal constant L2_CROSS_DOMAIN_MESSENGER =\\n        0x4200000000000000000000000000000000000007;\\n    address internal constant LIB_ADDRESS_MANAGER = 0x4200000000000000000000000000000000000008;\\n    address internal constant PROXY_EOA = 0x4200000000000000000000000000000000000009;\\n    address internal constant L2_STANDARD_BRIDGE = 0x4200000000000000000000000000000000000010;\\n    address internal constant SEQUENCER_FEE_WALLET = 0x4200000000000000000000000000000000000011;\\n    address internal constant L2_STANDARD_TOKEN_FACTORY =\\n        0x4200000000000000000000000000000000000012;\\n    address internal constant L1_BLOCK_NUMBER = 0x4200000000000000000000000000000000000013;\\n}\\n\",\"keccak256\":\"0x2bc28307af93e9716151a41a81694b56cbe513ef5eb335fb1d81f35e5db8edfa\",\"license\":\"MIT\"},\"contracts/common/implementation/Lockable.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n/**\\r\\n * @title A contract that provides modifiers to prevent reentrancy to state-changing and view-only methods. This contract\\r\\n * is inspired by https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/ReentrancyGuard.sol\\r\\n * and https://github.com/balancer-labs/balancer-core/blob/master/contracts/BPool.sol.\\r\\n */\\r\\ncontract Lockable {\\r\\n    bool private _notEntered;\\r\\n\\r\\n    constructor() {\\r\\n        // Storing an initial non-zero value makes deployment a bit more expensive, but in exchange the refund on every\\r\\n        // call to nonReentrant will be lower in amount. Since refunds are capped to a percentage of the total\\r\\n        // transaction's gas, it is best to keep them low in cases like this one, to increase the likelihood of the full\\r\\n        // refund coming into effect.\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Prevents a contract from calling itself, directly or indirectly.\\r\\n     * Calling a `nonReentrant` function from another `nonReentrant` function is not supported. It is possible to\\r\\n     * prevent this from happening by making the `nonReentrant` function external, and making it call a `private`\\r\\n     * function that does the actual state modification.\\r\\n     */\\r\\n    modifier nonReentrant() {\\r\\n        _preEntranceCheck();\\r\\n        _preEntranceSet();\\r\\n        _;\\r\\n        _postEntranceReset();\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @dev Designed to prevent a view-only method from being re-entered during a call to a `nonReentrant()` state-changing method.\\r\\n     */\\r\\n    modifier nonReentrantView() {\\r\\n        _preEntranceCheck();\\r\\n        _;\\r\\n    }\\r\\n\\r\\n    // Internal methods are used to avoid copying the require statement's bytecode to every `nonReentrant()` method.\\r\\n    // On entry into a function, `_preEntranceCheck()` should always be called to check if the function is being\\r\\n    // re-entered. Then, if the function modifies state, it should call `_postEntranceSet()`, perform its logic, and\\r\\n    // then call `_postEntranceReset()`.\\r\\n    // View-only methods can simply call `_preEntranceCheck()` to make sure that it is not being re-entered.\\r\\n    function _preEntranceCheck() internal view {\\r\\n        // On the first call to nonReentrant, _notEntered will be true\\r\\n        require(_notEntered, \\\"ReentrancyGuard: reentrant call\\\");\\r\\n    }\\r\\n\\r\\n    function _preEntranceSet() internal {\\r\\n        // Any calls to nonReentrant after this point will fail\\r\\n        _notEntered = false;\\r\\n    }\\r\\n\\r\\n    function _postEntranceReset() internal {\\r\\n        // By storing the original value once again, a refund is triggered (see\\r\\n        // https://eips.ethereum.org/EIPS/eip-2200)\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    // These functions are intended to be used by child contracts to temporarily disable and re-enable the guard.\\r\\n    // Intended use:\\r\\n    // _startReentrantGuardDisabled();\\r\\n    // ...\\r\\n    // _endReentrantGuardDisabled();\\r\\n    //\\r\\n    // IMPORTANT: these should NEVER be used in a method that isn't inside a nonReentrant block. Otherwise, it's\\r\\n    // possible to permanently lock your contract.\\r\\n    function _startReentrantGuardDisabled() internal {\\r\\n        _notEntered = true;\\r\\n    }\\r\\n\\r\\n    function _endReentrantGuardDisabled() internal {\\r\\n        _notEntered = false;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x0d2de08951d2be32ceb242649e4b248508f43ce9184ee9ac69eedcef9f6afd8b\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/chain-adapters/Optimism_ChildMessenger.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\n// This should be replaced with a \\\"real\\\" import when Optimism release their new contract versions.\\r\\nimport \\\"@eth-optimism/contracts/libraries/bridge/CrossDomainEnabled.sol\\\";\\r\\nimport \\\"@eth-optimism/contracts/libraries/constants/Lib_PredeployAddresses.sol\\\";\\r\\nimport \\\"../interfaces/ChildMessengerInterface.sol\\\";\\r\\nimport \\\"../interfaces/ChildMessengerConsumerInterface.sol\\\";\\r\\nimport \\\"../../common/implementation/Lockable.sol\\\";\\r\\n\\r\\n/**\\r\\n * @notice Sends cross chain messages from Optimism L2 to Ethereum L1 network.\\r\\n * @dev This contract is ownable via the onlyFromCrossDomainAccount. modifier, restricting ownership to the cross-domain\\r\\n * parent messenger contract that lives on L1.\\r\\n */\\r\\ncontract Optimism_ChildMessenger is CrossDomainEnabled, ChildMessengerInterface, Lockable {\\r\\n    // The only child network contract that can send messages over the bridge via the messenger is the oracle spoke.\\r\\n    address public oracleSpoke;\\r\\n\\r\\n    // Messenger contract on the other side of the L1<->L2 bridge.\\r\\n    address public parentMessenger;\\r\\n\\r\\n    // Hard coded default gas limit for L1 transactions.\\r\\n    uint32 public defaultGasLimit = 5_000_000;\\r\\n\\r\\n    event SetOracleSpoke(address newOracleSpoke);\\r\\n    event SetParentMessenger(address newParentMessenger);\\r\\n    event SetDefaultGasLimit(uint32 newDefaultGasLimit);\\r\\n    event MessageSentToParent(bytes data, address indexed parentAddress, address oracleSpoke, uint32 gasLimit);\\r\\n    event MessageReceivedFromParent(bytes data, address indexed targetSpoke, address indexed parentAddress);\\r\\n\\r\\n    /**\\r\\n     * @notice Construct the Optimism_ChildMessenger contract.\\r\\n     * @param _parentMessenger The address of the L1 parent messenger. Acts as the \\\"owner\\\" of this contract.\\r\\n     */\\r\\n    constructor(address _parentMessenger) CrossDomainEnabled(Lib_PredeployAddresses.L2_CROSS_DOMAIN_MESSENGER) {\\r\\n        parentMessenger = _parentMessenger;\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the stored address of the Oracle spoke, deployed on L2.\\r\\n     * @dev The caller of this function must be the parent messenger, over the canonical bridge.\\r\\n     * @param newOracleSpoke address of the new oracle spoke, deployed on L2.\\r\\n     */\\r\\n    function setOracleSpoke(address newOracleSpoke) public onlyFromCrossDomainAccount(parentMessenger) nonReentrant() {\\r\\n        oracleSpoke = newOracleSpoke;\\r\\n        emit SetOracleSpoke(newOracleSpoke);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the stored address of the parent messenger, deployed on L1.\\r\\n     * @dev The caller of this function must be the parent messenger, over the canonical bridge.\\r\\n     * @param newParentMessenger address of the new parent messenger, deployed on L1.\\r\\n     */\\r\\n    function setParentMessenger(address newParentMessenger)\\r\\n        public\\r\\n        onlyFromCrossDomainAccount(parentMessenger)\\r\\n        nonReentrant()\\r\\n    {\\r\\n        parentMessenger = newParentMessenger;\\r\\n        emit SetParentMessenger(newParentMessenger);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Changes the default gas limit that is sent along with transactions to Ethereum.\\r\\n     * @dev The caller of this function must be the parent messenger, over the canonical bridge.\\r\\n     * @param newDefaultGasLimit the new L1 gas limit to be set.\\r\\n     */\\r\\n    function setDefaultGasLimit(uint32 newDefaultGasLimit)\\r\\n        public\\r\\n        onlyFromCrossDomainAccount(parentMessenger)\\r\\n        nonReentrant()\\r\\n    {\\r\\n        defaultGasLimit = newDefaultGasLimit;\\r\\n        emit SetDefaultGasLimit(newDefaultGasLimit);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Sends a message to the parent messenger via the canonical message bridge.\\r\\n     * @dev The caller must be the OracleSpoke on L2. No other contract is permissioned to call this function.\\r\\n     * @dev The L1 target, the parent messenger, must implement processMessageFromChild to consume the message.\\r\\n     * @param data data message sent to the L1 messenger. Should be an encoded function call or packed data.\\r\\n     */\\r\\n    function sendMessageToParent(bytes memory data) public override nonReentrant() {\\r\\n        require(msg.sender == oracleSpoke, \\\"Only callable by oracleSpoke\\\");\\r\\n        bytes memory dataSentToParent = abi.encodeWithSignature(\\\"processMessageFromCrossChainChild(bytes)\\\", data);\\r\\n        sendCrossDomainMessage(parentMessenger, defaultGasLimit, dataSentToParent);\\r\\n        emit MessageSentToParent(dataSentToParent, parentMessenger, oracleSpoke, defaultGasLimit);\\r\\n    }\\r\\n\\r\\n    /**\\r\\n     * @notice Process a received message from the parent messenger via the canonical message bridge.\\r\\n     * @dev The caller must be the the parent messenger, sent over the canonical message bridge.\\r\\n     * @param data data message sent from the L1 messenger. Should be an encoded function call or packed data.\\r\\n     * @param target desired recipient of `data`. Target must implement the `processMessageFromParent` function. Having\\r\\n     * this as a param enables the L1 Messenger to send messages to arbitrary addresses on the L2. This is primarily\\r\\n     * used to send messages to the OracleSpoke and GovernorSpoke on L2.\\r\\n     */\\r\\n    function processMessageFromCrossChainParent(bytes memory data, address target)\\r\\n        public\\r\\n        onlyFromCrossDomainAccount(parentMessenger)\\r\\n        nonReentrant()\\r\\n    {\\r\\n        ChildMessengerConsumerInterface(target).processMessageFromParent(data);\\r\\n        emit MessageReceivedFromParent(data, target, parentMessenger);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x33760ec1759a99db4423747b59748eb0fa99c7b7bc18ffe3b72ca697dc195501\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/interfaces/ChildMessengerConsumerInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface ChildMessengerConsumerInterface {\\r\\n    // Called on L2 by child messenger.\\r\\n    function processMessageFromParent(bytes memory data) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x909c5020914855274be891571c9d53ff9d57c8e0144279c3f808ea4fcc28b97f\",\"license\":\"AGPL-3.0-only\"},\"contracts/cross-chain-oracle/interfaces/ChildMessengerInterface.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\ninterface ChildMessengerInterface {\\r\\n    // Should send cross-chain message to Parent messenger contract or revert.\\r\\n    function sendMessageToParent(bytes memory data) external;\\r\\n}\\r\\n\",\"keccak256\":\"0x1276c829956f733346e033969998d3825bea284ba0c29c83d46fe72ebc93e5fa\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x6080346100a257601f610aa138819003918201601f19168301916001600160401b038311848410176100a7578084926020946040528339810103126100a257516001600160a01b038116908190036100a257600080546001600160a81b03191674014200000000000000000000000000000000000007179055600280546001600160c01b0319169091176201312d60a61b1790556040516109e390816100be8239f35b600080fd5b634e487b7160e01b600052604160045260246000fdfe6040608081526004908136101561001557600080fd5b600091823560e01c8063187717ce146105e15780631a50ad30146104f95780633cb747bf146104d1578063524b6f70146103ca57806382098069146103a157806395368d2e1461037957806398e1e16f1461034c578063c948564b146102505763d982ebba1461008457600080fd5b3461020557602036600319011261020557803567ffffffffffffffff811161024c576100b390369083016107bf565b906100bc610918565b6000805460ff60a01b1990811690915560015490926001600160a01b039182163303610209579061011b61010d92865193849163109ff9a960e01b602084015260206024840152604483019061096d565b03601f19810184528361079d565b85600254938282541690813b156102055782908851928391633dbb202b60e01b8352868916908301526060602483015281838161015b606482018b61096d565b63ffffffff809c60a01c16604483015203925af180156101fb576101e3575b50507fc0fa0dc1fc5369b5e0fec9697d4d44f231a6a52bd4cbd29b4f6e8a21ab2f5257916101be91600254816001541695885194859460608652606086019061096d565b9660208501528160a01c168884015216930390a2600160a01b90600054161760005551f35b6101ec90610773565b6101f757853861017a565b8580fd5b87513d84823e3d90fd5b8280fd5b845162461bcd60e51b8152602081850152601c60248201527f4f6e6c792063616c6c61626c65206279206f7261636c6553706f6b65000000006044820152606490fd5b8380fd5b50346102055760203660031901126102055761026a61081b565b9060025460018060a01b0390602082875416610287813314610831565b8651636e296e4560e01b815294859182905afa918215610342576102dc6020937fe5fae35015b48cf9b49a43c8dc7ca108df20ad6dc988ee556e65807bdcda4b92958991610315575b508216838316146108b3565b6102e4610918565b6000546001600160a01b03199092169416938417600255845193845260ff60a01b191692a1600160a01b1760005551f35b6103359150853d811161033b575b61032d818361079d565b810190610894565b386102d0565b503d610323565b85513d88823e3d90fd5b50503461037557816003193601126103755760015490516001600160a01b039091168152602090f35b5080fd5b50503461037557816003193601126103755760209063ffffffff60025460a01c169051908152f35b50503461037557816003193601126103755760025490516001600160a01b039091168152602090f35b50346102055760203660031901126102055780359063ffffffff82168083036104cd5760025485546001600160a01b03929190602090841661040d338214610831565b8751636e296e4560e01b815295869182905afa9384156104c3577f82420e5818c266bec5ae52072a057f0b7dae2f148dfa3cc4d2d94fcba1e99cfb94602094610463928a926104a4575b508084169116146108b3565b61046b610918565b60ff60a01b19600054169463ffffffff60a01b9060a01b169063ffffffff60a01b1916176002558451908152a1600160a01b1760005551f35b6104bc919250863d811161033b5761032d818361079d565b9038610457565b86513d89823e3d90fd5b8480fd5b505034610375578160031936011261037557905490516001600160a01b039091168152602090f35b50346102055760203660031901126102055761051361081b565b9060018060a01b0390816002541691602081875416610533813314610831565b8651636e296e4560e01b815293849182905afa8015610342577f5e60d1b338c1efe33cdc840bc15ae31e8c16ec95b6ce1e2a41d334fc28b69fbc9382610585926020958a916105c4575b5016146108b3565b61058d610918565b60ff60a01b19600054169316806bffffffffffffffffffffffff60a01b60015416176001558451908152a1600160a01b1760005551f35b6105db9150863d811161033b5761032d818361079d565b3861057d565b5034610205578160031936011261020557803567ffffffffffffffff811161024c5761061090369083016107bf565b6001600160a01b039060243582811691908290036101f75782600254169286549481861661063f813314610831565b8751958691636e296e4560e01b835282846020998a935afa918215610769576106729285918c91610752575016146108b3565b61067a610918565b60ff60a01b199586168855833b1561074e57865163065fef2360e11b81529081018590528781806106ae602482018761096d565b038183885af180156107445761070f575b50907fb7effaeeeb3f33c4c793ac44d123d88600fdfcdc7232156dc0d70dab4e5dbe0c9160025416936106fb875192828493845283019061096d565b0390a3600160a01b90600054161760005551f35b9661073c7fb7effaeeeb3f33c4c793ac44d123d88600fdfcdc7232156dc0d70dab4e5dbe0c939298610773565b9690916106bf565b87513d8a823e3d90fd5b8780fd5b6105db9150893d8b1161033b5761032d818361079d565b89513d8c823e3d90fd5b67ffffffffffffffff811161078757604052565b634e487b7160e01b600052604160045260246000fd5b90601f8019910116810190811067ffffffffffffffff82111761078757604052565b81601f820112156108165780359067ffffffffffffffff821161078757604051926107f4601f8401601f19166020018561079d565b8284526020838301011161081657816000926020809301838601378301015290565b600080fd5b600435906001600160a01b038216820361081657565b1561083857565b60405162461bcd60e51b815260206004820152602e60248201527f4f564d5f58434841494e3a206d657373656e67657220636f6e7472616374207560448201526d1b985d5d1a195b9d1a58d85d195960921b6064820152608490fd5b9081602091031261081657516001600160a01b03811681036108165790565b156108ba57565b60405162461bcd60e51b815260206004820152603060248201527f4f564d5f58434841494e3a2077726f6e672073656e646572206f662063726f7360448201526f732d646f6d61696e206d65737361676560801b6064820152608490fd5b60ff60005460a01c161561092857565b60405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606490fd5b919082519283825260005b848110610999575050826000602080949584010152601f8019910116010190565b60208183018101518483018201520161097856fea2646970667358221220a416e1ff7073f4c2e17f4244add4d4a09c49b1e1b11358d211e8480cc74fba8a64736f6c63430008100033",
+  "deployedBytecode": "0x6040608081526004908136101561001557600080fd5b600091823560e01c8063187717ce146105e15780631a50ad30146104f95780633cb747bf146104d1578063524b6f70146103ca57806382098069146103a157806395368d2e1461037957806398e1e16f1461034c578063c948564b146102505763d982ebba1461008457600080fd5b3461020557602036600319011261020557803567ffffffffffffffff811161024c576100b390369083016107bf565b906100bc610918565b6000805460ff60a01b1990811690915560015490926001600160a01b039182163303610209579061011b61010d92865193849163109ff9a960e01b602084015260206024840152604483019061096d565b03601f19810184528361079d565b85600254938282541690813b156102055782908851928391633dbb202b60e01b8352868916908301526060602483015281838161015b606482018b61096d565b63ffffffff809c60a01c16604483015203925af180156101fb576101e3575b50507fc0fa0dc1fc5369b5e0fec9697d4d44f231a6a52bd4cbd29b4f6e8a21ab2f5257916101be91600254816001541695885194859460608652606086019061096d565b9660208501528160a01c168884015216930390a2600160a01b90600054161760005551f35b6101ec90610773565b6101f757853861017a565b8580fd5b87513d84823e3d90fd5b8280fd5b845162461bcd60e51b8152602081850152601c60248201527f4f6e6c792063616c6c61626c65206279206f7261636c6553706f6b65000000006044820152606490fd5b8380fd5b50346102055760203660031901126102055761026a61081b565b9060025460018060a01b0390602082875416610287813314610831565b8651636e296e4560e01b815294859182905afa918215610342576102dc6020937fe5fae35015b48cf9b49a43c8dc7ca108df20ad6dc988ee556e65807bdcda4b92958991610315575b508216838316146108b3565b6102e4610918565b6000546001600160a01b03199092169416938417600255845193845260ff60a01b191692a1600160a01b1760005551f35b6103359150853d811161033b575b61032d818361079d565b810190610894565b386102d0565b503d610323565b85513d88823e3d90fd5b50503461037557816003193601126103755760015490516001600160a01b039091168152602090f35b5080fd5b50503461037557816003193601126103755760209063ffffffff60025460a01c169051908152f35b50503461037557816003193601126103755760025490516001600160a01b039091168152602090f35b50346102055760203660031901126102055780359063ffffffff82168083036104cd5760025485546001600160a01b03929190602090841661040d338214610831565b8751636e296e4560e01b815295869182905afa9384156104c3577f82420e5818c266bec5ae52072a057f0b7dae2f148dfa3cc4d2d94fcba1e99cfb94602094610463928a926104a4575b508084169116146108b3565b61046b610918565b60ff60a01b19600054169463ffffffff60a01b9060a01b169063ffffffff60a01b1916176002558451908152a1600160a01b1760005551f35b6104bc919250863d811161033b5761032d818361079d565b9038610457565b86513d89823e3d90fd5b8480fd5b505034610375578160031936011261037557905490516001600160a01b039091168152602090f35b50346102055760203660031901126102055761051361081b565b9060018060a01b0390816002541691602081875416610533813314610831565b8651636e296e4560e01b815293849182905afa8015610342577f5e60d1b338c1efe33cdc840bc15ae31e8c16ec95b6ce1e2a41d334fc28b69fbc9382610585926020958a916105c4575b5016146108b3565b61058d610918565b60ff60a01b19600054169316806bffffffffffffffffffffffff60a01b60015416176001558451908152a1600160a01b1760005551f35b6105db9150863d811161033b5761032d818361079d565b3861057d565b5034610205578160031936011261020557803567ffffffffffffffff811161024c5761061090369083016107bf565b6001600160a01b039060243582811691908290036101f75782600254169286549481861661063f813314610831565b8751958691636e296e4560e01b835282846020998a935afa918215610769576106729285918c91610752575016146108b3565b61067a610918565b60ff60a01b199586168855833b1561074e57865163065fef2360e11b81529081018590528781806106ae602482018761096d565b038183885af180156107445761070f575b50907fb7effaeeeb3f33c4c793ac44d123d88600fdfcdc7232156dc0d70dab4e5dbe0c9160025416936106fb875192828493845283019061096d565b0390a3600160a01b90600054161760005551f35b9661073c7fb7effaeeeb3f33c4c793ac44d123d88600fdfcdc7232156dc0d70dab4e5dbe0c939298610773565b9690916106bf565b87513d8a823e3d90fd5b8780fd5b6105db9150893d8b1161033b5761032d818361079d565b89513d8c823e3d90fd5b67ffffffffffffffff811161078757604052565b634e487b7160e01b600052604160045260246000fd5b90601f8019910116810190811067ffffffffffffffff82111761078757604052565b81601f820112156108165780359067ffffffffffffffff821161078757604051926107f4601f8401601f19166020018561079d565b8284526020838301011161081657816000926020809301838601378301015290565b600080fd5b600435906001600160a01b038216820361081657565b1561083857565b60405162461bcd60e51b815260206004820152602e60248201527f4f564d5f58434841494e3a206d657373656e67657220636f6e7472616374207560448201526d1b985d5d1a195b9d1a58d85d195960921b6064820152608490fd5b9081602091031261081657516001600160a01b03811681036108165790565b156108ba57565b60405162461bcd60e51b815260206004820152603060248201527f4f564d5f58434841494e3a2077726f6e672073656e646572206f662063726f7360448201526f732d646f6d61696e206d65737361676560801b6064820152608490fd5b60ff60005460a01c161561092857565b60405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c006044820152606490fd5b919082519283825260005b848110610999575050826000602080949584010152601f8019910116010190565b60208183018101518483018201520161097856fea2646970667358221220a416e1ff7073f4c2e17f4244add4d4a09c49b1e1b11358d211e8480cc74fba8a64736f6c63430008100033",
+  "devdoc": {
+    "details": "This contract is ownable via the onlyFromCrossDomainAccount. modifier, restricting ownership to the cross-domain parent messenger contract that lives on L1.",
+    "kind": "dev",
+    "methods": {
+      "constructor": {
+        "params": {
+          "_parentMessenger": "The address of the L1 parent messenger. Acts as the \"owner\" of this contract."
+        }
+      },
+      "processMessageFromCrossChainParent(bytes,address)": {
+        "details": "The caller must be the the parent messenger, sent over the canonical message bridge.",
+        "params": {
+          "data": "data message sent from the L1 messenger. Should be an encoded function call or packed data.",
+          "target": "desired recipient of `data`. Target must implement the `processMessageFromParent` function. Having this as a param enables the L1 Messenger to send messages to arbitrary addresses on the L2. This is primarily used to send messages to the OracleSpoke and GovernorSpoke on L2."
+        }
+      },
+      "sendMessageToParent(bytes)": {
+        "details": "The caller must be the OracleSpoke on L2. No other contract is permissioned to call this function.The L1 target, the parent messenger, must implement processMessageFromChild to consume the message.",
+        "params": {
+          "data": "data message sent to the L1 messenger. Should be an encoded function call or packed data."
+        }
+      },
+      "setDefaultGasLimit(uint32)": {
+        "details": "The caller of this function must be the parent messenger, over the canonical bridge.",
+        "params": {
+          "newDefaultGasLimit": "the new L1 gas limit to be set."
+        }
+      },
+      "setOracleSpoke(address)": {
+        "details": "The caller of this function must be the parent messenger, over the canonical bridge.",
+        "params": {
+          "newOracleSpoke": "address of the new oracle spoke, deployed on L2."
+        }
+      },
+      "setParentMessenger(address)": {
+        "details": "The caller of this function must be the parent messenger, over the canonical bridge.",
+        "params": {
+          "newParentMessenger": "address of the new parent messenger, deployed on L1."
+        }
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "constructor": {
+        "notice": "Construct the Optimism_ChildMessenger contract."
+      },
+      "processMessageFromCrossChainParent(bytes,address)": {
+        "notice": "Process a received message from the parent messenger via the canonical message bridge."
+      },
+      "sendMessageToParent(bytes)": {
+        "notice": "Sends a message to the parent messenger via the canonical message bridge."
+      },
+      "setDefaultGasLimit(uint32)": {
+        "notice": "Changes the default gas limit that is sent along with transactions to Ethereum."
+      },
+      "setOracleSpoke(address)": {
+        "notice": "Changes the stored address of the Oracle spoke, deployed on L2."
+      },
+      "setParentMessenger(address)": {
+        "notice": "Changes the stored address of the parent messenger, deployed on L1."
+      }
+    },
+    "notice": "Sends cross chain messages from Optimism L2 to Ethereum L1 network.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 6,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Optimism_ChildMessenger.sol:Optimism_ChildMessenger",
+        "label": "messenger",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 16304,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Optimism_ChildMessenger.sol:Optimism_ChildMessenger",
+        "label": "_notEntered",
+        "offset": 20,
+        "slot": "0",
+        "type": "t_bool"
+      },
+      {
+        "astId": 23422,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Optimism_ChildMessenger.sol:Optimism_ChildMessenger",
+        "label": "oracleSpoke",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 23424,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Optimism_ChildMessenger.sol:Optimism_ChildMessenger",
+        "label": "parentMessenger",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_address"
+      },
+      {
+        "astId": 23427,
+        "contract": "contracts/cross-chain-oracle/chain-adapters/Optimism_ChildMessenger.sol:Optimism_ChildMessenger",
+        "label": "defaultGasLimit",
+        "offset": 20,
+        "slot": "2",
+        "type": "t_uint32"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_uint32": {
+        "encoding": "inplace",
+        "label": "uint32",
+        "numberOfBytes": "4"
+      }
+    }
+  }
+}

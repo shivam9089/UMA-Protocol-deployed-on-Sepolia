@@ -1,0 +1,87 @@
+{
+  "address": "0x9400a943a2c79AC68853F222b6394201ba7cC05a",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "votingV2",
+      "outputs": [
+        {
+          "internalType": "contract VotingInterface",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xcdec97a24d87ba56a4c59499a7b74550e800de6403ad9147b5beb701176f935a",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0x9400a943a2c79AC68853F222b6394201ba7cC05a",
+    "transactionIndex": 21,
+    "gasUsed": "243952",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x71a9c63c3e8d0b356802d742d14206d3a8dfdeef99f519d5e715621e98c2328e",
+    "transactionHash": "0xcdec97a24d87ba56a4c59499a7b74550e800de6403ad9147b5beb701176f935a",
+    "logs": [],
+    "blockNumber": 6161892,
+    "cumulativeGasUsed": "4062119",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"votingV2\",\"outputs\":[{\"internalType\":\"contract VotingInterface\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"balanceOf(address)\":{\"params\":{\"user\":\"address of the user for whom to calculate voting power.\"},\"returns\":{\"_0\":\"uint256 value of user's voting power based on staked UMA at DVM2.0.*\"}}},\"title\":\"SnapshotVotingPower\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"balanceOf(address)\":{\"notice\":\"This is only used by Snapshot to calculate voting power and does not represent transferable tokens.\"}},\"notice\":\"Helper contract to support offchain voting with Snapshot.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/snapshot-helpers/SnapshotVotingPower.sol\":\"SnapshotVotingPower\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/snapshot-helpers/SnapshotVotingPower.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity 0.8.16;\\r\\n\\r\\n/**\\r\\n * @title VotingInterface\\r\\n * @notice Minimum interface required to interact with VotingV2 contract.\\r\\n */\\r\\ninterface VotingInterface {\\r\\n    struct VoterStake {\\r\\n        uint128 stake;\\r\\n        uint128 pendingUnstake;\\r\\n        uint128 rewardsPaidPerToken;\\r\\n        uint128 outstandingRewards;\\r\\n        int128 unappliedSlash;\\r\\n        uint64 nextIndexToProcess;\\r\\n        uint64 unstakeTime;\\r\\n        address delegate;\\r\\n    }\\r\\n\\r\\n    function voterStakes(address) external view returns (VoterStake memory);\\r\\n\\r\\n    function getVoterFromDelegate(address) external view returns (address);\\r\\n}\\r\\n\\r\\n/**\\r\\n * @title SnapshotVotingPower\\r\\n * @notice Helper contract to support offchain voting with Snapshot.\\r\\n */\\r\\ncontract SnapshotVotingPower {\\r\\n    VotingInterface public immutable votingV2 = VotingInterface(0x004395edb43EFca9885CEdad51EC9fAf93Bd34ac);\\r\\n\\r\\n    /**\\r\\n     * @notice This is only used by Snapshot to calculate voting power and does not represent transferable tokens.\\r\\n     * @param user address of the user for whom to calculate voting power.\\r\\n     * @return uint256 value of user's voting power based on staked UMA at DVM2.0.\\r\\n     **/\\r\\n    function balanceOf(address user) external view returns (uint256) {\\r\\n        address voter = votingV2.getVoterFromDelegate(user);\\r\\n        VotingInterface.VoterStake memory voterStake = votingV2.voterStakes(voter);\\r\\n\\r\\n        // Avoid double counting in case of stake delegation.\\r\\n        if (voterStake.delegate != address(0) && user != voterStake.delegate) return 0;\\r\\n\\r\\n        return uint256(voterStake.stake);\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x6140db489f915d55d2f27a24afc64449e5f2b649e128246968c811d787d7bdc6\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x60a0806040523461003c57724395edb43efca9885cedad51ec9faf93bd34ac608052610373908161004282396080518181816086015261015d0152f35b600080fdfe608080604052600436101561001357600080fd5b600090813560e01c90816307f666a51461007257506370a082311461003757600080fd5b3461006f57602036600319011261006f57600435906001600160a01b038216820361006f57602061006783610133565b604051908152f35b80fd5b9050346100b557816003193601126100b5577f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b5080fd5b90601f8019910116810190811067ffffffffffffffff8211176100db57604052565b634e487b7160e01b600052604160045260246000fd5b51906001600160a01b038216820361010557565b600080fd5b51906001600160801b038216820361010557565b519067ffffffffffffffff8216820361010557565b60408051631d51f68d60e11b81526001600160a01b039283166004820181905260209390929091907f000000000000000000000000000000000000000000000000000000000000000083168583602481845afa9283156103325790849392916000936102f5575b508151938493634edd8d5360e01b85521660048401528260246101009586935afa9586156102ea57600096610202575b5050505060e08301511680151591826101f7575b50506101f157516001600160801b031690565b50600090565b1415905038806101de565b838381969894953d83116102e3575b61021b81836100b9565b810103126102df57815194850185811067ffffffffffffffff8211176102cb5782526102468461010a565b855261025381850161010a565b9085015261026281840161010a565b908401526102726060830161010a565b606084015260808201519081600f0b820361006f57506102bc9160e09160808501526102a060a0820161011e565b60a08501526102b160c0820161011e565b60c0850152016100f1565b60e082015291388080806101ca565b634e487b7160e01b84526041600452602484fd5b8280fd5b503d610211565b50513d6000823e3d90fd5b91929093508682813d831161032b575b61030f81836100b9565b8101031261006f5750906103248493926100f1565b913861019a565b503d610305565b82513d6000823e3d90fdfea264697066735822122055a1090fb257de1dad37a69d2c14d1270c460c15165334f61c5cbd6976b774c564736f6c63430008100033",
+  "deployedBytecode": "0x608080604052600436101561001357600080fd5b600090813560e01c90816307f666a51461007257506370a082311461003757600080fd5b3461006f57602036600319011261006f57600435906001600160a01b038216820361006f57602061006783610133565b604051908152f35b80fd5b9050346100b557816003193601126100b5577f00000000000000000000000000000000000000000000000000000000000000006001600160a01b03168152602090f35b5080fd5b90601f8019910116810190811067ffffffffffffffff8211176100db57604052565b634e487b7160e01b600052604160045260246000fd5b51906001600160a01b038216820361010557565b600080fd5b51906001600160801b038216820361010557565b519067ffffffffffffffff8216820361010557565b60408051631d51f68d60e11b81526001600160a01b039283166004820181905260209390929091907f000000000000000000000000000000000000000000000000000000000000000083168583602481845afa9283156103325790849392916000936102f5575b508151938493634edd8d5360e01b85521660048401528260246101009586935afa9586156102ea57600096610202575b5050505060e08301511680151591826101f7575b50506101f157516001600160801b031690565b50600090565b1415905038806101de565b838381969894953d83116102e3575b61021b81836100b9565b810103126102df57815194850185811067ffffffffffffffff8211176102cb5782526102468461010a565b855261025381850161010a565b9085015261026281840161010a565b908401526102726060830161010a565b606084015260808201519081600f0b820361006f57506102bc9160e09160808501526102a060a0820161011e565b60a08501526102b160c0820161011e565b60c0850152016100f1565b60e082015291388080806101ca565b634e487b7160e01b84526041600452602484fd5b8280fd5b503d610211565b50513d6000823e3d90fd5b91929093508682813d831161032b575b61030f81836100b9565b8101031261006f5750906103248493926100f1565b913861019a565b503d610305565b82513d6000823e3d90fdfea264697066735822122055a1090fb257de1dad37a69d2c14d1270c460c15165334f61c5cbd6976b774c564736f6c63430008100033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "balanceOf(address)": {
+        "params": {
+          "user": "address of the user for whom to calculate voting power."
+        },
+        "returns": {
+          "_0": "uint256 value of user's voting power based on staked UMA at DVM2.0.*"
+        }
+      }
+    },
+    "title": "SnapshotVotingPower",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "balanceOf(address)": {
+        "notice": "This is only used by Snapshot to calculate voting power and does not represent transferable tokens."
+      }
+    },
+    "notice": "Helper contract to support offchain voting with Snapshot.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

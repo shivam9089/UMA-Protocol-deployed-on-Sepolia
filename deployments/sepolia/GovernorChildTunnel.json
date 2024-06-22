@@ -1,0 +1,171 @@
+{
+  "address": "0x3Fd76903FE51d0F82281d0F3e266abDCF2d21463",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_fxChild",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "ExecutedGovernanceTransaction",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bytes",
+          "name": "message",
+          "type": "bytes"
+        }
+      ],
+      "name": "MessageSent",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "fxChild",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fxRootTunnel",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "stateId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "rootMessageSender",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "processMessageFromRoot",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_fxRootTunnel",
+          "type": "address"
+        }
+      ],
+      "name": "setFxRootTunnel",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xd11aafa265d23eec32902f5d939712ecdfb0d6c57e951059cb1ee3326acc7052",
+  "receipt": {
+    "to": null,
+    "from": "0x2d92211362AdAa7963De4609214282FFf44859F6",
+    "contractAddress": "0x3Fd76903FE51d0F82281d0F3e266abDCF2d21463",
+    "transactionIndex": 107,
+    "gasUsed": "343002",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x1c0c035e5a5d5eb7174366a8c7ccd4734f46d24a98aa4de17ae0e4fa844d3e4f",
+    "transactionHash": "0xd11aafa265d23eec32902f5d939712ecdfb0d6c57e951059cb1ee3326acc7052",
+    "logs": [],
+    "blockNumber": 6161307,
+    "cumulativeGasUsed": "16018486",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xf6537Fd2A447afAC20bABaFBf9113bc60F4fa594"
+  ],
+  "solcInputHash": "864d61c65c789401ae17358a5af86557",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.16+commit.07a7930e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_fxChild\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"ExecutedGovernanceTransaction\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"message\",\"type\":\"bytes\"}],\"name\":\"MessageSent\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"fxChild\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fxRootTunnel\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"stateId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"rootMessageSender\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"processMessageFromRoot\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_fxRootTunnel\",\"type\":\"address\"}],\"name\":\"setFxRootTunnel\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"title\":\"Governor contract deployed on sidechain that receives governance actions from Ethereum.\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/polygon-cross-chain-oracle/GovernorChildTunnel.sol\":\"GovernorChildTunnel\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[],\"viaIR\":true},\"sources\":{\"@maticnetwork/fx-portal/contracts/tunnel/FxBaseChildTunnel.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\n// IFxMessageProcessor represents interface to process message\\ninterface IFxMessageProcessor {\\n    function processMessageFromRoot(\\n        uint256 stateId,\\n        address rootMessageSender,\\n        bytes calldata data\\n    ) external;\\n}\\n\\n/**\\n * @notice Mock child tunnel contract to receive and send message from L2\\n */\\nabstract contract FxBaseChildTunnel is IFxMessageProcessor {\\n    // MessageTunnel on L1 will get data from this event\\n    event MessageSent(bytes message);\\n\\n    // fx child\\n    address public fxChild;\\n\\n    // fx root tunnel\\n    address public fxRootTunnel;\\n\\n    constructor(address _fxChild) {\\n        fxChild = _fxChild;\\n    }\\n\\n    // Sender must be fxRootTunnel in case of ERC20 tunnel\\n    modifier validateSender(address sender) {\\n        require(sender == fxRootTunnel, \\\"FxBaseChildTunnel: INVALID_SENDER_FROM_ROOT\\\");\\n        _;\\n    }\\n\\n    // set fxRootTunnel if not set already\\n    function setFxRootTunnel(address _fxRootTunnel) external virtual {\\n        require(fxRootTunnel == address(0x0), \\\"FxBaseChildTunnel: ROOT_TUNNEL_ALREADY_SET\\\");\\n        fxRootTunnel = _fxRootTunnel;\\n    }\\n\\n    function processMessageFromRoot(\\n        uint256 stateId,\\n        address rootMessageSender,\\n        bytes calldata data\\n    ) external override {\\n        require(msg.sender == fxChild, \\\"FxBaseChildTunnel: INVALID_SENDER\\\");\\n        _processMessageFromRoot(stateId, rootMessageSender, data);\\n    }\\n\\n    /**\\n     * @notice Emit message that can be received on Root Tunnel\\n     * @dev Call the internal function when need to emit message\\n     * @param message bytes message that will be sent to Root Tunnel\\n     * some message examples -\\n     *   abi.encode(tokenId);\\n     *   abi.encode(tokenId, tokenMetadata);\\n     *   abi.encode(messageType, messageData);\\n     */\\n    function _sendMessageToRoot(bytes memory message) internal {\\n        emit MessageSent(message);\\n    }\\n\\n    /**\\n     * @notice Process message received from Root Tunnel\\n     * @dev function needs to be implemented to handle message as per requirement\\n     * This is called by onStateReceive function.\\n     * Since it is called via a system call, any event will not be emitted during its execution.\\n     * @param stateId unique state id\\n     * @param sender root message sender\\n     * @param message bytes message that was sent from Root Tunnel\\n     */\\n    function _processMessageFromRoot(\\n        uint256 stateId,\\n        address sender,\\n        bytes memory message\\n    ) internal virtual;\\n}\\n\",\"keccak256\":\"0x4e102fe11245e851e0f581b1fd4d5a3de2a86254a39e25d7ecc6d4a5947bcbd8\",\"license\":\"MIT\"},\"contracts/polygon-cross-chain-oracle/GovernorChildTunnel.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0-only\\r\\npragma solidity ^0.8.0;\\r\\n\\r\\nimport \\\"@maticnetwork/fx-portal/contracts/tunnel/FxBaseChildTunnel.sol\\\";\\r\\n\\r\\n/**\\r\\n * @title Governor contract deployed on sidechain that receives governance actions from Ethereum.\\r\\n */\\r\\ncontract GovernorChildTunnel is FxBaseChildTunnel {\\r\\n    event ExecutedGovernanceTransaction(address indexed to, bytes data);\\r\\n\\r\\n    constructor(address _fxChild) FxBaseChildTunnel(_fxChild) {}\\r\\n\\r\\n    /**\\r\\n     * @notice Executes governance transaction created on Ethereum.\\r\\n     * @dev The data will be received automatically from the state receiver when the state is synced between Ethereum\\r\\n     * and Polygon. This will revert if the Root chain sender is not the `fxRootTunnel` contract.\\r\\n     * @param sender The sender of `data` from the Root chain.\\r\\n     * @param data ABI encoded params to include in delegated transaction.\\r\\n     */\\r\\n    function _processMessageFromRoot(\\r\\n        uint256, /* stateId */\\r\\n        address sender,\\r\\n        bytes memory data\\r\\n    ) internal override validateSender(sender) {\\r\\n        (address to, bytes memory inputData) = abi.decode(data, (address, bytes));\\r\\n\\r\\n        require(_executeCall(to, inputData), \\\"execute call failed\\\");\\r\\n        emit ExecutedGovernanceTransaction(to, inputData);\\r\\n    }\\r\\n\\r\\n    // Note: this snippet of code is copied from Governor.sol.\\r\\n    function _executeCall(address to, bytes memory data) private returns (bool) {\\r\\n        // Note: this snippet of code is copied from Governor.sol.\\r\\n        // solhint-disable-next-line max-line-length\\r\\n        // https://github.com/gnosis/safe-contracts/blob/59cfdaebcd8b87a0a32f87b50fead092c10d3a05/contracts/base/Executor.sol#L23-L31\\r\\n        // solhint-disable-next-line no-inline-assembly\\r\\n\\r\\n        bool success;\\r\\n        assembly {\\r\\n            let inputData := add(data, 0x20)\\r\\n            let inputDataSize := mload(data)\\r\\n            // Hardcode value to be 0 for relayed governance calls in order to avoid addressing complexity of bridging\\r\\n            // value cross-chain.\\r\\n            success := call(gas(), to, 0, inputData, inputDataSize, 0, 0)\\r\\n        }\\r\\n        return success;\\r\\n    }\\r\\n}\\r\\n\",\"keccak256\":\"0x9c24f3ae3006c7963d53c88635da71972db726b3a0fdc3d17933c1dd5eaf4b1f\",\"license\":\"AGPL-3.0-only\"}},\"version\":1}",
+  "bytecode": "0x60803461007457601f61055c38819003918201601f19168301916001600160401b038311848410176100795780849260209460405283398101031261007457516001600160a01b0381169081900361007457600080546001600160a01b0319169190911790556040516104cc90816100908239f35b600080fd5b634e487b7160e01b600052604160045260246000fdfe60806040526004361015610013575b600080fd5b6000803560e01c908163450d11f0146100885781637f1e9cb01461005d57508063888370941461005457639a7c4b711461004c57600080fd5b61000e61015b565b5061000e6100bd565b346100855780600319360112610085576001546040516001600160a01b039091168152602090f35b80fd5b34610085578060031936011261008557546001600160a01b03166080908152602090f35b6001600160a01b0381160361000e57565b503461000e57602036600319011261000e576004356100db816100ac565b600154906001600160a01b0390818316610103576001600160a01b0319909216911617600155005b60405162461bcd60e51b815260206004820152602a60248201527f4678426173654368696c6454756e6e656c3a20524f4f545f54554e4e454c5f4160448201526913149150511657d4d15560b21b6064820152608490fd5b503461000e57606036600319011261000e57602435610179816100ac565b6044359067ffffffffffffffff9081831161000e573660238401121561000e57826004013591821161000e57366024838501011161000e5760246101be930190610235565b005b50634e487b7160e01b600052604160045260246000fd5b6040519190601f01601f1916820167ffffffffffffffff8111838210176101fd57604052565b6102056101c0565b604052565b60209067ffffffffffffffff8111610228575b601f01601f19160190565b6102306101c0565b61021d565b6000549192916001600160a01b031633036102815761025b6102568361020a565b6101d7565b91808352368185011161000e5760208160009261027f9683870137840101526102d0565b565b60405162461bcd60e51b815260206004820152602160248201527f4678426173654368696c6454756e6e656c3a20494e56414c49445f53454e44456044820152602960f91b6064820152608490fd5b6001546001600160a01b039291908316908316036103ac5780518101916040826020850194031261000e5760208201519161030a836100ac565b60408101519067ffffffffffffffff821161000e57019280603f8501121561000e5760208401519261033e6102568561020a565b918483526040858701011161000e576000806103a79461039b9361038d7f597c4f48fc399c2e6bc556d2d0931e80d4c210ebc618738587c5d39fd9126d459860409a602089019b8c9101610405565b169684519082895af1610428565b6040519182918261046a565b0390a2565b60405162461bcd60e51b815260206004820152602b60248201527f4678426173654368696c6454756e6e656c3a20494e56414c49445f53454e444560448201526a1497d19493d357d493d3d560aa1b6064820152608490fd5b60005b8381106104185750506000910152565b8181015183820152602001610408565b1561042f57565b60405162461bcd60e51b8152602060048201526013602482015272195e1958dd5d194818d85b1b0819985a5b1959606a1b6044820152606490fd5b6040916020825261048a8151809281602086015260208686019101610405565b601f01601f191601019056fea2646970667358221220bbdc46e8491bc755f8d295ba1083578a783da0a18eb026ebfee3adf8397284f364736f6c63430008100033",
+  "deployedBytecode": "0x60806040526004361015610013575b600080fd5b6000803560e01c908163450d11f0146100885781637f1e9cb01461005d57508063888370941461005457639a7c4b711461004c57600080fd5b61000e61015b565b5061000e6100bd565b346100855780600319360112610085576001546040516001600160a01b039091168152602090f35b80fd5b34610085578060031936011261008557546001600160a01b03166080908152602090f35b6001600160a01b0381160361000e57565b503461000e57602036600319011261000e576004356100db816100ac565b600154906001600160a01b0390818316610103576001600160a01b0319909216911617600155005b60405162461bcd60e51b815260206004820152602a60248201527f4678426173654368696c6454756e6e656c3a20524f4f545f54554e4e454c5f4160448201526913149150511657d4d15560b21b6064820152608490fd5b503461000e57606036600319011261000e57602435610179816100ac565b6044359067ffffffffffffffff9081831161000e573660238401121561000e57826004013591821161000e57366024838501011161000e5760246101be930190610235565b005b50634e487b7160e01b600052604160045260246000fd5b6040519190601f01601f1916820167ffffffffffffffff8111838210176101fd57604052565b6102056101c0565b604052565b60209067ffffffffffffffff8111610228575b601f01601f19160190565b6102306101c0565b61021d565b6000549192916001600160a01b031633036102815761025b6102568361020a565b6101d7565b91808352368185011161000e5760208160009261027f9683870137840101526102d0565b565b60405162461bcd60e51b815260206004820152602160248201527f4678426173654368696c6454756e6e656c3a20494e56414c49445f53454e44456044820152602960f91b6064820152608490fd5b6001546001600160a01b039291908316908316036103ac5780518101916040826020850194031261000e5760208201519161030a836100ac565b60408101519067ffffffffffffffff821161000e57019280603f8501121561000e5760208401519261033e6102568561020a565b918483526040858701011161000e576000806103a79461039b9361038d7f597c4f48fc399c2e6bc556d2d0931e80d4c210ebc618738587c5d39fd9126d459860409a602089019b8c9101610405565b169684519082895af1610428565b6040519182918261046a565b0390a2565b60405162461bcd60e51b815260206004820152602b60248201527f4678426173654368696c6454756e6e656c3a20494e56414c49445f53454e444560448201526a1497d19493d357d493d3d560aa1b6064820152608490fd5b60005b8381106104185750506000910152565b8181015183820152602001610408565b1561042f57565b60405162461bcd60e51b8152602060048201526013602482015272195e1958dd5d194818d85b1b0819985a5b1959606a1b6044820152606490fd5b6040916020825261048a8151809281602086015260208686019101610405565b601f01601f191601019056fea2646970667358221220bbdc46e8491bc755f8d295ba1083578a783da0a18eb026ebfee3adf8397284f364736f6c63430008100033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "title": "Governor contract deployed on sidechain that receives governance actions from Ethereum.",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 2764,
+        "contract": "contracts/polygon-cross-chain-oracle/GovernorChildTunnel.sol:GovernorChildTunnel",
+        "label": "fxChild",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 2766,
+        "contract": "contracts/polygon-cross-chain-oracle/GovernorChildTunnel.sol:GovernorChildTunnel",
+        "label": "fxRootTunnel",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}
